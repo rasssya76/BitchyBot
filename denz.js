@@ -1162,7 +1162,7 @@ if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted
                      }],
  listType: 1
 }
-denz.sendMessage(from, listMsg, MessageType.listMessage, {contextInfo: { mentionedJid: [stod]},quoted:ftrol})
+denz.sendMessage(from, listMsg, MessageType.listMessage, {contextInfo: { mentionedJid: [stod]},quoted:ftrol}),
 "forwardingScore": 1000000000,
 isForwarded: false,
 sendEphemeral: false,
