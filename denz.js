@@ -72,6 +72,7 @@ const { herolist } = require('./lib/herolist.js')
 const { herodetails } = require('./lib/herodetail.js')
 const { mediafireDl } = require('./lib/mediafire.js')
 const { pinterest } = require('./lib/pinterest')
+const { y2mateA, y2mateV } = require('./lib/y2mate.js')
 const { addCommands, checkCommands, deleteCommands } = require('./lib/autoresp')
 const { yta, ytv, buffer2Stream, ytsr, baseURI, stream2Buffer, noop } = require('./lib/ytdl')
 const { getBuffer, getGroupAdmins, getRandom, start, info, success, close } = require('./lib/functions')
@@ -322,11 +323,11 @@ try {
 		}
 		if (antibot === true) return
 		const katalog = (teks) => {
-             res = denz.prepareMessageFromContent(from,{ "orderMessage": { "itemCount": 321, "message": teks, "footerText": "*_© Fikri Gans*", "thumbnail": ofrply, "surface": 'CATALOG' }}, {quoted:ftrol})
+             res = denz.prepareMessageFromContent(from,{ "orderMessage": { "itemCount": 321, "message": teks, "footerText": "R-BOT", "thumbnail": ofrply, "surface": 'CATALOG' }}, {quoted:ftroli})
              denz.relayWAMessage(res)
         }
         const grupinv = (teks) => {
-        	grup = denz.prepareMessageFromContent(from, { "groupInviteMessage": { "groupJid": '6288213840883-1616169743@g.us', "inviteCode": 'https://chat.whatsapp.com/HWuXP6nqzRlHSk202cVXzE', "groupName": `${NamaBot}`, "footerText": "*_© Dcode Denpa_*", "jpegThumbnail": ofrply, "caption": teks}}, {quoted:finv})
+        	grup = denz.prepareMessageFromContent(from, { "groupInviteMessage": { "groupJid": '6288213840883-1616169743@g.us', "inviteCode": 'https://chat.whatsapp.com/HWuXP6nqzRlHSk202cVXzE', "groupName": `${NamaBot}`, "footerText": "*_© RAMA_*", "jpegThumbnail": ofrply, "caption": teks}}, {quoted:finv})
             denz.relayWAMessage(grup)
         }
 		idttt = []
@@ -448,7 +449,24 @@ key: {
   'jpegThumbnail': dfrply
        }
      }
-  }		
+  }
+  //TROLI V2
+const ftroli = { 
+	    key: {
+	    fromMe: false, 
+	    participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "62882248593508@s.whatsapp.net" } : {}) 
+	    },
+                        "message": {
+                        "orderMessage": {
+                        "orderId": "359531915900587",
+						"itemCount": 1000000000000,
+						"status": "INQUIRY",
+						"surface": "CATALOG",
+						"message": `ᴄᴍᴅ ᴇxᴇᴄ ${command}`,
+						"orderTitle": `RamaXGans`,
+						"sellerJid": "62887435047326@s.whatsapp.net",
+						"token": "AR5b5YFz2g4W5fYrjbeakPiI3/XxarATSeP+KLh+0FGwkw=="
+					}}}		
 // LOCATION
 const floc = {
 	key : {
@@ -1081,7 +1099,6 @@ if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted
 → Total Hit : _${cmhit.length}_
 → Prefix : _${multi ? 'Multi Prefix' : 'No Prefix'}_     
 → Nama Bot : _${NamaBot}_
-→ Nama Owner : _${NamaOwner}_
 → Nomor Owner : _@${otod.split('@')[0]}_
 → Auto Composing : _${settings.autocomposing}_
 → Auto Recording : _${settings.autorecording}_
@@ -1155,7 +1172,7 @@ if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted
                      }],
  listType: 1
 }
-denz.sendMessage(from, listMsg, MessageType.listMessage, {contextInfo: { mentionedJid: [stod]},quoted:ftrol})
+denz.sendMessage(from, listMsg, MessageType.listMessage, {contextInfo: { mentionedJid: [stod,dtod]},quoted:ftroli})
 break
 case 'allmenu': 
   if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
@@ -1467,10 +1484,11 @@ footerText: `R-BOT`,
 buttons: gbutsan,
 headerType: 4
 }
-denz.sendMessage(from, btnBngsat, MessageType.buttonsMessage, { quoted: ftrol, caption: menunya, contextInfo: { mentionedJid: [dtod,otod,stod]}})
+denz.sendMessage(from, btnBngsat, MessageType.buttonsMessage, { quoted: ftroli, caption: menunya, contextInfo: { mentionedJid: [dtod,otod,stod]}})
                   }
 break
 case 'verify':
+case 'register':
 if (isRegistered) return sticOk(from)
 const serialUser = createSerial(18)
 	        veri = sender
@@ -1484,7 +1502,7 @@ const serialUser = createSerial(18)
 → *Pengguna:* _${_registered.length}_
 
 
-*「 ${NamaBot} 」*`
+   *${NamaBot}*`
 gbutsan = [
 {buttonId:`menu`,buttonText:{displayText:'ᴍᴇɴᴜ'},type:1},
 {buttonId:`donasi`,buttonText:{displayText:'ᴅᴏɴᴀsɪ'},type:1}
@@ -1498,7 +1516,7 @@ buttons: gbutsan,
 headerType: 4
 }
 denz.sendMessage(from, sendBtnVeryy, MessageType.buttonsMessage, {quoted:ftrol, contextInfo: { mentionedJid: [sender]}})
-	         console.log(color('[REGISTER]'), color(time, 'yellow'), 'Serial:', color(serialUser, 'cyan'), 'in', color(sender || groupName))
+	    console.log(color('[REGISTER]'), color(time, 'yellow'), 'Serial:', color(serialUser, 'cyan'), 'in', color(sender || groupName))
 	    // console.log(e)
         break
 case 'grupowner':
@@ -1597,17 +1615,47 @@ break
 case 'makermenu':
 menu = `  \`\`\`MENU MAKER\`\`\` 
  
-→ ${prefix}matrix [ _teks_ ]
-→ ${prefix}googletxt [ _teks_ ]
-→ ${prefix}spiderman [ _teks_ ]
-→ ${prefix}express [ _teks_ ]
-→ ${prefix}dance [ _teks_ ]
-→ ${prefix}blackbird [ _teks_ ]
-→ ${prefix}halloween [ _teks_ ]
-→ ${prefix}vampire [ _teks_ ]
-→ ${prefix}codetxt [ _teks_ ]
-→ ${prefix}text3d [ _teks_ ]
-→ ${prefix}warrior [ _teks_ ]`
+→ ${prefix}foliokanan [ _text_ ]
+→ ${prefix}foliokiri [ _text_ ]
+→ ${prefix}nuliskanan [ _text_ ]
+→ ${prefix}nuliskiri [ _text_ ]
+→ ${prefix}maker [ _text_ ]
+→ ${prefix}maker2 [ _text_ ]
+→ ${prefix}maker3 [ _text_ ]
+→ ${prefix}maker4 [ _text_ ]
+→ ${prefix}maker2d2 [ _text_ ]
+→ ${prefix}maker2d3 [ _text_ ]
+→ ${prefix}maker2d4 [ _text_ ]
+→ ${prefix}maker3d [ _text_ ]
+→ ${prefix}maker3d2 [ _text_ ]
+→ ${prefix}maker3d3 [ _text_ ]
+→ ${prefix}maker3d4 [ _text_ ]
+→ ${prefix}broken [ _text_ ]
+→ ${prefix}brokenglass [ _text_ ]
+→ ${prefix}3dunderwater [ _text_ ]
+→ ${prefix}neondevil [ _text_ ]
+→ ${prefix}artpapercut [ _text_ ]
+→ ${prefix}bearlogo [ _text_ ]
+→ ${prefix}icecold [ _text_ ]
+→ ${prefix}fruitjuice [ _text_ ]
+→ ${prefix}rusymetal [ _text_ ]
+→ ${prefix}abstragold [ _text_ ]
+→ ${prefix}biscuit [ _text_ ]
+→ ${prefix}breakwall [ _text_ ]
+→ ${prefix}christmas [ _text_ ]
+→ ${prefix}plasticbagdrug [ _text_ ]
+→ ${prefix}honey [ _text_ ]
+→ ${prefix}horror [ _text_ ]
+→ ${prefix}purplegame [ _text_ ]
+→ ${prefix}metalrainbow [ _text_ ]
+→ ${prefix}greenneon [ _text_ ]
+→ ${prefix}wood [ _text_ ]
+→ ${prefix}dropwater [ _text_ ]
+→ ${prefix}yellowjewelry [ _text_ ]
+→ ${prefix}shinymetal [ _text_ ]
+→ ${prefix}lava [ _text_ ]
+→ ${prefix}rock [ _text_ ]
+→ ${prefix}denim [ _text_ ]`
 katalog(menu)
 break
 case 'groupmenu':
@@ -3231,9 +3279,9 @@ if (args.length < 1) return reply('Link Nya Mana? ')
 if(!isUrl(args[0]) && !args[0].includes('mediafire')) return reply(mess.error.api)
 if (Number(filesize) >= 30000) return reply(`*「 MEDIAFIRE DOWNLOAD 」*
 
-*🔖 Nama :* ${res[0].nama}
-*🔖 Ukuran :* ${res[0].size}
-*🔖 Link :* ${res[0].link}
+* Nama :* ${res[0].nama}
+* Ukuran :* ${res[0].size}
+* Link :* ${res[0].link}
 
 _Maaf size melebihi batas maksimal, Silahkan klik link diatas_`)
 reply(mess.wait)
@@ -3242,9 +3290,9 @@ res = await mediafireDl(teks)
 result = `*「 MEDIAFIRE DOWNLOAD 」*
 
 *Data Berhasil Didapatkan!*
-\`\`\`🔖 Nama : ${res[0].nama}\`\`\`
-\`\`\`🔖 Ukuran : ${res[0].size}\`\`\`
-\`\`\`🔖 Link : ${res[0].link}\`\`\`
+\`\`\` Nama : ${res[0].nama}\`\`\`
+\`\`\` Ukuran : ${res[0].size}\`\`\`
+\`\`\` Link : ${res[0].link}\`\`\`
 
 _File sedang dikirim, Silahkan tunggu beberapa menit_`
 reply(result)
@@ -4574,25 +4622,27 @@ denz.sendMessage(from, 'yaudah oke',text, {
 })
 break
                 case 'ytmp4':
-              if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-						if (args.length === 0) return reply(`Kirim perintah *${prefix}ytmp4 [linkYt]*`)
-						let isLinks2 = args[0].match(/(?:https?:\/{2})?(?:w{3}\.)?youtu(?:be)?\.(?:com|be)(?:\/watch\?v=|\/)([^\s&]+)/)
-						if (!isLinks2) return reply(mess.error.Iv)
-						try {
-							reply(mess.wait)
-							ytv(args[0])
-							.then((res) => {
-								const { dl_link, thumb, title, filesizeF, filesize } = res
-								axios.get(`https://tinyurl.com/api-create.php?url=${dl_link}`)
-								.then((a) => {
-								if (Number(filesize) >= 40000) return sendMediaURL(from, thumb, `❏ *YTmp4*\n\n❏ *Title* : ${title}\n❏ *Ext* : MP3\n*Filesize* : ${filesizeF}\n*Link* : ${a.data}\n\n_Maaf durasi melebihi batas maksimal, Silahkan klik link diatas_`)
-								sendFileFromUrl(dl_link, document, {mimetype: 'video/mp4', filename: `${title}.mp4`, quoted: ftrol, contextInfo: { forwardingScore: 508, isForwarded: true, externalAdReply:{title:title,body:"🔖 YTMP4",mediaType:"2",thumbnail:getBuffer(thumb),sourceUrl:`${body.slice(7)}`}}}).catch(() => reply(mess.error.api))
-							})
-							})
-						} catch (err) {
-							reply(mess.error.api)
-						}
-						break
+              if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})				 
+if (args.length < 1) return reply('Link Nya Mana?')
+if(!isUrl(args[0]) && !args[0].includes('youtu')) return reply(mess.error.Iv)
+teks = args.join(' ')
+reply(mess.wait)
+res = await y2mateV(teks).catch(e => {
+reply('_[ ! ] Error Gagal Memasuki Web Y2mate_')
+})
+result = `❒「  *${botname}*  」
+├ *Judul :* ${res[0].judul}
+├ *Ukuran :* ${res[0].size}
+├ *Kualitas :* ${res[0].quality}p
+├ *Nama File :* ${res[0].output}
+└ *Output :* ${res[0].tipe}
+
+_*Tunggu Proses Uploading.....*_
+`
+sendFileFromUrl(res[0].thumb, image, {caption: result, quoted: ftrol}).then((lalu) => {
+sendFileFromUrl(res[0].link, video, {quoted: ftrol, mimetype: 'video/mp4', filename: res[0].output})
+})
+break
 						case 'ytsearch':
               if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
             if (!args.length) return reply('Judulnya apa kak?')
@@ -4602,66 +4652,69 @@ break
                 const filter1 = await ytsd.getFilters(input)
                 const filters1 = filter1.get('Type').get('Video')
                 const { items } = await ytsd(filters1.url, { limit: 10 })
-                let hehe = `*🔖 YOUTUBE SEARCH*
-*🔖 Search Query:* ${input}\n\n`
+                let hehe = `* YOUTUBE SEARCH*
+* Search Query:* ${input}\n\n`
                 for (let i = 0; i < items.length; i++) {
                     hehe += `───────────────\n
-*🔖 Judul:* ${items[i].title}
-*🔖 Id:* ${items[i].id}
-*🔖 Ditonton:* ${items[i].views}
-*🔖 Durasi:* ${items[i].duration}
-*🔖 Link:* ${items[i].url}\n\n`
+* Judul:* ${items[i].title}
+* Id:* ${items[i].id}
+* Ditonton:* ${items[i].views}
+* Durasi:* ${items[i].duration}
+* Link:* ${items[i].url}\n\n`
                 }
                 thumb = await getBuffer(items[0].bestThumbnail.url)
                 await denz.sendMessage(from, thumb, image, {quoted: ftrol, caption: `${hehe}───────────────\n
-*🔖 DOWNLOAD*
-🔖 ${prefix}ytmp3 [link yt] = Audio
-🔖 ${prefix}ytmp4 [link yt] = Video`, contextInfo: { forwardingScore: 508, isForwarded: true, externalAdReply:{title:`SEARCH: ${args[0]}`,body:"🔖YOUTUBE SEARCH",mediaType:"2",thumbnail:pporigi,mediaUrl:`https://youtu.be/JN_Gw2GzuqQ`}}})
+* DOWNLOAD*
+ ${prefix}ytmp3 [link yt] = Audio
+ ${prefix}ytmp4 [link yt] = Video`, contextInfo: { forwardingScore: 508, isForwarded: true, externalAdReply:{title:`SEARCH: ${args[0]}`,body:"YOUTUBE SEARCH",mediaType:"2",thumbnail:pporigi,mediaUrl:`https://youtu.be/JN_Gw2GzuqQ`}}})
             } catch(e) {
                 reply('Didn\'t find anything or there is any error!')
                 reply(`Error: ${e.message}`)
             }
             break
 					case 'ytmp3':
-              if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-						if (args.length === 0) return reply(`Kirim perintah *${prefix}ytmp3 [linkYt]*`)
-						let isLinks = args[0].match(/(?:https?:\/{2})?(?:w{3}\.)?youtu(?:be)?\.(?:com|be)(?:\/watch\?v=|\/)([^\s&]+)/)
-						if (!isLinks) return reply(mess.error.Iv)
-						try {
-							reply(mess.wait)
-							yta(args[0])
-							.then((res) => {
-								const { dl_link, thumb, title, filesizeF, filesize } = res
-								axios.get(`https://tinyurl.com/api-create.php?url=${dl_link}`)
-								.then((a) => {
-								if (Number(filesize) >= 30000) return sendMediaURL(from, thumb, `❏ *YTmp3*\n\n❏ *Title* : ${title}\n❏ *Ext* : MP3\n*Filesize* : ${filesizeF}\n*Link* : ${a.data}\n\n_Maaf durasi melebihi batas maksimal, Silahkan klik link diatas_`)
-								sendFileFromUrl(dl_link, document, {mimetype: 'audio/mp3', filename: `${title}.mp3`, quoted: ftrol, contextInfo: { forwardingScore: 508, isForwarded: true, externalAdReply:{title:title,body:"🔖 YTMP3",mediaType:"2",thumbnail:getBuffer(thumb),mediaUrl:`${body.slice(7)}`}}}).catch(() => reply(mess.error.api))
-							})
-					        })
-						} catch (err) {
-							reply(mess.error.api)
-						}
-						break
+if (args.length < 1) return reply('Link Nya Mana?')
+if(!isUrl(args[0]) && !args[0].includes('youtu')) return reply(mess.error.Iv)
+teks = args.join(' ')
+reply(mess.wait)
+res = await y2mateA(teks).catch(e => {
+reply('_[ ! ] Error Gagal Dalam Memasuki Web Y2mate_')
+})
+result = `  *${botname}* 
+*Judul :* ${res[0].judul}
+*Ukuran :* ${res[0].size}
+*Kualitas :* ${res[0].quality}kbps
+*Nama File :* ${res[0].output}
+*Output :* ${res[0].tipe}
+
+_*Tunggu Proses Uploading.....*_
+`
+sendFileFromUrl(res[0].thumb, image, {caption: result, quoted: msg}).then((lalu) => {
+sendFileFromUrl(res[0].link, document, {quoted: msg, mimetype: 'audio/mp3', filename: res[0].output})
+})
+break
                     case 'play':
-              if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-                            if (args.length === 0) return reply(`Kirim perintah *${prefix}play* _Judul lagu yang akan dicari_`)
-                            const playy = await axios.get(`https://bx-hunter.herokuapp.com/api/yt/search?query=${body.slice(6)}&apikey=${HunterApi}`)
-                            const mulaikah = playy.data.result[0].url
-                            try {
-                                reply(mess.wait)
-                                yta(mulaikah)
-                                .then((res) => {
-                                    const { dl_link, thumb, title, filesizeF, filesize } = res
-                                    axios.get(`https://tinyurl.com/api-create.php?url=${dl_link}`)
-                                    .then(async (a) => {
-                                    if (Number(filesize) >= 30000) return sendMediaURL(from, thumb, `❏ *PLAYmp3*\n\n❏ *Title* : ${title}\n❏ *Ext* : MP3\n*Filesize* : ${filesizeF}\n*Link* : ${a.data}\n\n_Maaf durasi melebihi batas maksimal, Silahkan klik link diatas_`)
-                                    sendFileFromUrl(dl_link, document, {mimetype: 'audio/mp3', filename: `${title}.mp3`, quoted: ftrol, contextInfo: { forwardingScore: 508, isForwarded: true, externalAdReply:{title:title,body:"🔖 PLAY MP3",mediaType:"2",thumbnail:getBuffer(thumb),mediaUrl:"https://youtu.be/Ejl9sLbgc1A"}}}).catch(() => reply(mess.error.api))
-                                    })
-                                })
-                            } catch (err) {
-                                reply(mess.error.api)
-                            }
-                            break
+					if (args.length === 0) return reply(`Kirim perintah *${prefix}play* _Judul lagu yang akan dicari_`)
+		            var srch = args.join('')
+		    		aramas = await yts(srch);
+		    		aramat = aramas.all 
+		   			var mulaikah = aramat[0].url							
+		                  try {
+		                    yta(mulaikah)
+		                    .then((res) => {
+		                        const { dl_link, thumb, title, filesizeF, filesize } = res
+		                        axios.get(`https://tinyurl.com/api-create.php?url=${dl_link}`)
+		                        .then(async (a) => {
+		                        if (Number(filesize) >= 100000) return sendMediaURL(from, thumb, `*PLAY MUSIC*\n\n*Title* : _${title}_\n*Ext* : _MP3_\n*Filesize* : _${filesizeF}_\n*Link* : _${a.data}_\n\n_Untuk durasi lebih dari batas disajikan dalam mektuk link_`)
+		                        const captions = `*PLAY MUSIC*\n\nTitle : _${title}_\nExt : _MP3_\nSize : _${filesizeF}_\nLink : ${a.data}\n\n_Silahkan tunggu file media sedang dikirim mungkin butuh beberapa menit_`
+		                       await sendMediaURL(from, thumb, captions)
+		                        sendMediaURL(from, dl_link).catch(() => reply('error'))
+		                        })                
+		                        })
+		                        } catch (err) {
+		                        reply(mess.error.api)
+		                        }
+		                   break  
                             case 'video':
               if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
                             if (args.length === 0) return reply(`Kirim perintah *${prefix}video* _Judul video yang akan dicari_`)
@@ -4675,7 +4728,7 @@ break
                                     axios.get(`https://tinyurl.com/api-create.php?url=${dl_link}`)
                                     .then(async (a) => {
                                     if (Number(filesize) >= 30000) return sendMediaURL(from, thumb, `❏ *PLAYmp4*\n\n❏ *Title* : ${title}\n❏ *Ext* : MP4\n*Filesize* : ${filesizeF}\n*Link* : ${a.data}\n\n_Maaf durasi melebihi batas maksimal, Silahkan klik link diatas_`)
-                                    sendFileFromUrl(dl_link, document, {mimetype: 'video/mp4', filename: `${title}.mp4`, quoted: ftrol, contextInfo: { forwardingScore: 508, isForwarded: true, externalAdReply:{title:title,body:"🔖 PLAY MP4",mediaType:"2",thumbnail:getBuffer(thumb),sourceUrl:"https://youtu.be/Ejl9sLbgc1A"}}}).catch(() => reply(mess.error.api))
+                                    sendFileFromUrl(dl_link, document, {mimetype: 'video/mp4', filename: `${title}.mp4`, quoted: ftrol, contextInfo: { forwardingScore: 508, isForwarded: true, externalAdReply:{title:title,body:" PLAY MP4",mediaType:"2",thumbnail:getBuffer(thumb),sourceUrl:"https://youtu.be/Ejl9sLbgc1A"}}}).catch(() => reply(mess.error.api))
                                     })
                                 })
                             } catch (err) {
@@ -5312,7 +5365,7 @@ Giliran = @${tty.player1.split('@')[0]}`
 * @Bryan Rafly
 * @Ma'Ruf
 * @Yuzzu Kamiyaka
-* @Ikyy
+* @denz
 * @Hardianto api
 **/
 
