@@ -4096,13 +4096,13 @@ break
               if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
 					if (!c) return reply(`Teks Nya Mana Kak?\nContoh :\n${prefix}attp ${NamaBot}`)
 					atetepe = await getBuffer(`https://api.xteam.xyz/attp?file&text=${encodeURIComponent(c)}`)
-					denz.sendMessage(from, atetepe, sticker, { quoted: mek })
+					denz.sendMessage(from, atetepe, sticker, { quoted: ftroli })
 					break
                 case 'ttp':  
               if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
                     if (!c) return reply(`Teks Nya Mana Kak?\nContoh :\n${prefix}attp ${NamaBot}`)
                     anu1 = await getBuffer(`https://api.xteam.xyz/ttp?file&text=${c}`)
-                    denz.sendMessage(from, anu1, sticker, { quoted: ftroli })
+                    denz.sendMessage(from, anu1, image, { quoted: ftroli, caption : `${prefix}sticker`})})
                     break
 				case 'semoji':
               if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
@@ -4639,10 +4639,10 @@ ini = await fetchJson(`https://api-yogipw.herokuapp.com/api/download/ytmp4?url=$
 anu = ini.result
 ini_txt =`*Judul* : ${anu.title}\n*Author* : ${anu.channel}\n*Publis* : ${anu.published}\n*Views* : ${anu.views}`
 yt4 = fs.readFileSync('./gambar/logo/ytdown.jpg')
-denz.sendMessage(from, yt4, image, { quoted: mek, caption: ini_txt })
+denz.sendMessage(from, yt4, image, { quoted: ftrol, caption: ini_txt })
 res = await getBuffer(anu.url)
 sticLoad(from)
-denz.sendMessage(from, res, video)
+denz.sendMessage(from, res, video, {quoted: ftrol})
 break
 case 'ytmp3':
 if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
@@ -4653,10 +4653,10 @@ ini = await fetchJson(`https://api-yogipw.herokuapp.com/api/download/ytmp3?url=$
 get = ini.result
 ini_txt =`*Judul* : ${get.title}\n*Author* : ${get.channel}\n*Publis* : ${get.published}\n*Views* : ${get.views}`
 yt3 = fs.readFileSync('./gambar/logo/ytdown.jpg')
-denz.sendMessage(from, yt3, image, { quoted: mek, caption: ini_txt })
+denz.sendMessage(from, yt3, image, { quoted: ftrol, caption: ini_txt })
 res = await getBuffer(get.url)
-sticLoad(from)
-denz.sendMessage(from, res, audio)
+reply(mess.wait)
+denz.sendMessage(from, res, audio, {quoted: ftrol})
 break	
 case 'ytsearch':
               if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
@@ -4690,21 +4690,23 @@ case 'ytsearch':
                     case 'ply4':
 case 'playmp4':
 if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
+if (args.length ==0)return reply('judul ??')
 bo = args.join(" ")
 reply(mess.wait)
 ini = await fetchJson(`https://api-yogipw.herokuapp.com/api/yt/playmp4?query=${bo}`)
 p4 = await getBuffer(get.url_video)
-denz.sendMessage(from, p4, video)
+denz.sendMessage(from, p4, video, {quoted: ftrol})
 break
 case 'ply3':
 case 'playmp3':
 case 'play':
 if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
+if (args.length ==0)return reply('cari apa?')
 bo = args.join(" ")
 reply(mess.wait)
 ini = await fetchJson(`https://api-yogipw.herokuapp.com/api/yt/playmp3?query=${bo}`)
 p3 = await getBuffer(ini.url)
-denz.sendMessage(from, p3, audio)
+denz.sendMessage(from, p3, audio, {quoted: ftrol})
 break 
                             case 'video':
               if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
