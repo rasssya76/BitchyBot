@@ -440,6 +440,7 @@ key: {
 }
 // TROLI
 // TROLI   
+uptime = process.uptime();
   const ftrol ={key: {fromMe: false,"participant":"0@s.whatsapp.net",   "remoteJid": "6289523258649-1604595598@g.us"  }, "message": {orderMessage: {itemCount: 2021,status: 200, thumbnail: dfrply, surface: 200, message: `ᴀᴋᴛɪғ sᴇʟᴀᴍᴀ ${kyun(uptime)}`, orderTitle: 'rama', sellerJid: '0@s.whatsapp.net'}},contextInfo: {"forwardingScore":999,"isForwarded":true},sendEphemeral: true}      
   //&
   //TROL
