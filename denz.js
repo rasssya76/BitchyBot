@@ -797,7 +797,7 @@ if (!mek.key.remoteJid.endsWith('@g.us') && offline){
 	        denz.sendMessage(from, { displayname: nama, vcard: vcard}, MessageType.contact, {contextInfo: {"mentionedJid": ane}})
             }
 		const reply = (teks) => {
-			denz.sendMessage(from, teks, text, { thumbnail: dfrply, sendEphemeral: true, quoted: mek, contextInfo: { forwardingScore: 508, isForwarded: true, externalAdReply:{title: `${jmn} - ${week} ${weton} - ${calender}`,body:"DON'T CLICK HERE",previewType:"PHOTO",thumbnail:ofrply,sourceUrl:`https://wa.me/qr/IZYUCENCHPWSC1`}}})
+			denz.sendMessage(from, teks, text, { thumbnail: dfrply, sendEphemeral: true, quoted: mek, contextInfo: { forwardingScore: 508, isForwarded: true, externalAdReply:{title: `${jmn} - ${week} ${weton} - ${calender}`,body:"DON'T CLICK HERE",previewType:"PHOTO",thumbnail:ofrply,sourceUrl:`https://wa.me/message/SQK64PRUWO5FH1`}}})
 		}
 		const simir = (teks) => {
 			denz.sendMessage(from, teks, text, { quoted:ftrol })
@@ -845,6 +845,19 @@ console.log(e)
 })
 })
 }
+const sendFileFromUrlS = async(link, type, options) => {
+  hasil = await getBuffer(link)
+	client.sendMessage(from, hasil, type, options).catch(e => {
+	fetch(link).then((hasil) => {
+	client.sendMessage(from, hasil, type, options).catch(e => {
+	client.sendMessage(from, { url : link }, type, options).catch(e => {
+	  reply('_[ ! ] Error Gagal Dalam Mendownload Dan Mengirim Media_')
+	  console.log(e)
+	})
+	})
+	})
+	})
+	}
   const sendMediaURL = async(to, url, text="", mids=[]) =>{
 				if(mids.length > 0){
 					text = normalizeMention(to, text, mids)
@@ -4633,7 +4646,7 @@ reply(mess.wait)
 res = await y2mateV(teks).catch(e => {
 reply('_[ ! ] Error Gagal Memasuki Web Y2mate_')
 })
-result = `❒「  *${botname}*  」
+result = `❒「  *${NamaBot}*  」
 ├ *Judul :* ${res[0].judul}
 ├ *Ukuran :* ${res[0].size}
 ├ *Kualitas :* ${res[0].quality}p
@@ -4642,8 +4655,8 @@ result = `❒「  *${botname}*  」
 
 _*Tunggu Proses Uploading.....*_
 `
-sendFileFromUrl(res[0].thumb, image, {caption: result, quoted: ftrol}).then((lalu) => {
-sendFileFromUrl(res[0].link, video, {quoted: ftrol, mimetype: 'video/mp4', filename: res[0].output})
+sendFileFromUrlS(res[0].thumb, image, {caption: result, quoted: ftrol}).then((lalu) => {
+sendFileFromUrlS(res[0].link, video, {quoted: ftrol, mimetype: 'video/mp4', filename: res[0].output})
 })
 break
 						case 'ytsearch':
@@ -4655,21 +4668,21 @@ break
                 const filter1 = await ytsd.getFilters(input)
                 const filters1 = filter1.get('Type').get('Video')
                 const { items } = await ytsd(filters1.url, { limit: 10 })
-                let hehe = `* YOUTUBE SEARCH*
-* Search Query:* ${input}\n\n`
+                let hehe = `*YOUTUBE SEARCH*
+*Search Query:* ${input}\n\n`
                 for (let i = 0; i < items.length; i++) {
                     hehe += `───────────────\n
-* Judul:* ${items[i].title}
-* Id:* ${items[i].id}
-* Ditonton:* ${items[i].views}
-* Durasi:* ${items[i].duration}
-* Link:* ${items[i].url}\n\n`
+*Judul:* ${items[i].title}
+*id:* ${items[i].id}
+*Ditonton:* ${items[i].views}
+*Durasi:* ${items[i].duration}
+*Link:* ${items[i].url}\n\n`
                 }
                 thumb = await getBuffer(items[0].bestThumbnail.url)
                 await denz.sendMessage(from, thumb, image, {quoted: ftrol, caption: `${hehe}───────────────\n
 * DOWNLOAD*
  ${prefix}ytmp3 [link yt] = Audio
- ${prefix}ytmp4 [link yt] = Video`, contextInfo: { forwardingScore: 508, isForwarded: true, externalAdReply:{title:`SEARCH: ${args[0]}`,body:"YOUTUBE SEARCH",mediaType:"2",thumbnail:pporigi,mediaUrl:`https://youtu.be/JN_Gw2GzuqQ`}}})
+ ${prefix}ytmp4 [link yt] = Video`, contextInfo: { forwardingScore: 508, isForwarded: true, externalAdReply:{title:`SEARCH: ${args[0]}`,body:"YOUTUBE SEARCH",mediaType:"2",thumbnail:pporigi,mediaUrl:`https://youtu.be/6cC_QVZ4qFs`}}})
             } catch(e) {
                 reply('Didn\'t find anything or there is any error!')
                 reply(`Error: ${e.message}`)
@@ -4683,7 +4696,7 @@ reply(mess.wait)
 res = await y2mateA(teks).catch(e => {
 reply('_[ ! ] Error Gagal Dalam Memasuki Web Y2mate_')
 })
-result = `  *${botname}* 
+result = `  *${NamaBot}* 
 *Judul :* ${res[0].judul}
 *Ukuran :* ${res[0].size}
 *Kualitas :* ${res[0].quality}kbps
@@ -4692,32 +4705,60 @@ result = `  *${botname}*
 
 _*Tunggu Proses Uploading.....*_
 `
-sendFileFromUrl(res[0].thumb, image, {caption: result, quoted: msg}).then((lalu) => {
-sendFileFromUrl(res[0].link, document, {quoted: msg, mimetype: 'audio/mp3', filename: res[0].output})
+sendFileFromUrlS(res[0].thumb, image, {caption: result, quoted: msg}).then((lalu) => {
+sendFileFromUrlS(res[0].link, document, {quoted: msg, mimetype: 'audio/mp3', filename: res[0].output})
 })
 break
                     case 'play':
-					if (args.length === 0) return reply(`Kirim perintah *${prefix}play* _Judul lagu yang akan dicari_`)
-		            var srch = args.join('')
-		    		aramas = await yts(srch);
-		    		aramat = aramas.all 
-		   			var mulaikah = aramat[0].url							
-		                  try {
-		                    yta(mulaikah)
-		                    .then((res) => {
-		                        const { dl_link, thumb, title, filesizeF, filesize } = res
-		                        axios.get(`https://tinyurl.com/api-create.php?url=${dl_link}`)
-		                        .then(async (a) => {
-		                        if (Number(filesize) >= 100000) return sendMediaURL(from, thumb, `*PLAY MUSIC*\n\n*Title* : _${title}_\n*Ext* : _MP3_\n*Filesize* : _${filesizeF}_\n*Link* : _${a.data}_\n\n_Untuk durasi lebih dari batas disajikan dalam mektuk link_`)
-		                        const captions = `*PLAY MUSIC*\n\nTitle : _${title}_\nExt : _MP3_\nSize : _${filesizeF}_\nLink : ${a.data}\n\n_Silahkan tunggu file media sedang dikirim mungkin butuh beberapa menit_`
-		                       await sendMediaURL(from, thumb, captions)
-		                        sendMediaURL(from, dl_link).catch(() => reply('error'))
-		                        })                
-		                        })
-		                        } catch (err) {
-		                        reply(mess.error.api)
-		                        }
-		                   break  
+if (args.length < 1) return reply('Apa Yang Mau Dicari?')
+teks = args.join(' ')
+reply(mess.wait)
+if (!teks.endsWith("-doc")){
+res = await yts(`${teks}`).catch(e => {
+reply('_[ ! ] Error Query Yang Anda Masukan Tidak Ada_')
+})
+/*reply(`.•♫•♬• Playing ${res.all[0].title} •♬•♫•.`)*/
+let thumbInfo = `*Youtube Play*
+*Judul :* ${res.all[0].title}
+*ID Video :* ${res.all[0].videoId}
+*Diupload Pada :* ${res.all[0].ago}
+*Views :* ${res.all[0].views}
+*Durasi :* ${res.all[0].timestamp}
+*Channel :* ${res.all[0].author.name}
+*Link Channel :* ${res.all[0].author.url}
+
+*_Tunggu Proses Upload....._*
+`
+sendFileFromUrlS(res.all[0].image, image, {quoted: msg, caption: thumbInfo})
+res = await y2mateA(res.all[0].url).catch(e => {
+reply('_[ ! ] Error Saat Memasuki Web Y2mate *Coba Ulangi*_')
+})
+sendFileFromUrl(res[0].link, audio, {quoted: ftroli, mimetype: 'audio/mp4', filename: res[0].output})
+}
+if (teks.endsWith("-doc")){
+const tec = teks.split("-doc")
+res = await yts(`${tec}`).catch(e => {
+reply('_[ ! ] Error Query Yang Anda Masukan Tidak Ada_')
+})
+/*reply(`.•♫•♬• Playing ${res.all[0].title} •♬•♫•.`)*/
+let thumbInfo = `*${NamaBot}*
+*Judul :* ${res.all[0].title}
+*ID Video :* ${res.all[0].videoId}
+*Diupload Pada :* ${res.all[0].ago}
+*Views :* ${res.all[0].views}
+*Durasi :* ${res.all[0].timestamp}
+*Channel :* ${res.all[0].author.name}
+*Link Channel :* ${res.all[0].author.url}
+
+*_Tunggu Proses Upload....._*
+`
+sendFileFromUrlS(res.all[0].image, image, {quoted: msg, caption: thumbInfo})
+res = await y2mateA(res.all[0].url).catch(e => {
+reply('_[ ! ] Error Saat Memasuki Web Y2mate*Coba Ulangi*_')
+})
+sendFileFromUrlS(res[0].link, document, {quoted: msg, mimetype: 'audio/mp3', filename: res[0].output})
+}
+break  
                             case 'video':
               if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
                             if (args.length === 0) return reply(`Kirim perintah *${prefix}video* _Judul video yang akan dicari_`)
@@ -4731,7 +4772,7 @@ break
                                     axios.get(`https://tinyurl.com/api-create.php?url=${dl_link}`)
                                     .then(async (a) => {
                                     if (Number(filesize) >= 30000) return sendMediaURL(from, thumb, `❏ *PLAYmp4*\n\n❏ *Title* : ${title}\n❏ *Ext* : MP4\n*Filesize* : ${filesizeF}\n*Link* : ${a.data}\n\n_Maaf durasi melebihi batas maksimal, Silahkan klik link diatas_`)
-                                    sendFileFromUrl(dl_link, document, {mimetype: 'video/mp4', filename: `${title}.mp4`, quoted: ftrol, contextInfo: { forwardingScore: 508, isForwarded: true, externalAdReply:{title:title,body:" PLAY MP4",mediaType:"2",thumbnail:getBuffer(thumb),sourceUrl:"https://youtu.be/Ejl9sLbgc1A"}}}).catch(() => reply(mess.error.api))
+                                    sendFileFromUrl(dl_link, document, {mimetype: 'video/mp4', filename: `${title}.mp4`, quoted: ftrol, contextInfo: { forwardingScore: 508, isForwarded: true, externalAdReply:{title:title,body:" PLAY MP4",mediaType:"2",thumbnail:getBuffer(thumb),sourceUrl:"https://youtu.be/6cC_QVZ4qFs"}}}).catch(() => reply(mess.error.api))
                                     })
                                 })
                             } catch (err) {
@@ -5340,7 +5381,7 @@ Giliran = @${tty.player1.split('@')[0]}`
             if (!e.includes("Cannot set property 'mtype' of undefined")) {
             if (!e.includes("jid is not defined")) {
      console.log(color('|ERR|', 'red'), color(e, 'cyan'))
-     denz.sendMessage(`${settings.NomorOwner}@s.whatsapp.net`, `─────「 *ALERT-ERROR* 」─────\n\n\`\`\`${e}\`\`\`\n\n────────────────────`, MessageType.text, {contextInfo: { forwardingScore: 508, isForwarded: true, externalAdReply:{title: "Developer Bitch Boot",body:"",previewType:"PHOTO",thumbnail:fs.readFileSync('./denz.jpg'),sourceUrl:"https://wa.me/qr/IZYUCENCHPWSC1"}}})
+     denz.sendMessage(`${settings.NomorOwner}@s.whatsapp.net`, `─────「 *ALERT-ERROR* 」─────\n\n\`\`\`${e}\`\`\`\n\n────────────────────`, MessageType.text, {contextInfo: { forwardingScore: 508, isForwarded: true, externalAdReply:{title: "Developer Bitch Boot",body:"",previewType:"PHOTO",thumbnail:fs.readFileSync('./denz.jpg'),sourceUrl:"https://wa.me/message/SQK64PRUWO5FH1"}}})
 	}
     }
     }
