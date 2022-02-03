@@ -1607,7 +1607,7 @@ menu = `  \`\`\`MENU DOWNLOAD\`\`\` 」
 → ${prefix}ytmp4 [ _link yt_ ]
 → ${prefix}ytmp3 [ _link yt_ ]
 → ${prefix}play [ _judul lagu_ ]
-→ ${prefix}video [ _judul video_ ]
+→ ${prefix}playmp4 [ _judul video_ ]
 → ${prefix}tinyurl [ _link_ ]
 → ${prefix}fetch [ _link_ ]
 → ${prefix}igdl [ _link_ ]
@@ -3348,12 +3348,12 @@ reply(lirik)
 break				 
 					case 'infogempa':
               if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-					anu = await fetchJson(`https://bx-hunter.herokuapp.com/api/info/gempa?apikey=${HunterApi}`, {method: 'get'})
+					anu = await fetchJson(`https://hardianto.xyz/api/info/gempa?apikey=${antoapi}`, {method: 'get'})
 					gempa = `❏ *INFO GEMPA*\n\n❏ Waktu : ${anu.result.Waktu}\n❏ Lintang : ${anu.result.Lintang}\n❏ Bujur : ${anu.result.Bujur}\n❏ Magnitudo : ${anu.result.Magnitudo}\n❏ Kedalaman : ${anu.result.Kedalaman}\n❏ Wilayah : ${anu.result.Wilayah}`
 					reply(mess.wait)
 					buff = await getBuffer(anu.result.Map)
 					denz.sendMessage(from, buff, image, {quoted: ftok, caption: gempa})
-					break 
+					break  
 				case 'dadu':
               if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
 			random = Math.floor(Math.random() * 6) + 1
@@ -4630,29 +4630,34 @@ denz.sendMessage(from, 'yaudah oke',text, {
  }
 })
 break
-                case 'ytmp4':
-              if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})				 
-if (args.length < 1) return reply('Link Nya Mana?')
-if(!isUrl(args[0]) && !args[0].includes('youtu')) return reply(mess.error.Iv)
-teks = args.join(' ')
+case 'ytmp4':
+              if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})        
+if (args.length ==0)return reply('Link nya Mana Kak?')
+ini_link = args.join(" ")
 reply(mess.wait)
-res = await y2mateV(teks).catch(e => {
-reply('_[ ! ] Error Gagal Memasuki Web Y2mate_')
-})
-result = `❒「  *${NamaBot}*  」
-├ *Judul :* ${res[0].judul}
-├ *Ukuran :* ${res[0].size}
-├ *Kualitas :* ${res[0].quality}p
-├ *Nama File :* ${res[0].output}
-└ *Output :* ${res[0].tipe}
-
-_*Tunggu Proses Uploading.....*_
-`
-sendFileFromUrlS(res[0].thumb, image, {caption: result, quoted: ftrol}).then((lalu) => {
-sendFileFromUrlS(res[0].link, video, {quoted: ftrol, mimetype: 'video/mp4', filename: res[0].output})
-})
+ini = await fetchJson(`https://api-yogipw.herokuapp.com/api/download/ytmp4?url=${ini_link}`)
+anu = ini.result
+ini_txt =`*Judul* : ${anu.title}\n*Author* : ${anu.channel}\n*Publis* : ${anu.published}\n*Views* : ${anu.views}`
+yt4 = fs.readFileSync('./gambar/logo/ytdown.jpg')
+denz.sendMessage(from, yt4, image, { quoted: mek, caption: ini_txt })
+res = await getBuffer(anu.url)
+sticLoad(from)
+denz.sendMessage(from, res, video)
 break
-						case 'ytsearch':
+case 'ytmp3':
+if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
+ if (args.length ==0)return reply('Link nya Mana Kak?')
+ini_link = args.join(" ")
+reply(mess.wait)
+ini = await fetchJson(`https://api-yogipw.herokuapp.com/api/download/ytmp3?url=${ini_link}`)
+get = ini.result
+ini_txt =`*Judul* : ${get.title}\n*Author* : ${get.channel}\n*Publis* : ${get.published}\n*Views* : ${get.views}`
+yt3 = fs.readFileSync('./gambar/logo/ytdown.jpg')
+denz.sendMessage(from, yt3, image, { quoted: mek, caption: ini_txt })
+res = await getBuffer(get.url)
+sticLoad(from)
+denz.sendMessage(from, res, audio)
+break	case 'ytsearch':
               if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
             if (!args.length) return reply('Judulnya apa kak?')
             try {
@@ -4680,78 +4685,26 @@ break
                 reply('Didn\'t find anything or there is any error!')
                 reply(`Error: ${e.message}`)
             }
-            break
-					case 'ytmp3':
-if (args.length < 1) return reply('Link Nya Mana?')
-if(!isUrl(args[0]) && !args[0].includes('youtu')) return reply(mess.error.Iv)
-teks = args.join(' ')
+            break					 
+                    case 'ply4':
+case 'playmp4':
+if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
+bo = args.join(" ")
 reply(mess.wait)
-res = await y2mateA(teks).catch(e => {
-reply('_[ ! ] Error Gagal Dalam Memasuki Web Y2mate_')
-})
-result = `  *${NamaBot}* 
-*Judul :* ${res[0].judul}
-*Ukuran :* ${res[0].size}
-*Kualitas :* ${res[0].quality}kbps
-*Nama File :* ${res[0].output}
-*Output :* ${res[0].tipe}
-
-_*Tunggu Proses Uploading.....*_
-`
-sendFileFromUrlS(res[0].thumb, image, {caption: result, quoted: ftroli}).then((lalu) => {
-sendFileFromUrlS(res[0].link, document, {quoted: ftroli, mimetype: 'audio/mp3', filename: res[0].output})
-})
+ini = await fetchJson(`https://api-yogipw.herokuapp.com/api/yt/playmp4?query=${bo}`)
+p4 = await getBuffer(get.url_video)
+denz.sendMessage(from, p4, video)
 break
-                    case 'play':
-if (args.length < 1) return reply('Apa Yang Mau Dicari?')
-teks = args.join(' ')
+case 'ply3':
+case 'playmp3':
+case 'play':
+if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
+bo = args.join(" ")
 reply(mess.wait)
-if (!teks.endsWith("-doc")){
-res = await yts(`${teks}`).catch(e => {
-reply('_[ ! ] Error Query Yang Anda Masukan Tidak Ada_')
-})
-/*reply(`.•♫•♬• Playing ${res.all[0].title} •♬•♫•.`)*/
-let thumbInfo = `*Youtube Play*
-*Judul :* ${res.all[0].title}
-*ID Video :* ${res.all[0].videoId}
-*Diupload Pada :* ${res.all[0].ago}
-*Views :* ${res.all[0].views}
-*Durasi :* ${res.all[0].timestamp}
-*Channel :* ${res.all[0].author.name}
-*Link Channel :* ${res.all[0].author.url}
-
-*_Tunggu Proses Upload....._*
-`
-sendFileFromUrlS(res.all[0].image, image, {quoted: ftroli, caption: thumbInfo})
-res = await y2mateA(res.all[0].url).catch(e => {
-reply('_[ ! ] Error Saat Memasuki Web Y2mate *Coba Ulangi*_')
-})
-sendFileFromUrl(res[0].link, audio, {quoted: ftroli, mimetype: 'audio/mp4', filename: res[0].output})
-}
-if (teks.endsWith("-doc")){
-const tec = teks.split("-doc")
-res = await yts(`${tec}`).catch(e => {
-reply('_[ ! ] Error Query Yang Anda Masukan Tidak Ada_')
-})
-/*reply(`.•♫•♬• Playing ${res.all[0].title} •♬•♫•.`)*/
-let thumbInfo = `*${NamaBot}*
-*Judul :* ${res.all[0].title}
-*ID Video :* ${res.all[0].videoId}
-*Diupload Pada :* ${res.all[0].ago}
-*Views :* ${res.all[0].views}
-*Durasi :* ${res.all[0].timestamp}
-*Channel :* ${res.all[0].author.name}
-*Link Channel :* ${res.all[0].author.url}
-
-*_Tunggu Proses Upload....._*
-`
-sendFileFromUrlS(res.all[0].image, image, {quoted: ftroli, caption: thumbInfo})
-res = await y2mateA(res.all[0].url).catch(e => {
-reply('_[ ! ] Error Saat Memasuki Web Y2mate*Coba Ulangi*_')
-})
-sendFileFromUrlS(res[0].link, document, {quoted: ftroli, mimetype: 'audio/mp3', filename: res[0].output})
-}
-break  
+ini = await fetchJson(`https://api-yogipw.herokuapp.com/api/yt/playmp3?query=${bo}`)
+p3 = await getBuffer(ini.url)
+denz.sendMessage(from, p3, audio)
+break 
                             case 'video':
               if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
                             if (args.length === 0) return reply(`Kirim perintah *${prefix}video* _Judul video yang akan dicari_`)
