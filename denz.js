@@ -439,18 +439,9 @@ key: {
 	}
 }
 // TROLI
-// TROLI
-  const ftrol = {
-  key: {
-  participant: "0@s.whatsapp.net",
-  "remoteJid": "0@s.whatsapp.net"},
-  "message": {"groupInviteMessage": {"groupJid": "6288213840883-1616169743@g.us",
-  "inviteCode": "m","groupName": "P", 
-  "caption": ` Hai kak ${pushname}\n${tampilUcapan}`,
-  'jpegThumbnail': dfrply
-       }
-     }
-  }
+// TROLI   
+  const ftrol ={key: {fromMe: false,"participant":"0@s.whatsapp.net",   "remoteJid": "6289523258649-1604595598@g.us"  }, "message": {orderMessage: {itemCount: 2021,status: 200, thumbnail: dfrply, surface: 200, message: `ᴀᴋᴛɪғ sᴇʟᴀᴍᴀ ${kyun(uptime)}`, orderTitle: 'rama', sellerJid: '0@s.whatsapp.net'}},contextInfo: {"forwardingScore":999,"isForwarded":true},sendEphemeral: true}      
+  //&
   //TROL
    const ftroli ={key: {fromMe: false,"participant":"0@s.whatsapp.net",   "remoteJid": "6289523258649-1604595598@g.us"  }, "message": {orderMessage: {itemCount: 2021,status: 200, thumbnail: dfrply, surface: 200, message: `ᴄᴍᴅ ᴇxᴇᴄ ${command}`, orderTitle: 'rama', sellerJid: '0@s.whatsapp.net'}},contextInfo: {"forwardingScore":999,"isForwarded":true},sendEphemeral: true}      
   //TROLI V2
@@ -4259,6 +4250,7 @@ break
         break
 				case 'status':
 case 'stats':
+case 'info':
               if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
 				var groups = denz.chats.array.filter(v => v.jid.endsWith('g.us'))
 				var privat = denz.chats.array.filter(v => v.jid.endsWith('s.whatsapp.net'))
@@ -4705,8 +4697,8 @@ result = `  *${NamaBot}*
 
 _*Tunggu Proses Uploading.....*_
 `
-sendFileFromUrlS(res[0].thumb, image, {caption: result, quoted: msg}).then((lalu) => {
-sendFileFromUrlS(res[0].link, document, {quoted: msg, mimetype: 'audio/mp3', filename: res[0].output})
+sendFileFromUrlS(res[0].thumb, image, {caption: result, quoted: ftroli}).then((lalu) => {
+sendFileFromUrlS(res[0].link, document, {quoted: ftroli, mimetype: 'audio/mp3', filename: res[0].output})
 })
 break
                     case 'play':
@@ -4729,7 +4721,7 @@ let thumbInfo = `*Youtube Play*
 
 *_Tunggu Proses Upload....._*
 `
-sendFileFromUrlS(res.all[0].image, image, {quoted: msg, caption: thumbInfo})
+sendFileFromUrlS(res.all[0].image, image, {quoted: ftroli, caption: thumbInfo})
 res = await y2mateA(res.all[0].url).catch(e => {
 reply('_[ ! ] Error Saat Memasuki Web Y2mate *Coba Ulangi*_')
 })
@@ -4752,11 +4744,11 @@ let thumbInfo = `*${NamaBot}*
 
 *_Tunggu Proses Upload....._*
 `
-sendFileFromUrlS(res.all[0].image, image, {quoted: msg, caption: thumbInfo})
+sendFileFromUrlS(res.all[0].image, image, {quoted: ftroli, caption: thumbInfo})
 res = await y2mateA(res.all[0].url).catch(e => {
 reply('_[ ! ] Error Saat Memasuki Web Y2mate*Coba Ulangi*_')
 })
-sendFileFromUrlS(res[0].link, document, {quoted: msg, mimetype: 'audio/mp3', filename: res[0].output})
+sendFileFromUrlS(res[0].link, document, {quoted: ftroli, mimetype: 'audio/mp3', filename: res[0].output})
 }
 break  
                             case 'video':
