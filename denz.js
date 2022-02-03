@@ -129,6 +129,8 @@ nopref = false
 
 // APIKEY
 HunterApi = settings.HunterApi
+dapaapi = 'RamaGans'
+antoapi = 'hardianto'
 YuzApi = 'Yuzzu'
 
 const time = moment().tz('Asia/Jakarta').format("HH:mm:ss")
@@ -1478,7 +1480,7 @@ const serialUser = createSerial(18)
 	         const jancok = `*Registration Successful*
 → *Nama :* _${pushname}_
 → *Nomor :* _@${sender.split('@')[0]}_
-→ *Seri:* _${serialUser_}
+→ *Seri:* _${serialUser}_
 → *Pengguna:* _${_registered.length}_
 
 
