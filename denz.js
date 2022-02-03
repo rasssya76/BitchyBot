@@ -45,6 +45,7 @@ const base64Img = require('base64-img')
 const ms = require('parse-ms')
 const figlet = require('figlet')
 const ytsd = require('ytsr')
+const yts = require( 'yt-search')
 const brainly = require('brainly-scraper')
 const ig = require('insta-fetcher')
 const cheerio = require('cheerio')
@@ -356,30 +357,30 @@ try {
 			var ase = new Date();
                         var jamss = ase.getHours();
                          switch(jamss){
-                case 0: jamss = "Selamat Midnight 🌚"; break;
-                case 1: jamss = "Selamat Midnight 🌚"; break;
-                case 2: jamss = "Selamat Midnight 🌚"; break;
-                case 3: jamss = "Selamat Midnight 🌔"; break;
-                case 4: jamss = "Selamat Midnight 🌔"; break;
-                case 5: jamss = "Selamat Dawn 🌄"; break;
-                case 6: jamss = "Selamat Morning 🌄"; break;
-                case 7: jamss = "Selamat Morning 🌄"; break;
-                case 8: jamss = "Selamat Morning ☀️"; break;
-                case 9: jamss = "Selamat Morning ☀️"; break;
-                case 10: jamss = "Selamat Morning ☀️"; break;
-                case 11: jamss = "Selamat Afternoon 🌞"; break;
-                case 12: jamss = "Selamat Zuhur 🌞"; break;
-                case 13: jamss = "Selamat Afternoon 🌞"; break;
-                case 14: jamss = "Selamat Afternoon 🌞"; break;
-                case 15: jamss = "Selamat Asr 🌞"; break;
-                case 16: jamss = "Selamat Afternoon ☀️"; break;
-                case 17: jamss = "Selamat Evening 🌄"; break;
-                case 18: jamss = "Selamat Maghrib 🌄"; break;
-                case 19: jamss = "Selamat Selamat Isha 🌙"; break;
-                case 20: jamss = "Selamat Night 🌙"; break;
-                case 21: jamss = "Selamat Night 🌙"; break;
-                case 22: jamss = "Selamat Midnight 🌙"; break;
-                case 23: jamss = "Selamat Midnight 🌚"; break;
+                case 0: jamss = "Selamat Malam 🌚"; break;
+                case 1: jamss = "Selamat Malam 🌚"; break;
+                case 2: jamss = "Selamat Malam 🌚"; break;
+                case 3: jamss = "Selamat Pagi 🌔"; break;
+                case 4: jamss = "Selamat Pagi 🌔"; break;
+                case 5: jamss = "Selamat Pagi 🌄"; break;
+                case 6: jamss = "Selamat Pagi 🌄"; break;
+                case 7: jamss = "Selamat Pagi 🌄"; break;
+                case 8: jamss = "Selamat Pagi ☀️"; break;
+                case 9: jamss = "Selamat Pagi ☀️"; break;
+                case 10: jamss = "Selamat Siang ☀️"; break;
+                case 11: jamss = "Selamat Siang 🌞"; break;
+                case 12: jamss = "Selamat Siang 🌞"; break;
+                case 13: jamss = "Selamat Siang 🌞"; break;
+                case 14: jamss = "Selamat Siang 🌞"; break;
+                case 15: jamss = "Selamat Sore 🌞"; break;
+                case 16: jamss = "Selamat Sore ☀️"; break;
+                case 17: jamss = "Selamat Sore 🌄"; break;
+                case 18: jamss = "Selamat Malam 🌄"; break;
+                case 19: jamss = "Selamat Malam 🌙"; break;
+                case 20: jamss = "Selamat Malam 🌙"; break;
+                case 21: jamss = "Selamat Malam 🌙"; break;
+                case 22: jamss = "Selamat Malam🌙"; break;
+                case 23: jamss = "Selamat Malam 🌚"; break;
             }
             var tampilUcapan = "" + jamss;
             const jmn = moment.tz('Asia/Jakarta').format('HH:mm:ss')
@@ -450,8 +451,10 @@ key: {
        }
      }
   }
+  //TROL
+   const ftroli ={key: {fromMe: false,"participant":"0@s.whatsapp.net",   "remoteJid": "6289523258649-1604595598@g.us"  }, "message": {orderMessage: {itemCount: 2021,status: 200, thumbnail: dfrply, surface: 200, message: `ᴄᴍᴅ ᴇxᴇᴄ ${command}`, orderTitle: 'rama', sellerJid: '0@s.whatsapp.net'}},contextInfo: {"forwardingScore":999,"isForwarded":true},sendEphemeral: true}      
   //TROLI V2
-const ftroli = { 
+const ftProli = { 
 	    key: {
 	    fromMe: false, 
 	    participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "62882248593508@s.whatsapp.net" } : {}) 
@@ -1982,7 +1985,7 @@ mhan = await denz.prepareMessage(from, buff, image, {thumbnail: buff})
 const buttonMessagessss = {
 imageMessage: mhan.message.imageMessage,
 contentText: `Ngedark Bos`,
-footerText: '*_© Fikri Gans*',
+footerText: '*R-BOT*',
 buttons: gbutsan,
 headerType: 4
 }
@@ -2722,7 +2725,7 @@ anu =`Silahkan pilih salah satu di bawah`
  buttons = [{buttonId: 'setallmenu ori', buttonText: {displayText: 'ORI'}, type: 1},{buttonId: 'setallmenu simpel', buttonText: {displayText: 'SIMPEL'}, type: 1}]
 const skuygf = {
     contentText: `${anu}`,
-    footerText: '*_© Fikri Gans*',
+    footerText: '*R-BOT*',
     buttons: buttons,
     headerType: 1
 }
@@ -2844,7 +2847,7 @@ break
 ]
 const btnskuy = {
     contentText: `${anu}`,
-    footerText: '*_© Fikri Gans*',
+    footerText: '*R-BOT*',
     buttons: buttons,
     headerType: 1
 }
@@ -3072,7 +3075,7 @@ if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted
 const buttons = [{buttonId: 'autorespon on', buttonText: {displayText: 'ON✔️'}, type: 1},{buttonId: 'autorespon off', buttonText: {displayText: 'OFF✖️'}, type: 1}]
 const btnharam = {
     contentText: `${anu}`,
-    footerText: '*_© Fikri Gans*',
+    footerText: '*R-BOT*',
     buttons: buttons,
     headerType: 1
 }
@@ -3092,7 +3095,7 @@ await denz.sendMessage(from, btnharam, MessageType.buttonsMessage, {quoted: ftro
 const buttons = [{buttonId: 'antideletee on', buttonText: {displayText: 'ON✔️'}, type: 1},{buttonId: 'antideletee off', buttonText: {displayText: 'OFF✖️'}, type: 1}]
 const buttonMessage = {
     contentText: `${anu}`,
-    footerText: '*_© Fikri Gans*',
+    footerText: '*R-BOT*',
     buttons: buttons,
     headerType: 1
 }
@@ -3596,7 +3599,7 @@ encmediam = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.exten
 punten = [{buttonId: 'antilink off', buttonText: {displayText: 'OFF✖️'}, type: 1},{buttonId: 'antilink on', buttonText: {displayText: 'ON✔️'}, type: 1}]
 const btnasu = {
     contentText: `${anu}`,
-    footerText: '*_© Fikri Gans*',
+    footerText: '*R-BOT*',
     buttons: punten,
     headerType: 1
 }
@@ -3621,7 +3624,7 @@ await denz.sendMessage(from, btnasu, MessageType.buttonsMessage, {quoted: ftrol}
 punten = [{buttonId: 'antibug off', buttonText: {displayText: 'OFF✖️'}, type: 1},{buttonId: 'antibug on', buttonText: {displayText: 'ON✔️'}, type: 1}]
 const btasu = {
     contentText: `${anu}`,
-    footerText: '*_© Fikri Gans*',
+    footerText: '*R-BOT*',
     buttons: punten,
     headerType: 1
 }
@@ -5129,7 +5132,7 @@ break
 punten = [{buttonId: 'welcome off', buttonText: {displayText: 'OFF✖️'}, type: 1},{buttonId: 'welcome on', buttonText: {displayText: 'ON✔️'}, type: 1}]
 const btngrass = {
     contentText: `${anu}`,
-    footerText: '*_© Fikri Gans*',
+    footerText: '*R-BOT*',
     buttons: punten,
     headerType: 1
 }
