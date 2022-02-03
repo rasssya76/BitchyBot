@@ -1068,7 +1068,7 @@ reply('http://youtube.com/dcodedenpa')
 				}
         switch (command) {        	
 case 'menu':
-case 'help:
+case 'help':
 if(menusimpel == false){
 stod = `${sender}`
 stst = await denz.getStatus(`${sender.split('@')[0]}@c.us`)
