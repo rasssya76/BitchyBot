@@ -4102,7 +4102,7 @@ break
               if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
                     if (!c) return reply(`Teks Nya Mana Kak?\nContoh :\n${prefix}attp ${NamaBot}`)
                     anu1 = await getBuffer(`https://api.xteam.xyz/ttp?file&text=${c}`)
-                    denz.sendMessage(from, anu1, image, { quoted: ftroli, caption : `${prefix}sticker`})})
+                    denz.sendMessage(from, anu1, image, { quoted: ftroli, caption : `${prefix}sticker`})
                     break
 				case 'semoji':
               if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
