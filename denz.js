@@ -4102,7 +4102,7 @@ break
               if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
                     if (!c) return reply(`Teks Nya Mana Kak?\nContoh :\n${prefix}attp ${NamaBot}`)
                     anu1 = await getBuffer(`https://api.xteam.xyz/ttp?file&text=${c}`)
-                    denz.sendMessage(from, anu1, image, {quoted: mek, caption : `${prefix}sticker`})
+                    denz.sendMessage(from, anu1, sticker, { quoted: ftroli })
                     break
 				case 'semoji':
               if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
@@ -4657,7 +4657,8 @@ denz.sendMessage(from, yt3, image, { quoted: mek, caption: ini_txt })
 res = await getBuffer(get.url)
 sticLoad(from)
 denz.sendMessage(from, res, audio)
-break	case 'ytsearch':
+break	
+case 'ytsearch':
               if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
             if (!args.length) return reply('Judulnya apa kak?')
             try {
