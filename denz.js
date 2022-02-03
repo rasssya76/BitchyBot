@@ -2900,46 +2900,18 @@ console.log(res)
 sendMediaURL(from,`${res.result.link}`,`${res.result.desc}`)
                     break
                     case 'tiktok':
+                   case 'tiktokdl':
+                   case 'tiktoknowm':
 if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-sendButLocation(from, 'Silahkan pilih media yang ingin kamu download', 'R-BOT', thumbnail, [{buttonId: `.tiktokwm ${q}`, buttonText: {displayText: 'WM'}, type: 1},{buttonId: `.tiktoknowm ${q}`, buttonText:{displayText: 'NOWM'}, type: 1},{buttonId: `.tiktokmusic ${q}`, buttonText:{displayText: 'AUDIO'}, type: 1}], {quoted: mek})
-						
-             break
-case 'tiktoknowm':   
-if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-			if (!q) return reply('Linknya?')
-			if (!isUrl(args[0]) && !args[0].includes('tiktok.com')) return reply('Invalid link')
-			reply(lang.wait())
-			let nowem = q
-			xa.ttdownloader(nowem)
-			.then(result => {
-				const { wm, nowm, audio } = result
-				axios.get(`https://tinyurl.com/api-create.php?url=${nowm}`)
-				.then(async (a) => {
-					me = `*Link* : ${a.data}`
-					noweem = await getBuffer(nowm)
-					denz.sendMessage(from,noweem , MessageType.document, {mimetype: 'video/mp4',filename: `Tiktok Download.mp4`,quoted: mek})
-					})
-				}).catch((err) => reply(`Link tidak valid`))
-			
-             break 
-case 'tiktokwm':
-if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-			if (!q) return reply('Linknya?')
-			if (!isUrl(args[0]) && !args[0].includes('tiktok.com')) return reply('Invalid link')
-			reply(lang.wait())
-			let wem = args.join(' ')
-			xa.ttdownloader(wem)
-			.then(result => {
-				const { wm, nowm, audio } = result
-				axios.get(`https://tinyurl.com/api-create.php?url=${nowm}`)
-				.then(async (a) => {
-					me = `*Link* : ${a.data}`
-					weem = await getBuffer(wm)
-					denz.sendMessage(from,weem , MessageType.document, {mimetype: 'video/mp4',filename: `Tiktok Wm.mp4`,quoted: mek})
-					})
-				}).catch((err) => reply(`Link tidak valid`))
-			
-             break 
+if (!c) return reply('Linknya?')
+var { TiktokDownloader } = require('./lib/tiktokdl')
+sticWait(from)
+res = await TiktokDownloader(`${c}`).catch(e => {
+reply(mess.error.api)
+})
+console.log(res)
+sendMediaURL(from, `${res.result.nowatermark}`)
+break
                     case 'tourl':
 if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
     if ((isMedia && !mek.message.videoMessage || isQuotedImage || isQuotedVideo ) && args.length == 0) {
@@ -4748,45 +4720,67 @@ ${prefix}ytmp4 [link yt] = Video`, contextInfo: { forwardingScore: 508, isForwar
                 reply(`Error: ${e.message}`)
             }
             break
-					case 'ytmp3':
-        if(!q) return reply('linknya?')              
-        res = await yta(`${q}`).catch(e => {
-        reply('```[ ! ] Error Saat Mengirim Audio```')})
-        sendMedia(from, `${res.dl_link}`,{quoted:mek})
-        break         
-        case 'ytmp4':
-        if(!q) return reply('linknya?')            
-        res = await ytv(`${q}`).catch(e => {
-        reply('```[ ! ] Error Saat Mengirim Video```')})
-        sendMedia(from, `${res.dl_link}`,'Nih Kack')
-        break
-                    case 'play': case 'song':
-             if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})				       
-    		if (args.length === 0) return reply(`Kirim perintah *${prefix}play* _Judul lagu_`)
-			var srch = args.join(' ')
-			aramas = await yts(srch);
-			aramat = aramas.all 
-			var mulaikah = aramat[0].url
-			try {
-				xa.Youtube(mulaikah).then(async (data) => {
-					if (Number(data.medias[7].formattedSize) >= 100000) return sendMediaURL(from, thumb, `*PLAY MUSIC*\n\n*Title* : ${title}\n*Ext* : MP3\n*Filesize* : ${filesizeF}\n*Link* : ${a.data}\n\n_Untuk durasi lebih dari batas disajikan dalam bentuk link_`)
-						const captions = `*---- 「 PLAY MUSIC 」----*
-						
-• Title : ${aramas.videos[0].title}
-• ID : ${aramas.videos[0].videoId}
-• Upload : ${aramas.videos[0].ago}
-• Size : ${data.medias[7].formattedSize}
-• Views: ${aramas.videos[0].views} 
-• Duration : ${aramas.videos[0].timestamp}
-• Url : ${aramas.videos[0].url}`
-var thumbyt = await getBuffer(aramas.videos[0].thumbnail)
-sendButLocation(from, captions, 'R-BOT', thumbyt, [{buttonId: `.ytmp4 ${mulaikah}`, buttonText: {displayText: 'Video'}, type: 1},{buttonId: `.ytmp3 ${mulaikah}`, buttonText:{displayText: 'Audio'}, type: 1}], {quoted: mek})
-						})
-				} catch (err) {
-					reply('Terjadi kesalahan')
-					}
-			
-             break
+case 'play':
+              if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
+                            if (args.length === 0) return reply(`Kirim perintah *${prefix}play* _Judul lagu yang akan dicari_`)
+                            const playy = await axios.get(`https://bx-hunter.herokuapp.com/api/yt/search?query=${body.slice(6)}&apikey=${HunterApi}`)
+                            const mulaikah = playy.data.result[0].url
+                            try {
+                                reply(mess.wait)
+                                yta(mulaikah)
+                                .then((res) => {
+                                    const { dl_link, thumb, title, filesizeF, filesize } = res
+                                    axios.get(`https://tinyurl.com/api-create.php?url=${dl_link}`)
+                                    .then(async (a) => {
+                                    if (Number(filesize) >= 30000) return sendMediaURL(from, thumb, `❏ *PLAYmp3*\n\n❏ *Title* : ${title}\n❏ *Ext* : MP3\n*Filesize* : ${filesizeF}\n*Link* : ${a.data}\n\n_Maaf durasi melebihi batas maksimal, Silahkan klik link diatas_`)
+                                    sendFileFromUrl(dl_link, document, {mimetype: 'audio/mp3', filename: `${title}.mp3`, quoted: ftrol, contextInfo: { forwardingScore: 508, isForwarded: true, externalAdReply:{title:title,body:"🔖 PLAY MP3",mediaType:"2",thumbnail:getBuffer(thumb),mediaUrl:"https://youtu.be/Ejl9sLbgc1A"}}}).catch(() => reply(mess.error.api))
+                                    })
+                                })
+                            } catch (err) {
+                                reply(mess.error.api)
+                            }
+                            break
+			case 'ytmp4':
+              if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
+						if (args.length === 0) return reply(`Kirim perintah *${prefix}ytmp4 [linkYt]*`)
+						let isLinks2 = args[0].match(/(?:https?:\/{2})?(?:w{3}\.)?youtu(?:be)?\.(?:com|be)(?:\/watch\?v=|\/)([^\s&]+)/)
+						if (!isLinks2) return reply(mess.error.Iv)
+						try {
+							reply(mess.wait)
+							ytv(args[0])
+							.then((res) => {
+								const { dl_link, thumb, title, filesizeF, filesize } = res
+								axios.get(`https://tinyurl.com/api-create.php?url=${dl_link}`)
+								.then((a) => {
+								if (Number(filesize) >= 40000) return sendMediaURL(from, thumb, `❏ *YTmp4*\n\n❏ *Title* : ${title}\n❏ *Ext* : MP3\n*Filesize* : ${filesizeF}\n*Link* : ${a.data}\n\n_Maaf durasi melebihi batas maksimal, Silahkan klik link diatas_`)
+								sendFileFromUrl(dl_link, document, {mimetype: 'video/mp4', filename: `${title}.mp4`, quoted: ftrol, contextInfo: { forwardingScore: 508, isForwarded: true, externalAdReply:{title:title,body:"🔖 YTMP4",mediaType:"2",thumbnail:getBuffer(thumb),sourceUrl:`${body.slice(7)}`}}}).catch(() => reply(mess.error.api))
+							})
+							})
+						} catch (err) {
+							reply(mess.error.api)
+						}
+						break
+case 'ytmp3':
+              if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
+						if (args.length === 0) return reply(`Kirim perintah *${prefix}ytmp3 [linkYt]*`)
+						let isLinks = args[0].match(/(?:https?:\/{2})?(?:w{3}\.)?youtu(?:be)?\.(?:com|be)(?:\/watch\?v=|\/)([^\s&]+)/)
+						if (!isLinks) return reply(mess.error.Iv)
+						try {
+							reply(mess.wait)
+							yta(args[0])
+							.then((res) => {
+								const { dl_link, thumb, title, filesizeF, filesize } = res
+								axios.get(`https://tinyurl.com/api-create.php?url=${dl_link}`)
+								.then((a) => {
+								if (Number(filesize) >= 30000) return sendMediaURL(from, thumb, `❏ *YTmp3*\n\n❏ *Title* : ${title}\n❏ *Ext* : MP3\n*Filesize* : ${filesizeF}\n*Link* : ${a.data}\n\n_Maaf durasi melebihi batas maksimal, Silahkan klik link diatas_`)
+								sendFileFromUrl(dl_link, document, {mimetype: 'audio/mp3', filename: `${title}.mp3`, quoted: ftrol, contextInfo: { forwardingScore: 508, isForwarded: true, externalAdReply:{title:title,body:"🔖 YTMP3",mediaType:"2",thumbnail:getBuffer(thumb),mediaUrl:`${body.slice(7)}`}}}).catch(() => reply(mess.error.api))
+							})
+					        })
+						} catch (err) {
+							reply(mess.error.api)
+						}
+						break
+
                             case 'video':
               if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
                             if (args.length === 0) return reply(`Kirim perintah *${prefix}video* _Judul video yang akan dicari_`)
