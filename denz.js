@@ -109,7 +109,6 @@ cmhit = []
 autorespon = false
 playmusic = false
 antidelete = false
-menusimpel = false
 menuall = false
 baterai = {
 battery: "" || "Not detected",
@@ -1069,7 +1068,6 @@ reply('http://youtube.com/dcodedenpa')
         switch (command) {        	
 case 'menu':
 case 'help':
-if(menusimpel == false){
 stod = `${sender}`
 stst = await denz.getStatus(`${sender.split('@')[0]}@c.us`)
 stst = stst.status == 401 ? '' : stst.status
@@ -1163,50 +1161,6 @@ if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted
  listType: 1
 }
 denz.sendMessage(from, listMsg, MessageType.listMessage, {contextInfo: { mentionedJid: [stod]},quoted:ftrol}),
-"forwardingScore": 1000000000,
-isForwarded: false,
-sendEphemeral: false,
-"externalAdReply": {
-"title": `hallo ${pushname}` ,
-"body": `${jmn} - ${week} ${weton} - ${calender}`,
-"mediaType": "2",
-"mediaUrl": "https://instagram.com/dark_botz_123",
-"thumbnail": pporigi,
-},mentionedJid:[stod]}, quoted : ftrol})
-}
-else if(list = true){
-        stod = `${sender}`
-       stst = await denz.getStatus(`${sender.split('@')[0]}@c.us`)
-				stst = stst.status == 401 ? '' : stst.status
-			num = await fetchJson(`https://api.telnyx.com/anonymous/v2/number_lookup/${senderNumber}`, {method: 'get'})
-       menu = `      「 \`\`\`${NamaBot}\`\`\` 」
-
-→ _Creator : @${dtod.split('@')[0]}_
-→ _Battery : ${baterai.battery}_
-→ _Mode : ${publik ? 'Public' : 'Self'}_
-→ _Total Hit : ${cmhit.length}_
-→ _Prefix : ${multi ? 'Multi Prefix' : 'No Prefix'}_
-
-     「 \`\`\`INFO BOT\`\`\` 」
-
-→ _Nama Bot : ${NamaBot}_
-→ _Nama Owner : ${NamaOwner}_
-→ _Nomor Owner : @${otod.split('@')[0]}_
-→ _Auto Composing : ${settings.autocomposing}_
-→ _Auto Recording : ${settings.autorecording}_
-
-    「 \`\`\`INFO USER\`\`\` 」
-
-→ _Status : ${isOwner ? 'Owner' : 'User'}_
-→ _Nama : ${pushname}_
-→ _Bio : ${stst}_
-→ _Nomor : @${stod.split('@')[0]}_
-→ _Info Nomor : ${num.data.country_code} - ${num.data.carrier.type} - ${num.data.carrier.name}_
-
-
-    「 \`\`\`${NamaBot}\`\`\` 」`
-sendButLocation(from, `${menu}`, " R-BOT", {jpegThumbnail:ofrply,name:""}, [{buttonId:`command`,buttonText:{displayText:'LIST MENU'},type:1},{buttonId:`owner`,buttonText:{displayText:'DEVELOPER'},type:1},{buttonId:`script`,buttonText:{displayText:'SOURCE CODE'},type:1}], {contextInfo: { mentionedJid: [dtod,otod,stod]}})
-}
 break
 case 'allmenu': 
   if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
@@ -1273,7 +1227,6 @@ menunya = `
 → ${prefix}unarchiveall
 → ${prefix}pin
 → ${prefix}unpin
-→ ${prefix}setmenu [ _ori/simple ]
 → ${prefix}setallmenu [ _ori/simpel_ ]
 → ${prefix}leavetime [ _detik/menit/jam_ ]
 → ${prefix}bukatime [ _detik/menit/jam_ ]
@@ -2712,26 +2665,6 @@ if (!isOwner && !mek.key.fromMe) return sticOwner(from)
 if (!c) return reply('Nama file nya apaa ?')
 anu = fs.readFileSync(`${c}`)
 reply(String(anu))
-break
-case 'setmenu':
-if (!isOwner && !mek.key.fromMe) return sticOwner(from)
-if(args[0] == 'ori'){
-menusimpel = true
-reply('Sucsess')
-}else if(args[0] == 'simpel'){
-menusimpel = false
-reply('Sucsess')
-}else if (!c) {
-anu =`Silahkan pilih salah satu di bawah`
- buttons = [{buttonId: 'setmenu ori', buttonText: {displayText: 'ORI'}, type: 1},{buttonId: 'setmenu simpel', buttonText: {displayText: 'SIMPEL'}, type: 1}]
-const skuygelud = {
-    contentText: `${anu}`,
-    footerText: ' R-BOT',
-    buttons: buttons,
-    headerType: 1
-}
-await denz.sendMessage(from, skuygelud, MessageType.buttonsMessage, {quoted: ftrol})
-}
 break
 case 'setallmenu':
 if (!isOwner && !mek.key.fromMe) return sticOwner(from)
