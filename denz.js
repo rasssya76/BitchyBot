@@ -134,6 +134,8 @@ HunterApi = settings.HunterApi
 dapaapi = 'RamaGans'
 antoapi = 'hardianto'
 YuzApi = 'Yuzzu'
+alphaapi = 'https://api-alphabot.herokuapp.com/api/'
+alphakey = 'Alphabot'
 
 const time = moment().tz('Asia/Jakarta').format("HH:mm:ss")
 
@@ -1315,6 +1317,7 @@ menunya = `
 → ${prefix}icecold [ _text_ ]
 → ${prefix}fruitjuice [ _text_ ]
 → ${prefix}rusymetal [ _text_ ]
+→ ${prefix}waifumaker [ _text_ ]
 → ${prefix}abstragold [ _text_ ]
 → ${prefix}biscuit [ _text_ ]
 → ${prefix}breakwall [ _text_ ]
@@ -3512,6 +3515,48 @@ if (Number(oi2) >= 50) return reply('Kebanyakan!')
                     ini_buffer = await getBuffer(`https://api.dapuhy.xyz/api/textpro/${command}?text=${ini_txt}&apikey=${dapaapi}`)                                                
                     denz.sendMessage(from, ini_buffer, image, { quoted: ftrol })
                     break
+case 'halloween2':
+case 'horror':
+case 'game8bit':
+case 'layered':
+case 'glitch2':
+case 'coolg':
+case 'coolwg':
+case 'realistic':
+case 'space3d':
+case 'gtiktok':
+case 'stone':
+case 'marvel':
+case 'marvel2':
+case 'pornhub':
+case 'avengers':
+case 'metalr':
+case 'metalg':
+case 'metalg2':
+case 'halloween2':
+case 'lion':
+case 'wolf_bw':
+case 'wolf_g':
+case 'ninja':
+case '3dsteel':
+case 'horror2':
+case 'lava':
+case 'bagel':
+if (args.length < 1) return reply(lang.tahta(prefix, command))
+var m = q
+var m1 = m.split("|")[0];
+var m2 = m.split("|")[1]; 
+let textpro = await getBuffer(`${alphaapi}/textpro/${command}?apikey=${alphakey}&text=${m1}&text2=${m2}`)
+sendButImage(from,  ` NIH NGAB` , `R-BOT`,textpro, [{"buttonId": `owner`,"buttonText": {"displayText": "OWNER"},"type": "RESPONSE"},{"buttonId": `donasi`,"buttonText": {"displayText": "DONASI"},"type": "RESPONSE"}], {thumbnail: dfrply, quoted: ftroli})
+break 
+case 'waifumaker':
+if (args.length < 1) return reply(lang.tahta(prefix, command))
+var m = q
+var fu2 = m.split("|")[0];
+var wa2 = m.split("|")[1]; 
+let textpro = await getBuffer(`https://hardianto.xyz/api/bot/gfx4?apikey=${antoapi}&text1=${fu2}&text2=${wa2}`)
+sendButImage(from,  ` NIH NGAB` , `R-BOT`,textpro, [{"buttonId": `owner`,"buttonText": {"displayText": "OWNER"},"type": "RESPONSE"},{"buttonId": `donasi`,"buttonText": {"displayText": "DONASI"},"type": "RESPONSE"}], {thumbnail: dfrply, quoted: ftroli})
+break 
 				case 'colong':
               if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
 		if (!isQuotedSticker) return reply(`Reply sticker dengan caption *${prefix}colong*`)
