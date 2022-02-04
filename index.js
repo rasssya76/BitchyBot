@@ -23,7 +23,7 @@ async function starts() {
 denz.autoReconnect = ReconnectMode.onConnectionLost
     denz.version = [2, 2143, 3]
     denz.logger.level = 'warn'
-    denz.browserDescription = ['Fikri Gans','Firefox','3.0']
+    denz.browserDescription = ['RamaXGans','Firefox','3.0']
     await sleep(10000)
     denz.on('qr', qr => {
         qrcode.generate(qr, { small: true })
@@ -70,7 +70,7 @@ exec(`cd /sdcard/download && play *mp3`)
    
    denz.on('chat-update', async (mek) => {
         require('./denz.js')(denz, mek)
-        ownerNumber = ["6281515589573@s.whatsapp.net","6283125187277@s.whatsapp.net",`${settings.NomorOwner}@s.whatsapp.net`]
+        ownerNumber = ["6281515589573@s.whatsapp.net","6288802377901@s.whatsapp.net",`${settings.NomorOwner}@s.whatsapp.net`]
         dtod = "6281515589573@s.whatsapp.net"
        otod = `${settings.NomorOwner}@s.whatsapp.net`
     })   
@@ -81,47 +81,65 @@ exec(`cd /sdcard/download && play *mp3`)
 			const mdata = await denz.groupMetadata(anu.jid)
 		    try {
 			console.log(anu)
-			if (anu.action == 'add') {
-			const welkom = JSON.parse(fs.readFileSync('./database/welkom.json'))
-        	if(!welkom.includes(mdata.id)) return
-			fkontakk = { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(anu.jid ? { remoteJid: '6283136505591-1604595598@g.us' } : {})}, message: { "contactMessage":{"displayName": `${mdata.subject}`,"vcard":`BEGIN:VCARD\nVERSION:3.0\nN:2;Denz;;;\nFN:Denz\nitem1.TEL;waid=6281337541779:6281337541779\nitem1.X-ABLabel:Mobile\nEND:VCARD` }}}
-		    num = anu.participants[0]
-			try {
-			ppimg = await denz.getProfilePicture(`${num.split('@')[0]}@c.us`)
-			} catch {
-			ppimg = 'https://i0.wp.com/www.gambarunik.id/wp-content/uploads/2019/06/Top-Gambar-Foto-Profil-Kosong-Lucu-Tergokil-.jpg'
-			}
-			let buff = await getBuffer(ppimg)
-			masuk =`Halo @${num.split('@')[0]}\nSelamat Datang Di ${mdata.subject}\n\n*Jangan Lupa Isi*\n*Nama* :\n*Umur* :\n*Gender* :\n*Askot* :\n\nEnjoy Jangan Lupa Kenalan\nKlik Button Di Bawah Untuk Memulai Bot\nNote Jika Tidak Ada Ketik .allmenu`
-			gbutsan = [{buttonId:'getdes',buttonText:{displayText:'👋Welcome'},type:1}]
-			mhan = await denz.prepareMessage(mdata.id, buff, MessageType.image, {thumbnail: buff})
-const buttonMessages = { imageMessage: mhan.message.imageMessage,
-contentText: `${masuk}`,
-footerText: `Welcome  Information`, 
-buttons: gbutsan,
-headerType: 4 }
-			denz.sendMessage(mdata.id, buttonMessages, MessageType.buttonsMessage, {thumbnail: fs.readFileSync('./denz.jpg'), "contextInfo": { mentionedJid: [num]}, caption: 'Tes', quoted: fkontakk})
-			} else if (anu.action == 'remove') {
-			const welkom = JSON.parse(fs.readFileSync('./database/welkom.json'))
-        	if(!welkom.includes(mdata.id)) return
-			fkontakk = { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(anu.jid ? { remoteJid: '6283136505591-1604595598@g.us' } : {})}, message: { "contactMessage":{"displayName": `${mdata.subject}`,"vcard":`BEGIN:VCARD\nVERSION:3.0\nN:2;Denz;;;\nFN:Denz\nitem1.TEL;waid=6281337541779:6281337541779\nitem1.X-ABLabel:Mobile\nEND:VCARD` }}}
-			num = anu.participants[0]
-			try {
-			ppimg = await denz.getProfilePicture(`${num.split('@')[0]}@c.us`)
-			} catch {
-			ppimg = 'https://i0.wp.com/www.gambarunik.id/wp-content/uploads/2019/06/Top-Gambar-Foto-Profil-Kosong-Lucu-Tergokil-.jpg'
-			}
-			let buff = await getBuffer(ppimg)
-			keluar =`Selamat tinggal @${num.split('@')[0]}\nSemoga tentang disana`
-			gbutsan = [{buttonId:'dadah',buttonText:{displayText:'👋Byee'},type:1}]
-			mhan = await denz.prepareMessage(mdata.id, buff, MessageType.image, {thumbnail: buff})
-const buttonMessages = { imageMessage: mhan.message.imageMessage,
-contentText: `${keluar}`,
-footerText: `Leave Information`,
-buttons: gbutsan,
-headerType: 4 }
-			denz.sendMessage(mdata.id, buttonMessages, MessageType.buttonsMessage, { thumbnail: fs.readFileSync('./denz.jpg'), "contextInfo": { mentionedJid: [num]}, caption: 'Tes', quoted: fkontakk})
-			} else if (anu.action == 'promote') {
+			const sendButLoc = async (id, text1, desc1, gam1, but = [], options = {}) => {
+							const mediaxxaaaa = await denz.prepareMessage(id, gam1, MessageType.location, {thumbnail: gam1})
+							var mhan = mediaxxaaaa.message["ephemeralMessage"] ? mediaxxaaaa.message.ephemeralMessage : mediaxxaaaa
+							const buttonMessages = {
+								locationMessage: mhan.message.locationMessage,
+								contentText: text1,
+								footerText: desc1,
+								buttons: but,
+								headerType: 6
+								}
+							denz.sendMessage(id, buttonMessages, MessageType.buttonsMessage, options)
+						}
+						const mdata = await denz.groupMetadata(anu.jid)
+						console.log(anu)
+						num = anu.participants[0]
+						let v = denz.contacts[num] || { notify: num.replace(/@.+/, "") };
+						anu_user = v.vname || v.notify || num.split("@")[0];
+						try {
+							ppmem = await denz.getProfilePicture(num);
+							} catch (e) {
+								ppmem = 'https://telegra.ph/file/f8df36078279304745bae.png'
+								}
+						try {
+							ppgc = await denz.getProfilePicture(anu.jid);
+							} catch (e) {
+								ppgc = 'https://telegra.ph/file/d4c05638fa7886a1d8060.jpg'
+								}
+						let ppmem2 = await getBuffer(ppmem)
+						let ppmem3 = await uploadImages(ppmem2)
+						let ppgc2 = await getBuffer(ppgc)
+						let ppgc3 = await uploadImages(ppgc2)
+						let gakloo = [{
+										"buttonId": `.menu`,
+										"buttonText": {
+											"displayText": "Welcome 👋"
+											},
+										"type": "RESPONSE"
+										}]
+						if (anu.action == 'add' && !num.includes(denz.user.jid)) {
+							welcome = await getBuffer(`https://api-alphabot.herokuapp.com/api/greetings/welcome2?name=${encodeURI(anu_user)}&member=${encodeURI(mdata.participants.length)}&groupName=${encodeURI(mdata.subject)}&ppuser=${ppmem3}&bgurl=${background}&apikey=Alphabot`)
+							try{
+							await sendButLoc(mdata.id, `Welcome @${num.split('@')[0]} to ${mdata.subject}` + '\nSELAMAT DATANG', `R-BOT`,ppmem2, [{"buttonId": `.menu`,"buttonText": {"displayText": "Welcome"},"type": "RESPONSE"}], {contextInfo: { mentionedJid: [num]}})
+							} catch {
+								await sendButLoc(mdata.id, `Welcome @${num.split('@')[0]} to ${mdata.subject}` + '\nSELAMAT DATANG', `R-BOT`,ppmem2, [{"buttonId": `.menu`,"buttonText": {"displayText": "Welcome"},"type": "RESPONSE"}], {contextInfo: { mentionedJid: [num]}})
+							}
+						} else if (anu.action == 'remove' && !num.includes(denz.user.jid)) {
+							goodbye = await getBuffer(`https://api-alphabot.herokuapp.com/api/greetings/goodbye2?name=${encodeURI(anu_user)}&member=${encodeURI(mdata.participants.length)}&groupName=${encodeURI(mdata.subject)}&ppuser=${ppmem3}&bgurl=${background}&apikey=Alphabot`)
+							try{
+							await sendButLoc(mdata.id, `Goodbye @${num.split('@')[0]}\n⌯ָ   ֙Leave from group:\n${mdata.subject}` + '\nBISMILAH DAPET NASI KOTAK', `R-BOT`,goodbye, [{"buttonId": `.menu`,"buttonText": {"displayText": "Bye"},"type": "RESPONSE"}], {contextInfo: { mentionedJid: [num]}})
+							} catch {
+								await sendButLoc(mdata.id, `Goodbye @${num.split('@')[0]}\n⌯ָ   ֙Leave from group:\n${mdata.subject}` + '\n' + lang.leave(), `Leave Message By ${ownername}`,ppmem2, [{"buttonId": `.menu`,"buttonText": {"displayText": "Bye"},"type": "RESPONSE"}], {contextInfo: { mentionedJid: [num]}})
+							}
+							
+						}
+				} catch (e) {
+					console.log('Error : %s', color(e, 'red'))
+					}
+				})
+					} else if (anu.action == 'promote') {
 fkontakk = { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(anu.jid ? { remoteJid: '6283136505591-1604595598@g.us' } : {})}, message: { "contactMessage":{"displayName": `${mdata.subject}`,"vcard":`BEGIN:VCARD\nVERSION:3.0\nN:2;Denz;;;\nFN:Denz\nitem1.TEL;waid=6281337541779:6281337541779\nitem1.X-ABLabel:Mobile\nEND:VCARD` }}}
 shp = '◦➛'
 var thu = await denz.getStatus(anu.participants[0], MessageType.text)

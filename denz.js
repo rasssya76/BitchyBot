@@ -1094,7 +1094,6 @@ stod = `${sender}`
 stst = await denz.getStatus(`${sender.split('@')[0]}@c.us`)
 stst = stst.status == 401 ? '' : stst.status
 num = await fetchJson(`https://api.telnyx.com/anonymous/v2/number_lookup/${senderNumber}`, {method: 'get'})      
-if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
  stod = `${sender}`
  listMsg = {
  buttonText: 'CLICK HERE',
@@ -1184,8 +1183,7 @@ if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted
 denz.sendMessage(from, listMsg, MessageType.listMessage, {contextInfo: { mentionedJid: [stod,dtod]},quoted:ftroli})
 break
 case 'allmenu': 
-  if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-stod = `${sender}`
+  stod = `${sender}`
        stst = await denz.getStatus(`${sender.split('@')[0]}@c.us`)
        nama = 'R-BOT'
        ownerJid = "6281515589573@s.whatsapp.net"
@@ -1343,7 +1341,6 @@ menunya = `
 → ${prefix}demote [ _@tag_ ]
 → ${prefix}antilink [ _on/off_ ]
 → ${prefix}antibug [ _on/off_ ]
-→ ${prefix} welcome [ _on/off_ ]
 → ${prefix}creategrup [ _nama|@tag_ ]
 → ${prefix}tictactoe [ _@tag_ ]
 → ${prefix}delttt
@@ -1456,8 +1453,7 @@ denz.sendMessage(from, btnBngsat, MessageType.buttonsMessage, { quoted: ftrol, c
                   }
 break
 case 'sewabot': 
-  if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-stod = `${sender}`
+  stod = `${sender}`
        stst = await denz.getStatus(`${sender.split('@')[0]}@c.us`)
        nama = 'R-BOT'
        ownerJid = "6281515589573@s.whatsapp.net"
@@ -1534,8 +1530,7 @@ menu = `https://chat.whatsapp.com/KTm4p53s6457qcV5aDOAPI`
 katalog(menu) 
 break
 case 'ownermenu':
-  if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-menu = `   \`\`\`MENU OWNER\`\`\`
+  menu = `   \`\`\`MENU OWNER\`\`\`
 
 → ${prefix}stopjadibot
 → ${prefix}autorespon [ _on/off_ ]
@@ -1595,8 +1590,7 @@ menu = `   \`\`\`MENU OWNER\`\`\`
 katalog(menu)
 break
 case 'downloadmenu':
-  if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-menu = `  \`\`\`MENU DOWNLOAD\`\`\` 」
+  menu = `  \`\`\`MENU DOWNLOAD\`\`\` 」
  
 → ${prefix}infogempa
 → ${prefix}herolist
@@ -1669,8 +1663,7 @@ menu = `  \`\`\`MENU MAKER\`\`\`
 katalog(menu)
 break
 case 'groupmenu':
-  if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-menu = ` 「 \`\`\`MENU GROUP\`\`\` 
+  menu = ` 「 \`\`\`MENU GROUP\`\`\` 
  
 → ${prefix}getpict [ _@tag_ ]
 → ${prefix}getname [ _reply target_ ]
@@ -1679,7 +1672,6 @@ menu = ` 「 \`\`\`MENU GROUP\`\`\`
 → ${prefix}demote [ _@tag_ ]
 → ${prefix}antilink [ _on/off_ ]
 → ${prefix}antibug [ _on/off_ ]
-→ ${prefix} welcome [ _on/off_ ]
 → ${prefix}creategrup [ _nama|@tag_ ]
 → ${prefix}tictactoe [ _@tag_ ]
 → ${prefix}delttt
@@ -1704,8 +1696,7 @@ menu = ` 「 \`\`\`MENU GROUP\`\`\`
 katalog(menu)
 break
 case 'othermenu':
-  if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-menu = ` 「 \`\`\`MENU OTHER\`\`\` 」
+  menu = ` 「 \`\`\`MENU OTHER\`\`\` 」
 
 → ${prefix}jadibot
 → ${prefix}caripesan [ _teks|jumlah_ ]
@@ -1748,32 +1739,28 @@ break
 // BIAR GAK LUPA 
 //LUPA
 case 'nuliskiri':
-  if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-if (!c) return reply('Textnya mana gan?')
+  if (!c) return reply('Textnya mana gan?')
 reply(mess.wait)
 kon = (`https://hardianto.xyz/api/nuliskiri?text=${c}&apikey=${antoapi}`)
 anu = await getBuffer(kon)
 denz.sendMessage(from, anu, image, { quoted: mek, thumbnail: fs.readFileSync('./denz.jpg')})
 break
 case 'nuliskanan':
-  if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-if (!c) return reply('Textnya mana gan?')
+  if (!c) return reply('Textnya mana gan?')
 reply(mess.wait)
 kon = (`https://hardianto.xyz/api/nuliskanan?text=${c}&apikey=${antoapi}`)
 anu = await getBuffer(kon)
 denz.sendMessage(from, anu, image, { quoted: mek, thumbnail: fs.readFileSync('./denz.jpg')})
 break
 case 'foliokanan':
-  if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-if (!c) return reply('Textnya mana gan?')
+  if (!c) return reply('Textnya mana gan?')
 reply(mess.wait)
 kon = (`https://hardianto.xyz/api/foliokanan?text=${c}&apikey=${antoapi}`)
 anu = await getBuffer(kon)
 denz.sendMessage(from, anu, image, { quoted: mek, thumbnail: fs.readFileSync('./denz.jpg')})
 break
 case 'foliokiri':
-  if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-if (!c) return reply('Textnya mana gan?')
+  if (!c) return reply('Textnya mana gan?')
 reply(mess.wait)
 kon = (`https://hardianto.xyz/api/foliokanan?text=${c}&apikey=${antoapi}`)
 anu = await getBuffer(kon)
@@ -1782,24 +1769,21 @@ break
 case 'santuy': case '+62': case 'bocil':
 case 'ukty': case 'bocil': case 'ghea':
 case 'asupanrikagusriani':
-  if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-  reply(mess.wait)
+    reply(mess.wait)
 anu = await fetchJson(`https://api.dapuhy.xyz/api/asupan/${command}?apikey=${dapaapi}`)
 ano = await getBuffer(anu.result.url)
 denz.sendMessage(from, ano, image, { quoted: mek, thumbnail: fs.readFileSync('./denz.jpg')})
 break
 case 'maker': case 'maker2': 
 case 'maker3': case 'maker4':
-  if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-  reply(mess.wait)
+    reply(mess.wait)
 if (args.length < 1) return reply(`*Example :*\n${prefix + command} Yuzzu Kamiyaka`)
 anu = await fetchJson(`https://api-yuzzu.herokuapp.com/api/${command}?text=${c}&apikey=${YuzApi}`)
 ano = await getBuffer(anu.result.results)
 denz.sendMessage(from, ano, image, { quoted: mek, thumbnail: fs.readFileSync('./denz.jpg')})
 break
        case 'maker2d2': 
-  if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-                    if (args.length < 1) return reply(`*Example :*\n${prefix + command} Yuzzu Kamiyaka`)
+                      if (args.length < 1) return reply(`*Example :*\n${prefix + command} Yuzzu Kamiyaka`)
 					makell = args.join(" ")
 					reply(mess.wait)
 					anu = await fetchJson(`https://api-yuzzu.herokuapp.com/api/maker2?text=${makell}&apikey=${YuzApi}`)
@@ -1807,8 +1791,7 @@ break
 					denz.sendMessage(from, buffer1, image, {quoted: mek, thumbnail: fs.readFileSync('./denz.jpg')})
 					break
 		case 'maker2d3': 
-  if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-                    if (args.length < 1) return reply(`*Example :*\n${prefix + command} Yuzzu Kamiyaka`)
+                      if (args.length < 1) return reply(`*Example :*\n${prefix + command} Yuzzu Kamiyaka`)
 					makell = args.join(" ")
 					reply(mess.wait)
 					anu = await fetchJson(`https://api-yuzzu.herokuapp.com/api/maker3?text=${makell}&apikey=${YuzApi}`)
@@ -1816,8 +1799,7 @@ break
 					denz.sendMessage(from, buffer1, image, {quoted: mek, thumbnail: fs.readFileSync('./denz.jpg')})
 					break
 		case 'maker2d4': 
-  if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-                    if (args.length < 1) return reply(`*Example :*\n${prefix + command} Yuzzu Kamiyaka`)
+                      if (args.length < 1) return reply(`*Example :*\n${prefix + command} Yuzzu Kamiyaka`)
 					makell = args.join(" ")
 					reply(mess.wait)
 					anu = await fetchJson(`https://api-yuzzu.herokuapp.com/api/maker4?text=${makell}&apikey=${YuzApi}`)
@@ -1825,8 +1807,7 @@ break
 					denz.sendMessage(from, buffer1, image, {quoted: mek, thumbnail: fs.readFileSync('./denz.jpg')})
 					break
 			case 'maker3d': 
-  if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-                    if (args.length < 1) return reply(`*Example :*\n${prefix + command} Yuzzu Kamiyaka`)
+                      if (args.length < 1) return reply(`*Example :*\n${prefix + command} Yuzzu Kamiyaka`)
 					makell = body.slice(8)
 					reply(mess.wait)
 					anu = await fetchJson(`https://api-yuzzu.herokuapp.com/api/maker3d?text=${makell}&apikey=${YuzApi}`)
@@ -1834,8 +1815,7 @@ break
 					denz.sendMessage(from, buffer1, image, {quoted: mek, thumbnail: fs.readFileSync('./denz.jpg')})
 					break
 			case 'maker3d2': 
-  if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-                    if (args.length < 1) return reply(`*Example :*\n${prefix + command} Yuzzu Kamiyaka`)
+                      if (args.length < 1) return reply(`*Example :*\n${prefix + command} Yuzzu Kamiyaka`)
 					makell = args.join(" ")
 					reply(mess.wait)
 					anu = await fetchJson(`https://api-yuzzu.herokuapp.com/api/maker3d/no2?text=${makell}&apikey=${YuzApi}`)
@@ -1843,8 +1823,7 @@ break
 					denz.sendMessage(from, buffer1, image, {quoted: mek, thumbnail: fs.readFileSync('./denz.jpg')})
 					break
 			case 'maker3d3': 
-  if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-                    if (args.length < 1) return reply(`*Example :*\n${prefix + command} Yuzzu Kamiyaka`)
+                      if (args.length < 1) return reply(`*Example :*\n${prefix + command} Yuzzu Kamiyaka`)
 					makell = args.join(" ")
 					reply(mess.wait)
 					anu = await fetchJson(`https://api-yuzzu.herokuapp.com/api/maker3d/no3?text=${makell}&apikey=${YuzApi}`)
@@ -1852,8 +1831,7 @@ break
 					denz.sendMessage(from, buffer1, image, {quoted: mek, thumbnail: fs.readFileSync('./denz.jpg')})
 					break
 			case 'maker3d4': 
-  if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-                    if (args.length < 1) return reply(`*Example :*\n${prefix + command} Yuzzu Kamiyaka`)
+                      if (args.length < 1) return reply(`*Example :*\n${prefix + command} Yuzzu Kamiyaka`)
 					makell = args.join(" ")
 					reply(mess.wait)
 					anu = await fetchJson(`https://api-yuzzu.herokuapp.com/api/maker3d/no4?text=${makell}&apikey=${YuzApi}`)
@@ -1861,8 +1839,7 @@ break
 					denz.sendMessage(from, buffer1, image, {quoted: mek, thumbnail: fs.readFileSync('./denz.jpg')})
 					break
 			case 'transformer': 
-  if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-                    if (args.length < 1) return reply(`*Example :*\n${prefix + command} Yuzzu Kamiyaka`)
+                      if (args.length < 1) return reply(`*Example :*\n${prefix + command} Yuzzu Kamiyaka`)
 					makell = args.join(" ")
 					reply(mess.wait)
 					anu = await fetchJson(`https://api-yuzzu.herokuapp.com/api/maker/special/transformer?text=${makell}&apikey=${YuzApi}`)
@@ -1870,8 +1847,7 @@ break
 					denz.sendMessage(from, buffer1, image, {quoted: mek, thumbnail: fs.readFileSync('./denz.jpg')})
 					break
 			case 'googletxt':
-  if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-                    if (args.length < 1) return reply(`*Example :*\n${prefix + command} tsukasa|chan|kawai`)
+                      if (args.length < 1) return reply(`*Example :*\n${prefix + command} tsukasa|chan|kawai`)
 					makell = args.join(" ")
 					ll1 = makell.split("|")[0];
 					ll2 = makell.split("|")[1];
@@ -1882,8 +1858,7 @@ break
 					denz.sendMessage(from, buffer1, image, {quoted: mek, thumbnail: fs.readFileSync('./denz.jpg')})
 					break
 			case 'battlefield': 
-  if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-                    if (args.length < 1) return reply(`*Example :*\n${prefix + command} Yuzzu|Kamiyaka`)
+                      if (args.length < 1) return reply(`*Example :*\n${prefix + command} Yuzzu|Kamiyaka`)
 					makell = args.join(" ")
 					ll1 = makell.split("|")[0];
 					ll2 = makell.split("|")[1];
@@ -1893,8 +1868,7 @@ break
 					denz.sendMessage(from, buffer1, image, {quoted: mek, thumbnail: fs.readFileSync('./denz.jpg')})
 					break
 			case 'coffeecup': 
-  if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-                    if (args.length < 1) return reply(`*Example :*\n${prefix + command} Yuzzu Kamiyaka`)
+                      if (args.length < 1) return reply(`*Example :*\n${prefix + command} Yuzzu Kamiyaka`)
 					makell = args.join(" ")
 					reply(mess.wait)
 					anu = await fetchJson(`https://api-yuzzu.herokuapp.com/api/textmaker/senja?text=${makell}&theme=coffee-cup&apikey=${YuzApi}`)
@@ -1902,8 +1876,7 @@ break
 					denz.sendMessage(from, buffer1, image, {quoted: mek, thumbnail: fs.readFileSync('./denz.jpg')})
 					break
 			case 'coffeecup2': 
-  if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-                    if (args.length < 1) return reply(`*Example :*\n${prefix + command} Yuzzu Kamiyaka`)
+                      if (args.length < 1) return reply(`*Example :*\n${prefix + command} Yuzzu Kamiyaka`)
 					makell = args.join(" ")
 					reply(mess.wait)
 					anu = await fetchJson(`https://api-yuzzu.herokuapp.com/api/textmaker/senja?text=${makell}&theme=coffee-cup2&apikey=${YuzApi}`)
@@ -1911,8 +1884,7 @@ break
 					denz.sendMessage(from, buffer1, image, {quoted: mek, thumbnail: fs.readFileSync('./denz.jpg')})
 					break
 			case 'neon': 
-  if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-                    if (args.length < 1) return reply(`*Example :*\n${prefix + command} Yuzzu Kamiyaka`)
+                      if (args.length < 1) return reply(`*Example :*\n${prefix + command} Yuzzu Kamiyaka`)
 					makell = args.join(" ")
 					reply(mess.wait)
 					anu = await fetchJson(`https://api-yuzzu.herokuapp.com/api/textmaker/metallic?text=${makell}&theme=neon&apikey=${YuzApi}`)
@@ -1920,8 +1892,7 @@ break
 					denz.sendMessage(from, buffer1, image, {quoted: mek, thumbnail: fs.readFileSync('./denz.jpg')})
 					break
              case 'glow': 
-  if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-                    if (args.length < 1) return reply(`*Example :*\n${prefix + command} Yuzzu Kamiyaka`)
+                      if (args.length < 1) return reply(`*Example :*\n${prefix + command} Yuzzu Kamiyaka`)
 					makell = args.join(" ")
 					reply(mess.wait)
 					anu = await fetchJson(`https://api-yuzzu.herokuapp.com/api/textmaker/metallic?text=${makell}&theme=glow&apikey=${YuzApi}`)
@@ -1929,8 +1900,7 @@ break
 					denz.sendMessage(from, buffer1, image, {quoted: mek, thumbnail: fs.readFileSync('./denz.jpg')})
 					break
 			case 'summer': 
-  if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-                    if (args.length < 1) return reply(`*Example :*\n${prefix + command} Yuzzu Kamiyaka`)
+                      if (args.length < 1) return reply(`*Example :*\n${prefix + command} Yuzzu Kamiyaka`)
 					makell = args.join(" ")
 					reply(mess.wait)
 					anu = await fetchJson(`https://api-yuzzu.herokuapp.com/api/textmaker/alam?text=${makell}&theme=summer&apikey=${YuzApi}`)
@@ -1938,8 +1908,7 @@ break
 					denz.sendMessage(from, buffer1, image, {quoted: mek, thumbnail: fs.readFileSync('./denz.jpg')})
 					break
 			case 'flower': 
-  if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-                    if (args.length < 1) return reply(`*Example :*\n${prefix + command} Yuzzu Kamiyaka`)
+                      if (args.length < 1) return reply(`*Example :*\n${prefix + command} Yuzzu Kamiyaka`)
 					makell = args.join(" ")
 					reply(mess.wait)
 					anu = await fetchJson(`https://api-yuzzu.herokuapp.com/api/textmaker/alam?text=${makell}&theme=flower&apikey=${YuzApi}`)
@@ -1947,8 +1916,7 @@ break
 					denz.sendMessage(from, buffer1, image, {quoted: mek, thumbnail: fs.readFileSync('./denz.jpg')})
 					break
 			case 'burn': 
-  if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-                    if (args.length < 1) return reply(`*Example :*\n${prefix + command} Yuzzu Kamiyaka`)
+                      if (args.length < 1) return reply(`*Example :*\n${prefix + command} Yuzzu Kamiyaka`)
 					makell = args.join(" ")
 					reply(mess.wait)
 					anu = await fetchJson(`https://api-yuzzu.herokuapp.com/api/textmaker/random?text=${makell}&theme=text-burn&apikey=${YuzApi}`)
@@ -1956,8 +1924,7 @@ break
 					denz.sendMessage(from, buffer1, image, {quoted: mek, thumbnail: fs.readFileSync('./denz.jpg')})
 					break
 			case 'quote': 
-  if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-                    if (args.length < 1) return reply(`*Example :*\n${prefix + command} Yuzzu Kamiyaka`)
+                      if (args.length < 1) return reply(`*Example :*\n${prefix + command} Yuzzu Kamiyaka`)
 					makell = args.join(" ")
 					reply(mess.wait)
 					anu = await fetchJson(`https://api-yuzzu.herokuapp.com/api/textmaker/random?text=${makell}&theme=art-quote&apikey=${YuzApi}`)
@@ -1965,8 +1932,7 @@ break
 					denz.sendMessage(from, buffer1, image, {quoted: mek, thumbnail: fs.readFileSync('./denz.jpg')})
 					break
 			case 'wooden': 
-  if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-                    if (args.length < 1) return reply(`*Example :*\n${prefix + command} Yuzzu Kamiyaka`)
+                      if (args.length < 1) return reply(`*Example :*\n${prefix + command} Yuzzu Kamiyaka`)
 					makell = args.join(" ")
 					reply(mess.wait)
 					anu = await fetchJson(`https://api-yuzzu.herokuapp.com/api/textmaker/roses?text=${makell}&theme=wooden-boarch&apikey=${YuzApi}`)
@@ -1974,8 +1940,7 @@ break
 					denz.sendMessage(from, buffer1, image, {quoted: mek, thumbnail: fs.readFileSync('./denz.jpg')})
 					break
 			case 'golden': 
-  if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-                    if (args.length < 1) return reply(`*Example :*\n${prefix + command} Yuzzu Kamiyaka`)
+                      if (args.length < 1) return reply(`*Example :*\n${prefix + command} Yuzzu Kamiyaka`)
 					makell = args.join(" ")
 					reply(mess.wait)
 					anu = await fetchJson(`https://api-yuzzu.herokuapp.com/api/textmaker/roses?text=${makell}&theme=golden&apikey=${YuzApi}`)
@@ -1983,8 +1948,7 @@ break
 					denz.sendMessage(from, buffer1, image, {quoted: mek, thumbnail: fs.readFileSync('./denz.jpg')})
 					break
 case 'meme':
-  if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-reply(mess.wait)
+  reply(mess.wait)
 anu = await fetchJson(`https://api-yuzzu.herokuapp.com/api/darkjokes?apikey=${YuzApi}`)
 buff = await getBuffer(anu.result.result)
 gbutsan = [{buttonId:`meme`,buttonText:{displayText:'LANJUT➡️'},type:1}]
@@ -2003,8 +1967,7 @@ denz.sendMessage(from, buttonMessagessss, MessageType.buttonsMessage, {
 break
 //🐀💰 MALING
                    case 'trigger':
-  if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-					var imgbb = require('imgbb-uploader')
+  					var imgbb = require('imgbb-uploader')
 					if ((isMedia && !mek.message.videoMessage || isQuotedImage) && args.length == 0) {
 					ger = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek 
 					reply(mess.wait)
@@ -2026,8 +1989,7 @@ break
 					}
 					break
 					case 'sampah':
-  if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-					var imgbb = require('imgbb-uploader')
+  					var imgbb = require('imgbb-uploader')
 	                 if ((isMedia && !mek.message.videoMessage || isQuotedImage) && args.length == 0) {
 	                 ger = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
 	                 owgi = await denz.downloadAndSaveMediaMessage(ger)
@@ -2039,8 +2001,7 @@ break
                    }
               break       
 		case 'gay':
-  if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-					var imgbb = require('imgbb-uploader')
+  					var imgbb = require('imgbb-uploader')
 					if ((isMedia && !mek.message.videoMessage || isQuotedImage) && args.length == 0) {
 					ger = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek 
 					reply(mess.wait)
@@ -2063,8 +2024,7 @@ break
 					}
 					break
 		case 'glass':
-  if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-					var imgbb = require('imgbb-uploader')
+  					var imgbb = require('imgbb-uploader')
 					if ((isMedia && !mek.message.videoMessage || isQuotedImage) && args.length == 0) {
 					ger = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek 
 					reply(mess.wait)
@@ -2087,8 +2047,7 @@ break
 					}
 					break
 		case 'passed':
-  if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-					var imgbb = require('imgbb-uploader')
+  					var imgbb = require('imgbb-uploader')
 					if ((isMedia && !mek.message.videoMessage || isQuotedImage) && args.length == 0) {
 					ger = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek 
 					reply(mess.wait)
@@ -2111,8 +2070,7 @@ break
 					}
 					break
 		case 'jail':
-  if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-					var imgbb = require('imgbb-uploader')
+  					var imgbb = require('imgbb-uploader')
 					if ((isMedia && !mek.message.videoMessage || isQuotedImage) && args.length == 0) {
 					ger = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek 
 					reply(mess.wait)
@@ -2135,8 +2093,7 @@ break
 					}
 					break
 		case 'comrade':
-  if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-					var imgbb = require('imgbb-uploader')
+  					var imgbb = require('imgbb-uploader')
 					if ((isMedia && !mek.message.videoMessage || isQuotedImage) && args.length == 0) {
 					ger = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek 
 					reply(mess.wait)
@@ -2159,8 +2116,7 @@ break
 					}
 					break
 		case 'hijau':
-  if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-					var imgbb = require('imgbb-uploader')
+  					var imgbb = require('imgbb-uploader')
 					if ((isMedia && !mek.message.videoMessage || isQuotedImage) && args.length == 0) {
 					ger = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek 
 					reply(mess.wait)
@@ -2184,8 +2140,7 @@ break
 					}
 					break 
 		case 'biru':
-  if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-					var imgbb = require('imgbb-uploader')
+  					var imgbb = require('imgbb-uploader')
 					if ((isMedia && !mek.message.videoMessage || isQuotedImage) && args.length == 0) {
 					ger = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek 
 					reply(mess.wait)
@@ -2209,8 +2164,7 @@ break
 					}
 					 break 
 		case 'greyscale':
-  if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-					var imgbb = require('imgbb-uploader')
+  					var imgbb = require('imgbb-uploader')
 					if ((isMedia && !mek.message.videoMessage || isQuotedImage) && args.length == 0) {
 					ger = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek 
 					reply(mess.wait)
@@ -2234,8 +2188,7 @@ break
 					}
 				 break 
 		case 'invert':
-  if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-					var imgbb = require('imgbb-uploader')
+  					var imgbb = require('imgbb-uploader')
 					if ((isMedia && !mek.message.videoMessage || isQuotedImage) && args.length == 0) {
 					ger = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek 
 					reply(mess.wait)
@@ -2259,8 +2212,7 @@ break
 					}
 				 break 
 		case 'invert_greyscale':
-  if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-					var imgbb = require('imgbb-uploader')
+  					var imgbb = require('imgbb-uploader')
 					if ((isMedia && !mek.message.videoMessage || isQuotedImage) && args.length == 0) {
 					ger = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek 
 					reply(mess.wait)
@@ -2284,8 +2236,7 @@ break
 					}
 				 break 
 		case 'red':
-  if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-					var imgbb = require('imgbb-uploader')
+  					var imgbb = require('imgbb-uploader')
 					if ((isMedia && !mek.message.videoMessage || isQuotedImage) && args.length == 0) {
 					ger = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek 
 					reply(mess.wait)
@@ -2309,8 +2260,7 @@ break
 					}
 				 break
          case 'blurple':
-  if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-					var imgbb = require('imgbb-uploader')
+  					var imgbb = require('imgbb-uploader')
 					if ((isMedia && !mek.message.videoMessage || isQuotedImage) && args.length == 0) {
 					ger = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek 
 					reply(mess.wait)
@@ -2334,8 +2284,7 @@ break
 					}
 				 break 
 		case 'blurple2':
-  if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-					var imgbb = require('imgbb-uploader')
+  					var imgbb = require('imgbb-uploader')
 					if ((isMedia && !mek.message.videoMessage || isQuotedImage) && args.length == 0) {
 					ger = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek 
 					reply(mess.wait)
@@ -2359,8 +2308,7 @@ break
 					}
 				 break 
 		case 'wasted':
-  if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-					var imgbb = require('imgbb-uploader')
+  					var imgbb = require('imgbb-uploader')
 					if ((isMedia && !mek.message.videoMessage || isQuotedImage) && args.length == 0) {
 					ger = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek 
 					reply(mess.wait)
@@ -2383,8 +2331,7 @@ break
 					break 
 		case 'pelangi':
 		case 'rainbow':
-  if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-					var imgbb = require('imgbb-uploader')
+  					var imgbb = require('imgbb-uploader')
 					if ((isMedia && !mek.message.videoMessage || isQuotedImage) && args.length == 0) {
 					ger = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek 
 					reply(mess.wait)
@@ -2406,8 +2353,7 @@ break
 					}
 					break 
 		case 'sepia':
-  if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-					var imgbb = require('imgbb-uploader')
+  					var imgbb = require('imgbb-uploader')
 					if ((isMedia && !mek.message.videoMessage || isQuotedImage) && args.length == 0) {
 					ger = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek 
 					reply(mess.wait)
@@ -2430,8 +2376,7 @@ break
 					break 
 					//Fun not faedah
                case 'brainly':
-  if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-					if (args.length < 1) return reply('Pertanyaan apa')
+  					if (args.length < 1) return reply('Pertanyaan apa')
 		          	brien = args.join(' ')
 					brainly(`${brien}`).then(res => {
 					teks = '❉───────────────────────❉\n'
@@ -2442,8 +2387,7 @@ break
 		            })              
 					break
 case 'igstalk':
-  if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-try{
+  try{
 if (!c) return reply('Usernamenya?')
 ig.fetchUser(`${args.join(' ')}`).then(Y => {
 console.log(`${args.join(' ')}`)
@@ -2463,36 +2407,31 @@ denz.sendMessage(from, nih_buff, image, { quoted: mek, caption: tt });
 break;      
 break    
                 case 'bisakah':
-  if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-					bisakah = body.slice(1)
+  					bisakah = body.slice(1)
 					const bisa =['Bisa','Tidak Bisa','Coba Ulangi','Ngimpi kah?','yakin bisa?']
 					const keh = bisa[Math.floor(Math.random() * bisa.length)]
 					denz.sendMessage(from, 'Pertanyaan : *'+bisakah+'*\n\nJawaban : '+ keh, text, { quoted: mek })
 					break
 				case 'kapankah':
-  if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-					kapankah = body.slice(1)
+  					kapankah = body.slice(1)
 					const kapan =['Besok','Lusa','Tadi','4 Hari Lagi','5 Hari Lagi','6 Hari Lagi','1 Minggu Lagi','2 Minggu Lagi','3 Minggu Lagi','1 Bulan Lagi','2 Bulan Lagi','3 Bulan Lagi','4 Bulan Lagi','5 Bulan Lagi','6 Bulan Lagi','1 Tahun Lagi','2 Tahun Lagi','3 Tahun Lagi','4 Tahun Lagi','5 Tahun Lagi','6 Tahun Lagi','1 Abad lagi','3 Hari Lagi','Tidak Akan Pernah']
 					const koh = kapan[Math.floor(Math.random() * kapan.length)]
 					denz.sendMessage(from, 'Pertanyaan : *'+kapankah+'*\n\nJawaban : '+ koh, text, { quoted: mek })
 					break
          			  case 'apakah':
-  if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-					apakah = body.slice(1)
+  					apakah = body.slice(1)
 					const apa =['Iya','Tidak','Bisa Jadi','Coba Ulangi','Tanyakan Ayam']
 					const kah = apa[Math.floor(Math.random() * apa.length)]
 					denz.sendMessage(from, 'Pertanyaan : *'+apakah+'*\n\nJawaban : '+ kah, text, { quoted: mek })
 					break
 				case 'rate':
-  if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-					rate = body.slice(1)
+  					rate = body.slice(1)
 					const ra =['4','9','17','28','34','48','59','62','74','83','97','100','29','94','75','82','41','39']
 					const te = ra[Math.floor(Math.random() * ra.length)]
 					denz.sendMessage(from, 'Pertanyaan : *'+rate+'*\n\nJawaban : '+ te+'%', text, { quoted: mek })
 					break
 		    case 'tiktokaudio':
-  if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-		 		if (!isUrl(args[0]) && !args[0].includes('tiktok.com')) return reply(mess.error.api)
+  		 		if (!isUrl(args[0]) && !args[0].includes('tiktok.com')) return reply(mess.error.api)
  		if (!c) return reply('Linknya?')
  		reply(mess.wait)
 		hx.ttdownloader(`${args[0]}`)
@@ -2507,8 +2446,7 @@ break
 		})
 		break 
 	case 'igstory': 
-  if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-            if(!c) return reply('Usernamenya?')
+              if(!c) return reply('Usernamenya?')
             hx.igstory(`${c}`)
             .then(async result => {
             for(let i of result.medias){
@@ -2523,8 +2461,7 @@ break
             });
             break
     case 'playstore':
-    if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-            if(!c) return reply('lu nyari apa?')
+                if(!c) return reply('lu nyari apa?')
             let play = await hx.playstore(`${c}`)
             let store = '❉─────────────────────❉\n'
             for (let i of play){
@@ -2537,8 +2474,7 @@ break
             reply(store)
             break
 		    case 'fb':
-		if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-            if (!c) return reply('Linknya?')
+		            if (!c) return reply('Linknya?')
             if (!isUrl(args[0]) && !args[0].includes('facebook.com')) return reply(mess.error.api)
             reply(mess.wait)
             te = args.join(' ')
@@ -2552,7 +2488,6 @@ case 'linkwa':
 case 'grupwa':
 case 'groupwa':
 case 'gcwa':
-if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
             if(!c) return reply('cari group apa?')
             hx.linkwa(`${c}`)
             .then(result => {
@@ -2564,8 +2499,7 @@ if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted
             });
             break 
     case 'otaku':
-    if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-            if(!c) return reply('judul animenya?')
+                if(!c) return reply('judul animenya?')
             let anime = await hx.otakudesu(`${c}`)
             rem = `*Judul* : ${anime.judul}
 *Jepang* : ${anime.jepang}
@@ -2583,8 +2517,7 @@ ${anime.desc}\n\n*Link Batch* : ${anime.batch}\n*Link Download SD* : ${anime.bat
             denz.sendMessage(from,ram,image,{quoted:mek,caption:rem})
             break
     case 'komiku':
-    if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-            if(!c) return reply(`judulnya?\n${prefix}komiku mao gakuin`)
+                if(!c) return reply(`judulnya?\n${prefix}komiku mao gakuin`)
             let komik = await hx.komiku(`${c}`)
             result = `*Title* : ${komik.title}\n
 *Title Indo* : ${komik.indo}\n
@@ -2595,8 +2528,7 @@ ${anime.desc}\n\n*Link Batch* : ${anime.batch}\n*Link Download SD* : ${anime.bat
             sendMediaURL(from, komik.image,result)
             break  
 		    case 'twmp4': case 'twitter':
-		if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-if (args.length < 1) return reply('Link?')
+		if (args.length < 1) return reply('Link?')
 lin = args[0]
 reply(mess.wait)
 hx.twitter(lin).then(res => {
@@ -2607,8 +2539,7 @@ sendMediaURL(from, Anu, 'Done!')
 })
 break
 case 'twmp3':
-		if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-if (args.length < 1) return reply('Link?')
+		if (args.length < 1) return reply('Link?')
 lin = args[0]
 reply(mess.wait)
 hx.twitter(lin).then(async (res) => {
@@ -2619,8 +2550,7 @@ denz.sendMessage(from, khs, audio, {mimetype:'audio/mp4', filename:'audio.mp3', 
 })
 break
     case 'chara':
-		if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-            if(!c) return reply(`gambar apa?\n${prefix}chara nino`)
+		            if(!c) return reply(`gambar apa?\n${prefix}chara nino`)
             let im = await hx.chara(`${c}`)
             let acak = im[Math.floor(Math.random() * im.length)]
             let li = await getBuffer(acak)
@@ -2676,8 +2606,7 @@ break
                 }
                 break
 case 'tutuptime':
-		if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-if (!isGroup) return reply(mess.only.group)
+		if (!isGroup) return reply(mess.only.group)
 if (!isGroupAdmins) return sticAdmin(from)
 if (!isBotGroupAdmins) return sticNotAdmin(from)
 if (args[1]=="detik") {var timer = args[0]+"000"
@@ -2690,8 +2619,7 @@ denz.groupSettingChange (from, GroupSettingChange.messageSend, true);
 }, timer)
 break
 case 'bukatime':
-		if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-if (!isGroup) return reply(mess.only.group)
+		if (!isGroup) return reply(mess.only.group)
 if (!isGroupAdmins) return sticAdmin(from)
 if (!isBotGroupAdmins) return sticNotAdmin(from)
 if (args[1]=="detik") {var timer = args[0]+"000"
@@ -2741,7 +2669,6 @@ await denz.sendMessage(from, skuygf, MessageType.buttonsMessage, {quoted: ftrol}
 break
 //Sampai sini
 case 'j':
-if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
 client.version = [2, 2119, 6]
 client.browserDescription = ['Dcode Denpa','Desktop','3.0']
 if (args[0] && args[0].length > 200) {
@@ -2872,7 +2799,6 @@ Scan QR di atas bila pengguna Gopay`
 denz.sendMessage(from, dona, image, { quoted: ftrol, thumbnail: dona, caption: doni })
 break
        case 'debug':
-if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
 			 res = await denz.prepareMessageFromContent(from,{
 "templateMessage": {
 						"hydratedTemplate": {
@@ -2907,7 +2833,6 @@ if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted
 denz.relayWAMessage(res)
 break
 case 'debug2':
-if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
    res = await denz.prepareMessageFromContent(from,{
 "templateMessage": {
   "hydratedFourRowTemplate": {
@@ -2943,7 +2868,6 @@ break
 case 'ig':
 case 'igdl':
 case 'instagram':
-if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
 if (!c) return reply('Linknya?')
 var { igDownloader } = require('./lib/igdown')
    res = await igDownloader(`${c}`).catch(e => {
@@ -2955,7 +2879,6 @@ sendMediaURL(from,`${res.result.link}`,`${res.result.desc}`)
                     case 'tiktok':
                    case 'tiktokdl':
                    case 'tiktoknowm':
-if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
 if (!c) return reply('Linknya?')
 var { TiktokDownloader } = require('./lib/tiktokdl')
 reply(mess.wait)
@@ -2966,7 +2889,6 @@ console.log(res)
 sendMediaURL(from, `${res.result.nowatermark}`)
 break
                     case 'tourl':
-if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
     if ((isMedia && !mek.message.videoMessage || isQuotedImage || isQuotedVideo ) && args.length == 0) {
             boij = isQuotedImage || isQuotedVideo ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
             owgi = await denz.downloadMediaMessage(boij)
@@ -2977,7 +2899,6 @@ if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted
             }
             break
 case 'viewonce':
-if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
 res = await denz.prepareMessageFromContent(from,{
 "viewOnceMessage": {
 "message": {
@@ -2992,7 +2913,6 @@ res = await denz.prepareMessageFromContent(from,{
 denz.relayWAMessage(res)
 break
 case 'pinterest':
-if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
 if (!c) return reply('yg mau di cari apa?')
 pinterest(`${c}`).then( data => {
 const amsulah = data.result
@@ -3003,11 +2923,9 @@ break
 case 'isbaileys': 
 case 'bail': 
 case 'baileys':
-if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
 reply(`${mek.quoted.isBaileys}`)
 break
 case 'getcaption':
-if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
 try {
 reply(`${mek.quoted.title}`)
 } catch {
@@ -3015,7 +2933,6 @@ reply(`${mek.quoted.caption}`)
 }
 break
 case 'q': 
-if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
     if (!m.quoted) return reply('reply pesan!')
     let qse = denz.serializeM(await m.getQuotedObj())
     if (!qse.quoted) return reply('pesan yang anda reply tidak mengandung reply!')
@@ -3029,12 +2946,10 @@ case 'listgroup':
                 case 'gruplist':
                 case 'groplist':
                 case 'grouplist':
-if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
   const txs = denz.chats.all().filter(v => v.jid.endsWith('g.us')).map(v =>`- ${denz.getName(v.jid)}\n${v.jid}\n[${v.read_only ? 'Left' : 'Joined'}]`).join`\n\n`
   reply(txs)
   break
   case 'caripesan':
-if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
 if (args.length < 1) return reply(`Penggunaan ${prefix}caripesan Hi|15`)
 tekse = args.join('')
 if (tekse.includes("|")) { 
@@ -3062,7 +2977,6 @@ reply(`Penggunaan ${prefix}caripesan Hi|15`)
 break
   case 'get':
 case 'fetch':
-if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
             if(!c) return reply('Linknya?')
             fetch(`${args[0]}`).then(res => res.text())  
             .then(bu =>{
@@ -3129,13 +3043,11 @@ await denz.sendMessage(from, buttonMessage, MessageType.buttonsMessage, {quoted:
         case 'test':
 				case 'cek':
 				case 'tes':
-if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
 				runtime = process.uptime()
 				reply(`- Active!\n${waktu(runtime)}`)
 				break
 				case 'tictactoe':
 case 'ttt':
-if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
 if (!isGroup) return reply(mess.only.group)
 if (args.length < 1) return reply('Tag Lawan Anda! ')
 if (isTTT) return reply('Sedang Ada Permainan Di Grub Ini, Harap Tunggu')
@@ -3156,7 +3068,6 @@ Ketik ${prefix}delttc , Untuk Mereset Permainan Yg Ada Di Grup!`, text, {context
 break
                 case 'delttt':
                 case 'delttc':
-if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
 if (!isGroup) return reply(mess.only.group)
 if (!isTTT) return reply('Tidak Ada Permainan Di Grub Ini')
 naa = ky_ttt.filter(toek => !toek.id.includes(from)) 
@@ -3199,7 +3110,6 @@ break
 			break
 		case 'gimage':
 case 'googleimage':
-if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
 if (args.length < 1) return reply('Apa Yang Mau Dicari?')
 reply(mess.wait)
 teks = args.join(' ')
@@ -3214,7 +3124,6 @@ sendFileFromUrl(random, image, {quoted: mek, caption: `*Hasil Pencarian Dari :* 
 }
 break
 				case 'herolist':
-if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
 await herolist().then((ress) => {
 let listt = `*List hero untuk feature ${prefix}herodetail*\n\n`
 for (var i = 0; i < ress.hero.length; i++) {
@@ -3224,7 +3133,6 @@ reply(listt)
 })
 break
 case 'herodetail':
-if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
 res = await herodetails(body.slice(12))
 her = `*Hero Details ${body.slice(12)}*
 
@@ -3256,7 +3164,6 @@ break
 				case 'google':
 case 'googlesearch':
 case 'ggs':
-if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
 if (args.length < 1) return reply('Yang mau di cari apaan?')
 teks = args.join(' ')
 reply(mess.wait)
@@ -3271,7 +3178,6 @@ var akhir = kant.trim()
 reply(akhir)
 break
 case 'wiki':
-if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
 if (args.length < 1) return reply(' Yang Mau Di Cari Apa? ')
 teks = args.join(' ')
 res = await wikiSearch(teks).catch(e => {
@@ -3299,14 +3205,12 @@ reply(result)
 sendFileFromUrlS(res[0].link, document, {mimetype: res[0].mime, filename: res[0].nama, quoted: ftroli})
 break
 				case 'kalkulator':
-if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
 				 var mtk = body.slice(12)
 				 teks = `${mtk} = ${Math_js.evaluate(mtk)}`
 				 reply(teks)
 				 break
 				case 'translate':
 				case 'ts':
-if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
 					try{
 					if ( args.length === 1 ){
 						tekss = mek.message.extendedTextMessage.contextInfo.quotedMessage.conversation
@@ -3329,7 +3233,6 @@ if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted
 			}
 				  break
 case 'lirik':
-if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
 if (args.length < 1) return reply('Judulnya?')
 reply(mess.wait)
 teks = body.slice(7)
@@ -3339,22 +3242,19 @@ reply(lirik)
 })
 break				 
 					case 'infogempa':
-              if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-					anu = await fetchJson(`https://hardianto.xyz/api/info/gempa?apikey=${antoapi}`, {method: 'get'})
+              					anu = await fetchJson(`https://hardianto.xyz/api/info/gempa?apikey=${antoapi}`, {method: 'get'})
 					gempa = `❏ *INFO GEMPA*\n\n❏ Waktu : ${anu.result.Waktu}\n❏ Lintang : ${anu.result.Lintang}\n❏ Bujur : ${anu.result.Bujur}\n❏ Magnitudo : ${anu.result.Magnitudo}\n❏ Kedalaman : ${anu.result.Kedalaman}\n❏ Wilayah : ${anu.result.Wilayah}`
 					reply(mess.wait)
 					buff = await getBuffer(anu.result.Map)
 					denz.sendMessage(from, buff, image, {quoted: ftok, caption: gempa})
 					break  
 				case 'dadu':
-              if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-			random = Math.floor(Math.random() * 6) + 1
+              			random = Math.floor(Math.random() * 6) + 1
 		damdu = fs.readFileSync(`./sticker/${random}.webp`)
 			denz.sendMessage(from, damdu, sticker, {quoted: mek})
 			break
 				case 'robot':
-              if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-encmedial = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
+              encmedial = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
 medial = await denz.downloadAndSaveMediaMessage(encmedial)
 ran = getRandom('.mp3')
 exec(`ffmpeg -i ${medial} -filter_complex "afftfilt=real='hypot(re,im)*sin(0)':imag='hypot(re,im)*cos(0)':win_size=512:overlap=0.75" ${ran}`, (err, stderr, stdout) => {
@@ -3366,8 +3266,7 @@ fs.unlinkSync(ran)
 })
 break
 case 'gemuk':
-              if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-					encmediaz = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
+              					encmediaz = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
 					mediaz = await denz.downloadAndSaveMediaMessage(encmediaz)
 					ran = getRandom('.mp3')
 					exec(`ffmpeg -i ${mediaz} -filter:a "atempo=1.6,asetrate=22100" ${ran}`, (err, stderr, stdout) => {
@@ -3379,8 +3278,7 @@ case 'gemuk':
 					})
 					break
 case 'balik':
-              if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-	encmediau = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
+              	encmediau = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
 	mediau = await denz.downloadAndSaveMediaMessage(encmediau)
 	ran = getRandom('.mp3')
 	exec(`ffmpeg -i ${mediau} -filter_complex "areverse" ${ran}`, (err, stderr, stdout) => {
@@ -3392,8 +3290,7 @@ fs.unlinkSync(ran)
 	})
 break
 case 'bass':                 
-              if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-					encmediao = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
+              					encmediao = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
 					mediao = await denz.downloadAndSaveMediaMessage(encmediao)
 					ran = getRandom('.mp3')
 					exec(`ffmpeg -i ${mediao} -af equalizer=f=94:width_type=o:width=2:g=30 ${ran}`, (err, stderr, stdout) => {
@@ -3405,8 +3302,7 @@ case 'bass':
 					})
 				break
 case 'sider':
-              if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-if (!isGroup) return reply(mess.only.group)
+              if (!isGroup) return reply(mess.only.group)
 infom = await denz.messageInfo(from, mek.message.extendedTextMessage.contextInfo.stanzaId)
 tagg = []
 teks = `Telah Dibaca Oleh :\n\n`
@@ -3418,8 +3314,7 @@ tagg.push(i.jid)
 mentions(teks, tagg, true)
 break
 case 'tospam':
-              if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-if (!isQuotedSticker && !isQuotedAudio && !isQuotedImage && budy.length > 10) {
+              if (!isQuotedSticker && !isQuotedAudio && !isQuotedImage && budy.length > 10) {
 teks = body.slice(8)
 oi1 = teks.split('|')[0]
 oi2 = teks.split('|')[1]
@@ -3549,8 +3444,7 @@ let makeRT = await getBuffer(`https://hardianto.xyz/api/bot/gfx4?apikey=${antoap
 sendButImage(from,  ` NIH NGAB` , `R-BOT`,makeRT, [{"buttonId": `owner`,"buttonText": {"displayText": "OWNER"},"type": "RESPONSE"},{"buttonId": `donasi`,"buttonText": {"displayText": "DONASI"},"type": "RESPONSE"}], {thumbnail: dfrply, quoted: ftroli})
 break 
 				case 'colong':
-              if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-		if (!isQuotedSticker) return reply(`Reply sticker dengan caption *${prefix}colong*`)
+              		if (!isQuotedSticker) return reply(`Reply sticker dengan caption *${prefix}colong*`)
 		const encmediia = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
 	        const meidia = await denz.downloadAndSaveMediaMessage(encmediia, `./sticker/${sender}`)
 		    exec(`webpmux -set exif ./sticker/data.exif ./sticker/${sender}.webp -o ./sticker/${sender}.webp`, async (error) => {
@@ -3562,8 +3456,7 @@ break
 				break
 				case 'readmore':
 			    	case 'more':
-              if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-			    	const more = String.fromCharCode(8206)
+              			    	const more = String.fromCharCode(8206)
 			    	const readmore = more.repeat(4001)
 				    if (!c.includes('|')) return  reply(mess.error.api)
                     const text1 = c.substring(0, c.indexOf('|') - 0)
@@ -3601,8 +3494,7 @@ sleep(4000)
 reply('Sukses')
 break
 				case 'detikvn':
-              if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-encmediam = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
+              encmediam = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
 					mediam = await denz.downloadAndSaveMediaMessage(encmediam)
 					cokmatane = Number(args[0])
 					hah = fs.readFileSync(mediam)
@@ -3610,8 +3502,7 @@ encmediam = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.exten
 						fs.unlinkSync(mediam)
 				break
 				case 'detikvideo':
-              if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-				encmedian = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
+              				encmedian = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
 					median = await denz.downloadAndSaveMediaMessage(encmedian)
 					cokmatane = Number(args[0])
 					hah = fs.readFileSync(median)
@@ -3619,8 +3510,7 @@ encmediam = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.exten
 						fs.unlinkSync(median)
 				break
 				 case 'antilink':
-              if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-	        if (!isGroup) return reply(mess.only.group)
+              	        if (!isGroup) return reply(mess.only.group)
 			if (!isGroupAdmins) return sticAdmin(from)
 			if (!isBotGroupAdmins) return sticNotAdmin(from)
 					if (args[0] === 'on') {
@@ -3648,8 +3538,7 @@ await denz.sendMessage(from, btnasu, MessageType.buttonsMessage, {quoted: ftrol}
 					}
 					break
 					case 'antibug':
-              if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-          if (!isGroup) return reply(mess.only.group)
+                        if (!isGroup) return reply(mess.only.group)
 			if (!isGroupAdmins) return sticAdmin(from)
 			if (!isBotGroupAdmins) return sticNotAdmin(from)
           if (args[0] === 'on') {
@@ -3673,8 +3562,7 @@ await denz.sendMessage(from, btasu, MessageType.buttonsMessage, {quoted: ftrol})
 					}
           break
 				case 'tinyurl':
-              if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-try {
+              try {
 link = args[0]
 anu = await axios.get(`https://tinyurl.com/api-create.php?url=${link}`)
 reply(`${anu.data}`)
@@ -3684,8 +3572,7 @@ reply(`${e}`)
 }
 break
 case 'sharelock':
- if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-kntl = `${args.join(' ')}`
+ kntl = `${args.join(' ')}`
 nama = kntl.split("|")[0];
 impostor = kntl.split("|")[1];
 denz.sendMessage(from, {
@@ -3694,8 +3581,7 @@ address: impostor,
 jpegThumbnail: ofrply}, MessageType.liveLocation, {quoted:floc})
 break
 case 'tts':
-              if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-					  try{
+              					  try{
         if (args.length > 1) {
         const gtts = require('./lib/gtts')(args[0])
         if (args.length < 2) return denz.sendMessage(from, 'Textnya mana gan?', text, {quoted: mek})
@@ -3733,8 +3619,7 @@ case 'tts':
 }
 break 
 				case 'demote':
-              if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-				if (!isGroup) return reply(mess.only.group)
+              				if (!isGroup) return reply(mess.only.group)
 				if (!isGroupAdmins) return sticAdmin(from)
                    if (!isBotGroupAdmins) return sticNotAdmin(from)
 					if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMessage === null) return reply('Reply targetnya!')
@@ -3743,8 +3628,7 @@ break
 						reply('Sukses demote admin')
 						break
 					case 'promote':
-              if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-					if (!isGroup) return reply(mess.only.group)
+              					if (!isGroup) return reply(mess.only.group)
 					if (!isGroupAdmins) return sticAdmin(from)
                    if (!isBotGroupAdmins) return sticNotAdmin(from)
 				  if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMessage === null) return reply('Reply targetnya!')
@@ -3756,8 +3640,7 @@ break
 				case 'linkgroup':
 				case 'linkgc':
 				case 'link':
-              if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-				if (!isGroup) return reply(mess.only.group)
+              				if (!isGroup) return reply(mess.only.group)
                    if (!isBotGroupAdmins) return sticNotAdmin(from)
 					linkgc = await denz.groupInviteCode(from)
 					yeh = `https://chat.whatsapp.com/${linkgc}\n\nLink grup ${groupName}`
@@ -3766,8 +3649,7 @@ break
 					case 'resetlinkgc':
          case 'resetlinkgroup':
          case 'revoke':
-              if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-         if (!isGroup) return reply(mess.only.group)
+                       if (!isGroup) return reply(mess.only.group)
          if (!isGroupAdmins) return sticAdmin(from)
                    if (!isBotGroupAdmins) return sticNotAdmin(from)
           json = ['action', 'inviteReset', from]
@@ -3830,8 +3712,7 @@ break
                 denz.groupMakeAdmin(from, members_id)
                 break
 				case 'setnamegc':
-              if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-					if (!isGroup) return reply(mess.only.group)
+              					if (!isGroup) return reply(mess.only.group)
 					if (!isGroupAdmins) return sticAdmin(from)
               if (!isBotGroupAdmins) return sticNotAdmin(from)
 					denz.groupUpdateSubject(from, `${body.slice(11)}`)
@@ -3839,8 +3720,7 @@ break
 					break					
 				case 'setdeskgc':
 				case 'setdescgc':
-              if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-					if (!isGroup) return reply(mess.only.group)
+              					if (!isGroup) return reply(mess.only.group)
 					if (!isGroupAdmins) return sticAdmin(from)
                    if (!isBotGroupAdmins) return sticNotAdmin(from)
 					denz.groupUpdateDescription(from, `${body.slice(10)}`)
@@ -3994,8 +3874,7 @@ if (!isOwner && !mek.key.fromMe) return sticOwner(from)
 				reply('Okey')
 				break
 				case 'tomp4':
-              if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-					if (!isQuotedSticker) return reply('Reply stiker nya')
+              					if (!isQuotedSticker) return reply('Reply stiker nya')
                                         reply(mess.wait)
             if ((isMedia && !mek.message.videoMessage || isQuotedSticker) && args.length == 0) {
             ger = isQuotedSticker ? JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : mek
@@ -4009,8 +3888,7 @@ if (!isOwner && !mek.key.fromMe) return sticOwner(from)
             fs.unlinkSync(owgi)
             break
             case 'tomp3':
-              if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-					denz.updatePresence(from, Presence.composing)
+              					denz.updatePresence(from, Presence.composing)
 					if (!isQuotedVideo) return reply('Reply Video Nya Kak')
 					reply(mess.wait)
 					encmediad = JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo
@@ -4025,8 +3903,7 @@ if (!isOwner && !mek.key.fromMe) return sticOwner(from)
 					})
 					break
 				case 'suit':
-              if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-  if (args.length < 1) return reply('Pilih gunting/batu/kertas')
+                if (args.length < 1) return reply('Pilih gunting/batu/kertas')
 					if (args[0] === 'gunting' ) {
 					  gunting = [
 					    "Kamu *Gunting*\nAku *Kertas*\nKamu Menang 😔",
@@ -4057,13 +3934,11 @@ if (!isOwner && !mek.key.fromMe) return sticOwner(from)
 break
 		    case 'slot':
             case 'slots':
-              if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-            const somtoy = sotoy[Math.floor(Math.random() * sotoy.length)]
+                          const somtoy = sotoy[Math.floor(Math.random() * sotoy.length)]
             denz.sendMessage(from, `[  🎰 | SLOTS ]\n-----------------\n🍋 : 🍌 : 🍍\n${somtoy}<=====\n🍋 : 🍌 : 🍍\n[  🎰 | SLOTS ]\n\nKeterangan : Jika anda Mendapatkan 3Buah Sama Berarti Anda Menang\n\nContoh : 🍌 : 🍌 : 🍌<=====`, MessageType.text, { quoted: mek })
             break
 				case 'kontak':
-              if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-				if (!isGroup) return reply(mess.only.group)
+              				if (!isGroup) return reply(mess.only.group)
 					argzu = arg.split('|')
 				if (!argzu) return reply(`Penggunaan ${prefix}kontak @tag|nama`)
 				if (mek.message.extendedTextMessage != undefined){
@@ -4074,8 +3949,7 @@ break
 				}
 				break
 				case 'kontag':
-              if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-				if (!isGroup) return reply(mess.only.group)
+              				if (!isGroup) return reply(mess.only.group)
 				if (!isGroupAdmins) return sticAdmin(from)
                 argzi = arg.split('|')
 				if (!argzi) return reply(`Penggunaan ${prefix}kontak @tag|nama`)
@@ -4087,15 +3961,13 @@ break
 				}
 				break
 				case 'getdes':
-              if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-				if (!isGroup) return reply(mess.only.group)
+              				if (!isGroup) return reply(mess.only.group)
 					anu = from
 			   metadete = await denz.groupMetadata(anu)
 				denz.sendMessage(from, metadete.desc, text, {quoted:mek})
 				  break
 					case 'getbio':
-              if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-	  var yy = mek.message.extendedTextMessage.contextInfo.participant
+              	  var yy = mek.message.extendedTextMessage.contextInfo.participant
 var p = await denz.getStatus(`${yy}`, MessageType.text)
 reply(p.status)
 if (p.status == 401) {
@@ -4103,23 +3975,20 @@ reply(mess.error.api)
 }
 break
                     case 'getname':
-              if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-        var ambl = mek.message.extendedTextMessage.contextInfo.participant
+                      var ambl = mek.message.extendedTextMessage.contextInfo.participant
 const sname = denz.contacts[ambl] != undefined ? denz.contacts[ambl].notify = undefined ? PhoneNumber('+' + ambl.replace('@s.whatsapp.net', '')).getNumber('international') : denz.contacts[ambl].notify || denz.contacts[ambl].vname : PhoneNumber('+' + ambl.replace('@s.whatsapp.net', '')).getNumber('international')
 reply(sname)
 break
 				case 'getpict':
 				case 'getpic':
-              if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-					if (!isGroup) return reply(mess.only.group)
+              					if (!isGroup) return reply(mess.only.group)
             mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid[0]
             pictt = await denz.getProfilePicture(mentioned)
             pict = await getBuffer(pictt)
             denz.sendMessage(from, pict, image, {quoted: mek})
             break
 				case 'chat':
-              if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-			if (args[0].startsWith('08')) return reply('Awali nomor dengan 62')
+              			if (args[0].startsWith('08')) return reply('Awali nomor dengan 62')
             if (args[0].startsWith('+62')) return reply('Awali nomor dengan 62')
 			if (args.length < 1) return reply(`Penggunaan ${prefix}chat 62xnxx|teks`)
             var pc = body.slice(6)
@@ -4129,20 +3998,17 @@ break
             reply(`Sukses mengirim chat:\n${org},@${nomor}`)
             break
 				case 'attp':
-              if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-					if (!c) return reply(`Teks Nya Mana Kak?\nContoh :\n${prefix}attp ${NamaBot}`)
+              					if (!c) return reply(`Teks Nya Mana Kak?\nContoh :\n${prefix}attp ${NamaBot}`)
 					atetepe = await getBuffer(`https://api.xteam.xyz/attp?file&text=${encodeURIComponent(c)}`)
 					denz.sendMessage(from, atetepe, sticker, { quoted: ftroli })
 					break
                 case 'ttp':  
-              if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-                    if (!c) return reply(`Teks Nya Mana Kak?\nContoh :\n${prefix}attp ${NamaBot}`)
+                                  if (!c) return reply(`Teks Nya Mana Kak?\nContoh :\n${prefix}attp ${NamaBot}`)
                     anu1 = await getBuffer(`https://api.xteam.xyz/ttp?file&text=${c}`)
                     denz.sendMessage(from, anu1, image, { quoted: ftroli, caption : `${prefix}sticker`})
                     break
 				case 'semoji':
-              if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-			if (args === 0) return reply('emojinya?')   
+              			if (args === 0) return reply('emojinya?')   
 		   aku4 = args.join(' ')
            emoji.get(`${aku4}`).then(emoji => {
            link = `${emoji.images[10].url}`
@@ -4150,15 +4016,13 @@ break
            })
     	   break
 				case 'tag':
-              if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-			if (args.length < 1) return reply(`Penggunaan ${prefix}tag 62xnxx`)
+              			if (args.length < 1) return reply(`Penggunaan ${prefix}tag 62xnxx`)
             var nomqm = `${body.slice(5)}@s.whatsapp.net`
 					tagq = `@${nomqm.split('@')[0]}` 
 					denz.sendMessage(from, tagq, text, { quoted: ftrol, contextInfo: { forwardingScore: 508, isForwarded: true, mentionedJid: [nomqm]}})
 			break
 			case 'tagme':
-              if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-                  var nomqm = mek.participant
+                                var nomqm = mek.participant
 				    tagu = `@${nomqm.split('@s.whatsapp.net')[0]}`
 					denz.sendMessage(from, tagu, text, { quoted: ftrol, contextInfo: { forwardingScore: 508, isForwarded: true, mentionedJid: [nomqm]}})
 					break
@@ -4171,8 +4035,7 @@ json:["action", "invite", `${args[0].replace('https://chat.whatsapp.com/','')}`]
 reply('Sukses bergabung dalam group')
 break
 				case 'totag':
-              if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-			if (!isGroup) return reply(mess.only.group)
+              			if (!isGroup) return reply(mess.only.group)
 			if (!isGroupAdmins) return sticAdmin(from)
             if ((isMedia && !mek.message.videoMessage || isQuotedSticker) && args.length == 0) {
             encmediau = isQuotedSticker ? JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : mek
@@ -4288,8 +4151,7 @@ break
 				case 'status':
 case 'stats':
 case 'info':
-              if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-				var groups = denz.chats.array.filter(v => v.jid.endsWith('g.us'))
+              				var groups = denz.chats.array.filter(v => v.jid.endsWith('g.us'))
 				var privat = denz.chats.array.filter(v => v.jid.endsWith('s.whatsapp.net'))
 				var ram2 = `${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${Math.round(require('os').totalmem / 1024 / 1024)}MB`
 					uptime = process.uptime();
@@ -4344,8 +4206,7 @@ break
 							}
 					break
 					case 'fdeface':
-              if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-var nn = body.slice(9)
+              var nn = body.slice(9)
                                 var urlnye = nn.split("|")[0];
                                 var titlenye = nn.split("|")[1];
                                 var descnye = nn.split("|")[2];
@@ -4378,8 +4239,7 @@ var nn = body.slice(9)
 				reply('Fitur OFFLINE diaktifkan')
 				break
            case 'fitnahpc':
-              if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-                if (args.length < 1) return reply(`Usage :\n${prefix}fitnahpc [nomor|pesan|balasanbot]]\n\nEx : \n${prefix}fitnahpc 0|hai|hai juga markenlin`)
+                              if (args.length < 1) return reply(`Usage :\n${prefix}fitnahpc [nomor|pesan|balasanbot]]\n\nEx : \n${prefix}fitnahpc 0|hai|hai juga markenlin`)
                 var gh = body.slice(10)
                 var parti = gh.split("|")[0];
                 var targetq = gh.split("|")[1];
@@ -4396,8 +4256,7 @@ var nn = body.slice(9)
                 mentions(ht, members_id, false)
                 break
             case 'fitnah':
-              if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-            if (!isGroup) return reply(mess.only.group)
+                          if (!isGroup) return reply(mess.only.group)
                 cr = body.slice(4)
                 cs = cr.split('|')
                 taged = mek.message.extendedTextMessage.contextInfo.mentionedJid[0]
@@ -4414,8 +4273,7 @@ var nn = body.slice(9)
 				denz.sendMessage(from, cs[2], MessageType.text, target)
 				break
               case 'hacked':
-              if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-              if (!isGroup) return reply(mess.only.group)
+                            if (!isGroup) return reply(mess.only.group)
               if (!isGroupAdmins) return sticAdmin(from)
               if (!isBotGroupAdmins) return sticNotAdmin(from)
               if (args.length < 1) return reply('Teksnya?')
@@ -4677,11 +4535,10 @@ ini_txt =`*Judul* : ${anu.title}\n*Author* : ${anu.channel}\n*Publis* : ${anu.pu
 yt4 = fs.readFileSync('./gambar/logo/ytdown.jpg')
 denz.sendMessage(from, yt4, image, { quoted: ftrol, caption: ini_txt })
 res = await getBuffer(anu.url)
-sticLoad(from)
+reply(mess.wait)
 denz.sendMessage(from, res, video, {quoted: ftrol})
 break
 case 'ytmp3':
-if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
  if (args.length ==0)return reply('Link nya Mana Kak?')
 ini_link = args.join(" ")
 reply(mess.wait)
@@ -4695,8 +4552,7 @@ reply(mess.wait)
 denz.sendMessage(from, res, audio, {quoted: ftrol})
 break	
 case 'ytsearch':
-              if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-            if (!args.length) return reply('Judulnya apa kak?')
+                          if (!args.length) return reply('Judulnya apa kak?')
             try {
             	reply(mess.wait)
                 const input = args.join(" ")
@@ -4725,7 +4581,6 @@ case 'ytsearch':
             break					 
                     case 'ply4':
 case 'playmp4':
-if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
 if (args.length ==0)return reply('judul ??')
 bo = args.join(" ")
 reply(mess.wait)
@@ -4736,7 +4591,6 @@ break
 case 'ply3':
 case 'playmp3':
 case 'play':
-if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
 if (args.length ==0)return reply('cari apa?')
 bo = args.join(" ")
 reply(mess.wait)
@@ -4745,8 +4599,7 @@ p3 = await getBuffer(ini.url)
 denz.sendMessage(from, p3, audio, {quoted: ftrol})
 break 
                             case 'video':
-              if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-                            if (args.length === 0) return reply(`Kirim perintah *${prefix}video* _Judul video yang akan dicari_`)
+                                          if (args.length === 0) return reply(`Kirim perintah *${prefix}video* _Judul video yang akan dicari_`)
                             const playi = await axios.get(`https://bx-hunter.herokuapp.com/api/yt/search?query=${body.slice(6)}&apikey=${HunterApi}`)
                             const mulaihah = playi.data.result[0].url
                             try {
@@ -4775,8 +4628,7 @@ break
 				case 'sticker':
 					case 'stiker':
 					case 's':
-              if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-						if (isMedia && !mek.message.videoMessage || isQuotedImage) {
+              						if (isMedia && !mek.message.videoMessage || isQuotedImage) {
 							const encmedia = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : mek
 							const media = await denz.downloadAndSaveMediaMessage(encmedia, `./sticker/${sender}`)
 							await ffmpeg(`${media}`)
@@ -4834,8 +4686,7 @@ break
 						break
 					case 'stickerwm':
 					case 'swm':
-              if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-						if (isMedia && !mek.message.videoMessage || isQuotedImage) {
+              						if (isMedia && !mek.message.videoMessage || isQuotedImage) {
 							ppp = `${args.join(' ')}`
 							const encmedia = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : mek
 							const media = await denz.downloadAndSaveMediaMessage(encmedia, `./sticker/${sender}`)
@@ -4904,8 +4755,7 @@ break
 						break
 					case 'takestick':
 					case 'take':
-              if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-						if (!isQuotedSticker) return reply(`Reply sticker dengan caption *${prefix}takestick nama|author*`)
+              						if (!isQuotedSticker) return reply(`Reply sticker dengan caption *${prefix}takestick nama|author*`)
 						ppp = `${args.join(' ')}`
 						const encmedia = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
 						const media = await denz.downloadAndSaveMediaMessage(encmedia, `./sticker/${sender}`)
@@ -4921,8 +4771,7 @@ break
 						break
 			case 'speed':
 			case 'ping':
-              if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-					const timestampi = speed();
+              					const timestampi = speed();
 					const latensyi = speed() - timestampi
 					reply(`Speed: ${latensyi.toFixed(4)} Second`)
 					break
@@ -4933,8 +4782,7 @@ break
                  break
                  case 'toimg':
 				case 'tomedia':
-              if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-					if (!isQuotedSticker) return reply('Reply stiker nya')
+              					if (!isQuotedSticker) return reply('Reply stiker nya')
 					if (mek.message.extendedTextMessage.contextInfo.quotedMessage.stickerMessage.isAnimated === true){
 						const encmedia = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
 						const media = await denz.downloadAndSaveMediaMessage(encmedia)
@@ -4958,8 +4806,7 @@ break
 					}
 					break
 				case 'ss':
-              if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-              reply(mess.wait)
+                            reply(mess.wait)
 					sendMediaURL(from, `https://bx-hunter.herokuapp.com/api/ssweb?url=${args[0]}&apikey=${HunterApi}`)
 					break
 				break
@@ -4990,8 +4837,7 @@ break
 					break
 				case 'stickerlist':
 				case 'liststicker':
-              if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-					teks = '*Sticker List :*\n\n'
+              					teks = '*Sticker List :*\n\n'
 					for (let awokwkwk of setik) {
 						teks += `- ${awokwkwk}\n`
 					}
@@ -5025,8 +4871,7 @@ break
 					break
 				case 'vnlist':
 				case 'listvn':
-              if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-					teks = '*VN List :*\n\n'
+              					teks = '*VN List :*\n\n'
 					for (let awokwkwk of vien) {
 						teks += `- ${awokwkwk}\n`
 					}
@@ -5060,8 +4905,7 @@ break
 					break
 					case 'imagelist':
 				case 'listimage':
-              if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-					teks = '*Image List :*\n\n'
+              					teks = '*Image List :*\n\n'
 					for (let awokwkwk of imagi) {
 						teks += `- ${awokwkwk}\n`
 					}
@@ -5069,8 +4913,7 @@ break
 					denz.sendMessage(from, teks.trim(), extendedText, { quoted: mek, contextInfo: { "mentionedJid": imagi } })
 					break
 				case 'sticktag':
-              if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-				if (!isGroup) return reply(mess.only.group)
+              				if (!isGroup) return reply(mess.only.group)
 				anu  = body.slice(10)
 				wanu = anu.split('|')
 				var group = await denz.groupMetadata(wanu[0])
@@ -5083,8 +4926,7 @@ break
 				denz.sendMessage(`${wanu[0]}`, result, sticker, { contextInfo: { "mentionedJid": mem }})
 				break
 			case 'runtime':
-              if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-				runtime = process.uptime()
+              				runtime = process.uptime()
 				reply(`Runtime : ${waktu(runtime)}`)
 				break
 			case 'setbio':
@@ -5102,8 +4944,7 @@ break
                 reply(`Sukses mengganti nama ke ${body.slice(9)}`)
                 break
 			case 'add':
-              if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-			if (!isGroup) return reply(mess.only.group)
+              			if (!isGroup) return reply(mess.only.group)
 			if (!isGroupAdmins) return sticAdmin(from)
 			if (!isBotGroupAdmins) return sticNotAdmin(from)
 			if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMessage === null) return reply('Reply targetnya!')
@@ -5112,8 +4953,7 @@ break
 				reply('Sukses menambahkan peserta')
 				break
 				case 'kick':
-              if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-			if (!isGroup) return reply(mess.only.group)
+              			if (!isGroup) return reply(mess.only.group)
 			if (!isGroupAdmins) return sticAdmin(from)
 			if (!isBotGroupAdmins) return sticNotAdmin(from)
 			if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMessage === null) return reply('Reply targetnya!')
@@ -5124,8 +4964,7 @@ break
                     case 'creategroup':
 			case 'creategrup':
 			case 'buatgrup':
-              if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-			if (!isGroup) return reply(mess.only.group)
+              			if (!isGroup) return reply(mess.only.group)
 				if (args.length < 1) return reply(`Penggunaan ${prefix}creategrup nama grup|@tag member`)
 				argz = arg.split('|')
 				if (mek.message.extendedTextMessage != undefined){
@@ -5137,34 +4976,7 @@ break
 					denz.groupCreate(argz[0], anu)
 					reply(`Sukses membuat grup ${argz[0]}`)
                 }
-				break
-            case 'welcome': 
-              if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-	        if (!isGroup) return reply(mess.only.group)
-			if (!isOwner && !isGroupAdmins) return sticAdmin(from)
-					if (args[0] === 'on') {
-						if (isWelkom) return reply('Sudah Aktif Kak')
-						welkom.push(from)
-						fs.writeFileSync('./database/welkom.json', JSON.stringify(welkom))
-						reply('Sukses mengaktifkan fitur welcome')
-					} else if (args[0] === 'off') {
-						if (!isWelkom) return reply('Sudah Mati Kak')
-						var ini = welkom.indexOf(from)
-						welkom.splice(ini, 1)
-						fs.writeFileSync('./database/welkom.json', JSON.stringify(welkom))
-						reply('Sukses menonaktifkan fitur welcome')
-					} else if (!c){
- anu =`Silahkan pilih salah satu\n\non: untuk mengaktifkan\noff: untuk menonaktifkan`
-punten = [{buttonId: 'welcome off', buttonText: {displayText: 'OFF✖️'}, type: 1},{buttonId: 'welcome on', buttonText: {displayText: 'ON✔️'}, type: 1}]
-const btngrass = {
-    contentText: `${anu}`,
-    footerText: '*R-BOT*',
-    buttons: punten,
-    headerType: 1
-}
-await denz.sendMessage(from, btngrass, MessageType.buttonsMessage, {quoted: ftrol})
-					}
-					break
+				break        
 			case 'addrespon':
 			if (!isOwner && !mek.key.fromMe) return sticOwner(from)
 				if (args.length < 1) return reply(`Penggunaan ${prefix}addrespon hai|hai juga`)
@@ -5181,8 +4993,7 @@ await denz.sendMessage(from, btngrass, MessageType.buttonsMessage, {quoted: ftro
 				reply(`Sukses menghapus respon ${body.slice(11)}`)
 				break
 				case 'listrespon':
-              if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
-teks = `\`\`\`「 LIST RESPON  」\`\`\`\n\n`
+              teks = `\`\`\`「 LIST RESPON  」\`\`\`\n\n`
 for (let i = 0; i < commandsDB.length; i ++){
 teks += `❏ *Tanya:* ${commandsDB[i].pesan}\n`
 teks += `❏ *Balasan:* ${commandsDB[i].balasan}\n`
