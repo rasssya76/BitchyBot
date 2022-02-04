@@ -3554,8 +3554,8 @@ if (args.length < 1) return reply(lang.tahta(prefix, command))
 var m = q
 var fu2 = m.split("|")[0];
 var wa2 = m.split("|")[1]; 
-let textpro = await getBuffer(`https://hardianto.xyz/api/bot/gfx4?apikey=${antoapi}&text1=${fu2}&text2=${wa2}`)
-sendButImage(from,  ` NIH NGAB` , `R-BOT`,textpro, [{"buttonId": `owner`,"buttonText": {"displayText": "OWNER"},"type": "RESPONSE"},{"buttonId": `donasi`,"buttonText": {"displayText": "DONASI"},"type": "RESPONSE"}], {thumbnail: dfrply, quoted: ftroli})
+let makeRT = await getBuffer(`https://hardianto.xyz/api/bot/gfx4?apikey=${antoapi}&text1=${fu2}&text2=${wa2}`)
+sendButImage(from,  ` NIH NGAB` , `R-BOT`,makeRT, [{"buttonId": `owner`,"buttonText": {"displayText": "OWNER"},"type": "RESPONSE"},{"buttonId": `donasi`,"buttonText": {"displayText": "DONASI"},"type": "RESPONSE"}], {thumbnail: dfrply, quoted: ftroli})
 break 
 				case 'colong':
               if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
