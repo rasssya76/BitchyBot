@@ -3542,7 +3542,7 @@ case 'horror2':
 case 'lava':
 case 'bagel':
 if (args.length == 0) return reply(`Example: ${prefix + command} Rama Gamtenk`) 
-var m = q
+var m = c
 var m1 = m.split("|")[0];
 var m2 = m.split("|")[1]; 
 let textpro = await getBuffer(`${alphaapi}/textpro/${command}?apikey=${alphakey}&text=${m1}&text2=${m2}`)
@@ -3550,7 +3550,7 @@ sendButImage(from,  ` NIH NGAB` , `R-BOT`,textpro, [{"buttonId": `owner`,"button
 break 
 case 'waifumaker':
 if (args.length == 0) return reply(`Example: ${prefix + command} Rama Gamtenk`) 
-var m = q
+var m = c
 var fu2 = m.split("|")[0];
 var wa2 = m.split("|")[1]; 
 let makeRT = await getBuffer(`https://hardianto.xyz/api/bot/gfx4?apikey=${antoapi}&text1=${fu2}&text2=${wa2}`)
