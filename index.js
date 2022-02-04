@@ -12,7 +12,7 @@ const time = moment().tz('Asia/Jakarta').format("HH:mm:ss")
 const fetch = require('node-fetch')
 const { color, bgcolor } = require('./lib/color')
 const { exec } = require('child_process')
-const { uploadImages } = require('./lib/uploadimg')
+const { uploadImages } = require('./lib/uploadimage')
 const { wait, simih, getBuffer, h2k, generateMessageID, getGroupAdmins, getRandom, banner, start, info, success, close } = require('./lib/functions')
 const settings = JSON.parse(fs.readFileSync('./settings.json'))
 const sleep = async (ms) => {
