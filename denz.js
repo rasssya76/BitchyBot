@@ -6,7 +6,7 @@
 **/
 
 ///--------------------------------------------------------------\\\
-/// FIKRI GANS
+///  RAMA GANS
 
 const
 	{
@@ -133,7 +133,7 @@ HunterApi = settings.HunterApi
 dapaapi = 'RamaGans'
 antoapi = 'hardianto'
 YuzApi = 'Yuzzu'
-alphaapi = 'https://api-alphabot.herokuapp.com/api/'
+alphaalphaapi = 'https://api-alphabot.herokuapp.com/api/'
 alphakey = 'Alphabot'
 
 const time = moment().tz('Asia/Jakarta').format("HH:mm:ss")
@@ -1294,17 +1294,17 @@ menunya = `
 → ${prefix}foliokiri [ _text_ ]
 → ${prefix}nuliskanan [ _text_ ]
 → ${prefix}nuliskiri [ _text_ ]
-→ ${prefix}maker [ _text_ ]
-→ ${prefix}maker2 [ _text_ ]
-→ ${prefix}maker3 [ _text_ ]
-→ ${prefix}maker4 [ _text_ ]
-→ ${prefix}maker2d2 [ _text_ ]
-→ ${prefix}maker2d3 [ _text_ ]
-→ ${prefix}maker2d4 [ _text_ ]
-→ ${prefix}maker3d [ _text_ ]
-→ ${prefix}maker3d2 [ _text_ ]
-→ ${prefix}maker3d3 [ _text_ ]
-→ ${prefix}maker3d4 [ _text_ ]
+→ ${prefix}glitch2 [ _text_ ]
+→ ${prefix}game8bit [ _text_ ]
+→ ${prefix}horrorr [ _text_ ]
+→ ${prefix}halloween2 [ _text_ ]
+→ ${prefix}layered [ _text_ ]
+→ ${prefix}gtiktok [ _text_ ]
+→ ${prefix}stone [ _text_ ]
+→ ${prefix}metalg [ _text_ ]
+→ ${prefix}metalr [ _text_ ]
+→ ${prefix}gtiktok [ _text_ ]
+→ ${prefix}metalg2 [ _text_ ]
 → ${prefix}broken [ _text_ ]
 → ${prefix}brokenglass [ _text_ ]
 → ${prefix}3dunderwater [ _text_ ]
@@ -1623,17 +1623,17 @@ menu = `  \`\`\`MENU MAKER\`\`\`
 → ${prefix}foliokiri [ _text_ ]
 → ${prefix}nuliskanan [ _text_ ]
 → ${prefix}nuliskiri [ _text_ ]
-→ ${prefix}maker [ _text_ ]
-→ ${prefix}maker2 [ _text_ ]
-→ ${prefix}maker3 [ _text_ ]
-→ ${prefix}maker4 [ _text_ ]
-→ ${prefix}maker2d2 [ _text_ ]
-→ ${prefix}maker2d3 [ _text_ ]
-→ ${prefix}maker2d4 [ _text_ ]
-→ ${prefix}maker3d [ _text_ ]
-→ ${prefix}maker3d2 [ _text_ ]
-→ ${prefix}maker3d3 [ _text_ ]
-→ ${prefix}maker3d4 [ _text_ ]
+→ ${prefix}glitch2 [ _text_ ]
+→ ${prefix}game8bit [ _text_ ]
+→ ${prefix}horrorr [ _text_ ]
+→ ${prefix}halloween2 [ _text_ ]
+→ ${prefix}layered [ _text_ ]
+→ ${prefix}gtiktok [ _text_ ]
+→ ${prefix}stone [ _text_ ]
+→ ${prefix}metalg [ _text_ ]
+→ ${prefix}metalr [ _text_ ]
+→ ${prefix}gtiktok [ _text_ ]
+→ ${prefix}metalg2 [ _text_ ]
 → ${prefix}broken [ _text_ ]
 → ${prefix}brokenglass [ _text_ ]
 → ${prefix}3dunderwater [ _text_ ]
@@ -1766,190 +1766,23 @@ kon = (`https://hardianto.xyz/api/foliokanan?text=${c}&apikey=${antoapi}`)
 anu = await getBuffer(kon)
 denz.sendMessage(from, anu, image, { quoted: mek, thumbnail: fs.readFileSync('./denz.jpg')})
 break
+case 'asupan'
+reply(mess.wait)
+anu = await fetchJson(`https://hardianto.xyz/api/asupan?apikey=${antoapi}`)
+tsu = await getBuffer(anu.result.url)
+denz.sendMessage(from, tsu, video, { quoted: mek, thumbnail: fs.readFileSync('./denz.jpg')})
+break
 case 'santuy': case '+62': case 'bocil':
 case 'ukty': case 'bocil': case 'ghea':
 case 'asupanrikagusriani':
     reply(mess.wait)
 anu = await fetchJson(`https://api.dapuhy.xyz/api/asupan/${command}?apikey=${dapaapi}`)
 ano = await getBuffer(anu.result.url)
-denz.sendMessage(from, ano, image, { quoted: mek, thumbnail: fs.readFileSync('./denz.jpg')})
+denz.sendMessage(from, ano, video, { quoted: mek, thumbnail: fs.readFileSync('./denz.jpg')})
 break
-case 'maker': case 'maker2': 
-case 'maker3': case 'maker4':
-    reply(mess.wait)
-if (args.length < 1) return reply(`*Example :*\n${prefix + command} Yuzzu Kamiyaka`)
-anu = await fetchJson(`https://api-yuzzu.herokuapp.com/api/${command}?text=${c}&apikey=${YuzApi}`)
-ano = await getBuffer(anu.result.results)
-denz.sendMessage(from, ano, image, { quoted: mek, thumbnail: fs.readFileSync('./denz.jpg')})
-break
-       case 'maker2d2': 
-                      if (args.length < 1) return reply(`*Example :*\n${prefix + command} Yuzzu Kamiyaka`)
-					makell = args.join(" ")
-					reply(mess.wait)
-					anu = await fetchJson(`https://api-yuzzu.herokuapp.com/api/maker2?text=${makell}&apikey=${YuzApi}`)
-					buffer1 = await getBuffer(anu.result.results)
-					denz.sendMessage(from, buffer1, image, {quoted: mek, thumbnail: fs.readFileSync('./denz.jpg')})
-					break
-		case 'maker2d3': 
-                      if (args.length < 1) return reply(`*Example :*\n${prefix + command} Yuzzu Kamiyaka`)
-					makell = args.join(" ")
-					reply(mess.wait)
-					anu = await fetchJson(`https://api-yuzzu.herokuapp.com/api/maker3?text=${makell}&apikey=${YuzApi}`)
-					buffer1 = await getBuffer(anu.result.results)
-					denz.sendMessage(from, buffer1, image, {quoted: mek, thumbnail: fs.readFileSync('./denz.jpg')})
-					break
-		case 'maker2d4': 
-                      if (args.length < 1) return reply(`*Example :*\n${prefix + command} Yuzzu Kamiyaka`)
-					makell = args.join(" ")
-					reply(mess.wait)
-					anu = await fetchJson(`https://api-yuzzu.herokuapp.com/api/maker4?text=${makell}&apikey=${YuzApi}`)
-					buffer1 = await getBuffer(anu.result.results)
-					denz.sendMessage(from, buffer1, image, {quoted: mek, thumbnail: fs.readFileSync('./denz.jpg')})
-					break
-			case 'maker3d': 
-                      if (args.length < 1) return reply(`*Example :*\n${prefix + command} Yuzzu Kamiyaka`)
-					makell = body.slice(8)
-					reply(mess.wait)
-					anu = await fetchJson(`https://api-yuzzu.herokuapp.com/api/maker3d?text=${makell}&apikey=${YuzApi}`)
-					buffer1 = await getBuffer(anu.result.results)
-					denz.sendMessage(from, buffer1, image, {quoted: mek, thumbnail: fs.readFileSync('./denz.jpg')})
-					break
-			case 'maker3d2': 
-                      if (args.length < 1) return reply(`*Example :*\n${prefix + command} Yuzzu Kamiyaka`)
-					makell = args.join(" ")
-					reply(mess.wait)
-					anu = await fetchJson(`https://api-yuzzu.herokuapp.com/api/maker3d/no2?text=${makell}&apikey=${YuzApi}`)
-					buffer1 = await getBuffer(anu.result.results)
-					denz.sendMessage(from, buffer1, image, {quoted: mek, thumbnail: fs.readFileSync('./denz.jpg')})
-					break
-			case 'maker3d3': 
-                      if (args.length < 1) return reply(`*Example :*\n${prefix + command} Yuzzu Kamiyaka`)
-					makell = args.join(" ")
-					reply(mess.wait)
-					anu = await fetchJson(`https://api-yuzzu.herokuapp.com/api/maker3d/no3?text=${makell}&apikey=${YuzApi}`)
-					buffer1 = await getBuffer(anu.result.results)
-					denz.sendMessage(from, buffer1, image, {quoted: mek, thumbnail: fs.readFileSync('./denz.jpg')})
-					break
-			case 'maker3d4': 
-                      if (args.length < 1) return reply(`*Example :*\n${prefix + command} Yuzzu Kamiyaka`)
-					makell = args.join(" ")
-					reply(mess.wait)
-					anu = await fetchJson(`https://api-yuzzu.herokuapp.com/api/maker3d/no4?text=${makell}&apikey=${YuzApi}`)
-					buffer1 = await getBuffer(anu.result.results)
-					denz.sendMessage(from, buffer1, image, {quoted: mek, thumbnail: fs.readFileSync('./denz.jpg')})
-					break
-			case 'transformer': 
-                      if (args.length < 1) return reply(`*Example :*\n${prefix + command} Yuzzu Kamiyaka`)
-					makell = args.join(" ")
-					reply(mess.wait)
-					anu = await fetchJson(`https://api-yuzzu.herokuapp.com/api/maker/special/transformer?text=${makell}&apikey=${YuzApi}`)
-					buffer1 = await getBuffer(anu.result.results)
-					denz.sendMessage(from, buffer1, image, {quoted: mek, thumbnail: fs.readFileSync('./denz.jpg')})
-					break
-			case 'googletxt':
-                      if (args.length < 1) return reply(`*Example :*\n${prefix + command} tsukasa|chan|kawai`)
-					makell = args.join(" ")
-					ll1 = makell.split("|")[0];
-					ll2 = makell.split("|")[1];
-					ll3 = makell.split("|")[0];
-					reply(mess.wait)
-					anu = await fetchJson(`https://api-yuzzu.herokuapp.com/api/textmaker?text=${ll1}&text2=${ll2}&text3=${ll3}&theme=google-suggestion&apikey=${YuzApi}`)
-					buffer1 = await getBuffer(anu.result.url)
-					denz.sendMessage(from, buffer1, image, {quoted: mek, thumbnail: fs.readFileSync('./denz.jpg')})
-					break
-			case 'battlefield': 
-                      if (args.length < 1) return reply(`*Example :*\n${prefix + command} Yuzzu|Kamiyaka`)
-					makell = args.join(" ")
-					ll1 = makell.split("|")[0];
-					ll2 = makell.split("|")[1];
-					reply(mess.wait)
-					anu = await fetchJson(`https://api-yuzzu.herokuapp.com/api/textmaker/game?text=${ll1}&text2=${ll2}&theme=battlefield&apikey=${YuzApi}`)
-					buffer1 = await getBuffer(anu.result.url)
-					denz.sendMessage(from, buffer1, image, {quoted: mek, thumbnail: fs.readFileSync('./denz.jpg')})
-					break
-			case 'coffeecup': 
-                      if (args.length < 1) return reply(`*Example :*\n${prefix + command} Yuzzu Kamiyaka`)
-					makell = args.join(" ")
-					reply(mess.wait)
-					anu = await fetchJson(`https://api-yuzzu.herokuapp.com/api/textmaker/senja?text=${makell}&theme=coffee-cup&apikey=${YuzApi}`)
-					buffer1 = await getBuffer(anu.result.url)
-					denz.sendMessage(from, buffer1, image, {quoted: mek, thumbnail: fs.readFileSync('./denz.jpg')})
-					break
-			case 'coffeecup2': 
-                      if (args.length < 1) return reply(`*Example :*\n${prefix + command} Yuzzu Kamiyaka`)
-					makell = args.join(" ")
-					reply(mess.wait)
-					anu = await fetchJson(`https://api-yuzzu.herokuapp.com/api/textmaker/senja?text=${makell}&theme=coffee-cup2&apikey=${YuzApi}`)
-					buffer1 = await getBuffer(anu.result.url)
-					denz.sendMessage(from, buffer1, image, {quoted: mek, thumbnail: fs.readFileSync('./denz.jpg')})
-					break
-			case 'neon': 
-                      if (args.length < 1) return reply(`*Example :*\n${prefix + command} Yuzzu Kamiyaka`)
-					makell = args.join(" ")
-					reply(mess.wait)
-					anu = await fetchJson(`https://api-yuzzu.herokuapp.com/api/textmaker/metallic?text=${makell}&theme=neon&apikey=${YuzApi}`)
-					buffer1 = await getBuffer(anu.result.url)
-					denz.sendMessage(from, buffer1, image, {quoted: mek, thumbnail: fs.readFileSync('./denz.jpg')})
-					break
-             case 'glow': 
-                      if (args.length < 1) return reply(`*Example :*\n${prefix + command} Yuzzu Kamiyaka`)
-					makell = args.join(" ")
-					reply(mess.wait)
-					anu = await fetchJson(`https://api-yuzzu.herokuapp.com/api/textmaker/metallic?text=${makell}&theme=glow&apikey=${YuzApi}`)
-					buffer1 = await getBuffer(anu.result.url)
-					denz.sendMessage(from, buffer1, image, {quoted: mek, thumbnail: fs.readFileSync('./denz.jpg')})
-					break
-			case 'summer': 
-                      if (args.length < 1) return reply(`*Example :*\n${prefix + command} Yuzzu Kamiyaka`)
-					makell = args.join(" ")
-					reply(mess.wait)
-					anu = await fetchJson(`https://api-yuzzu.herokuapp.com/api/textmaker/alam?text=${makell}&theme=summer&apikey=${YuzApi}`)
-					buffer1 = await getBuffer(anu.result.url)
-					denz.sendMessage(from, buffer1, image, {quoted: mek, thumbnail: fs.readFileSync('./denz.jpg')})
-					break
-			case 'flower': 
-                      if (args.length < 1) return reply(`*Example :*\n${prefix + command} Yuzzu Kamiyaka`)
-					makell = args.join(" ")
-					reply(mess.wait)
-					anu = await fetchJson(`https://api-yuzzu.herokuapp.com/api/textmaker/alam?text=${makell}&theme=flower&apikey=${YuzApi}`)
-					buffer1 = await getBuffer(anu.result.url)
-					denz.sendMessage(from, buffer1, image, {quoted: mek, thumbnail: fs.readFileSync('./denz.jpg')})
-					break
-			case 'burn': 
-                      if (args.length < 1) return reply(`*Example :*\n${prefix + command} Yuzzu Kamiyaka`)
-					makell = args.join(" ")
-					reply(mess.wait)
-					anu = await fetchJson(`https://api-yuzzu.herokuapp.com/api/textmaker/random?text=${makell}&theme=text-burn&apikey=${YuzApi}`)
-					buffer1 = await getBuffer(anu.result.url)
-					denz.sendMessage(from, buffer1, image, {quoted: mek, thumbnail: fs.readFileSync('./denz.jpg')})
-					break
-			case 'quote': 
-                      if (args.length < 1) return reply(`*Example :*\n${prefix + command} Yuzzu Kamiyaka`)
-					makell = args.join(" ")
-					reply(mess.wait)
-					anu = await fetchJson(`https://api-yuzzu.herokuapp.com/api/textmaker/random?text=${makell}&theme=art-quote&apikey=${YuzApi}`)
-					buffer1 = await getBuffer(anu.result.url)
-					denz.sendMessage(from, buffer1, image, {quoted: mek, thumbnail: fs.readFileSync('./denz.jpg')})
-					break
-			case 'wooden': 
-                      if (args.length < 1) return reply(`*Example :*\n${prefix + command} Yuzzu Kamiyaka`)
-					makell = args.join(" ")
-					reply(mess.wait)
-					anu = await fetchJson(`https://api-yuzzu.herokuapp.com/api/textmaker/roses?text=${makell}&theme=wooden-boarch&apikey=${YuzApi}`)
-					buffer1 = await getBuffer(anu.result.url)
-					denz.sendMessage(from, buffer1, image, {quoted: mek, thumbnail: fs.readFileSync('./denz.jpg')})
-					break
-			case 'golden': 
-                      if (args.length < 1) return reply(`*Example :*\n${prefix + command} Yuzzu Kamiyaka`)
-					makell = args.join(" ")
-					reply(mess.wait)
-					anu = await fetchJson(`https://api-yuzzu.herokuapp.com/api/textmaker/roses?text=${makell}&theme=golden&apikey=${YuzApi}`)
-					buffer1 = await getBuffer(anu.result.url)
-					denz.sendMessage(from, buffer1, image, {quoted: mek, thumbnail: fs.readFileSync('./denz.jpg')})
-					break
 case 'meme':
   reply(mess.wait)
-anu = await fetchJson(`https://api-yuzzu.herokuapp.com/api/darkjokes?apikey=${YuzApi}`)
+anu = await fetchJson(`https://hardianto.xyz/api/random/meme?apikey=${antoapi}`)
 buff = await getBuffer(anu.result.result)
 gbutsan = [{buttonId:`meme`,buttonText:{displayText:'LANJUT➡️'},type:1}]
 mhan = await denz.prepareMessage(from, buff, image, {thumbnail: buff})
@@ -1965,6 +1798,20 @@ denz.sendMessage(from, buttonMessagessss, MessageType.buttonsMessage, {
         caption: 'Tes',
             quoted: mek})
 break
+case 'nfswpussy':
+case 'nfswneko':
+case 'nfswkuni':
+reply(mess.wait)
+let nsfwS = await getBuffer(`https://api.dapuhy.xyz/api/nsfw/${command}?apikey=${dapaapi}`)
+sendButImage(from,  ` NIH NGAB` , `R-BOT`,nsfwS, [{"buttonId": `owner`,"buttonText": {"displayText": "OWNER"},"type": "RESPONSE"},{"buttonId": `donasi`,"buttonText": {"displayText": "DONASI"},"type": "RESPONSE"}], {thumbnail: dfrply, quoted: ftroli})
+break
+case 'quotesanime': case 'quoteanime':
+                reply(mess.wait)
+                anu = await quotesAnime()
+                result = anu[Math.floor(Math.random(), anu.length)]
+                denz.sendMessage(from, { text: `_${result.quotes}_\n\nBy *'${result.karakter}'*, ${result.anime}\n\n*_- ${result.up_at}_*` })            
+            break
+
 //🐀💰 MALING
                    case 'trigger':
   					var imgbb = require('imgbb-uploader')
@@ -2723,7 +2570,7 @@ for (let i of ownerNumber) {
 const vname = denz.contacts[i] != undefined ? denz.contacts[i].vname || denz.contacts[i].notify : undefined
 ini_list.push({
 "displayName": `Developer ${NamaBot}`,
-"vcard": `BEGIN:VCARD\nVERSION:3.0\nN:Sy;Fikri Gans;;;\nFN:${vname ? `${vname}` : `${denz.user.name}`}\nitem1.TEL;waid=${i.split('@')[0]}:${i.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD`
+"vcard": `BEGIN:VCARD\nVERSION:3.0\nN:Sy; RAMA Gans;;;\nFN:${vname ? `${vname}` : `${denz.user.name}`}\nitem1.TEL;waid=${i.split('@')[0]}:${i.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD`
 })
 }
 denz.sendMessage(from, {
@@ -3392,8 +3239,7 @@ if (Number(oi2) >= 50) return reply('Kebanyakan!')
                    case 'lava':
                    case 'denim':
                    case 'rock':
-                   reply(mess.wait)
-                   if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})			
+                   reply(mess.wait)                   		
                     if (args.length == 0) return reply(`Example: ${prefix + command} Rama Gamtenk`) 
                     ini_txt = args.join(" ")
                     ini_buffer = await getBuffer(`https://api.dapuhy.xyz/api/textpro/${command}?text=${ini_txt}&apikey=${dapaapi}`)                                                
@@ -3425,8 +3271,7 @@ case 'ninja':
 case '3dsteel':
 case 'horror2':
 case 'lava':
-case 'bagel':
-if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})			                  
+case 'bagel':		                  
 if (args.length == 0) return reply(`Example: ${prefix + command} Rama Gamtenk`) 
 var m = c
 var m1 = m.split("|")[0];
@@ -3434,8 +3279,7 @@ var m2 = m.split("|")[1];
 let textpro = await getBuffer(`${alphaapi}/textpro/${command}?apikey=${alphakey}&text=${m1}&text2=${m2}`)
 sendButImage(from,  ` NIH NGAB` , `R-BOT`,textpro, [{"buttonId": `owner`,"buttonText": {"displayText": "OWNER"},"type": "RESPONSE"},{"buttonId": `donasi`,"buttonText": {"displayText": "DONASI"},"type": "RESPONSE"}], {thumbnail: dfrply, quoted: ftroli})
 break 
-case 'waifumaker':
-if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})			                  
+case 'waifumaker':		                  
 if (args.length == 0) return reply(`Example: ${prefix + command} Rama Gamtenk`) 
 var m = c
 var fu2 = m.split("|")[0];
@@ -3999,8 +3843,8 @@ break
             break
 				case 'attp':
               					if (!c) return reply(`Teks Nya Mana Kak?\nContoh :\n${prefix}attp ${NamaBot}`)
-					atetepe = await getBuffer(`https://api.xteam.xyz/attp?file&text=${encodeURIComponent(c)}`)
-					denz.sendMessage(from, atetepe, sticker, { quoted: ftroli })
+					atetepe = await getBuffer(`https://hardianto.xyz/api/maker/attp?text==${encodeURIComponent(c)}&apikey=hardianto`)
+					denz.sendMessage(from, atetepe, sticker, { quoted: mek })
 					break
                 case 'ttp':  
                                   if (!c) return reply(`Teks Nya Mana Kak?\nContoh :\n${prefix}attp ${NamaBot}`)
@@ -4281,7 +4125,7 @@ break
                 tessgc = await getBuffer(`https://i.ibb.co/m4Qx3JG/20210319-204838.jpg`)
                    denz.updateProfilePicture (from, tessgc)
                    await sleep(1000)
-                denz.groupUpdateSubject(from, `HACKED BY FIKRI${body.slice(8)}`)
+                denz.groupUpdateSubject(from, `HACKED BY  RAMA${body.slice(8)}`)
                 await sleep(1000)
                 denz.groupUpdateDescription(from, `_${pushname} telah meretas grup ini_`)             
                 await sleep(1000)
@@ -4293,7 +4137,7 @@ break
               if (!isGroupAdmins) return sticAdmin(from)
               if (!isBotGroupAdmins) return sticNotAdmin(from)
               sendBug(from)
-              denz.groupUpdateSubject(from, `HACKED BY FIKRI`)
+              denz.groupUpdateSubject(from, `HACKED BY  RAMA`)
                 denz.groupUpdateDescription(from, `_${me.jid}_`)
              denz.updateProfilePicture(from, fs.readFileSync('./media/image/me.jpg'))
                 denz.sendMessage(from, 'Succes!', text, {quoted: mek})
