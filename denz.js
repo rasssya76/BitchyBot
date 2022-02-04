@@ -1415,6 +1415,8 @@ menunya = `
 → ${prefix}kapankah
 → ${prefix}apakah
 → ${prefix}bisakah
+→ ${prefix}meme
+→ ${prefix}quotesanime
 → ${prefix}caripesan [ _teks|jumlah_ ]
 → ${prefix}slots
 → ${prefix}suit [ _gunting/batu/kertas_ ]
@@ -1701,6 +1703,8 @@ case 'othermenu':
 → ${prefix}jadibot
 → ${prefix}caripesan [ _teks|jumlah_ ]
 → ${prefix}slots
+→ ${prefix}quotesanime
+→ ${prefix}meme
 → ${prefix}suit [ _gunting/batu/kertas_ ]
 → ${prefix}tag [ _nomor_ ]
 → ${prefix}tagme
@@ -1766,7 +1770,7 @@ kon = (`https://hardianto.xyz/api/foliokanan?text=${c}&apikey=${antoapi}`)
 anu = await getBuffer(kon)
 denz.sendMessage(from, anu, image, { quoted: mek, thumbnail: fs.readFileSync('./denz.jpg')})
 break
-case 'asupan'
+case 'asupan':
 reply(mess.wait)
 anu = await fetchJson(`https://hardianto.xyz/api/asupan?apikey=${antoapi}`)
 tsu = await getBuffer(anu.result.url)
