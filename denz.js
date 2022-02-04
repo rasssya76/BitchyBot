@@ -1026,8 +1026,8 @@ denz.updatePresence(from, Presence.composing)
 if (!settings.autorecording) {
 denz.updatePresence(from, Presence.recording)
 }
-if (budy.startsWith('Denz')){
-sendButMessage(from, `${JSON.stringify(me, null, 2)}`, "*_© Dcode Denpa_*", [{buttonId: 'igm', buttonText: {displayText: 'Instagram'}, type: 1},{buttonId: 'ytm', buttonText: {displayText: 'YouTube'}, type: 1}], {quoted:ftrol, contextInfo: { forwardingScore: 508, isForwarded: true}})
+if (budy.startsWith('Tes')){
+sendButMessage(from, `${JSON.stringify(me, null, 2)}`, "*R-BOT BY RAMAXANV*", [{buttonId: 'owner', buttonText: {displayText: 'OWNER'}, type: 1},{buttonId: 'menu', buttonText: {displayText: 'MENU'}, type: 1}], {quoted:ftrol, contextInfo: { forwardingScore: 508, isForwarded: true}})
 }
 if(isButton == 'igm'){
 reply('http://instagram.com/dcodedenpa')
@@ -3283,30 +3283,20 @@ sendFileFromUrl(res[0].thumb, image, {quoted: mek, caption: result}).catch(e => 
   reply(result)
 })
 break
-case 'mediafire':
-if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
+case'mediafire':
 if (args.length < 1) return reply('Link Nya Mana? ')
-if(!isUrl(args[0]) && !args[0].includes('mediafire')) return reply(mess.error.api)
-if (Number(filesize) >= 30000) return reply(`*「 MEDIAFIRE DOWNLOAD 」*
-
-* Nama :* ${res[0].nama}
-* Ukuran :* ${res[0].size}
-* Link :* ${res[0].link}
-
-_Maaf size melebihi batas maksimal, Silahkan klik link diatas_`)
+if(!isUrl(args[0]) && !args[0].includes('mediafire')) return reply(mess.error.Iv)
 reply(mess.wait)
 teks = args.join(' ')
 res = await mediafireDl(teks)
-result = `*「 MEDIAFIRE DOWNLOAD 」*
+result = `「  *${NamaBot}*  」
+*Nama :* ${res[0].nama}
+*Ukuran :* ${res[0].size}
+*Link :* ${res[0].link}
 
-*Data Berhasil Didapatkan!*
-\`\`\` Nama : ${res[0].nama}\`\`\`
-\`\`\` Ukuran : ${res[0].size}\`\`\`
-\`\`\` Link : ${res[0].link}\`\`\`
-
-_File sedang dikirim, Silahkan tunggu beberapa menit_`
+_*Tunggu Proses Upload Media......*_`
 reply(result)
-sendFileFromUrl(res[0].link, document, {mimetype: res[0].mime, filename: res[0].nama, quoted: mek})
+sendFileFromUrlS(res[0].link, document, {mimetype: res[0].mime, filename: res[0].nama, quoted: ftroli})
 break
 				case 'kalkulator':
 if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})
@@ -3541,6 +3531,7 @@ case '3dsteel':
 case 'horror2':
 case 'lava':
 case 'bagel':
+if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})			                  
 if (args.length == 0) return reply(`Example: ${prefix + command} Rama Gamtenk`) 
 var m = c
 var m1 = m.split("|")[0];
@@ -3549,6 +3540,7 @@ let textpro = await getBuffer(`${alphaapi}/textpro/${command}?apikey=${alphakey}
 sendButImage(from,  ` NIH NGAB` , `R-BOT`,textpro, [{"buttonId": `owner`,"buttonText": {"displayText": "OWNER"},"type": "RESPONSE"},{"buttonId": `donasi`,"buttonText": {"displayText": "DONASI"},"type": "RESPONSE"}], {thumbnail: dfrply, quoted: ftroli})
 break 
 case 'waifumaker':
+if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})			                  
 if (args.length == 0) return reply(`Example: ${prefix + command} Rama Gamtenk`) 
 var m = c
 var fu2 = m.split("|")[0];
