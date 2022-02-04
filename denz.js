@@ -3542,7 +3542,7 @@ case '3dsteel':
 case 'horror2':
 case 'lava':
 case 'bagel':
-if (args.length < 1) return reply(lang.tahta(prefix, command))
+if (args.length == 0) return reply(`Example: ${prefix + command} Rama Gamtenk`) 
 var m = q
 var m1 = m.split("|")[0];
 var m2 = m.split("|")[1]; 
@@ -3550,7 +3550,7 @@ let textpro = await getBuffer(`${alphaapi}/textpro/${command}?apikey=${alphakey}
 sendButImage(from,  ` NIH NGAB` , `R-BOT`,textpro, [{"buttonId": `owner`,"buttonText": {"displayText": "OWNER"},"type": "RESPONSE"},{"buttonId": `donasi`,"buttonText": {"displayText": "DONASI"},"type": "RESPONSE"}], {thumbnail: dfrply, quoted: ftroli})
 break 
 case 'waifumaker':
-if (args.length < 1) return reply(lang.tahta(prefix, command))
+if (args.length == 0) return reply(`Example: ${prefix + command} Rama Gamtenk`) 
 var m = q
 var fu2 = m.split("|")[0];
 var wa2 = m.split("|")[1]; 
