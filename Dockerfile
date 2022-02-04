@@ -3,9 +3,10 @@ FROM node:16.13.0
 RUN apt-get update && \
   apt-get install -y \
   neofetch \
+  chromium \
   ffmpeg \
+  webp \
   wget \
-  chromium \ 
   imagemagick && \
   rm -rf /var/lib/apt/lists/*
 
