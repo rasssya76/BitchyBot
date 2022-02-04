@@ -67,11 +67,13 @@ const { fetchJson } = require('./lib/fetcher')
 const { uploadimg, upload } = require('./lib/uploadimg')
 const { webp2mp4File } = require('./lib/webp2mp4')
 const { lirikLagu } = require('./lib/lirik.js')
+const { quotesanime } = require('./lib/scraper')
 const { wikiSearch } = require('./lib/wiki.js')
 const { herolist } = require('./lib/herolist.js')
 const { herodetails } = require('./lib/herodetail.js')
 const { mediafireDl } = require('./lib/mediafire.js')
 const { pinterest } = require('./lib/pinterest')
+
 const { y2mateA, y2mateV } = require('./lib/y2mate.js')
 const { addCommands, checkCommands, deleteCommands } = require('./lib/autoresp')
 const { yta, ytv, buffer2Stream, ytsr, baseURI, stream2Buffer, noop } = require('./lib/ytdl')
@@ -109,7 +111,7 @@ cmhit = []
 autorespon = false
 playmusic = false
 antidelete = false
-menuall = false
+menuall = true
 baterai = {
 battery: "" || "Not detected",
 isCharge: "" || false
@@ -133,7 +135,7 @@ HunterApi = settings.HunterApi
 dapaapi = 'RamaGans'
 antoapi = 'hardianto'
 YuzApi = 'Yuzzu'
-alphaalphaapi = 'https://api-alphabot.herokuapp.com/api/'
+alphaapi = 'https://api-alphabot.herokuapp.com/api/'
 alphakey = 'Alphabot'
 
 const time = moment().tz('Asia/Jakarta').format("HH:mm:ss")
@@ -1781,26 +1783,14 @@ case 'ukty': case 'bocil': case 'ghea':
 case 'asupanrikagusriani':
     reply(mess.wait)
 anu = await fetchJson(`https://api.dapuhy.xyz/api/asupan/${command}?apikey=${dapaapi}`)
-ano = await getBuffer(anu.result.url)
+ano = await getBuffer(anu)
 denz.sendMessage(from, ano, video, { quoted: mek, thumbnail: fs.readFileSync('./denz.jpg')})
 break
 case 'meme':
   reply(mess.wait)
 anu = await fetchJson(`https://hardianto.xyz/api/random/meme?apikey=${antoapi}`)
-buff = await getBuffer(anu.result.result)
-gbutsan = [{buttonId:`meme`,buttonText:{displayText:'LANJUT➡️'},type:1}]
-mhan = await denz.prepareMessage(from, buff, image, {thumbnail: buff})
-const buttonMessagessss = {
-imageMessage: mhan.message.imageMessage,
-contentText: `Ngedark Bos`,
-footerText: '*R-BOT*',
-buttons: gbutsan,
-headerType: 4
-}
-denz.sendMessage(from, buttonMessagessss, MessageType.buttonsMessage, {
-        thumbnail: fs.readFileSync('./denz.jpg'),
-        caption: 'Tes',
-            quoted: mek})
+buff = await getBuffer(anu.result.url)
+denz.sendMessage(from, anu, image, { quoted: ftroli, thumbnail: fs.readFileSync('./denz.jpg')})
 break
 case 'nfswpussy':
 case 'nfswneko':
