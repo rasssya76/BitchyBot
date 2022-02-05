@@ -1481,8 +1481,7 @@ footerText: `R-BOT`,
 buttons: gbutsan,
 headerType: 4
 }
-sendButLocation(from, ``, ${menunya}, MessageType.buttonsMessage, { quoted: mek, contextInfo: { mentionedJid: [dtod,otod,stod]}})
-                  }
+sendButLocation(from, `\n`, ${menunya}, MessageType.buttonsMessage, pporigi, gbutsan, {quoted: mek})                  
 break
 case 'sewabot': 
   stod = `${sender}`
