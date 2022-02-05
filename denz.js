@@ -1748,7 +1748,7 @@ ${smbols} ${prefix}kitsune
 ${smbols} ${prefix}keta
 ${smbols} ${prefix}neko2
 ${smbols} ${prefix}poke
-${smbols} ${prefix}slap
+${smbols} ${prefix}slap`
 katalog(menu)
 break
 case 'othermenu':
