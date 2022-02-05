@@ -699,6 +699,19 @@ headerType: 5
 }
 denz.sendMessage(id, buttonMessages, MessageType.buttonsMessage, options)
 }
+//DOC
+const sendButDocument = async(id, text1, desc1, media, doc1, but = [], options = {}) => {
+kma = doc1
+mhan = await denz.prepareMessage(from, media, document, kma)
+const buttonMessages = {
+documentMessage: mhan.message.documentMessage,
+contentText: text1,
+footerText: desc1,
+buttons: but,
+headerType: "DOCUMENT"
+}
+denz.sendMessage(id, buttonMessages, MessageType.buttonsMessage, options)
+}
 ///Button Location
 const sendButLocation = async (id, text1, desc1, gam1, but = [], options = {}) => {
 kma = gam1
@@ -1155,6 +1168,10 @@ ${smbols} Tanggal : ${calender}
                            {
                               "title": "Runtime",
                               "rowId": ""
+                            },
+                           {
+                              "title": "Allmenu",
+                              "rowId": ""
                            },
                            {
                               "title": "OwnerMenu",
@@ -1165,8 +1182,8 @@ ${smbols} Tanggal : ${calender}
                               "rowId": ""
                            },
                            {
-                              "title": "GroupMenu⎋",
-                              "rowId": ".groupmenu"
+                              "title": "GroupMenu",
+                              "rowId": ""
                            },
                            {                             
                               "title": "Nsfwmenu",
@@ -1481,7 +1498,7 @@ footerText: `R-BOT`,
 buttons: gbutsan,
 headerType: 4
 }
-sendButLocation(from, `\n`, ${menunya}, MessageType.buttonsMessage, pporigi, gbutsan, {quoted: mek})                  
+sendButDocument(from, `${menunya}`, "© B Y R A M A®", fs.readFileSync('./pdf.pdf'), {mimetype:Mimetype.pdf, thumbnail:fs.readFileSync('./banner.jpg'), filename:`${jmn} - ${week} - ${calender}`},  gbutsan, {quoted:ftrol, contextInfo: { mentionedJid: [dtod,otod,stod], forwardingScore: 508, isForwarded: true, externalAdReply:{title:`${tampilUcapan} ${pushname}`,body:`*click here How to bot`,mediaType:"2",thumbnail:ofrply,mediaUrl:`https://youtu.be/6cC_QVZ4qFs`}}})
 break
 case 'sewabot': 
   stod = `${sender}`
@@ -1521,7 +1538,7 @@ footerText: `R-BOT`,
 buttons: gbutsan,
 headerType: 4
 }
-denz.sendMessage(from, btnBngsat, MessageType.buttonsMessage, { quoted: ftroli, caption: menunya, contextInfo: { mentionedJid: [dtod,otod,stod]}})
+denz.sendMessage(from, btnBngsat, MessageType.buttonsMessage, caption: menunya, {quoted:fvid, contextInfo: { mentionedJid: [dtod,otod,stod], forwardingScore: 508, isForwarded: true, externalAdReply:{title:`${tampilUcapan} - ${pushname}\nDownload Script`,mediaType:"2",thumbnail:ofrply,mediaUrl:`https://youtu.be/x-O0WHkv3uc`}})
                   }
 break
 case 'verify':
