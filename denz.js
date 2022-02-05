@@ -1134,55 +1134,55 @@ ${smbols} Tanggal : ${calender}
  rows: [
                           {
                               "title": "Script⎋",
-                              "rowId": ""
+                              "rowId": ".script"
                            },
                            {
                               "title": "Speed⎋",
-                              "rowId": ""
+                              "rowId": ".speed"
                            },
                            {
                               "title": "Status⎋",
-                              "rowId": ""
+                              "rowId": ".status"
                            },
                            {
                               "title": "Creator⎋",
-                              "rowId": ""
+                              "rowId": ".owner"
                            },
                            {
                               "title": "Jadibot⎋",
-                              "rowId": ""
+                              "rowId": ".j"
                            },
                            {
                               "title": "Runtime⎋",
-                              "rowId": ""
+                              "rowId": ".runtime"
                            },
                            {
                               "title": "OwnerMenu⎋",
-                              "rowId": ""
+                              "rowId": ".ownermenu"
                            },
                            {
                               "title": "MakerMenu⎋",
-                              "rowId": ""
+                              "rowId": ".makermenu"
                            },
                            {
                               "title": "GroupMenu⎋",
-                              "rowId": ""
+                              "rowId": ".groupmenu"
                            },
                            {                             
                               "title": "Nsfwmenu⎋",
-                              "rowId": ""
+                              "rowId": ".nfswmenu"
                            },
                            {
                               "title": "OtherMenu⎋",
-                              "rowId": ""
+                              "rowId": ".othermenu"
                            },
                            {
                               "title": "DownloadMenu⎋",
-                              "rowId": ""
+                              "rowId": ".downloadmenu"
                               },
                            {
                               "title": "GrupOwner⎋",
-                              "rowId": ""
+                              "rowId": ".grupowner"
                            }
                         ]
                      }],
@@ -2045,7 +2045,7 @@ denz.sendMessage(from, buffer, image, { quoted: mek, thumbnail: fs.readFileSync(
 break
 case 'quotesanime': case 'quoteanime':
                 reply(mess.wait)
-                anu = await quotesAnime()
+                anu = await quotesanime()
                 result = anu[Math.floor(Math.random(), anu.length)]
                 denz.sendMessage(from, { text: `_${result.quotes}_\n\nBy *'${result.karakter}'*, ${result.anime}\n\n*_- ${result.up_at}_*` })            
             break
@@ -5025,24 +5025,37 @@ break
                 denz.updateProfileName(anu)
                 reply(`Sukses mengganti nama ke ${body.slice(9)}`)
                 break
-			case 'add':
-              			if (!isGroup) return reply(mess.only.group)
+		case 'add':
+				if (!isGroup) return reply(mess.only.group)
 			if (!isGroupAdmins) return sticAdmin(from)
 			if (!isBotGroupAdmins) return sticNotAdmin(from)
-			if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMessage === null) return reply('Reply targetnya!')
-			add = mek.message.extendedTextMessage.contextInfo.participant
-		    denz.groupAdd(from, [add])
-				reply('Sukses menambahkan peserta')
-				break
+				if (args.length < 1) return reply('Yang mau di add siapa??')
+					if (args[0].startsWith('08')) return reply('Gunakan kode negara Gan')
+					try {
+						num = `${args[0].replace(/ /g, '')}@s.whatsapp.net`
+						denz.groupAdd(from, [num])
+					} catch (e) {
+						console.log('Error :', e)
+						reply('Gagal menambahkan target, mungkin karena di private')
+					}
+					break
 				case 'kick':
               			if (!isGroup) return reply(mess.only.group)
 			if (!isGroupAdmins) return sticAdmin(from)
 			if (!isBotGroupAdmins) return sticNotAdmin(from)
-			if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMessage === null) return reply('Reply targetnya!')
-			kick = mek.message.extendedTextMessage.contextInfo.participant
-		    denz.groupRemove(from, [kick])
-						reply('Sukses mengeluarkan peserta')
-                    break
+			mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid
+					if (mentioned.length > 1) {
+						teks = 'Perintah di terima, mengeluarkan :\n'
+						for (let _ of mentioned) {
+							teks += `@${_.split('@')[0]}\n`
+						}
+						mentions(teks, mentioned, true)
+						denz.groupRemove(from, mentioned)
+					} else {
+						mentions(`Perintah di terima, mengeluarkan : @${mentioned[0].split('@')[0]}`, mentioned, true)
+						denz.groupRemove(from, mentioned)
+					}
+					break 
                     case 'creategroup':
 			case 'creategrup':
 			case 'buatgrup':
