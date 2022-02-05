@@ -126,16 +126,16 @@ exec(`cd /sdcard/download && play *mp3`)
 						if (anu.action == 'add' && !num.includes(denz.user.jid)) {
 							welcome = await getBuffer(`https://api-alphabot.herokuapp.com/api/greetings/welcome2?name=${encodeURI(anu_user)}&member=${encodeURI(mdata.participants.length)}&groupName=${encodeURI(mdata.subject)}&ppuser=${ppmem3}&bgurl=${background}&apikey=Alphabot`)
 							try{
-							await sendButLoc(mdata.id, `Welcome @${num.split('@')[0]} to ${mdata.subject}` + '\nSELAMAT DATANG', `R-BOT`,ppmem2, [{"buttonId": `.menu`,"buttonText": {"displayText": "Welcome"},"type": "RESPONSE"}], {contextInfo: { mentionedJid: [num]}})
+							await sendButLoc(mdata.id, `Welcome @${num.split('@')[0]} to \n${mdata.subject}` + '\nSELAMAT DATANG SILAHKAN INTRO!!!', `R-BOT`,ppmem2, [{"buttonId": `Tes`,"buttonText": {"displayText": "Oke‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎\n*AKU MAU KASIH TAU KALAU AKU ITU ANAK HASIL ZINA*"},"type": "RESPONSE"}], {contextInfo: { mentionedJid: [num]}})
 							} catch {
 								await sendButLoc(mdata.id, `Welcome @${num.split('@')[0]} to ${mdata.subject}` + '\nSELAMAT DATANG', `R-BOT`,ppmem2, [{"buttonId": `.menu`,"buttonText": {"displayText": "Welcome"},"type": "RESPONSE"}], {contextInfo: { mentionedJid: [num]}})
 							}
 						} else if (anu.action == 'remove' && !num.includes(denz.user.jid)) {
 							goodbye = await getBuffer(`https://api-alphabot.herokuapp.com/api/greetings/goodbye2?name=${encodeURI(anu_user)}&member=${encodeURI(mdata.participants.length)}&groupName=${encodeURI(mdata.subject)}&ppuser=${ppmem3}&bgurl=${background}&apikey=Alphabot`)
 							try{
-							await sendButLoc(mdata.id, `Goodbye @${num.split('@')[0]}\n⌯ָ   ֙Leave from group:\n${mdata.subject}` + '\nBISMILAH DAPET NASI KOTAK', `R-BOT`,goodbye, [{"buttonId": `.menu`,"buttonText": {"displayText": "Bye"},"type": "RESPONSE"}], {contextInfo: { mentionedJid: [num]}})
+							await sendButLoc(mdata.id, `Goodbye @${num.split('@')[0]}\n⌯ָ   ֙Leave from group:\n${mdata.subject}` + '\nBISMILAH DAPET NASI KOTAK', `R-BOT`,goodbye, [{"buttonId": `Tes`,"buttonText": {"displayText": "Goodbye‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎\n\nDia Pacarku guys, Kita Ngegay udah lama, gak tau kenapa tiba2 Keluar grup 😭"},"type": "RESPONSE"}], {contextInfo: { mentionedJid: [num]}})
 							} catch {
-						       await sendButLoc(mdata.id, `Goodbye @${num.split('@')[0]}\n⌯ָ   ֙Leave from group:\n${mdata.subject}` + '\n' + lang.leave(), `Leave Message By ${ownername}`,ppmem2, [{"buttonId": `.menu`,"buttonText": {"displayText": "Bye"},"type": "RESPONSE"}], {contextInfo: { mentionedJid: [num]}})		
+						       await sendButLoc(mdata.id, `Goodbye @${num.split('@')[0]}\n⌯ָ   ֙Leave from group:\n${mdata.subject}` + '\n' + lang.leave(), `Leave Message By ${ownername}`,ppmem2, [{"buttonId": `Tes`,"buttonText": {"displayText": "Goodbye‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎\n\nDia Pacarku guys, Kita Ngegay udah lama, gak tau kenapa tiba2 Keluar grup 😭"},"type": "RESPONSE"}], {contextInfo: { mentionedJid: [num]}})		
 						       }										 				           
 		} else if (anu.action == 'promote') {
 fkontakk = { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(anu.jid ? { remoteJid: '6283136505591-1604595598@g.us' } : {})}, message: { "contactMessage":{"displayName": `${mdata.subject}`,"vcard":`BEGIN:VCARD\nVERSION:3.0\nN:2;Denz;;;\nFN:Denz\nitem1.TEL;waid=6281337541779:6281337541779\nitem1.X-ABLabel:Mobile\nEND:VCARD` }}}
@@ -201,8 +201,8 @@ denz.on('CB:action,,call', async json => {
         })
         
 	denz.on('message-delete', async (m) => {
-if (!m.key.fromMe && !antidelete) {
-if (!m.key.remoteJid == 'status@broadcast') return
+if (m.key.remoteJid == 'status@broadcast') return
+if (!m.key.fromMe && antidelete)
 m.message = (Object.keys(m.message)[0] === 'ephemeralMessage') ? m.message.ephemeralMessage.message : m.message
 const jam = moment.tz('Asia/Jakarta').format('HH:mm:ss')
 let d = new Date
@@ -219,13 +219,19 @@ day: 'numeric',
 month: 'long',
 year: 'numeric'
 })
-denz.copyNForward(m.key.remoteJid, m.message)
-denz.sendMessage(m.key.remoteJid, `▷\`\`\`Anti Delete\`\`\`
-
-▢ \`\`\`Nama : @${m.participant.split("@")[0]}\`\`\`
-▢ \`\`\`Tipe : ${c3type}\`\`\`
-▢ \`\`\`Tanggal : ${jam} - ${week} ${weton} - ${calender}\`\`\``, MessageType.text, {quoted: m.message, contextInfo: {"mentionedJid": [m.participant]}})
+denzdelete = `*「 PESAN DITARIK TERDETEKSI 」*
+› Dari : *@${m.participant.split("@")[0]}*
+› Waktu : ${jam}
+› Tanggal : ${calender}`
+button = [{buttonId: `!000`, buttonText: {displayText: 'Oke‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎\n\nYahh gpp Sumpah , fiturnya sangat membantu para pelaku Penjahat Kelamin :)'}, type: 1}]
+const buMess = {
+    contentText: `${denzdelete}`,
+    footerText: 'Anti Delete › Pesan ini telah di hapus',
+    buttons: button,
+    headerType: 1
 }
+denz.sendMessage(m.key.remoteJid, buMess, MessageType.buttonsMessage, {quoted: m.message, contextInfo: {"mentionedJid": [m.participant]}})
+denz.copyNForward(m.key.remoteJid, m.message)
 })
 }
 

@@ -97,7 +97,7 @@ const commandsDB = JSON.parse(fs.readFileSync('./database/commands.json'))
 const tictactoe = JSON.parse(fs.readFileSync("./database/tictactoe.json"))
 const antilink = JSON.parse(fs.readFileSync('./database/antilink.json'))
 const welkom = JSON.parse(fs.readFileSync('./database/welkom.json'))
-const nsfw = JSON.parse(fs.readFileSync('./database/nsfw.json'))
+const nsfww = JSON.parse(fs.readFileSync('./database/nsfw.json'))
 const mute = JSON.parse(fs.readFileSync('./database/mute.json'))
 const settings = JSON.parse(fs.readFileSync('./settings.json'))
 const _registered = JSON.parse(fs.readFileSync('./database/registered.json'))
@@ -127,6 +127,7 @@ NamaOwner = settings.NamaOwner
 ovo = settings.Ovo
 dana = settings.Dana
 gopay = settings.Gopay
+smbols = '✜'
 multi = true
 nopref = false
 
@@ -137,6 +138,7 @@ antoapi = 'hardianto'
 YuzApi = 'Yuzzu'
 alphaapi = 'https://api-alphabot.herokuapp.com/api/'
 alphakey = 'Alphabot'
+antores = 'https://hardianto.xyz'
 
 const time = moment().tz('Asia/Jakarta').format("HH:mm:ss")
 
@@ -313,7 +315,7 @@ try {
 		const groupDesc = isGroup ? groupMetadata.desc : ''
 		const groupOwner = isGroup ? groupMetadata.owner : ''
 		const isOwner = ownerNumber.includes(sender)
-		const isNsfw = isGroup ? nsfw.includes(from) : false
+		const isNsfw = isGroup ? nsfww.includes(from) : false
 		const isGroupAdmins = groupAdmins.includes(sender) || false
 		const isKickArea = isGroup ? kickarea.includes(from) : false
 		const isAntiLink = isGroup ? antilink.includes(from) : false
@@ -1103,27 +1105,27 @@ num = await fetchJson(`https://api.telnyx.com/anonymous/v2/number_lookup/${sende
  description: `Hai kak @${stod.split('@')[0]}, ${tampilUcapan} kak
 
    *INFO BOT*  
-→ Creator : _@${dtod.split('@')[0]}_
-→ Battery : _${baterai.battery}_
-→ Mode : _${publik ? 'Public' : 'Self'}_
-→ Total Hit : _${cmhit.length}_
-→ Prefix : _${multi ? 'Multi Prefix' : 'No Prefix'}_     
-→ Nama Bot : _${NamaBot}_
-→ Nomor Owner : _@${otod.split('@')[0]}_
-→ Auto Composing : _${settings.autocomposing}_
-→ Auto Recording : _${settings.autorecording}_
+${smbols} Creator : _@${dtod.split('@')[0]}_
+${smbols} Battery : _${baterai.battery}_
+${smbols} Mode : _${publik ? 'Public' : 'Self'}_
+${smbols} Total Hit : _${cmhit.length}_
+${smbols} Prefix : _${multi ? 'Multi Prefix' : 'No Prefix'}_     
+${smbols} Nama Bot : _${NamaBot}_
+${smbols} Nomor Owner : _@${otod.split('@')[0]}_
+${smbols} Auto Composing : _${settings.autocomposing}_
+${smbols} Auto Recording : _${settings.autorecording}_
 
    *INFO USER*
-→ Status : _${isOwner ? 'Owner' : 'User'}_
-→ Nama : _${pushname}_
-→ Bio : _${stst}_
-→ Nomor : _@${stod.split('@')[0]}_
-→ Info Nomor : _${num.data.country_code} - ${num.data.carrier.type} - ${num.data.carrier.name}_
+${smbols} Status : _${isOwner ? 'Owner' : 'User'}_
+${smbols} Nama : _${pushname}_
+${smbols} Bio : _${stst}_
+${smbols} Nomor : _@${stod.split('@')[0]}_
+${smbols} Info Nomor : _${num.data.country_code} - ${num.data.carrier.type} - ${num.data.carrier.name}_
 
    *WAKTU*
-→ Jam : ${jmn}
-→ Hari : ${week} ${weton}
-→ Tanggal : ${calender}
+${smbols} Jam : ${jmn}
+${smbols} Hari : ${week} ${weton}
+${smbols} Tanggal : ${calender}
 
  `,
  sections: [
@@ -1131,51 +1133,55 @@ num = await fetchJson(`https://api.telnyx.com/anonymous/v2/number_lookup/${sende
                       "title": `${jmn} - ${week} ${weton} - ${calender}`,
  rows: [
                           {
-                              "title": "Script",
+                              "title": "Script⎋",
                               "rowId": ""
                            },
                            {
-                              "title": "Speed",
+                              "title": "Speed⎋",
                               "rowId": ""
                            },
                            {
-                              "title": "Status",
+                              "title": "Status⎋",
                               "rowId": ""
                            },
                            {
-                              "title": "Creator",
+                              "title": "Creator⎋",
                               "rowId": ""
                            },
                            {
-                              "title": "Jadibot",
+                              "title": "Jadibot⎋",
                               "rowId": ""
                            },
                            {
-                              "title": "Runtime",
+                              "title": "Runtime⎋",
                               "rowId": ""
                            },
                            {
-                              "title": "OwnerMenu",
+                              "title": "OwnerMenu⎋",
                               "rowId": ""
                            },
                            {
-                              "title": "MakerMenu",
+                              "title": "MakerMenu⎋",
                               "rowId": ""
                            },
                            {
-                              "title": "GroupMenu",
+                              "title": "GroupMenu⎋",
+                              "rowId": ""
+                           },
+                           {                             
+                              "title": "Nsfwmenu⎋",
                               "rowId": ""
                            },
                            {
-                              "title": "OtherMenu",
+                              "title": "OtherMenu⎋",
                               "rowId": ""
                            },
                            {
-                              "title": "DownloadMenu",
+                              "title": "DownloadMenu⎋",
                               "rowId": ""
                               },
                            {
-                              "title": "GrupOwner",
+                              "title": "GrupOwner⎋",
                               "rowId": ""
                            }
                         ]
@@ -1193,248 +1199,270 @@ case 'allmenu':
 			num = await fetchJson(`https://api.telnyx.com/anonymous/v2/number_lookup/${senderNumber}`, {method: 'get'})
 menunya = `   
 ❒  𝗢𝗪𝗡𝗘𝗥 𝗠𝗘𝗡𝗨
-→ ${prefix}stopjadibot
-→ ${prefix}autorespon [ _on/off_ ]
-→ ${prefix}antidelete [ _on/off_ ]
-→ ${prefix}bc [ _teks/reply gif/image/video with caption_ ]
-→ ${prefix}tobc [ _reply sticker/audio with caption_ ]
-→ ${prefix}return [ _javascript_ ]
-→ ${prefix}clearall
-→ ${prefix}delchat
-→ ${prefix}mute
-→ ${prefix}unmute
-→ ${prefix}public
-→ ${prefix}self
-→ ${prefix}spam [ _teks|jumlah_ ]
-→ ${prefix}demoteall
-→ ${prefix}promoteall
-→ ${prefix}addcmd [ _teks reply stc_ ]
-→ ${prefix}delcmd [ _reply stc_ ]
-→ ${prefix}listcmd
-→ ${prefix}spamsw [ _teks|jumlah_ ]
-→ ${prefix}upswteks [ _teks_ ]
-→ ${prefix}upswlokasi [ _teks_ ]
-→ ${prefix}upswaudio [ _reply audio_ ]
-→ ${prefix}upswvoice [ _reply audio_ ]
-→ ${prefix}upswsticker [ _reply sticker_ ]
-→ ${prefix}upswimage [ _reply image with caption_ ]
-→ ${prefix}upswgif [ _reply gif with caption_ ]
-→ ${prefix}upswvideo [ _reply video with caption_ ]
-→ ${prefix}shutdown
-→ ${prefix}offline [ _alasan_ ]
-→ ${prefix}online
-→ ${prefix}exif [ _nama|author_ ]
-→ ${prefix}setprofile [ _reply image_ ]
-→ ${prefix}setname [ _teks_ ]
-→ ${prefix}setprefix [ _multi/nopref/prefix_ ]
-→ ${prefix}setbio [ _teks_ ]
-→ ${prefix}bug [ _jumlah_ ]
-→ ${prefix}bugpc2 [ _jumlah_ ]
-→ ${prefix}bugtroli2 [ _jumlah_ ]
-→ ${prefix}bugpc
-→ ${prefix}bugcombine
-→ ${prefix}bugtroli
-→ ${prefix}buglokasi
-→ ${prefix}bughole
-→ ${prefix}leave
-→ ${prefix}restart
-→ ${prefix}join [ _link group_ ]
-→ ${prefix}addrespon [ _tanya|jawab_ ]
-→ ${prefix}delrespon [ _nama_ ]
-→ ${prefix}listrespon
-→ ${prefix}readall
-→ ${prefix}unreadall
-→ ${prefix}archive
-→ ${prefix}unarchiveall
-→ ${prefix}pin
-→ ${prefix}unpin
-→ ${prefix}setallmenu [ _ori/simpel_ ]
-→ ${prefix}leavetime [ _detik/menit/jam_ ]
-→ ${prefix}bukatime [ _detik/menit/jam_ ]
-→ ${prefix}tutuptime [ _detik/menit/jam_ ]
-→ ${prefix}nano [ _nama file_ ]
+${smbols} ${prefix}stopjadibot
+${smbols} ${prefix}autorespon [ _on/off_ ]
+${smbols} ${prefix}antidelete [ _on/off_ ]
+${smbols} ${prefix}bc [ _teks/reply gif/image/video with caption_ ]
+${smbols} ${prefix}tobc [ _reply sticker/audio with caption_ ]
+${smbols} ${prefix}return [ _javascript_ ]
+${smbols} ${prefix}clearall
+${smbols} ${prefix}delchat
+${smbols} ${prefix}mute
+${smbols} ${prefix}unmute
+${smbols} ${prefix}public
+${smbols} ${prefix}self
+${smbols} ${prefix}spam [ _teks|jumlah_ ]
+${smbols} ${prefix}demoteall
+${smbols} ${prefix}promoteall
+${smbols} ${prefix}addcmd [ _teks reply stc_ ]
+${smbols} ${prefix}delcmd [ _reply stc_ ]
+${smbols} ${prefix}listcmd
+${smbols} ${prefix}spamsw [ _teks|jumlah_ ]
+${smbols} ${prefix}upswteks [ _teks_ ]
+${smbols} ${prefix}upswlokasi [ _teks_ ]
+${smbols} ${prefix}upswaudio [ _reply audio_ ]
+${smbols} ${prefix}upswvoice [ _reply audio_ ]
+${smbols} ${prefix}upswsticker [ _reply sticker_ ]
+${smbols} ${prefix}upswimage [ _reply image with caption_ ]
+${smbols} ${prefix}upswgif [ _reply gif with caption_ ]
+${smbols} ${prefix}upswvideo [ _reply video with caption_ ]
+${smbols} ${prefix}shutdown
+${smbols} ${prefix}offline [ _alasan_ ]
+${smbols} ${prefix}online
+${smbols} ${prefix}exif [ _nama|author_ ]
+${smbols} ${prefix}setprofile [ _reply image_ ]
+${smbols} ${prefix}setname [ _teks_ ]
+${smbols} ${prefix}setprefix [ _multi/nopref/prefix_ ]
+${smbols} ${prefix}setbio [ _teks_ ]
+${smbols} ${prefix}bug [ _jumlah_ ]
+${smbols} ${prefix}bugpc2 [ _jumlah_ ]
+${smbols} ${prefix}bugtroli2 [ _jumlah_ ]
+${smbols} ${prefix}bugpc
+${smbols} ${prefix}bugcombine
+${smbols} ${prefix}bugtroli
+${smbols} ${prefix}buglokasi
+${smbols} ${prefix}bughole
+${smbols} ${prefix}leave
+${smbols} ${prefix}restart
+${smbols} ${prefix}join [ _link group_ ]
+${smbols} ${prefix}addrespon [ _tanya|jawab_ ]
+${smbols} ${prefix}delrespon [ _nama_ ]
+${smbols} ${prefix}listrespon
+${smbols} ${prefix}readall
+${smbols} ${prefix}unreadall
+${smbols} ${prefix}archive
+${smbols} ${prefix}unarchiveall
+${smbols} ${prefix}pin
+${smbols} ${prefix}unpin
+${smbols} ${prefix}setallmenu [ _ori/simpel_ ]
+${smbols} ${prefix}leavetime [ _detik/menit/jam_ ]
+${smbols} ${prefix}bukatime [ _detik/menit/jam_ ]
+${smbols} ${prefix}tutuptime [ _detik/menit/jam_ ]
+${smbols} ${prefix}nano [ _nama file_ ]
 
 ❒  𝗗𝗢𝗪𝗡𝗟𝗢𝗔𝗗 𝗠𝗘𝗡𝗨
-→ ${prefix}infogempa
-→ ${prefix}herolist
-→ ${prefix}herodetail [ _hero_ ]
-→ ${prefix}google [ _search_ ]
-→ ${prefix}gimage [ _search_ ]
-→ ${prefix}wiki [ _search_ ]
-→ ${prefix}mediafire [ _link_ ]
-→ ${prefix}ytsearch [ _judul_ ]
-→ ${prefix}ytmp4 [ _link yt_ ]
-→ ${prefix}ytmp3 [ _link yt_ ]
-→ ${prefix}play [ _judul lagu_ ]
-→ ${prefix}video [ _judul video_ ]
-→ ${prefix}tinyurl [ _link_ ]
-→ ${prefix}fetch [ _link_ ]
-→ ${prefix}igdl [ _link_ ]
-→ ${prefix}tiktokdl [ _link_ ]
-→ ${prefix}pinterest [ _search_ ]
-→ ${prefix}lirik [ _judul_ ]
-→ ${prefix}tourl [ _reply image/video_ ]
-→ ${prefix}kalkulator [ _angka_ ]
-→ ${prefix}fancytext [ _teks_ ]
-→ ${prefix}translate [ _teks kodebhs_ ]
-→ ${prefix}ss [ _link_ ]
-→ ${prefix}playstore [ _search_ ]
-→ ${prefix}tiktokaudio [ _link_ ]
-→ ${prefix}brainly [ _search_ ]
-→ ${prefix}igstory [ _search_ ]
-→ ${prefix}igstalk [ _link_ ]
-→ ${prefix}twitter [ _link_ ]
-→ ${prefix}twmp3 [ _link_ ]
-→ ${prefix}linkwa [ _search_ ]
-→ ${prefix}fb [ _link_ ]
-→ ${prefix}chara [ _search_ ]
-→ ${prefix}otaku [ _search_ ]
-→ ${prefix}komiku [ _search_ ]
+${smbols} ${prefix}infogempa
+${smbols} ${prefix}herolist
+${smbols} ${prefix}herodetail [ _hero_ ]
+${smbols} ${prefix}google [ _search_ ]
+${smbols} ${prefix}gimage [ _search_ ]
+${smbols} ${prefix}wiki [ _search_ ]
+${smbols} ${prefix}mediafire [ _link_ ]
+${smbols} ${prefix}ytsearch [ _judul_ ]
+${smbols} ${prefix}ytmp4 [ _link yt_ ]
+${smbols} ${prefix}ytmp3 [ _link yt_ ]
+${smbols} ${prefix}play [ _judul lagu_ ]
+${smbols} ${prefix}video [ _judul video_ ]
+${smbols} ${prefix}tinyurl [ _link_ ]
+${smbols} ${prefix}fetch [ _link_ ]
+${smbols} ${prefix}igdl [ _link_ ]
+${smbols} ${prefix}tiktokdl [ _link_ ]
+${smbols} ${prefix}pinterest [ _search_ ]
+${smbols} ${prefix}lirik [ _judul_ ]
+${smbols} ${prefix}tourl [ _reply image/video_ ]
+${smbols} ${prefix}kalkulator [ _angka_ ]
+${smbols} ${prefix}fancytext [ _teks_ ]
+${smbols} ${prefix}translate [ _teks kodebhs_ ]
+${smbols} ${prefix}ss [ _link_ ]
+${smbols} ${prefix}playstore [ _search_ ]
+${smbols} ${prefix}tiktokaudio [ _link_ ]
+${smbols} ${prefix}brainly [ _search_ ]
+${smbols} ${prefix}igstory [ _search_ ]
+${smbols} ${prefix}igstalk [ _link_ ]
+${smbols} ${prefix}twitter [ _link_ ]
+${smbols} ${prefix}twmp3 [ _link_ ]
+${smbols} ${prefix}linkwa [ _search_ ]
+${smbols} ${prefix}fb [ _link_ ]
+${smbols} ${prefix}chara [ _search_ ]
+${smbols} ${prefix}otaku [ _search_ ]
+${smbols} ${prefix}komiku [ _search_ ]
 
 ❒  𝗧𝗘𝗫𝗧𝗣𝗥𝗢/𝗠𝗔𝗞𝗘𝗥 
-→ ${prefix}foliokanan [ _text_ ]
-→ ${prefix}foliokiri [ _text_ ]
-→ ${prefix}nuliskanan [ _text_ ]
-→ ${prefix}nuliskiri [ _text_ ]
-→ ${prefix}glitch2 [ _text_ ]
-→ ${prefix}game8bit [ _text_ ]
-→ ${prefix}horrorr [ _text_ ]
-→ ${prefix}halloween2 [ _text_ ]
-→ ${prefix}layered [ _text_ ]
-→ ${prefix}gtiktok [ _text_ ]
-→ ${prefix}stone [ _text_ ]
-→ ${prefix}metalg [ _text_ ]
-→ ${prefix}metalr [ _text_ ]
-→ ${prefix}gtiktok [ _text_ ]
-→ ${prefix}metalg2 [ _text_ ]
-→ ${prefix}broken [ _text_ ]
-→ ${prefix}brokenglass [ _text_ ]
-→ ${prefix}3dunderwater [ _text_ ]
-→ ${prefix}neondevil [ _text_ ]
-→ ${prefix}artpapercut [ _text_ ]
-→ ${prefix}bearlogo [ _text_ ]
-→ ${prefix}icecold [ _text_ ]
-→ ${prefix}fruitjuice [ _text_ ]
-→ ${prefix}rusymetal [ _text_ ]
-→ ${prefix}waifumaker [ _text_ ]
-→ ${prefix}abstragold [ _text_ ]
-→ ${prefix}biscuit [ _text_ ]
-→ ${prefix}breakwall [ _text_ ]
-→ ${prefix}christmas [ _text_ ]
-→ ${prefix}plasticbagdrug [ _text_ ]
-→ ${prefix}honey [ _text_ ]
-→ ${prefix}horror [ _text_ ]
-→ ${prefix}purplegame [ _text_ ]
-→ ${prefix}metalrainbow [ _text_ ]
-→ ${prefix}greenneon [ _text_ ]
-→ ${prefix}wood [ _text_ ]
-→ ${prefix}dropwater [ _text_ ]
-→ ${prefix}yellowjewelry [ _text_ ]
-→ ${prefix}shinymetal [ _text_ ]
-→ ${prefix}lava [ _text_ ]
-→ ${prefix}rock [ _text_ ]
-→ ${prefix}denim [ _text_ ]
+${smbols} ${prefix}foliokanan [ _text_ ]
+${smbols} ${prefix}foliokiri [ _text_ ]
+${smbols} ${prefix}nuliskanan [ _text_ ]
+${smbols} ${prefix}nuliskiri [ _text_ ]
+${smbols} ${prefix}glitch2 [ _text_ ]
+${smbols} ${prefix}game8bit [ _text_ ]
+${smbols} ${prefix}horrorr [ _text_ ]
+${smbols} ${prefix}halloween2 [ _text_ ]
+${smbols} ${prefix}layered [ _text_ ]
+${smbols} ${prefix}gtiktok [ _text_ ]
+${smbols} ${prefix}stone [ _text_ ]
+${smbols} ${prefix}metalg [ _text_ ]
+${smbols} ${prefix}metalr [ _text_ ]
+${smbols} ${prefix}gtiktok [ _text_ ]
+${smbols} ${prefix}metalg2 [ _text_ ]
+${smbols} ${prefix}broken [ _text_ ]
+${smbols} ${prefix}brokenglass [ _text_ ]
+${smbols} ${prefix}3dunderwater [ _text_ ]
+${smbols} ${prefix}neondevil [ _text_ ]
+${smbols} ${prefix}artpapercut [ _text_ ]
+${smbols} ${prefix}bearlogo [ _text_ ]
+${smbols} ${prefix}icecold [ _text_ ]
+${smbols} ${prefix}fruitjuice [ _text_ ]
+${smbols} ${prefix}rusymetal [ _text_ ]
+${smbols} ${prefix}waifumaker [ _text_ ]
+${smbols} ${prefix}abstragold [ _text_ ]
+${smbols} ${prefix}biscuit [ _text_ ]
+${smbols} ${prefix}breakwall [ _text_ ]
+${smbols} ${prefix}christmas [ _text_ ]
+${smbols} ${prefix}plasticbagdrug [ _text_ ]
+${smbols} ${prefix}honey [ _text_ ]
+${smbols} ${prefix}horror [ _text_ ]
+${smbols} ${prefix}purplegame [ _text_ ]
+${smbols} ${prefix}metalrainbow [ _text_ ]
+${smbols} ${prefix}greenneon [ _text_ ]
+${smbols} ${prefix}wood [ _text_ ]
+${smbols} ${prefix}dropwater [ _text_ ]
+${smbols} ${prefix}yellowjewelry [ _text_ ]
+${smbols} ${prefix}shinymetal [ _text_ ]
+${smbols} ${prefix}lava [ _text_ ]
+${smbols} ${prefix}rock [ _text_ ]
+${smbols} ${prefix}denim [ _text_ ]
 
 ❒  𝗚𝗥𝗢𝗨𝗣 𝗠𝗘𝗡𝗨
-→ ${prefix}getpict [ _@tag_ ]
-→ ${prefix}getname [ _reply target_ ]
-→ ${prefix}getbio [ _reply target_ ]
-→ ${prefix}promote [ _@tag_ ]
-→ ${prefix}demote [ _@tag_ ]
-→ ${prefix}antilink [ _on/off_ ]
-→ ${prefix}antibug [ _on/off_ ]
-→ ${prefix}creategrup [ _nama|@tag_ ]
-→ ${prefix}tictactoe [ _@tag_ ]
-→ ${prefix}delttt
-→ ${prefix}getpp
-→ ${prefix}kick [ _@tag_ ]
-→ ${prefix}add [ _nomor_ ]
-→ ${prefix}getdeskgc
-→ ${prefix}sider [ _reply pesan bot_ ]
-→ ${prefix}hacked [ _teks_ ]
-→ ${prefix}setnamegc [ _teks_ ]
-→ ${prefix}setdeskgc [ _teks_ ]
-→ ${prefix}fitnah [ _@tag|teks1|teks2_ ]
-→ ${prefix}kontak [ _@tag|nama_ ]
-→ ${prefix}kontag [ _@tag|nama_ ]
-→ ${prefix}opengc
-→ ${prefix}closegc
-→ ${prefix}resetlinkgc
-→ ${prefix}linkgrup
-→ ${prefix}hidetag [ _teks_ ]
-→ ${prefix}sticktag [ _nama sticker_ ]
-→ ${prefix}totag [ _reply media_ ]
+${smbols} ${prefix}getpict [ _@tag_ ]
+${smbols} ${prefix}getname [ _reply target_ ]
+${smbols} ${prefix}getbio [ _reply target_ ]
+${smbols} ${prefix}promote [ _@tag_ ]
+${smbols} ${prefix}demote [ _@tag_ ]
+${smbols} ${prefix}antilink [ _on/off_ ]
+${smbols} ${prefix}antibug [ _on/off_ ]
+${smbols} ${prefix}creategrup [ _nama|@tag_ ]
+${smbols} ${prefix}tictactoe [ _@tag_ ]
+${smbols} ${prefix}delttt
+${smbols} ${prefix}getpp
+${smbols} ${prefix}kick [ _@tag_ ]
+${smbols} ${prefix}add [ _nomor_ ]
+${smbols} ${prefix}getdeskgc
+${smbols} ${prefix}sider [ _reply pesan bot_ ]
+${smbols} ${prefix}hacked [ _teks_ ]
+${smbols} ${prefix}setnamegc [ _teks_ ]
+${smbols} ${prefix}setdeskgc [ _teks_ ]
+${smbols} ${prefix}fitnah [ _@tag|teks1|teks2_ ]
+${smbols} ${prefix}kontak [ _@tag|nama_ ]
+${smbols} ${prefix}kontag [ _@tag|nama_ ]
+${smbols} ${prefix}opengc
+${smbols} ${prefix}closegc
+${smbols} ${prefix}resetlinkgc
+${smbols} ${prefix}linkgrup
+${smbols} ${prefix}hidetag [ _teks_ ]
+${smbols} ${prefix}sticktag [ _nama sticker_ ]
+${smbols} ${prefix}totag [ _reply media_ ]
+
+❒  𝗡𝗦𝗙𝗪 𝗠𝗘𝗡𝗨
+${smbols} ${prefix}trapnime
+${smbols} ${prefix}neko
+${smbols} ${prefix}megumin
+${smbols} ${prefix}blowjob
+${smbols} ${prefix}hentai
+${smbols} ${prefix}awoo
+${smbols} ${prefix}bj 
+${smbols} ${prefix}eroneko
+${smbols} ${prefix}lesbian
+${smbols} ${prefix}anal
+${smbols} ${prefix}yuri
+${smbols} ${prefix}baka
+${smbols} ${prefix}neko2
+${smbols} ${prefix}wallpaper
+${smbols} ${prefix}pussy
+${smbols} ${prefix}kitsune
+${smbols} ${prefix}keta
+${smbols} ${prefix}neko2
+${smbols} ${prefix}poke
+${smbols} ${prefix}slap
 
 ❒  𝗧𝗢𝗟𝗟𝗦 𝗠𝗘𝗡𝗨
-→ ${prefix}sticker
-→ ${prefix}stickerwm [ _nama|author_ ]
-→ ${prefix}takestick [ _nama|author_ ]
-→ ${prefix}colong [ _reply sticker_ ]
-→ ${prefix}dadu
-→ ${prefix}semoji [ _emoji_ ]
-→ ${prefix}attp [ _teks_ ]
-→ ${prefix}toimg
-→ ${prefix}tomp3 [ _reply video_ ]
-→ ${prefix}tomp4 [ _reply sticker gif_ ]
-→ ${prefix}robot [ _reply audio_ ]
-→ ${prefix}balik [ _reply audio_ ]
-→ ${prefix}bass [ _reply audio_ ]
-→ ${prefix}gemuk [ _reply audio_ ]
-→ ${prefix}detikvn [ _reply audio caption angka_ ]
-→ ${prefix}detikvideo [ _reply video caption angka_ ]
+${smbols} ${prefix}sticker
+${smbols} ${prefix}stickerwm [ _nama|author_ ]
+${smbols} ${prefix}takestick [ _nama|author_ ]
+${smbols} ${prefix}colong [ _reply sticker_ ]
+${smbols} ${prefix}dadu
+${smbols} ${prefix}semoji [ _emoji_ ]
+${smbols} ${prefix}attp [ _teks_ ]
+${smbols} ${prefix}toimg
+${smbols} ${prefix}tomp3 [ _reply video_ ]
+${smbols} ${prefix}tomp4 [ _reply sticker gif_ ]
+${smbols} ${prefix}robot [ _reply audio_ ]
+${smbols} ${prefix}balik [ _reply audio_ ]
+${smbols} ${prefix}bass [ _reply audio_ ]
+${smbols} ${prefix}gemuk [ _reply audio_ ]
+${smbols} ${prefix}detikvn [ _reply audio caption angka_ ]
+${smbols} ${prefix}detikvideo [ _reply video caption angka_ ]
 
 ❒  𝗔𝗦𝗨𝗣𝗔𝗡
-→ ${prefix}asupanrikagusriani
-→ ${prefix}+62
-→ ${prefix}santuy
-→ ${prefix}ukhty
-→ ${prefix}bocil
-→ ${prefix}ghea
+${smbols} ${prefix}asupanrikagusriani
+${smbols} ${prefix}+62
+${smbols} ${prefix}santuy
+${smbols} ${prefix}ukhty
+${smbols} ${prefix}bocil
+${smbols} ${prefix}ghea
 
 ❒  𝗗𝗔𝗧𝗔𝗕𝗔𝗦𝗘
-→ ${prefix}listimage
-→ ${prefix}liststicker
-→ ${prefix}listvn
-→ ${prefix}addsticker [ _nama_ ]
-→ ${prefix}delsticker [ _nama_ ]
-→ ${prefix}addvn [ _nama_ ]
-→ ${prefix}delvn [ _nama_ ]
-→ ${prefix}addimage [ _nama_ ]
-→ ${prefix}delimage [ _nama_ ]
+${smbols} ${prefix}listimage
+${smbols} ${prefix}liststicker
+${smbols} ${prefix}listvn
+${smbols} ${prefix}addsticker [ _nama_ ]
+${smbols} ${prefix}delsticker [ _nama_ ]
+${smbols} ${prefix}addvn [ _nama_ ]
+${smbols} ${prefix}delvn [ _nama_ ]
+${smbols} ${prefix}addimage [ _nama_ ]
+${smbols} ${prefix}delimage [ _nama_ ]
 
 ❒  𝗝𝗔𝗗𝗜𝗕𝗢𝗧
-→ ${prefix}stopjadibot
-→ ${prefix}jadibot
+${smbols} ${prefix}stopjadibot
+${smbols} ${prefix}jadibot
 
 ❒  𝗘𝗩𝗔𝗟𝗟
-→ *x*
-→ *>*
-→ *=>*
-→ *$*
+${smbols} *x*
+${smbols} *>*
+${smbols} *=>*
+${smbols} *$*
 
 ❒  𝗢𝗧𝗛𝗘𝗥/𝗙𝗨𝗡
-→ ${prefix}rate
-→ ${prefix}kapankah
-→ ${prefix}apakah
-→ ${prefix}bisakah
-→ ${prefix}meme
-→ ${prefix}quotesanime
-→ ${prefix}caripesan [ _teks|jumlah_ ]
-→ ${prefix}slots
-→ ${prefix}suit [ _gunting/batu/kertas_ ]
-→ ${prefix}tag [ _nomor_ ]
-→ ${prefix}tagme
-→ ${prefix}tts [ _kodebhs teks_ ]
-→ ${prefix}readmore [ _teks1|teks2_ ]
-→ ${prefix}fitnahpc [ _nomor|teks1|teks2_ ]
-→ ${prefix}chat [ _nomor|teks_ ]
-→ ${prefix}fdeface [ _replyimg link|teks1|teks2_ ]
-→ ${prefix}listgrup
-→ ${prefix}baileys [ _reply message_ ]
-→ ${prefix}q [ _reply message_ ]
-→ ${prefix}getcaption [ _reply message_ ]
-→ ${prefix}tospam [ _reply audio/sticker/image|jumlah_ ]
-→ ${prefix}sharelock [ _teks1|teks2_ ]
+${smbols} ${prefix}rate
+${smbols} ${prefix}kapankah
+${smbols} ${prefix}apakah
+${smbols} ${prefix}bisakah
+${smbols} ${prefix}meme
+${smbols} ${prefix}quotesanime
+${smbols} ${prefix}caripesan [ _teks|jumlah_ ]
+${smbols} ${prefix}slots
+${smbols} ${prefix}suit [ _gunting/batu/kertas_ ]
+${smbols} ${prefix}tag [ _nomor_ ]
+${smbols} ${prefix}tagme
+${smbols} ${prefix}tts [ _kodebhs teks_ ]
+${smbols} ${prefix}readmore [ _teks1|teks2_ ]
+${smbols} ${prefix}fitnahpc [ _nomor|teks1|teks2_ ]
+${smbols} ${prefix}chat [ _nomor|teks_ ]
+${smbols} ${prefix}fdeface [ _replyimg link|teks1|teks2_ ]
+${smbols} ${prefix}listgrup
+${smbols} ${prefix}baileys [ _reply message_ ]
+${smbols} ${prefix}q [ _reply message_ ]
+${smbols} ${prefix}getcaption [ _reply message_ ]
+${smbols} ${prefix}tospam [ _reply audio/sticker/image|jumlah_ ]
+${smbols} ${prefix}sharelock [ _teks1|teks2_ ]
 `
 if(menuall == false){
    //Masih langka
@@ -1466,15 +1494,15 @@ case 'sewabot':
 menunya = `
  
   「 PRICELIST 」
-→ OPEN JASA SEWA BOT WHATSAPP
-→ LIST SEWA BOT
-→ 1MINGGU : 5.000
-→ 1BULAN : 10.000
-→ PERMANEN : 20.000
-→ LIST PREMIUM 
-→ PERHARI : 3.000
-→ PERMINGGU : 7.000
-→ PERBULAN : 12.000
+${smbols} OPEN JASA SEWA BOT WHATSAPP
+${smbols} LIST SEWA BOT
+${smbols} 1MINGGU : 5.000
+${smbols} 1BULAN : 10.000
+${smbols} PERMANEN : 20.000
+${smbols} LIST PREMIUM 
+${smbols} PERHARI : 3.000
+${smbols} PERMINGGU : 7.000
+${smbols} PERBULAN : 12.000
 
 `
 if(menuall == false){
@@ -1506,10 +1534,10 @@ const serialUser = createSerial(18)
 	        fs.writeFileSync('./database/registered.json', JSON.stringify(_registered))
 	        addRegisteredUser(sender, serialUser)
 	         const jancok = `*Registration Successful*
-→ *Nama :* _${pushname}_
-→ *Nomor :* _@${sender.split('@')[0]}_
-→ *Seri:* _${serialUser}_
-→ *Pengguna:* _${_registered.length}_
+${smbols} *Nama :* _${pushname}_
+${smbols} *Nomor :* _@${sender.split('@')[0]}_
+${smbols} *Seri:* _${serialUser}_
+${smbols} *Pengguna:* _${_registered.length}_
 
 
    *${NamaBot}*`
@@ -1536,210 +1564,234 @@ break
 case 'ownermenu':
   menu = `   \`\`\`MENU OWNER\`\`\`
 
-→ ${prefix}stopjadibot
-→ ${prefix}autorespon [ _on/off_ ]
-→ ${prefix}antidelete [ _on/off_ ]
-→ ${prefix}bc [ _teks/reply gif/image/video with caption_ ]
-→ ${prefix}tobc [ _reply sticker/audio with caption_ ]
-→ ${prefix}return [ _javascript_ ]
-→ ${prefix}clearall
-→ ${prefix}delchat
-→ ${prefix}mute
-→ ${prefix}unmute
-→ ${prefix}public
-→ ${prefix}self
-→ ${prefix}spam [ _teks|jumlah_ ]
-→ ${prefix}demoteall
-→ ${prefix}promoteall
-→ ${prefix}addcmd [ _teks reply stc_ ]
-→ ${prefix}delcmd [ _reply stc_ ]
-→ ${prefix}listcmd
-→ ${prefix}spamsw [ _teks|jumlah_ ]
-→ ${prefix}upswteks [ _teks_ ]
-→ ${prefix}upswlokasi [ _teks_ ]
-→ ${prefix}upswaudio [ _reply audio_ ]
-→ ${prefix}upswvoice [ _reply audio_ ]
-→ ${prefix}upswsticker [ _reply sticker_ ]
-→ ${prefix}upswimage [ _reply image with caption_ ]
-→ ${prefix}upswgif [ _reply gif with caption_ ]
-→ ${prefix}upswvideo [ _reply video with caption_ ]
-→ ${prefix}shutdown
-→ ${prefix}offline [ _alasan_ ]
-→ ${prefix}online
-→ ${prefix}exif [ _nama|author_ ]
-→ ${prefix}setprofile [ _reply image_ ]
-→ ${prefix}setname [ _teks_ ]
-→ ${prefix}setprefix [ _multi/nopref/prefix_ ]
-→ ${prefix}setbio [ _teks_ ]
-→ ${prefix}addsticker [ _nama_ ]
-→ ${prefix}delsticker [ _nama_ ]
-→ ${prefix}addvn [ _nama_ ]
-→ ${prefix}delvn [ _nama_ ]
-→ ${prefix}addimage [ _nama_ ]
-→ ${prefix}delimage [ _nama_ ]
-→ ${prefix}bug [ _jumlah_ ]
-→ ${prefix}bugpc2 [ _jumlah_ ]
-→ ${prefix}bugtroli2 [ _jumlah_ ]
-→ ${prefix}bugpc
-→ ${prefix}bugcombine
-→ ${prefix}bugtroli
-→ ${prefix}buglokasi
-→ ${prefix}bughole
-→ ${prefix}leave
-→ ${prefix}restart
-→ ${prefix}join [ _link group_ ]
-→ ${prefix}addrespon [ _tanya|jawab_ ]
-→ ${prefix}delrespon [ _nama_ ]
-→ ${prefix}listrespon`
+${smbols} ${prefix}stopjadibot
+${smbols} ${prefix}autorespon [ _on/off_ ]
+${smbols} ${prefix}antidelete [ _on/off_ ]
+${smbols} ${prefix}bc [ _teks/reply gif/image/video with caption_ ]
+${smbols} ${prefix}tobc [ _reply sticker/audio with caption_ ]
+${smbols} ${prefix}return [ _javascript_ ]
+${smbols} ${prefix}clearall
+${smbols} ${prefix}delchat
+${smbols} ${prefix}mute
+${smbols} ${prefix}unmute
+${smbols} ${prefix}public
+${smbols} ${prefix}self
+${smbols} ${prefix}spam [ _teks|jumlah_ ]
+${smbols} ${prefix}demoteall
+${smbols} ${prefix}promoteall
+${smbols} ${prefix}addcmd [ _teks reply stc_ ]
+${smbols} ${prefix}delcmd [ _reply stc_ ]
+${smbols} ${prefix}listcmd
+${smbols} ${prefix}spamsw [ _teks|jumlah_ ]
+${smbols} ${prefix}upswteks [ _teks_ ]
+${smbols} ${prefix}upswlokasi [ _teks_ ]
+${smbols} ${prefix}upswaudio [ _reply audio_ ]
+${smbols} ${prefix}upswvoice [ _reply audio_ ]
+${smbols} ${prefix}upswsticker [ _reply sticker_ ]
+${smbols} ${prefix}upswimage [ _reply image with caption_ ]
+${smbols} ${prefix}upswgif [ _reply gif with caption_ ]
+${smbols} ${prefix}upswvideo [ _reply video with caption_ ]
+${smbols} ${prefix}shutdown
+${smbols} ${prefix}offline [ _alasan_ ]
+${smbols} ${prefix}online
+${smbols} ${prefix}exif [ _nama|author_ ]
+${smbols} ${prefix}setprofile [ _reply image_ ]
+${smbols} ${prefix}setname [ _teks_ ]
+${smbols} ${prefix}setprefix [ _multi/nopref/prefix_ ]
+${smbols} ${prefix}setbio [ _teks_ ]
+${smbols} ${prefix}addsticker [ _nama_ ]
+${smbols} ${prefix}delsticker [ _nama_ ]
+${smbols} ${prefix}addvn [ _nama_ ]
+${smbols} ${prefix}delvn [ _nama_ ]
+${smbols} ${prefix}addimage [ _nama_ ]
+${smbols} ${prefix}delimage [ _nama_ ]
+${smbols} ${prefix}bug [ _jumlah_ ]
+${smbols} ${prefix}bugpc2 [ _jumlah_ ]
+${smbols} ${prefix}bugtroli2 [ _jumlah_ ]
+${smbols} ${prefix}bugpc
+${smbols} ${prefix}bugcombine
+${smbols} ${prefix}bugtroli
+${smbols} ${prefix}buglokasi
+${smbols} ${prefix}bughole
+${smbols} ${prefix}leave
+${smbols} ${prefix}restart
+${smbols} ${prefix}join [ _link group_ ]
+${smbols} ${prefix}addrespon [ _tanya|jawab_ ]
+${smbols} ${prefix}delrespon [ _nama_ ]
+${smbols} ${prefix}listrespon`
 katalog(menu)
 break
 case 'downloadmenu':
   menu = `  \`\`\`MENU DOWNLOAD\`\`\` 」
  
-→ ${prefix}infogempa
-→ ${prefix}herolist
-→ ${prefix}herodetail [ _hero_ ]
-→ ${prefix}google [ _search_ ]
-→ ${prefix}gimage [ _search_ ]
-→ ${prefix}wiki [ _search_ ]
-→ ${prefix}mediafire [ _link_ ]
-→ ${prefix}ytsearch [ _judul_ ]
-→ ${prefix}ytmp4 [ _link yt_ ]
-→ ${prefix}ytmp3 [ _link yt_ ]
-→ ${prefix}play [ _judul lagu_ ]
-→ ${prefix}playmp4 [ _judul video_ ]
-→ ${prefix}tinyurl [ _link_ ]
-→ ${prefix}fetch [ _link_ ]
-→ ${prefix}igdl [ _link_ ]
-→ ${prefix}tiktokdl [ _link_ ]
-→ ${prefix}pinterest [ _search_ ]
-→ ${prefix}lirik [ _judul_ ]
-→ ${prefix}tourl [ _reply image/video_ ]
-→ ${prefix}resepmasakan [ _judul_ ]
-→ ${prefix}translate [ _teks kodebhs_ ]
-→ ${prefix}ss [ _link_ ]`
+${smbols} ${prefix}infogempa
+${smbols} ${prefix}herolist
+${smbols} ${prefix}herodetail [ _hero_ ]
+${smbols} ${prefix}google [ _search_ ]
+${smbols} ${prefix}gimage [ _search_ ]
+${smbols} ${prefix}wiki [ _search_ ]
+${smbols} ${prefix}mediafire [ _link_ ]
+${smbols} ${prefix}ytsearch [ _judul_ ]
+${smbols} ${prefix}ytmp4 [ _link yt_ ]
+${smbols} ${prefix}ytmp3 [ _link yt_ ]
+${smbols} ${prefix}play [ _judul lagu_ ]
+${smbols} ${prefix}playmp4 [ _judul video_ ]
+${smbols} ${prefix}tinyurl [ _link_ ]
+${smbols} ${prefix}fetch [ _link_ ]
+${smbols} ${prefix}igdl [ _link_ ]
+${smbols} ${prefix}tiktokdl [ _link_ ]
+${smbols} ${prefix}pinterest [ _search_ ]
+${smbols} ${prefix}lirik [ _judul_ ]
+${smbols} ${prefix}tourl [ _reply image/video_ ]
+${smbols} ${prefix}resepmasakan [ _judul_ ]
+${smbols} ${prefix}translate [ _teks kodebhs_ ]
+${smbols} ${prefix}ss [ _link_ ]`
 katalog(menu)
 break
 case 'makermenu':
 menu = `  \`\`\`MENU MAKER\`\`\` 
  
-→ ${prefix}foliokanan [ _text_ ]
-→ ${prefix}foliokiri [ _text_ ]
-→ ${prefix}nuliskanan [ _text_ ]
-→ ${prefix}nuliskiri [ _text_ ]
-→ ${prefix}glitch2 [ _text_ ]
-→ ${prefix}game8bit [ _text_ ]
-→ ${prefix}horrorr [ _text_ ]
-→ ${prefix}halloween2 [ _text_ ]
-→ ${prefix}layered [ _text_ ]
-→ ${prefix}gtiktok [ _text_ ]
-→ ${prefix}stone [ _text_ ]
-→ ${prefix}metalg [ _text_ ]
-→ ${prefix}metalr [ _text_ ]
-→ ${prefix}gtiktok [ _text_ ]
-→ ${prefix}metalg2 [ _text_ ]
-→ ${prefix}broken [ _text_ ]
-→ ${prefix}brokenglass [ _text_ ]
-→ ${prefix}3dunderwater [ _text_ ]
-→ ${prefix}neondevil [ _text_ ]
-→ ${prefix}artpapercut [ _text_ ]
-→ ${prefix}bearlogo [ _text_ ]
-→ ${prefix}icecold [ _text_ ]
-→ ${prefix}fruitjuice [ _text_ ]
-→ ${prefix}rusymetal [ _text_ ]
-→ ${prefix}abstragold [ _text_ ]
-→ ${prefix}biscuit [ _text_ ]
-→ ${prefix}breakwall [ _text_ ]
-→ ${prefix}christmas [ _text_ ]
-→ ${prefix}plasticbagdrug [ _text_ ]
-→ ${prefix}honey [ _text_ ]
-→ ${prefix}horror [ _text_ ]
-→ ${prefix}purplegame [ _text_ ]
-→ ${prefix}metalrainbow [ _text_ ]
-→ ${prefix}greenneon [ _text_ ]
-→ ${prefix}wood [ _text_ ]
-→ ${prefix}dropwater [ _text_ ]
-→ ${prefix}yellowjewelry [ _text_ ]
-→ ${prefix}shinymetal [ _text_ ]
-→ ${prefix}lava [ _text_ ]
-→ ${prefix}rock [ _text_ ]
-→ ${prefix}denim [ _text_ ]`
+${smbols} ${prefix}foliokanan [ _text_ ]
+${smbols} ${prefix}foliokiri [ _text_ ]
+${smbols} ${prefix}nuliskanan [ _text_ ]
+${smbols} ${prefix}nuliskiri [ _text_ ]
+${smbols} ${prefix}glitch2 [ _text_ ]
+${smbols} ${prefix}game8bit [ _text_ ]
+${smbols} ${prefix}horrorr [ _text_ ]
+${smbols} ${prefix}halloween2 [ _text_ ]
+${smbols} ${prefix}layered [ _text_ ]
+${smbols} ${prefix}gtiktok [ _text_ ]
+${smbols} ${prefix}stone [ _text_ ]
+${smbols} ${prefix}metalg [ _text_ ]
+${smbols} ${prefix}metalr [ _text_ ]
+${smbols} ${prefix}gtiktok [ _text_ ]
+${smbols} ${prefix}metalg2 [ _text_ ]
+${smbols} ${prefix}broken [ _text_ ]
+${smbols} ${prefix}brokenglass [ _text_ ]
+${smbols} ${prefix}3dunderwater [ _text_ ]
+${smbols} ${prefix}neondevil [ _text_ ]
+${smbols} ${prefix}artpapercut [ _text_ ]
+${smbols} ${prefix}bearlogo [ _text_ ]
+${smbols} ${prefix}icecold [ _text_ ]
+${smbols} ${prefix}fruitjuice [ _text_ ]
+${smbols} ${prefix}rusymetal [ _text_ ]
+${smbols} ${prefix}abstragold [ _text_ ]
+${smbols} ${prefix}biscuit [ _text_ ]
+${smbols} ${prefix}breakwall [ _text_ ]
+${smbols} ${prefix}christmas [ _text_ ]
+${smbols} ${prefix}plasticbagdrug [ _text_ ]
+${smbols} ${prefix}honey [ _text_ ]
+${smbols} ${prefix}horror [ _text_ ]
+${smbols} ${prefix}purplegame [ _text_ ]
+${smbols} ${prefix}metalrainbow [ _text_ ]
+${smbols} ${prefix}greenneon [ _text_ ]
+${smbols} ${prefix}wood [ _text_ ]
+${smbols} ${prefix}dropwater [ _text_ ]
+${smbols} ${prefix}yellowjewelry [ _text_ ]
+${smbols} ${prefix}shinymetal [ _text_ ]
+${smbols} ${prefix}lava [ _text_ ]
+${smbols} ${prefix}rock [ _text_ ]
+${smbols} ${prefix}denim [ _text_ ]`
 katalog(menu)
 break
 case 'groupmenu':
   menu = ` 「 \`\`\`MENU GROUP\`\`\` 
  
-→ ${prefix}getpict [ _@tag_ ]
-→ ${prefix}getname [ _reply target_ ]
-→ ${prefix}getbio [ _reply target_ ]
-→ ${prefix}promote [ _@tag_ ]
-→ ${prefix}demote [ _@tag_ ]
-→ ${prefix}antilink [ _on/off_ ]
-→ ${prefix}antibug [ _on/off_ ]
-→ ${prefix}creategrup [ _nama|@tag_ ]
-→ ${prefix}tictactoe [ _@tag_ ]
-→ ${prefix}delttt
-→ ${prefix}getpp
-→ ${prefix}kick [ _@tag_ ]
-→ ${prefix}add [ _nomor_ ]
-→ ${prefix}getdeskgc
-→ ${prefix}sider [ _reply pesan bot_ ]
-→ ${prefix}hacked [ _teks_ ]
-→ ${prefix}setnamegc [ _teks_ ]
-→ ${prefix}setdeskgc [ _teks_ ]
-→ ${prefix}fitnah [ _@tag|teks1|teks2_ ]
-→ ${prefix}kontak [ _@tag|nama_ ]
-→ ${prefix}kontag [ _@tag|nama_ ]
-→ ${prefix}opengc
-→ ${prefix}closegc
-→ ${prefix}resetlinkgc
-→ ${prefix}linkgrup
-→ ${prefix}hidetag [ _teks_ ]
-→ ${prefix}sticktag [ _nama sticker_ ]
-→ ${prefix}totag [ _reply media_ ]`
+${smbols} ${prefix}getpict [ _@tag_ ]
+${smbols} ${prefix}getname [ _reply target_ ]
+${smbols} ${prefix}getbio [ _reply target_ ]
+${smbols} ${prefix}promote [ _@tag_ ]
+${smbols} ${prefix}demote [ _@tag_ ]
+${smbols} ${prefix}antilink [ _on/off_ ]
+${smbols} ${prefix}antibug [ _on/off_ ]
+${smbols} ${prefix}creategrup [ _nama|@tag_ ]
+${smbols} ${prefix}tictactoe [ _@tag_ ]
+${smbols} ${prefix}delttt
+${smbols} ${prefix}getpp
+${smbols} ${prefix}kick [ _@tag_ ]
+${smbols} ${prefix}add [ _nomor_ ]
+${smbols} ${prefix}getdeskgc
+${smbols} ${prefix}sider [ _reply pesan bot_ ]
+${smbols} ${prefix}hacked [ _teks_ ]
+${smbols} ${prefix}setnamegc [ _teks_ ]
+${smbols} ${prefix}setdeskgc [ _teks_ ]
+${smbols} ${prefix}fitnah [ _@tag|teks1|teks2_ ]
+${smbols} ${prefix}kontak [ _@tag|nama_ ]
+${smbols} ${prefix}kontag [ _@tag|nama_ ]
+${smbols} ${prefix}opengc
+${smbols} ${prefix}closegc
+${smbols} ${prefix}resetlinkgc
+${smbols} ${prefix}linkgrup
+${smbols} ${prefix}hidetag [ _teks_ ]
+${smbols} ${prefix}sticktag [ _nama sticker_ ]
+${smbols} ${prefix}totag [ _reply media_ ]`
+katalog(menu)
+break
+case 'nsfwmenu':
+  menu = ` 「 \`\`\`MENU NSFW\`\`\` 」
+${smbols} ${prefix}trapnime
+${smbols} ${prefix}neko
+${smbols} ${prefix}megumin
+${smbols} ${prefix}blowjob
+${smbols} ${prefix}hentai
+${smbols} ${prefix}awoo
+${smbols} ${prefix}bj 
+${smbols} ${prefix}eroneko
+${smbols} ${prefix}lesbian
+${smbols} ${prefix}anal
+${smbols} ${prefix}yuri
+${smbols} ${prefix}baka
+${smbols} ${prefix}neko2
+${smbols} ${prefix}wallpaper
+${smbols} ${prefix}pussy
+${smbols} ${prefix}kitsune
+${smbols} ${prefix}keta
+${smbols} ${prefix}neko2
+${smbols} ${prefix}poke
+${smbols} ${prefix}slap
 katalog(menu)
 break
 case 'othermenu':
   menu = ` 「 \`\`\`MENU OTHER\`\`\` 」
 
-→ ${prefix}jadibot
-→ ${prefix}caripesan [ _teks|jumlah_ ]
-→ ${prefix}slots
-→ ${prefix}quotesanime
-→ ${prefix}meme
-→ ${prefix}suit [ _gunting/batu/kertas_ ]
-→ ${prefix}tag [ _nomor_ ]
-→ ${prefix}tagme
-→ ${prefix}tts [ _kodebhs teks_ ]
-→ ${prefix}readmore [ _teks1|teks2_ ]
-→ ${prefix}fitnahpc [ _nomor|teks1|teks2_ ]
-→ ${prefix}chat [ _nomor|teks_ ]
-→ ${prefix}fdeface [ _replyimg link|teks1|teks2_ ]
-→ ${prefix}listimage
-→ ${prefix}liststicker
-→ ${prefix}listvn
-→ ${prefix}listgrup
-→ ${prefix}baileys [ _reply message_ ]
-→ ${prefix}q [ _reply message_ ]
-→ ${prefix}getcaption [ _reply message_ ]
-→ ${prefix}tospam [ _reply audio/sticker/image|jumlah_ ]
-→ ${prefix}sharelock [ _teks1|teks2_ ]
-→ ${prefix}sticker
-→ ${prefix}stickerwm [ _nama|author_ ]
-→ ${prefix}takestick [ _nama|author_ ]
-→ ${prefix}colong [ _reply sticker_ ]
-→ ${prefix}dadu
-→ ${prefix}semoji [ _emoji_ ]
-→ ${prefix}attp [ _teks_ ]
-→ ${prefix}toimg
-→ ${prefix}tomp3 [ _reply video_ ]
-→ ${prefix}tomp4 [ _reply sticker gif_ ]
-→ ${prefix}robot [ _reply audio_ ]
-→ ${prefix}balik [ _reply audio_ ]
-→ ${prefix}bass [ _reply audio_ ]
-→ ${prefix}gemuk [ _reply audio_ ]
-→ ${prefix}detikvn [ _reply audio caption angka_ ]
-→ ${prefix}detikvideo [ _reply video caption angka_ ]`
+${smbols} ${prefix}jadibot
+${smbols} ${prefix}caripesan [ _teks|jumlah_ ]
+${smbols} ${prefix}slots
+${smbols} ${prefix}quotesanime
+${smbols} ${prefix}meme
+${smbols} ${prefix}suit [ _gunting/batu/kertas_ ]
+${smbols} ${prefix}tag [ _nomor_ ]
+${smbols} ${prefix}tagme
+${smbols} ${prefix}tts [ _kodebhs teks_ ]
+${smbols} ${prefix}readmore [ _teks1|teks2_ ]
+${smbols} ${prefix}fitnahpc [ _nomor|teks1|teks2_ ]
+${smbols} ${prefix}chat [ _nomor|teks_ ]
+${smbols} ${prefix}fdeface [ _replyimg link|teks1|teks2_ ]
+${smbols} ${prefix}listimage
+${smbols} ${prefix}liststicker
+${smbols} ${prefix}listvn
+${smbols} ${prefix}listgrup
+${smbols} ${prefix}baileys [ _reply message_ ]
+${smbols} ${prefix}q [ _reply message_ ]
+${smbols} ${prefix}getcaption [ _reply message_ ]
+${smbols} ${prefix}tospam [ _reply audio/sticker/image|jumlah_ ]
+${smbols} ${prefix}sharelock [ _teks1|teks2_ ]
+${smbols} ${prefix}sticker
+${smbols} ${prefix}stickerwm [ _nama|author_ ]
+${smbols} ${prefix}takestick [ _nama|author_ ]
+${smbols} ${prefix}colong [ _reply sticker_ ]
+${smbols} ${prefix}dadu
+${smbols} ${prefix}semoji [ _emoji_ ]
+${smbols} ${prefix}attp [ _teks_ ]
+${smbols} ${prefix}toimg
+${smbols} ${prefix}tomp3 [ _reply video_ ]
+${smbols} ${prefix}tomp4 [ _reply sticker gif_ ]
+${smbols} ${prefix}robot [ _reply audio_ ]
+${smbols} ${prefix}balik [ _reply audio_ ]
+${smbols} ${prefix}bass [ _reply audio_ ]
+${smbols} ${prefix}gemuk [ _reply audio_ ]
+${smbols} ${prefix}detikvn [ _reply audio caption angka_ ]
+${smbols} ${prefix}detikvideo [ _reply video caption angka_ ]`
 katalog(menu)
 break
 // BIAR GAK LUPA 
@@ -1788,16 +1840,208 @@ denz.sendMessage(from, ano, video, { quoted: mek, thumbnail: fs.readFileSync('./
 break
 case 'meme':
   reply(mess.wait)
-anu = await fetchJson(`https://hardianto.xyz/api/random/meme?apikey=${antoapi}`)
-buff = await getBuffer(anu.result.url)
+anu = await fetchJson(`https://api.lolhuman.xyz/api/meme/darkjoke?apikey=${lolkey}`)
+buff = await getBuffer(anu)
 denz.sendMessage(from, anu, image, { quoted: ftroli, thumbnail: fs.readFileSync('./denz.jpg')})
 break
-case 'nfswpussy':
-case 'nfswneko':
-case 'nfswkuni':
+case 'nsfw':
+	        if (!isGroup) return reply(mess.only.group)
+			if (!isOwner && !isGroupAdmins) return reply(mess.only.admin)
+					if (args.length < 1) return reply(`untuk mengaktifkan ketik : ${prefix}nsfw 1`)
+					if (Number(args[0]) === 1) {
+						if (isNsfw) return reply('Sudah Aktif Kak')
+						nsfww.push(from)
+						fs.writeFileSync('./database/nsfw.json', JSON.stringify(nsfww))
+						reply('Sukses mengaktifkan fitur nsfw')
+						denz.sendMessage(from, `Okeh On`, text)
+					} else if (Number(args[0]) === 0) {
+						if (!isNsfw) return reply('Sudah Mati Kak')
+						var ini = nsfww.indexOf(from)
+						nsfww.splice(ini, 1)
+						fs.writeFileSync('./database/nsfw.json', JSON.stringify(nsfww))
+						reply('Sukses menonaktifkan fitur nsfw')
+					} else {
+						reply('1 untuk mengaktifkan, 0 untuk mematikan')
+					}
+					break
+case 'yuri':
+if (!isGroup) return reply(mess.only.group)
+	if (!isBotGroupAdmins) return reply(mess.only.Badmin)
+if (!isNsfw) return reply(`Fitur Nsfw Belum Aktif Di Grup Ini\nKetik: ${prefix}nsfw 1 \nUntuk Mengaktifkan`)
 reply(mess.wait)
-let nsfwS = await getBuffer(`https://api.dapuhy.xyz/api/nsfw/${command}?apikey=${dapaapi}`)
-sendButImage(from,  ` NIH NGAB` , `R-BOT`,nsfwS, [{"buttonId": `owner`,"buttonText": {"displayText": "OWNER"},"type": "RESPONSE"},{"buttonId": `donasi`,"buttonText": {"displayText": "DONASI"},"type": "RESPONSE"}], {thumbnail: dfrply, quoted: ftroli})
+kon = (`${antores}/api/anime/random?nsfw=yuri&apikey=${antoapi}`)
+anu = await getBuffer(kon)
+denz.sendMessage(from, anu, image, { quoted: mek, thumbnail: fs.readFileSync('./denz.jpg')})﻿
+break
+case 'anal':
+if (!isGroup) return reply(mess.only.group)
+	if (!isBotGroupAdmins) return reply(mess.only.Badmin)
+if (!isNsfw) return reply(`Fitur Nsfw Belum Aktif Di Grup Ini\nKetik: ${prefix}nsfw 1 \nUntuk Mengaktifkan`)
+reply(mess.wait)
+aku = (`${antores}/api/anime/random?nsfw=anal&apikey=${antoapi}`)
+kon = await getBuffer(aku)
+denz.sendMessage(from, kon, image, { quoted: mek, thumbnail: fs.readFileSync('./denz.jpg')})﻿
+break
+case 'lesbian':
+if (!isGroup) return reply(mess.only.group)
+	if (!isBotGroupAdmins) return reply(mess.only.Badmin)
+if (!isNsfw) return reply(`Fitur Nsfw Belum Aktif Di Grup Ini\nKetik: ${prefix}nsfw 1 \nUntuk Mengaktifkan`)
+reply(mess.wait)
+kau = (`${antores}/api/anime/random?nsfw=lesbian&apikey=${antoapi}`)
+kon = await getBuffer(kau)
+denz.sendMessage(from, kon, image, { quoted: mek, thumbnail: fs.readFileSync('./denz.jpg')})﻿
+break
+case 'eroneko':
+if (!isGroup) return reply(mess.only.group)
+	if (!isBotGroupAdmins) return reply(mess.only.Badmin)
+if (!isNsfw) return reply(`Fitur Nsfw Belum Aktif Di Grup Ini\nKetik: ${prefix}nsfw 1 \nUntuk Mengaktifkan`)
+reply(mess.wait)
+hai = (`${antores}/api/anime/random?nsfw=eroNeko&apikey=${antoapi}`)
+kon = await getBuffer(hai)
+denz.sendMessage(from, kon, image, { quoted: mek, thumbnail: fs.readFileSync('./denz.jpg')})﻿
+break
+case 'bj':
+if (!isGroup) return reply(mess.only.group)
+	if (!isBotGroupAdmins) return reply(mess.only.Badmin)
+if (!isNsfw) return reply(`Fitur Nsfw Belum Aktif Di Grup Ini\nKetik: ${prefix}nsfw 1 \nUntuk Mengaktifkan`)
+reply(mess.wait)
+hai = (`${antores}/api/anime/random?nsfw=bJ&apikey=${antoapi}`)
+kon = await getBuffer(hai)
+denz.sendMessage(from, kon, image, { quoted: mek, thumbnail: fs.readFileSync('./denz.jpg')})﻿
+break
+case 'kitsune':
+if (!isGroup) return reply(mess.only.group)
+	if (!isBotGroupAdmins) return reply(mess.only.Badmin)
+if (!isNsfw) return reply(`Fitur Nsfw Belum Aktif Di Grup Ini\nKetik: ${prefix}nsfw 1 \nUntuk Mengaktifkan`)
+reply(mess.wait)
+hai = (`${antores}/api/anime/random?nsfw=kitsune&apikey=${antoapi}`)
+kon = await getBuffer(hai)
+denz.sendMessage(from, kon, image, { quoted: mek, thumbnail: fs.readFileSync('./denz.jpg')})﻿
+break
+case 'pussy':
+if (!isGroup) return reply(mess.only.group)
+	if (!isBotGroupAdmins) return reply(mess.only.Badmin)
+if (!isNsfw) return reply(`Fitur Nsfw Belum Aktif Di Grup Ini\nKetik: ${prefix}nsfw 1 \nUntuk Mengaktifkan`)
+reply(mess.wait)
+hai = await getBuffer(`${antores}/api/anime/random?nsfw=pussy&apikey=${antoapi}`)
+denz.sendMessage(from, hai, image, { quoted: mek, thumbnail: fs.readFileSync('./denz.jpg')})﻿
+break
+case 'wallpaper':
+if (!isGroup) return reply(mess.only.group)
+	if (!isBotGroupAdmins) return reply(mess.only.Badmin)
+if (!isNsfw) return reply(`Fitur Nsfw Belum Aktif Di Grup Ini\nKetik: ${prefix}nsfw 1 \nUntuk Mengaktifkan`)
+reply(mess.wait)
+hai = (`${antores}/api/anime/random?sfw=wallpaper&apikey=${antoapi}`)
+kon = await getBuffer(hai)
+denz.sendMessage(from, kon, image, { quoted: mek, thumbnail: fs.readFileSync('./denz.jpg')})﻿
+break
+case 'neko2':
+if (!isGroup) return reply(mess.only.group)
+	if (!isBotGroupAdmins) return reply(mess.only.Badmin)
+if (!isNsfw) return reply(`Fitur Nsfw Belum Aktif Di Grup Ini\nKetik: ${prefix}nsfw 1 \nUntuk Mengaktifkan`)
+reply(mess.wait)
+hai = (`${antores}/api/anime/random?sfw=neko&apikey=${antoapi}`)
+kon = await getBuffer(hai)
+denz.sendMessage(from, kon, image, { quoted: mek, thumbnail: fs.readFileSync('./denz.jpg')})﻿
+break
+case 'baka':
+if (!isGroup) return reply(mess.only.group)
+	if (!isBotGroupAdmins) return reply(mess.only.Badmin)
+if (!isNsfw) return reply(`Fitur Nsfw Belum Aktif Di Grup Ini\nKetik: ${prefix}nsfw 1 \nUntuk Mengaktifkan`)
+reply(mess.wait)
+hai = (`${antores}/api/anime/random?sfw=baka&apikey=${antoapi}`)
+kon = await getBuffer(hai)
+denz.sendMessage(from, kon, image, { quoted: mek, thumbnail: fs.readFileSync('./denz.jpg')})﻿
+break
+case 'slap':
+if (!isGroup) return reply(mess.only.group)
+	if (!isBotGroupAdmins) return reply(mess.only.Badmin)
+if (!isNsfw) return reply(`Fitur Nsfw Belum Aktif Di Grup Ini\nKetik: ${prefix}nsfw 1 \nUntuk Mengaktifkan`)
+reply(mess.wait)
+hai = (`${antores}/api/anime/random?sfw=slap&apikey=${antoapi}`)
+kon = await getBuffer(hai)
+denz.sendMessage(from, kon, image, { quoted: mek, thumbnail: fs.readFileSync('./denz.jpg')})﻿
+break
+case 'poke':
+if (!isGroup) return reply(mess.only.group)
+	if (!isBotGroupAdmins) return reply(mess.only.Badmin)
+if (!isNsfw) return reply(`Fitur Nsfw Belum Aktif Di Grup Ini\nKetik: ${prefix}nsfw 1 \nUntuk Mengaktifkan`)
+reply(mess.wait)
+hai = (`${antores}/api/anime/random?sfw=poke&apikey=${antoapi}`)
+kon = await getBuffer(hai)
+denz.sendMessage(from, kon, image, { quoted: mek, thumbnail: fs.readFileSync('./denz.jpg')})﻿
+break
+case 'neko2':
+if (!isGroup) return reply(mess.only.group)
+	if (!isBotGroupAdmins) return reply(mess.only.Badmin)
+if (!isNsfw) return reply(`Fitur Nsfw Belum Aktif Di Grup Ini\nKetik: ${prefix}nsfw 1 \nUntuk Mengaktifkan`)
+reply(mess.wait)
+hai = (`${antores}/api/anime/random?sfw=neko&apikey=${antoapi}`)
+kon = await getBuffer(hai)
+denz.sendMessage(from, kon, image, { quoted: mek, thumbnail: fs.readFileSync('./denz.jpg')})﻿
+break
+case 'keta':
+if (!isGroup) return reply(mess.only.group)
+	if (!isBotGroupAdmins) return reply(mess.only.Badmin)
+if (!isNsfw) return reply(`Fitur Nsfw Belum Aktif Di Grup Ini\nKetik: ${prefix}nsfw 1 \nUntuk Mengaktifkan`)
+reply(mess.wait)
+hai = (`${antores}/api/anime/random?nsfw=keta&apikey=${antoapi}`)
+kon = await getBuffer(hai)
+denz.sendMessage(from, kon, image, { quoted: mek, thumbnail: fs.readFileSync('./denz.jpg')})﻿
+break
+case  'awoo':
+if (!isGroup) return reply(mess.only.group)
+	if (!isBotGroupAdmins) return reply(mess.only.Badmin)
+if (!isNsfw) return reply(`Fitur Nsfw Belum Aktif Di Grup Ini\nKetik: ${prefix}nsfw 1 \nUntuk Mengaktifkan`)
+reply(mess.wait)
+anu = await fetchJson(`https://waifu.pics/api/sfw/awoo`)
+buffer = await getBuffer(anu.url)
+denz.sendMessage(from, buffer, image, { quoted: mek, thumbnail: fs.readFileSync('./denz.jpg')})﻿
+break
+case  'blowjob':
+if (!isGroup) return reply(mess.only.group)
+	if (!isBotGroupAdmins) return reply(mess.only.Badmin)
+if (!isNsfw) return reply(`Fitur Nsfw Belum Aktif Di Grup Ini\nKetik: ${prefix}nsfw 1 \nUntuk Mengaktifkan`)
+reply(mess.wait)
+anu = await fetchJson(`https://nekos.life/api/v2/img/blowjob`)
+buffer = await getBuffer(anu.url)
+denz.sendMessage(from, buffer, image, { quoted: mek, thumbnail: fs.readFileSync('./denz.jpg')})﻿
+break
+case 'hentai': 
+if (!isGroup) return reply(mess.only.group)
+if (!isBotGroupAdmins) return reply(mess.only.Badmin)
+if (!isNsfw) return reply(`Fitur Nsfw Belum Aktif Di Grup Ini\nKetik: ${prefix}nsfw 1 \nUntuk Mengaktifkan`)
+reply(mess.wait)
+anu = await fetchJson(`https://waifu.pics/api/nsfw/neko`)
+buffer = await getBuffer(anu.url)
+denz.sendMessage(from, buffer, image, { quoted: mek, thumbnail: fs.readFileSync('./denz.jpg')})﻿
+break
+case  'megumin':
+if (!isGroup) return reply(mess.only.group)
+	if (!isBotGroupAdmins) return reply(mess.only.Badmin)
+if (!isNsfw) return reply(`Fitur Nsfw Belum Aktif Di Grup Ini\nKetik: ${prefix}nsfw 1 \nUntuk Mengaktifkan`)
+reply(mess.wait)
+anu = await fetchJson(`https://waifu.pics/api/sfw/megumin`)
+buffer = await getBuffer(anu.url)
+denz.sendMessage(from, buffer, image, { quoted: mek, thumbnail: fs.readFileSync('./denz.jpg')})﻿
+break
+case  'neko':
+if (!isGroup) return reply(mess.only.group)
+	if (!isBotGroupAdmins) return reply(mess.only.Badmin)
+if (!isNsfw) return reply(`Fitur Nsfw Belum Aktif Di Grup Ini\nKetik: ${prefix}nsfw 1 \nUntuk Mengaktifkan`)
+reply(mess.wait)
+anu = await fetchJson(`https://waifu.pics/api/nsfw/neko`)
+buffer = await getBuffer(anu.url)
+denz.sendMessage(from, buffer, image, { quoted: mek, thumbnail: fs.readFileSync('./denz.jpg')})﻿
+break
+case  'trapnime':
+if (!isGroup) return reply(mess.only.group)
+	if (!isBotGroupAdmins) return reply(mess.only.Badmin)
+if (!isNsfw) return reply(`Fitur Nsfw Belum Aktif Di Grup Ini\nKetik: ${prefix}nsfw 1 \nUntuk Mengaktifkan`)
+reply(mess.wait)
+anu = await fetchJson(`https://waifu.pics/api/nsfw/trap`)
+buffer = await getBuffer(anu.url)
+denz.sendMessage(from, buffer, image, { quoted: mek, thumbnail: fs.readFileSync('./denz.jpg')})﻿
 break
 case 'quotesanime': case 'quoteanime':
                 reply(mess.wait)
@@ -3837,7 +4081,7 @@ break
             break
 				case 'attp':
               					if (!c) return reply(`Teks Nya Mana Kak?\nContoh :\n${prefix}attp ${NamaBot}`)
-					atetepe = await getBuffer(`https://hardianto.xyz/api/maker/attp?text==${encodeURIComponent(c)}&apikey=hardianto`)
+					atetepe = await getBuffer(`https://hardianto.xyz/api/maker/attp?text==${encodeURIComponent(c)}&apikey=${antoapi}`)
 					denz.sendMessage(from, atetepe, sticker, { quoted: mek })
 					break
                 case 'ttp':  
