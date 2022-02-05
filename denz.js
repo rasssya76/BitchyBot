@@ -1133,56 +1133,56 @@ ${smbols} Tanggal : ${calender}
                       "title": `${jmn} - ${week} ${weton} - ${calender}`,
  rows: [
                           {
-                              "title": "Script⎋",
-                              "rowId": ".script"
+                              "title": "Script",
+                              "rowId": ""
                            },
                            {
-                              "title": "Speed⎋",
-                              "rowId": ".speed"
+                              "title": "Speed",
+                              "rowId": ""
                            },
                            {
-                              "title": "Status⎋",
-                              "rowId": ".status"
+                              "title": "Status",
+                              "rowId": ""
                            },
                            {
-                              "title": "Creator⎋",
-                              "rowId": ".owner"
+                              "title": "Creator",
+                              "rowId": ""
                            },
                            {
-                              "title": "Jadibot⎋",
-                              "rowId": ".j"
+                              "title": "Jadibot",
+                              "rowId": ""
                            },
                            {
-                              "title": "Runtime⎋",
-                              "rowId": ".runtime"
+                              "title": "Runtime",
+                              "rowId": ""
                            },
                            {
-                              "title": "OwnerMenu⎋",
-                              "rowId": ".ownermenu"
+                              "title": "OwnerMenu",
+                              "rowId": ""
                            },
                            {
-                              "title": "MakerMenu⎋",
-                              "rowId": ".makermenu"
+                              "title": "MakerMenu",
+                              "rowId": ""
                            },
                            {
                               "title": "GroupMenu⎋",
                               "rowId": ".groupmenu"
                            },
                            {                             
-                              "title": "Nsfwmenu⎋",
-                              "rowId": ".nfswmenu"
+                              "title": "Nsfwmenu",
+                              "rowId": ""
                            },
                            {
-                              "title": "OtherMenu⎋",
-                              "rowId": ".othermenu"
+                              "title": "OtherMenu",
+                              "rowId": ""
                            },
                            {
-                              "title": "DownloadMenu⎋",
-                              "rowId": ".downloadmenu"
+                              "title": "DownloadMenu",
+                              "rowId": ""
                               },
                            {
-                              "title": "GrupOwner⎋",
-                              "rowId": ".grupowner"
+                              "title": "GrupOwner",
+                              "rowId": ""
                            }
                         ]
                      }],
@@ -1481,7 +1481,7 @@ footerText: `R-BOT`,
 buttons: gbutsan,
 headerType: 4
 }
-denz.sendMessage(from, btnBngsat, MessageType.buttonsMessage, { quoted: ftrol, caption: menunya, contextInfo: { mentionedJid: [dtod,otod,stod]}})
+sendButLocation(from, ``, ${menunya}, MessageType.buttonsMessage, { quoted: mek, contextInfo: { mentionedJid: [dtod,otod,stod]}})
                   }
 break
 case 'sewabot': 
@@ -3705,19 +3705,37 @@ break
 				if (!isGroupAdmins) return sticAdmin(from)
                    if (!isBotGroupAdmins) return sticNotAdmin(from)
 					if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMessage === null) return reply('Reply targetnya!')
-			demote = mek.message.extendedTextMessage.contextInfo.participant
-		    denz.groupDemoteAdmin(from, [demote])
-						reply('Sukses demote admin')
-						break
+			mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid
+					if (mentioned.length > 1) {
+						teks = 'Perintah di terima, anda tidak menjadi admin :\n'
+						for (let _ of mentioned) {
+							teks += `@${_.split('@')[0]}\n`
+						}
+						mentions(teks, mentioned, true)
+						denz.groupDemoteAdmin(from, mentioned)
+					} else {
+						mentions(`Perintah di terima, Menurunka : @${mentioned[0].split('@')[0]} Menjadi Member`, mentioned, true)
+						denz.groupDemoteAdmin(from, mentioned)
+					}
+					break
 					case 'promote':
               					if (!isGroup) return reply(mess.only.group)
 					if (!isGroupAdmins) return sticAdmin(from)
                    if (!isBotGroupAdmins) return sticNotAdmin(from)
 				  if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMessage === null) return reply('Reply targetnya!')
-			promote = mek.message.extendedTextMessage.contextInfo.participant
-		    denz.groupMakeAdmin(from, [promote])
-						reply('Sukses promote member')
-						break
+			mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid
+					if (mentioned.length > 1) {
+						teks = 'Perintah di terima, anda menjdi admin :\n'
+						for (let _ of mentioned) {
+							teks += `@${_.split('@')[0]}\n`
+						}
+						mentions(teks, mentioned, true)
+						denz.groupMakeAdmin(from, mentioned)
+					} else {
+						mentions(`Perintah di terima, @${mentioned[0].split('@')[0]} Kamu Menjadi Admin Di Group *${groupMetadata.subject}*`, mentioned, true)
+						denz.groupMakeAdmin(from, mentioned)
+					}
+					break
 				case 'linkgrup':
 				case 'linkgroup':
 				case 'linkgc':
