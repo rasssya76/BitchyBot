@@ -1539,8 +1539,8 @@ footerText: `R-BOT`,
 buttons: gbutsan,
 headerType: 4
 }
-denz.sendMessage(from, btnBngsat, MessageType.buttonsMessage, caption: menunya, {quoted:fvid, contextInfo: { mentionedJid: [dtod,otod,stod], forwardingScore: 508, isForwarded: true, externalAdReply:{title:`${tampilUcapan} - ${pushname}\nDownload Script`,mediaType:"2",thumbnail:ofrply,mediaUrl:`https://youtu.be/x-O0WHkv3uc`}})
-                  }
+sendButDocument(from, `${menunya}`, "© B Y R A M A®", fs.readFileSync('./pdf.pdf'), {mimetype:Mimetype.pdf, thumbnail:fs.readFileSync('./banner.jpg'), filename:`${jmn} - ${week} - ${calender}`},  gbutsan, {quoted:ftrol, contextInfo: { mentionedJid: [dtod,otod,stod], forwardingScore: 508, isForwarded: true, externalAdReply:{title:`${tampilUcapan} ${pushname}`,body:`*click here How to bot`,mediaType:"2",thumbnail:ofrply,mediaUrl:`https://youtu.be/6cC_QVZ4qFs`}}})
+                     }
 break
 case 'verify':
 case 'register':
