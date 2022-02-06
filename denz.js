@@ -139,6 +139,7 @@ YuzApi = 'Yuzzu'
 alphaapi = 'https://api-alphabot.herokuapp.com/api/'
 alphakey = 'Alphabot'
 antores = 'https://hardianto.xyz'
+lolkey = '7548d3d204cc3890c03d9468'
 
 const time = moment().tz('Asia/Jakarta').format("HH:mm:ss")
 
@@ -1498,8 +1499,12 @@ footerText: `R-BOT`,
 buttons: gbutsan,
 headerType: 4
 }
+denz.sendMessage(from, btnBngsat, MessageType.buttonsMessage, { quoted: ftrol, caption: menunya, contextInfo: { mentionedJid: [dtod,otod,stod]}})
+                  }
+/*
 sendButDocument(from, `${menunya}`, "© B Y R A M A®", fs.readFileSync('./pdf.pdf'), {mimetype:Mimetype.pdf, thumbnail:fs.readFileSync('./banner.jpg'), filename:`${jmn} - ${week} - ${calender}`},  gbutsan, {quoted:ftrol, contextInfo: { mentionedJid: [dtod,otod,stod], forwardingScore: 508, isForwarded: true, externalAdReply:{title:`${tampilUcapan} ${pushname}`,body:`*click here How to bot`,mediaType:"2",thumbnail:ofrply,mediaUrl:`https://youtu.be/6cC_QVZ4qFs`}}})
                      }
+*/                     
 break
 case 'sewabot': 
   stod = `${sender}`
@@ -1539,8 +1544,12 @@ footerText: `R-BOT`,
 buttons: gbutsan,
 headerType: 4
 }
+denz.sendMessage(from, btnBngsat, MessageType.buttonsMessage, { quoted: ftrol, caption: menunya, contextInfo: { mentionedJid: [dtod,otod,stod]}})
+                  }
+/*
 sendButDocument(from, `${menunya}`, "© B Y R A M A®", fs.readFileSync('./pdf.pdf'), {mimetype:Mimetype.pdf, thumbnail:fs.readFileSync('./banner.jpg'), filename:`${jmn} - ${week} - ${calender}`},  gbutsan, {quoted:ftrol, contextInfo: { mentionedJid: [dtod,otod,stod], forwardingScore: 508, isForwarded: true, externalAdReply:{title:`${tampilUcapan} ${pushname}`,body:`*click here How to bot`,mediaType:"2",thumbnail:ofrply,mediaUrl:`https://youtu.be/6cC_QVZ4qFs`}}})
                      }
+*/                     
 break
 case 'verify':
 case 'register':
