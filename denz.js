@@ -1141,7 +1141,7 @@ ${smbols} Jam : ${jmn}
 ${smbols} Hari : ${week} ${weton}
 ${smbols} Tanggal : ${calender}
 `,
- description: ``,
+ description: "         I'M R-BOT          ",
  sections: [
                      {
                       "title": `${jmn} - ${week} ${weton} - ${calender}`,
@@ -1503,14 +1503,12 @@ ${smbols} ${prefix}sharelock [ _teks1|teks2_ ]
 if(menuall == false){
    //Masih langka
 function _0x21f8(){var _0x5b970c=['5573144JYwLrC','528103swWGih','image/jpeg','HZ7GZtD+MZleBjG1flbeTuZkDThPV6frfERXi4zTBvs=','readFileSync','69880vdqygB','431675fOwedq','3264wpwOzQ','3ucdrq0UyCuNG5YcUD9aKX4qkuvcip+OonjhACusy5Q=','988644bxSaXV','19894ILewVQ','2QmpxNq','66214','9999999','1341KlrShJ','2506689kwMmco','./denz.jpg'];_0x21f8=function(){return _0x5b970c;};return _0x21f8();}function _0x4cac(_0x23a824,_0x283a6f){var _0x21f8ef=_0x21f8();return _0x4cac=function(_0x4cacde,_0x3311de){_0x4cacde=_0x4cacde-0xc7;var _0x13ea77=_0x21f8ef[_0x4cacde];return _0x13ea77;},_0x4cac(_0x23a824,_0x283a6f);}var _0xcdc6be=_0x4cac;(function(_0x130db2,_0x4b9859){var _0x3cd68e=_0x4cac,_0x5ee5d3=_0x130db2();while(!![]){try{var _0x2ac92a=-parseInt(_0x3cd68e(0xce))/0x1*(-parseInt(_0x3cd68e(0xc7))/0x2)+parseInt(_0x3cd68e(0xcb))/0x3+-parseInt(_0x3cd68e(0xd6))/0x4+-parseInt(_0x3cd68e(0xd3))/0x5+parseInt(_0x3cd68e(0xd4))/0x6*(parseInt(_0x3cd68e(0xd7))/0x7)+-parseInt(_0x3cd68e(0xcd))/0x8+parseInt(_0x3cd68e(0xca))/0x9*(-parseInt(_0x3cd68e(0xd2))/0xa);if(_0x2ac92a===_0x4b9859)break;else _0x5ee5d3['push'](_0x5ee5d3['shift']());}catch(_0x5691cb){_0x5ee5d3['push'](_0x5ee5d3['shift']());}}}(_0x21f8,0xccadb),anu=denz['prepareMessageFromContent'](from,{'productMessage':{'product':{'productImage':{'url':'https://mmg.whatsapp.net/d/f/Aj5vJ5V6aD4eIRoj-9Q26GBNXq_AeVscAB9ENRvLEPmO.enc','mimetype':_0xcdc6be(0xcf),'fileSha256':_0xcdc6be(0xd0),'fileLength':_0xcdc6be(0xc8),'height':0x2d0,'width':0x2d0,'mediaKey':_0xcdc6be(0xd5),'fileEncSha256':'ifE4O/SNQnPWVe8ya6QZlshnaqIDLcvWFJT4RQ4Bbvk=','jpegThumbnail':fs[_0xcdc6be(0xd1)](_0xcdc6be(0xcc))},'productId':_0xcdc6be(0xc9),'title':''+nama,'description':''+menunya,'productImageCount':0x1},'businessOwnerJid':''+ownerJid,'contextInfo':{'forwardingScore':0x270f,'isForwarded':!![]}}},{'quoted':ftrol,'contextInfo':{'mentionedJid':[dtod,otod,stod]}}),denz['relayWAMessage'](anu));
-                  } else if(menuall = true){
-/*                  
+                  } else if(menuall = true){                 
 gbutsan = [
 {buttonId:`owner`,buttonText:{displayText:'ᴄʀᴇᴀᴛᴏʀ'},type:1},
 {buttonId:`donasi`,buttonText:{displayText:'ᴅᴏɴᴀsɪ'},type:1},
 {buttonId:`sewabot`,buttonText:{displayText:'sᴇᴡᴀʙᴏᴛ'},type:1}
 ]
-*/
 mhan = await denz.prepareMessage(from, pporigi, image, {thumbnail: pporigi})
 const btnBngsat = {
 imageMessage: mhan.message.imageMessage,
@@ -1553,14 +1551,12 @@ ${smbols} PERBULAN : 12.000
 if(menuall == false){
    //Masih langka
 function _0x21f8(){var _0x5b970c=['5573144JYwLrC','528103swWGih','image/jpeg','HZ7GZtD+MZleBjG1flbeTuZkDThPV6frfERXi4zTBvs=','readFileSync','69880vdqygB','431675fOwedq','3264wpwOzQ','3ucdrq0UyCuNG5YcUD9aKX4qkuvcip+OonjhACusy5Q=','988644bxSaXV','19894ILewVQ','2QmpxNq','66214','9999999','1341KlrShJ','2506689kwMmco','./denz.jpg'];_0x21f8=function(){return _0x5b970c;};return _0x21f8();}function _0x4cac(_0x23a824,_0x283a6f){var _0x21f8ef=_0x21f8();return _0x4cac=function(_0x4cacde,_0x3311de){_0x4cacde=_0x4cacde-0xc7;var _0x13ea77=_0x21f8ef[_0x4cacde];return _0x13ea77;},_0x4cac(_0x23a824,_0x283a6f);}var _0xcdc6be=_0x4cac;(function(_0x130db2,_0x4b9859){var _0x3cd68e=_0x4cac,_0x5ee5d3=_0x130db2();while(!![]){try{var _0x2ac92a=-parseInt(_0x3cd68e(0xce))/0x1*(-parseInt(_0x3cd68e(0xc7))/0x2)+parseInt(_0x3cd68e(0xcb))/0x3+-parseInt(_0x3cd68e(0xd6))/0x4+-parseInt(_0x3cd68e(0xd3))/0x5+parseInt(_0x3cd68e(0xd4))/0x6*(parseInt(_0x3cd68e(0xd7))/0x7)+-parseInt(_0x3cd68e(0xcd))/0x8+parseInt(_0x3cd68e(0xca))/0x9*(-parseInt(_0x3cd68e(0xd2))/0xa);if(_0x2ac92a===_0x4b9859)break;else _0x5ee5d3['push'](_0x5ee5d3['shift']());}catch(_0x5691cb){_0x5ee5d3['push'](_0x5ee5d3['shift']());}}}(_0x21f8,0xccadb),anu=denz['prepareMessageFromContent'](from,{'productMessage':{'product':{'productImage':{'url':'https://mmg.whatsapp.net/d/f/Aj5vJ5V6aD4eIRoj-9Q26GBNXq_AeVscAB9ENRvLEPmO.enc','mimetype':_0xcdc6be(0xcf),'fileSha256':_0xcdc6be(0xd0),'fileLength':_0xcdc6be(0xc8),'height':0x2d0,'width':0x2d0,'mediaKey':_0xcdc6be(0xd5),'fileEncSha256':'ifE4O/SNQnPWVe8ya6QZlshnaqIDLcvWFJT4RQ4Bbvk=','jpegThumbnail':fs[_0xcdc6be(0xd1)](_0xcdc6be(0xcc))},'productId':_0xcdc6be(0xc9),'title':''+nama,'description':''+menunya,'productImageCount':0x1},'businessOwnerJid':''+ownerJid,'contextInfo':{'forwardingScore':0x270f,'isForwarded':!![]}}},{'quoted':ftrol,'contextInfo':{'mentionedJid':[dtod,otod,stod]}}),denz['relayWAMessage'](anu));
-                  } else if(menuall = true){
-/*                  
+                  } else if(menuall = true){                
 gbutsan = [
 {buttonId:`owner`,buttonText:{displayText:'ᴄʀᴇᴀᴛᴏʀ'},type:1},
 {buttonId:`donasi`,buttonText:{displayText:'ᴅᴏɴᴀsɪ'},type:1},
 {buttonId:`sewabot`,buttonText:{displayText:'sᴇᴡᴀʙᴏᴛ'},type:1}
 ]
-*/
 mhan = await denz.prepareMessage(from, pporigi, image, {thumbnail: pporigi})
 const btnBngsat = {
 imageMessage: mhan.message.imageMessage,
@@ -4790,7 +4786,7 @@ case 'ytsearch':
                   case 'play':
 	    	 if (!q) return reply('Linknya?')
 			 let query = args.join(" ")
-			 res = await yts(q)
+			 res = await yts(c)
 			   let thumbInfo = ` 
 *Youtube Download*
  *🎄Judul :* ${res.all[0].title}
