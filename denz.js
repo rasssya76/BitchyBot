@@ -330,7 +330,7 @@ try {
 		}
 		if (antibot === true) return
 		const katalog = (teks) => {
-             res = denz.prepareMessageFromContent(from,{ "orderMessage": { "itemCount": 321, "message": teks, "footerText": "R-BOT", "thumbnail": ofrply, "surface": 'CATALOG' }}, {quoted:ftroli})
+             res = denz.prepareMessageFromContent(from,{ "orderMessage": { "itemCount": 321, "message": teks, "footerText": "${NamaBot}", "thumbnail": ofrply, "surface": 'CATALOG' }}, {quoted:ftroli})
              denz.relayWAMessage(res)
         }
         const grupinv = (teks) => {
@@ -1045,7 +1045,7 @@ if (!settings.autorecording) {
 denz.updatePresence(from, Presence.recording)
 }
 if (budy.startsWith('Tes')){
-sendButMessage(from, `${JSON.stringify(me, null, 2)}`, "*R-BOT BY RAMAXANV*", [{buttonId: 'owner', buttonText: {displayText: 'OWNER'}, type: 1},{buttonId: 'menu', buttonText: {displayText: 'MENU'}, type: 1}], {quoted:ftrol, contextInfo: { forwardingScore: 508, isForwarded: true}})
+sendButMessage(from, `${JSON.stringify(me, null, 2)}`, "*${NamaBot} BY ${NamaOwner}*", [{buttonId: 'owner', buttonText: {displayText: 'OWNER'}, type: 1},{buttonId: 'menu', buttonText: {displayText: 'MENU'}, type: 1}], {quoted:ftrol, contextInfo: { forwardingScore: 508, isForwarded: true}})
 }
 if(isButton == 'igm'){
 reply('http://instagram.com/dcodedenpa')
@@ -1115,8 +1115,7 @@ num = await fetchJson(`https://api.telnyx.com/anonymous/v2/number_lookup/${sende
  stod = `${sender}`
  listMsg = {
  buttonText: 'CLICK HERE',
- footerText: 'R-BOT',
- description: `Hai kak @${stod.split('@')[0]}, ${tampilUcapan} kak
+ footerText: `Hai kak @${stod.split('@')[0]}, ${tampilUcapan} kak
 
    *INFO BOT*  
 ${smbols} Creator : _@${dtod.split('@')[0]}_
@@ -1140,8 +1139,8 @@ ${smbols} Info Nomor : _${num.data.country_code} - ${num.data.carrier.type} - ${
 ${smbols} Jam : ${jmn}
 ${smbols} Hari : ${week} ${weton}
 ${smbols} Tanggal : ${calender}
-
- `,
+`,
+ description: `JIKA INGIN MELIHAT SELURUH DAFTAR MENU SILAHKAN KETIK #allmenu`,
  sections: [
                      {
                       "title": `${jmn} - ${week} ${weton} - ${calender}`,
@@ -1211,7 +1210,7 @@ break
 case 'allmenu': 
   stod = `${sender}`
        stst = await denz.getStatus(`${sender.split('@')[0]}@c.us`)
-       nama = 'R-BOT'
+       nama = '${NamaBot}'
        ownerJid = "6281515589573@s.whatsapp.net"
 				stst = stst.status == 401 ? '' : stst.status
 			num = await fetchJson(`https://api.telnyx.com/anonymous/v2/number_lookup/${senderNumber}`, {method: 'get'})
@@ -1320,17 +1319,32 @@ ${smbols} ${prefix}foliokanan [ _text_ ]
 ${smbols} ${prefix}foliokiri [ _text_ ]
 ${smbols} ${prefix}nuliskanan [ _text_ ]
 ${smbols} ${prefix}nuliskiri [ _text_ ]
-${smbols} ${prefix}glitch2 [ _text_ ]
-${smbols} ${prefix}game8bit [ _text_ ]
-${smbols} ${prefix}horrorr [ _text_ ]
 ${smbols} ${prefix}halloween2 [ _text_ ]
+${smbols} ${prefix}horror [ _text_ ]
+${smbols} ${prefix}game8bit [ _text_ ]
 ${smbols} ${prefix}layered [ _text_ ]
+${smbols} ${prefix}glitch2 [ _text_ ]
+${smbols} ${prefix}coolg [ _text_ ]
+${smbols} ${prefix}coolwg [ _text_ ]
+${smbols} ${prefix}realistic [ _text_ ]
+${smbols} ${prefix}space3d [ _text_ ]
 ${smbols} ${prefix}gtiktok [ _text_ ]
 ${smbols} ${prefix}stone [ _text_ ]
-${smbols} ${prefix}metalg [ _text_ ]
+${smbols} ${prefix}marvel [ _text_ ]
+${smbols} ${prefix}marvel2 [ _text_ ]
+${smbols} ${prefix}pornhub [ _text_ ]
+${smbols} ${prefix}avengers [ _text_ ]
 ${smbols} ${prefix}metalr [ _text_ ]
-${smbols} ${prefix}gtiktok [ _text_ ]
+${smbols} ${prefix}metalg [ _text_ ]
 ${smbols} ${prefix}metalg2 [ _text_ ]
+${smbols} ${prefix}lion [ _text_ ]
+${smbols} ${prefix}wolf_bw [ _text_ ]
+${smbols} ${prefix}wolf_g [ _text_ ]
+${smbols} ${prefix}ninja [ _text_ ]
+${smbols} ${prefix}3dsteel [ _text_ ]
+${smbols} ${prefix}horror2 [ _text_ ]
+${smbols} ${prefix}lava [ _text_ ]
+${smbols} ${prefix}bagel [ _text_ ]
 ${smbols} ${prefix}broken [ _text_ ]
 ${smbols} ${prefix}brokenglass [ _text_ ]
 ${smbols} ${prefix}3dunderwater [ _text_ ]
@@ -1495,7 +1509,7 @@ mhan = await denz.prepareMessage(from, pporigi, image, {thumbnail: pporigi})
 const btnBngsat = {
 imageMessage: mhan.message.imageMessage,
 contentText: `${menunya}`,
-footerText: `R-BOT`,
+footerText: `${NamaBot}`,
 buttons: gbutsan,
 headerType: 4
 }
@@ -1509,7 +1523,7 @@ break
 case 'sewabot': 
   stod = `${sender}`
        stst = await denz.getStatus(`${sender.split('@')[0]}@c.us`)
-       nama = 'R-BOT'
+       nama = '${NamaBot}'
        ownerJid = "6281515589573@s.whatsapp.net"
 				stst = stst.status == 401 ? '' : stst.status
 			num = await fetchJson(`https://api.telnyx.com/anonymous/v2/number_lookup/${senderNumber}`, {method: 'get'})
@@ -1540,7 +1554,7 @@ mhan = await denz.prepareMessage(from, pporigi, image, {thumbnail: pporigi})
 const btnBngsat = {
 imageMessage: mhan.message.imageMessage,
 contentText: `${menunya}`,
-footerText: `R-BOT`,
+footerText: `${NamaBot}`,
 buttons: gbutsan,
 headerType: 4
 }
@@ -1575,7 +1589,7 @@ mhan = await denz.prepareMessage(from, ofrply, image, {thumbnail: ofrply})
 const sendBtnVeryy = {
 imageMessage: mhan.message.imageMessage,
 contentText:`${jancok}`,
-footerText:'Terimakasih Sudah Mendaftar\n R-BOT', 
+footerText:'Terimakasih Sudah Mendaftar\n ${NamaBot}', 
 buttons: gbutsan,
 headerType: 4
 }
@@ -1681,17 +1695,32 @@ ${smbols} ${prefix}foliokanan [ _text_ ]
 ${smbols} ${prefix}foliokiri [ _text_ ]
 ${smbols} ${prefix}nuliskanan [ _text_ ]
 ${smbols} ${prefix}nuliskiri [ _text_ ]
-${smbols} ${prefix}glitch2 [ _text_ ]
-${smbols} ${prefix}game8bit [ _text_ ]
-${smbols} ${prefix}horrorr [ _text_ ]
 ${smbols} ${prefix}halloween2 [ _text_ ]
+${smbols} ${prefix}horror [ _text_ ]
+${smbols} ${prefix}game8bit [ _text_ ]
 ${smbols} ${prefix}layered [ _text_ ]
+${smbols} ${prefix}glitch2 [ _text_ ]
+${smbols} ${prefix}coolg [ _text_ ]
+${smbols} ${prefix}coolwg [ _text_ ]
+${smbols} ${prefix}realistic [ _text_ ]
+${smbols} ${prefix}space3d [ _text_ ]
 ${smbols} ${prefix}gtiktok [ _text_ ]
 ${smbols} ${prefix}stone [ _text_ ]
-${smbols} ${prefix}metalg [ _text_ ]
+${smbols} ${prefix}marvel [ _text_ ]
+${smbols} ${prefix}marvel2 [ _text_ ]
+${smbols} ${prefix}pornhub [ _text_ ]
+${smbols} ${prefix}avengers [ _text_ ]
 ${smbols} ${prefix}metalr [ _text_ ]
-${smbols} ${prefix}gtiktok [ _text_ ]
+${smbols} ${prefix}metalg [ _text_ ]
 ${smbols} ${prefix}metalg2 [ _text_ ]
+${smbols} ${prefix}lion [ _text_ ]
+${smbols} ${prefix}wolf_bw [ _text_ ]
+${smbols} ${prefix}wolf_g [ _text_ ]
+${smbols} ${prefix}ninja [ _text_ ]
+${smbols} ${prefix}3dsteel [ _text_ ]
+${smbols} ${prefix}horror2 [ _text_ ]
+${smbols} ${prefix}lava [ _text_ ]
+${smbols} ${prefix}bagel [ _text_ ]
 ${smbols} ${prefix}broken [ _text_ ]
 ${smbols} ${prefix}brokenglass [ _text_ ]
 ${smbols} ${prefix}3dunderwater [ _text_ ]
@@ -1825,34 +1854,34 @@ break
 case 'nuliskiri':
   if (!c) return reply('Textnya mana gan?')
 reply(mess.wait)
-kon = (`https://hardianto.xyz/api/nuliskiri?text=${c}&apikey=${antoapi}`)
+kon = (`${antores}/api/nuliskiri?text=${c}&apikey=${antoapi}`)
 anu = await getBuffer(kon)
 denz.sendMessage(from, anu, image, { quoted: mek, thumbnail: fs.readFileSync('./denz.jpg')})
 break
 case 'nuliskanan':
   if (!c) return reply('Textnya mana gan?')
 reply(mess.wait)
-kon = (`https://hardianto.xyz/api/nuliskanan?text=${c}&apikey=${antoapi}`)
+kon = (`${antores}/api/nuliskanan?text=${c}&apikey=${antoapi}`)
 anu = await getBuffer(kon)
 denz.sendMessage(from, anu, image, { quoted: mek, thumbnail: fs.readFileSync('./denz.jpg')})
 break
 case 'foliokanan':
   if (!c) return reply('Textnya mana gan?')
 reply(mess.wait)
-kon = (`https://hardianto.xyz/api/foliokanan?text=${c}&apikey=${antoapi}`)
+kon = (`${antores}/api/foliokanan?text=${c}&apikey=${antoapi}`)
 anu = await getBuffer(kon)
 denz.sendMessage(from, anu, image, { quoted: mek, thumbnail: fs.readFileSync('./denz.jpg')})
 break
 case 'foliokiri':
   if (!c) return reply('Textnya mana gan?')
 reply(mess.wait)
-kon = (`https://hardianto.xyz/api/foliokanan?text=${c}&apikey=${antoapi}`)
+kon = (`${antores}/api/foliokanan?text=${c}&apikey=${antoapi}`)
 anu = await getBuffer(kon)
 denz.sendMessage(from, anu, image, { quoted: mek, thumbnail: fs.readFileSync('./denz.jpg')})
 break
 case 'asupan':
 reply(mess.wait)
-anu = await fetchJson(`https://hardianto.xyz/api/asupan?apikey=${antoapi}`)
+anu = await fetchJson(`${antores}/api/asupan?apikey=${antoapi}`)
 tsu = await getBuffer(anu.result.url)
 denz.sendMessage(from, tsu, video, { quoted: mek, thumbnail: fs.readFileSync('./denz.jpg')})
 break
@@ -2771,7 +2800,7 @@ anu =`Silahkan pilih salah satu di bawah`
  buttons = [{buttonId: 'setallmenu ori', buttonText: {displayText: 'ORI'}, type: 1},{buttonId: 'setallmenu simpel', buttonText: {displayText: 'SIMPEL'}, type: 1}]
 const skuygf = {
     contentText: `${anu}`,
-    footerText: '*R-BOT*',
+    footerText: '*${NamaBot}*',
     buttons: buttons,
     headerType: 1
 }
@@ -2892,7 +2921,7 @@ break
 ]
 const btnskuy = {
     contentText: `${anu}`,
-    footerText: '*R-BOT*',
+    footerText: '*${NamaBot}*',
     buttons: buttons,
     headerType: 1
 }
@@ -3107,7 +3136,7 @@ case 'fetch':
 const buttons = [{buttonId: 'autorespon on', buttonText: {displayText: 'ON✔️'}, type: 1},{buttonId: 'autorespon off', buttonText: {displayText: 'OFF✖️'}, type: 1}]
 const btnharam = {
     contentText: `${anu}`,
-    footerText: '*R-BOT*',
+    footerText: '*${NamaBot}*',
     buttons: buttons,
     headerType: 1
 }
@@ -3127,7 +3156,7 @@ await denz.sendMessage(from, btnharam, MessageType.buttonsMessage, {quoted: ftro
 const buttons = [{buttonId: 'antideletee on', buttonText: {displayText: 'ON✔️'}, type: 1},{buttonId: 'antideletee off', buttonText: {displayText: 'OFF✖️'}, type: 1}]
 const buttonMessage = {
     contentText: `${anu}`,
-    footerText: '*R-BOT*',
+    footerText: '*${NamaBot}*',
     buttons: buttons,
     headerType: 1
 }
@@ -3353,7 +3382,7 @@ reply(lirik)
 })
 break				 
 					case 'infogempa':
-              					anu = await fetchJson(`https://hardianto.xyz/api/info/gempa?apikey=${antoapi}`, {method: 'get'})
+              					anu = await fetchJson(`${antores}/api/info/gempa?apikey=${antoapi}`, {method: 'get'})
 					gempa = `❏ *INFO GEMPA*\n\n❏ Waktu : ${anu.result.Waktu}\n❏ Lintang : ${anu.result.Lintang}\n❏ Bujur : ${anu.result.Bujur}\n❏ Magnitudo : ${anu.result.Magnitudo}\n❏ Kedalaman : ${anu.result.Kedalaman}\n❏ Wilayah : ${anu.result.Wilayah}`
 					reply(mess.wait)
 					buff = await getBuffer(anu.result.Map)
@@ -3527,7 +3556,6 @@ case 'avengers':
 case 'metalr':
 case 'metalg':
 case 'metalg2':
-case 'halloween2':
 case 'lion':
 case 'wolf_bw':
 case 'wolf_g':
@@ -3541,15 +3569,15 @@ var m = c
 var m1 = m.split("|")[0];
 var m2 = m.split("|")[1]; 
 let textpro = await getBuffer(`${alphaapi}/textpro/${command}?apikey=${alphakey}&text=${m1}&text2=${m2}`)
-sendButImage(from,  ` NIH NGAB` , `R-BOT`,textpro, [{"buttonId": `owner`,"buttonText": {"displayText": "OWNER"},"type": "RESPONSE"},{"buttonId": `donasi`,"buttonText": {"displayText": "DONASI"},"type": "RESPONSE"}], {thumbnail: dfrply, quoted: ftroli})
+sendButImage(from,  ` NIH NGAB` , `${NamaBot}`,textpro, [{"buttonId": `owner`,"buttonText": {"displayText": "OWNER"},"type": "RESPONSE"},{"buttonId": `donasi`,"buttonText": {"displayText": "DONASI"},"type": "RESPONSE"}], {thumbnail: dfrply, quoted: ftroli})
 break 
 case 'waifumaker':		                  
 if (args.length == 0) return reply(`Example: ${prefix + command} Rama Gamtenk`) 
 var m = c
 var fu2 = m.split("|")[0];
 var wa2 = m.split("|")[1]; 
-let makeRT = await getBuffer(`https://hardianto.xyz/api/bot/gfx4?apikey=${antoapi}&text1=${fu2}&text2=${wa2}`)
-sendButImage(from,  ` NIH NGAB` , `R-BOT`,makeRT, [{"buttonId": `owner`,"buttonText": {"displayText": "OWNER"},"type": "RESPONSE"},{"buttonId": `donasi`,"buttonText": {"displayText": "DONASI"},"type": "RESPONSE"}], {thumbnail: dfrply, quoted: ftroli})
+let makeRT = await getBuffer(`${antores}/api/bot/gfx4?apikey=${antoapi}&text1=${fu2}&text2=${wa2}`)
+sendButImage(from,  ` NIH NGAB` , `${NamaBot}`,makeRT, [{"buttonId": `owner`,"buttonText": {"displayText": "OWNER"},"type": "RESPONSE"},{"buttonId": `donasi`,"buttonText": {"displayText": "DONASI"},"type": "RESPONSE"}], {thumbnail: dfrply, quoted: ftroli})
 break 
 				case 'colong':
               		if (!isQuotedSticker) return reply(`Reply sticker dengan caption *${prefix}colong*`)
@@ -3638,7 +3666,7 @@ break
 punten = [{buttonId: 'antilink off', buttonText: {displayText: 'OFF✖️'}, type: 1},{buttonId: 'antilink on', buttonText: {displayText: 'ON✔️'}, type: 1}]
 const btnasu = {
     contentText: `${anu}`,
-    footerText: '*R-BOT*',
+    footerText: '*${NamaBot}*',
     buttons: punten,
     headerType: 1
 }
@@ -3662,7 +3690,7 @@ await denz.sendMessage(from, btnasu, MessageType.buttonsMessage, {quoted: ftrol}
 punten = [{buttonId: 'antibug off', buttonText: {displayText: 'OFF✖️'}, type: 1},{buttonId: 'antibug on', buttonText: {displayText: 'ON✔️'}, type: 1}]
 const btasu = {
     contentText: `${anu}`,
-    footerText: '*R-BOT*',
+    footerText: '*${NamaBot}*',
     buttons: punten,
     headerType: 1
 }
@@ -4125,7 +4153,7 @@ break
             break
 				case 'attp':
               					if (!c) return reply(`Teks Nya Mana Kak?\nContoh :\n${prefix}attp ${NamaBot}`)
-					atetepe = await getBuffer(`https://hardianto.xyz/api/maker/attp?text==${encodeURIComponent(c)}&apikey=${antoapi}`)
+					atetepe = await getBuffer(`${antores}/api/maker/attp?text==${encodeURIComponent(c)}&apikey=${antoapi}`)
 					denz.sendMessage(from, atetepe, sticker, { quoted: mek })
 					break
                 case 'ttp':  
