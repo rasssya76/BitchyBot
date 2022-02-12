@@ -127,6 +127,7 @@ NamaOwner = settings.NamaOwner
 ovo = settings.Ovo
 dana = settings.Dana
 gopay = settings.Gopay
+Tmm = '❒'
 smbols = '✜'
 multi = true
 nopref = false
@@ -1140,7 +1141,7 @@ ${smbols} Jam : ${jmn}
 ${smbols} Hari : ${week} ${weton}
 ${smbols} Tanggal : ${calender}
 `,
- description: `\n`,
+ description: ``,
  sections: [
                      {
                       "title": `${jmn} - ${week} ${weton} - ${calender}`,
@@ -1215,7 +1216,7 @@ case 'allmenu':
 				stst = stst.status == 401 ? '' : stst.status
 			num = await fetchJson(`https://api.telnyx.com/anonymous/v2/number_lookup/${senderNumber}`, {method: 'get'})
 menunya = `   
-❒  𝗢𝗪𝗡𝗘𝗥 𝗠𝗘𝗡𝗨
+${Tmm}  𝗢𝗪𝗡𝗘𝗥 𝗠𝗘𝗡𝗨
 ${smbols} ${prefix}stopjadibot
 ${smbols} ${prefix}autorespon [ _on/off_ ]
 ${smbols} ${prefix}antidelete [ _on/off_ ]
@@ -1277,7 +1278,7 @@ ${smbols} ${prefix}bukatime [ _detik/menit/jam_ ]
 ${smbols} ${prefix}tutuptime [ _detik/menit/jam_ ]
 ${smbols} ${prefix}nano [ _nama file_ ]
 
-❒  𝗗𝗢𝗪𝗡𝗟𝗢𝗔𝗗 𝗠𝗘𝗡𝗨
+${Tmm}  𝗗𝗢𝗪𝗡𝗟𝗢𝗔𝗗 𝗠𝗘𝗡𝗨
 ${smbols} ${prefix}infogempa
 ${smbols} ${prefix}herolist
 ${smbols} ${prefix}herodetail [ _hero_ ]
@@ -1314,7 +1315,7 @@ ${smbols} ${prefix}chara [ _search_ ]
 ${smbols} ${prefix}otaku [ _search_ ]
 ${smbols} ${prefix}komiku [ _search_ ]
 
-❒  𝗧𝗘𝗫𝗧𝗣𝗥𝗢/𝗠𝗔𝗞𝗘𝗥 
+${Tmm}  𝗧𝗘𝗫𝗧𝗣𝗥𝗢/𝗠𝗔𝗞𝗘𝗥 
 ${smbols} ${prefix}foliokanan [ _text_ ]
 ${smbols} ${prefix}foliokiri [ _text_ ]
 ${smbols} ${prefix}nuliskanan [ _text_ ]
@@ -1354,7 +1355,6 @@ ${smbols} ${prefix}bearlogo [ _text_ ]
 ${smbols} ${prefix}icecold [ _text_ ]
 ${smbols} ${prefix}fruitjuice [ _text_ ]
 ${smbols} ${prefix}rusymetal [ _text_ ]
-${smbols} ${prefix}waifumaker [ _text_ ]
 ${smbols} ${prefix}abstragold [ _text_ ]
 ${smbols} ${prefix}biscuit [ _text_ ]
 ${smbols} ${prefix}breakwall [ _text_ ]
@@ -1365,6 +1365,8 @@ ${smbols} ${prefix}horror [ _text_ ]
 ${smbols} ${prefix}purplegame [ _text_ ]
 ${smbols} ${prefix}metalrainbow [ _text_ ]
 ${smbols} ${prefix}greenneon [ _text_ ]
+${smbols} ${prefix}waifumaker [ _text_ ]
+${smbols} ${prefix}carbon
 ${smbols} ${prefix}wood [ _text_ ]
 ${smbols} ${prefix}dropwater [ _text_ ]
 ${smbols} ${prefix}yellowjewelry [ _text_ ]
@@ -1373,7 +1375,7 @@ ${smbols} ${prefix}lava [ _text_ ]
 ${smbols} ${prefix}rock [ _text_ ]
 ${smbols} ${prefix}denim [ _text_ ]
 
-❒  𝗚𝗥𝗢𝗨𝗣 𝗠𝗘𝗡𝗨
+${Tmm}  𝗚𝗥𝗢𝗨𝗣 𝗠𝗘𝗡𝗨
 ${smbols} ${prefix}getpict [ _@tag_ ]
 ${smbols} ${prefix}getname [ _reply target_ ]
 ${smbols} ${prefix}getbio [ _reply target_ ]
@@ -1403,7 +1405,7 @@ ${smbols} ${prefix}hidetag [ _teks_ ]
 ${smbols} ${prefix}sticktag [ _nama sticker_ ]
 ${smbols} ${prefix}totag [ _reply media_ ]
 
-❒  𝗡𝗦𝗙𝗪 𝗠𝗘𝗡𝗨
+${Tmm}  𝗡𝗦𝗙𝗪 𝗠𝗘𝗡𝗨
 ${smbols} ${prefix}trapnime
 ${smbols} ${prefix}neko
 ${smbols} ${prefix}megumin
@@ -1425,7 +1427,7 @@ ${smbols} ${prefix}neko2
 ${smbols} ${prefix}poke
 ${smbols} ${prefix}slap
 
-❒  𝗧𝗢𝗟𝗟𝗦 𝗠𝗘𝗡𝗨
+${Tmm}  𝗧𝗢𝗟𝗟𝗦 𝗠𝗘𝗡𝗨
 ${smbols} ${prefix}sticker
 ${smbols} ${prefix}stickerwm [ _nama|author_ ]
 ${smbols} ${prefix}takestick [ _nama|author_ ]
@@ -1443,7 +1445,7 @@ ${smbols} ${prefix}gemuk [ _reply audio_ ]
 ${smbols} ${prefix}detikvn [ _reply audio caption angka_ ]
 ${smbols} ${prefix}detikvideo [ _reply video caption angka_ ]
 
-❒  𝗔𝗦𝗨𝗣𝗔𝗡
+${Tmm}  𝗔𝗦𝗨𝗣𝗔𝗡
 ${smbols} ${prefix}asupanrikagusriani
 ${smbols} ${prefix}+62
 ${smbols} ${prefix}santuy
@@ -1451,7 +1453,7 @@ ${smbols} ${prefix}ukhty
 ${smbols} ${prefix}bocil
 ${smbols} ${prefix}ghea
 
-❒  𝗗𝗔𝗧𝗔𝗕𝗔𝗦𝗘
+${Tmm}  𝗗𝗔𝗧𝗔𝗕𝗔𝗦𝗘
 ${smbols} ${prefix}listimage
 ${smbols} ${prefix}liststicker
 ${smbols} ${prefix}listvn
@@ -1462,17 +1464,17 @@ ${smbols} ${prefix}delvn [ _nama_ ]
 ${smbols} ${prefix}addimage [ _nama_ ]
 ${smbols} ${prefix}delimage [ _nama_ ]
 
-❒  𝗝𝗔𝗗𝗜𝗕𝗢𝗧
+${Tmm}  𝗝𝗔𝗗𝗜𝗕𝗢𝗧
 ${smbols} ${prefix}stopjadibot
 ${smbols} ${prefix}jadibot
 
-❒  𝗘𝗩𝗔𝗟𝗟
+${Tmm}  𝗘𝗩𝗔𝗟𝗟
 ${smbols} *x*
 ${smbols} *>*
 ${smbols} *=>*
 ${smbols} *$*
 
-❒  𝗢𝗧𝗛𝗘𝗥/𝗙𝗨𝗡
+${Tmm}  𝗢𝗧𝗛𝗘𝗥/𝗙𝗨𝗡
 ${smbols} ${prefix}rate
 ${smbols} ${prefix}kapankah
 ${smbols} ${prefix}apakah
@@ -1495,6 +1497,7 @@ ${smbols} ${prefix}q [ _reply message_ ]
 ${smbols} ${prefix}getcaption [ _reply message_ ]
 ${smbols} ${prefix}tospam [ _reply audio/sticker/image|jumlah_ ]
 ${smbols} ${prefix}sharelock [ _teks1|teks2_ ]
+
 `
 if(menuall == false){
    //Masih langka
@@ -2880,16 +2883,16 @@ break
 				case 'script':
 		case 'sc':
 		case 'sourcecode':
-		anu =`╭─❒ SCRIPT
+		anu =`╭─${Tmm} SCRIPT
 │◦➛Base : Denis Putra
 │◦➛Recode : Yuzzu Kamiyaka
 │
-└──────[ GITHUB ]──────❒
+└──────[ GITHUB ]──────${Tmm}
   │◦➛Script Ory :
   │◦➛https://github.com/dcode-depa/bitch-boot
   │◦➛Script Recode : 
   │◦➛https://github.com/YuzzuKamiyka/bitch-bot
-  └──────────────────❒`
+  └──────────────────${Tmm}`
  buttons = [
 {buttonId: `menu`, buttonText: {displayText: 'BACK ⬅️'}, type: 1},
 {buttonId:`donasi`,buttonText:{displayText:'DONASI 💰'},type:1},
@@ -2905,7 +2908,7 @@ await denz.sendMessage(from, btnskuy, MessageType.buttonsMessage, {quoted: ftrol
 		break
 case 'donasi':
 dona = fs.readFileSync('./media/donasi.jpg')
-doni =`*╭─❒ 「 Donasi 」 ──────*
+doni =`*╭─${Tmm} 「 Donasi 」 ──────*
 *│*
 *│*⬡ *Mau donasi apa cuma liat doang?*
 *│*⬡ *OVO     :* ${ovo}
@@ -3541,21 +3544,80 @@ case '3dsteel':
 case 'horror2':
 case 'lava':
 case 'bagel':		                  
-if (args.length == 0) return reply(`Example: ${prefix + command} Rama Gamtenk`) 
+if (args.length == 0) return reply(`Example: ${prefix + command} Rama | Gans`) 
 var m = c
 var m1 = m.split("|")[0];
 var m2 = m.split("|")[1]; 
 let textpro = await getBuffer(`${alphaapi}/textpro/${command}?apikey=${alphakey}&text=${m1}&text2=${m2}`)
 sendButImage(from,  ` NIH NGAB` , `${NamaBot}`,textpro, [{"buttonId": `owner`,"buttonText": {"displayText": "OWNER"},"type": "RESPONSE"},{"buttonId": `donasi`,"buttonText": {"displayText": "DONASI"},"type": "RESPONSE"}], {thumbnail: dfrply, quoted: ftroli})
 break 
+case 'carbon':		                  
+if (args.length == 0) return reply(`Example: ${prefix + command} Rama | Gans`) 
+var m = c
+var cnb = m.split("|")[0];
+var wp = m.split("|")[1]; 
+let makeRT = await getBuffer(`https://hardianto.xyz/api/maker/carbon?code=const%20${cnb}%20=%20require(%27${wp}%27)&color=cyan&apikey=hardianto`)
+sendButImage(from,  ` NIH NGAB` , `${NamaBot}`,makeRT, [{"buttonId": `owner`,"buttonText": {"displayText": "OWNER"},"type": "RESPONSE"},{"buttonId": `donasi`,"buttonText": {"displayText": "DONASI"},"type": "RESPONSE"}], {thumbnail: dfrply, quoted: ftroli})
+break
 case 'waifumaker':		                  
-if (args.length == 0) return reply(`Example: ${prefix + command} Rama Gamtenk`) 
+if (args.length == 0) return reply(`Example: ${prefix + command} Rama | Gans`) 
+var m = c
+var fu2 = m.split("|")[0];
+var wa2 = m.split("|")[1]; 
+let makeRT = await getBuffer(`${antores}/api/bot/gfx4?apikey=${antoapi}&text1=${fu2}&text2=${wa2}`)
+sendButImage(from,  ` NIH NGAB` , `${NamaBot}`,makeRT, [{"buttonId": `owner`,"buttonText": {"displayText": "OWNER"},"type": "RESPONSE"},{"buttonId": `donasi`,"buttonText": {"displayText": "DONASI"},"type": "RESPONSE"}], {thumbnail: dfrply, quoted: ftroli})
+break
+/*
+case 'waifumaker':		                  
+if (args.length == 0) return reply(`Example: ${prefix + command} Rama | Gans`) 
+var m = c
+var fu2 = m.split("|")[0];
+var wa2 = m.split("|")[1]; 
+let makeRT = await getBuffer(`https://hardianto.xyz/api/bot/gura?apikey=hardianto&nama=${fu2}%20${wa2}`)
+sendButImage(from,  ` NIH NGAB` , `${NamaBot}`,makeRT, [{"buttonId": `owner`,"buttonText": {"displayText": "OWNER"},"type": "RESPONSE"},{"buttonId": `donasi`,"buttonText": {"displayText": "DONASI"},"type": "RESPONSE"}], {thumbnail: dfrply, quoted: ftroli})
+break
+case 'waifumaker':		                  
+if (args.length == 0) return reply(`Example: ${prefix + command} Rama | Gans`) 
+var m = c
+var fu2 = m.split("|")[0];
+var wa2 = m.split("|")[1]; 
+let makeRT = await getBuffer(`https://hardianto.xyz/api/bot/gfx1?apikey=hardianto&nama=${fu2}%20${wa2}`)
+sendButImage(from,  ` NIH NGAB` , `${NamaBot}`,makeRT, [{"buttonId": `owner`,"buttonText": {"displayText": "OWNER"},"type": "RESPONSE"},{"buttonId": `donasi`,"buttonText": {"displayText": "DONASI"},"type": "RESPONSE"}], {thumbnail: dfrply, quoted: ftroli})
+break
+case 'waifumaker':		                  
+if (args.length == 0) return reply(`Example: ${prefix + command} Rama | Gans`) 
+var m = c
+var fu2 = m.split("|")[0];
+var wa2 = m.split("|")[1]; 
+let makeRT = await getBuffer(`${antores}/api/bot/gfx4?apikey=${antoapi}&text1=${fu2}&text2=${wa2}`)
+sendButImage(from,  ` NIH NGAB` , `${NamaBot}`,makeRT, [{"buttonId": `owner`,"buttonText": {"displayText": "OWNER"},"type": "RESPONSE"},{"buttonId": `donasi`,"buttonText": {"displayText": "DONASI"},"type": "RESPONSE"}], {thumbnail: dfrply, quoted: ftroli})
+break
+case 'waifumaker':		                  
+if (args.length == 0) return reply(`Example: ${prefix + command} Rama | Gans`) 
+var m = c
+var fu2 = m.split("|")[0];
+var wa2 = m.split("|")[1]; 
+let makeRT = await getBuffer(`${antores}/api/bot/gfx4?apikey=${antoapi}&text1=${fu2}&text2=${wa2}`)
+sendButImage(from,  ` NIH NGAB` , `${NamaBot}`,makeRT, [{"buttonId": `owner`,"buttonText": {"displayText": "OWNER"},"type": "RESPONSE"},{"buttonId": `donasi`,"buttonText": {"displayText": "DONASI"},"type": "RESPONSE"}], {thumbnail: dfrply, quoted: ftroli})
+break
+case 'waifumaker':		                  
+if (args.length == 0) return reply(`Example: ${prefix + command} Rama | Gans`) 
+var m = c
+var fu2 = m.split("|")[0];
+var wa2 = m.split("|")[1]; 
+let makeRT = await getBuffer(`${antores}/api/bot/gfx4?apikey=${antoapi}&text1=${fu2}&text2=${wa2}`)
+sendButImage(from,  ` NIH NGAB` , `${NamaBot}`,makeRT, [{"buttonId": `owner`,"buttonText": {"displayText": "OWNER"},"type": "RESPONSE"},{"buttonId": `donasi`,"buttonText": {"displayText": "DONASI"},"type": "RESPONSE"}], {thumbnail: dfrply, quoted: ftroli})
+break
+case 'waifumaker':		                  
+if (args.length == 0) return reply(`Example: ${prefix + command} Rama | Gans`) 
 var m = c
 var fu2 = m.split("|")[0];
 var wa2 = m.split("|")[1]; 
 let makeRT = await getBuffer(`${antores}/api/bot/gfx4?apikey=${antoapi}&text1=${fu2}&text2=${wa2}`)
 sendButImage(from,  ` NIH NGAB` , `${NamaBot}`,makeRT, [{"buttonId": `owner`,"buttonText": {"displayText": "OWNER"},"type": "RESPONSE"},{"buttonId": `donasi`,"buttonText": {"displayText": "DONASI"},"type": "RESPONSE"}], {thumbnail: dfrply, quoted: ftroli})
 break 
+*/
+
 				case 'colong':
               		if (!isQuotedSticker) return reply(`Reply sticker dengan caption *${prefix}colong*`)
 		const encmediia = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
