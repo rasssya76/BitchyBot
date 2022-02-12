@@ -45,6 +45,7 @@ const base64Img = require('base64-img')
 const ms = require('parse-ms')
 const figlet = require('figlet')
 const ytsd = require('ytsr')
+const yts = require('yt-search')
 const brainly = require('brainly-scraper')
 const ig = require('insta-fetcher')
 const cheerio = require('cheerio')
@@ -67,7 +68,6 @@ const { fetchJson } = require('./lib/fetcher')
 const { uploadimg, upload } = require('./lib/uploadimg')
 const { webp2mp4File } = require('./lib/webp2mp4')
 const { lirikLagu } = require('./lib/lirik.js')
-const { quotesanime } = require('./lib/scraper')
 const { wikiSearch } = require('./lib/wiki.js')
 const { herolist } = require('./lib/herolist.js')
 const { herodetails } = require('./lib/herodetail.js')
@@ -1212,7 +1212,7 @@ case 'allmenu':
   stod = `${sender}`
        stst = await denz.getStatus(`${sender.split('@')[0]}@c.us`)
        nama = '${NamaBot}'
-       ownerJid = "6281515589573@s.whatsapp.net"
+       ownerJid = "${NomorOwner}@s.whatsapp.net"
 				stst = stst.status == 401 ? '' : stst.status
 			num = await fetchJson(`https://api.telnyx.com/anonymous/v2/number_lookup/${senderNumber}`, {method: 'get'})
 menunya = `   
@@ -1281,6 +1281,7 @@ ${smbols} ${prefix}nano [ _nama file_ ]
 ${Tmm}  𝗗𝗢𝗪𝗡𝗟𝗢𝗔𝗗 𝗠𝗘𝗡𝗨
 ${smbols} ${prefix}infogempa
 ${smbols} ${prefix}herolist
+${smbols} ${prefix}ssweb
 ${smbols} ${prefix}herodetail [ _hero_ ]
 ${smbols} ${prefix}google [ _search_ ]
 ${smbols} ${prefix}gimage [ _search_ ]
@@ -1503,11 +1504,13 @@ if(menuall == false){
    //Masih langka
 function _0x21f8(){var _0x5b970c=['5573144JYwLrC','528103swWGih','image/jpeg','HZ7GZtD+MZleBjG1flbeTuZkDThPV6frfERXi4zTBvs=','readFileSync','69880vdqygB','431675fOwedq','3264wpwOzQ','3ucdrq0UyCuNG5YcUD9aKX4qkuvcip+OonjhACusy5Q=','988644bxSaXV','19894ILewVQ','2QmpxNq','66214','9999999','1341KlrShJ','2506689kwMmco','./denz.jpg'];_0x21f8=function(){return _0x5b970c;};return _0x21f8();}function _0x4cac(_0x23a824,_0x283a6f){var _0x21f8ef=_0x21f8();return _0x4cac=function(_0x4cacde,_0x3311de){_0x4cacde=_0x4cacde-0xc7;var _0x13ea77=_0x21f8ef[_0x4cacde];return _0x13ea77;},_0x4cac(_0x23a824,_0x283a6f);}var _0xcdc6be=_0x4cac;(function(_0x130db2,_0x4b9859){var _0x3cd68e=_0x4cac,_0x5ee5d3=_0x130db2();while(!![]){try{var _0x2ac92a=-parseInt(_0x3cd68e(0xce))/0x1*(-parseInt(_0x3cd68e(0xc7))/0x2)+parseInt(_0x3cd68e(0xcb))/0x3+-parseInt(_0x3cd68e(0xd6))/0x4+-parseInt(_0x3cd68e(0xd3))/0x5+parseInt(_0x3cd68e(0xd4))/0x6*(parseInt(_0x3cd68e(0xd7))/0x7)+-parseInt(_0x3cd68e(0xcd))/0x8+parseInt(_0x3cd68e(0xca))/0x9*(-parseInt(_0x3cd68e(0xd2))/0xa);if(_0x2ac92a===_0x4b9859)break;else _0x5ee5d3['push'](_0x5ee5d3['shift']());}catch(_0x5691cb){_0x5ee5d3['push'](_0x5ee5d3['shift']());}}}(_0x21f8,0xccadb),anu=denz['prepareMessageFromContent'](from,{'productMessage':{'product':{'productImage':{'url':'https://mmg.whatsapp.net/d/f/Aj5vJ5V6aD4eIRoj-9Q26GBNXq_AeVscAB9ENRvLEPmO.enc','mimetype':_0xcdc6be(0xcf),'fileSha256':_0xcdc6be(0xd0),'fileLength':_0xcdc6be(0xc8),'height':0x2d0,'width':0x2d0,'mediaKey':_0xcdc6be(0xd5),'fileEncSha256':'ifE4O/SNQnPWVe8ya6QZlshnaqIDLcvWFJT4RQ4Bbvk=','jpegThumbnail':fs[_0xcdc6be(0xd1)](_0xcdc6be(0xcc))},'productId':_0xcdc6be(0xc9),'title':''+nama,'description':''+menunya,'productImageCount':0x1},'businessOwnerJid':''+ownerJid,'contextInfo':{'forwardingScore':0x270f,'isForwarded':!![]}}},{'quoted':ftrol,'contextInfo':{'mentionedJid':[dtod,otod,stod]}}),denz['relayWAMessage'](anu));
                   } else if(menuall = true){
+/*                  
 gbutsan = [
 {buttonId:`owner`,buttonText:{displayText:'ᴄʀᴇᴀᴛᴏʀ'},type:1},
 {buttonId:`donasi`,buttonText:{displayText:'ᴅᴏɴᴀsɪ'},type:1},
 {buttonId:`sewabot`,buttonText:{displayText:'sᴇᴡᴀʙᴏᴛ'},type:1}
 ]
+*/
 mhan = await denz.prepareMessage(from, pporigi, image, {thumbnail: pporigi})
 const btnBngsat = {
 imageMessage: mhan.message.imageMessage,
@@ -1516,9 +1519,12 @@ footerText: `${NamaBot}`,
 buttons: gbutsan,
 headerType: 4
 }
+sendButDocument(from, "      𝐈'𝐌 𝐑-𝐁𝐎𝐓      ", `${menunya}`, fs.readFileSync('./denz.jpg'), {mimetype:Mimetype.pdf, thumbnail:ofrply, filename:`𝚁-𝙱𝙾𝚃 𝚟4.18`}, [{buttonId:`${prefix}owner`,buttonText:{displayText:'ᴄʀᴇᴀᴛᴏʀ'},type:1},{buttonId:`${prefix}stats`,buttonText:{displayText:'ɪɴғᴏ'},type:1},{buttonId:`${prefix}grupowner`,buttonText:{displayText:'ɢʀᴜᴘʙᴏᴛ'},type:1}], {quoted:ftrol, contextInfo: { mentionedJid: [dtod,otod,stod], forwardingScore: 508, isForwarded: true, externalAdReply:{title:`𝚁-𝙱𝙾𝚃 𝚋𝚢 𝚁𝚊𝚖𝚊`,body:`𝙼𝚊𝚍𝚎 𝚠𝚒𝚝𝚑 𝚋𝚢 𝚁𝚊𝚖𝚊𝙶𝚊𝚗𝚜`,mediaType:"2",thumbnail:ofrply,mediaUrl:`https://youtu.be/6cC_QVZ4qFs`}}})
+                 }
+/*
 denz.sendMessage(from, btnBngsat, MessageType.buttonsMessage, { quoted: ftrol, caption: menunya, contextInfo: { mentionedJid: [dtod,otod,stod]}})
                   }
-/*
+                  
 sendButDocument(from, `${menunya}`, "© B Y R A M A®", fs.readFileSync('./pdf.pdf'), {mimetype:Mimetype.pdf, thumbnail:fs.readFileSync('./banner.jpg'), filename:`${jmn} - ${week} - ${calender}`},  gbutsan, {quoted:ftrol, contextInfo: { mentionedJid: [dtod,otod,stod], forwardingScore: 508, isForwarded: true, externalAdReply:{title:`${tampilUcapan} ${pushname}`,body:`*click here How to bot`,mediaType:"2",thumbnail:ofrply,mediaUrl:`https://youtu.be/6cC_QVZ4qFs`}}})
                      }
 */                     
@@ -1527,7 +1533,7 @@ case 'sewabot':
   stod = `${sender}`
        stst = await denz.getStatus(`${sender.split('@')[0]}@c.us`)
        nama = '${NamaBot}'
-       ownerJid = "6281515589573@s.whatsapp.net"
+       ownerJid = "${NomorOwner}@s.whatsapp.net"
 				stst = stst.status == 401 ? '' : stst.status
 			num = await fetchJson(`https://api.telnyx.com/anonymous/v2/number_lookup/${senderNumber}`, {method: 'get'})
 menunya = `
@@ -1548,11 +1554,13 @@ if(menuall == false){
    //Masih langka
 function _0x21f8(){var _0x5b970c=['5573144JYwLrC','528103swWGih','image/jpeg','HZ7GZtD+MZleBjG1flbeTuZkDThPV6frfERXi4zTBvs=','readFileSync','69880vdqygB','431675fOwedq','3264wpwOzQ','3ucdrq0UyCuNG5YcUD9aKX4qkuvcip+OonjhACusy5Q=','988644bxSaXV','19894ILewVQ','2QmpxNq','66214','9999999','1341KlrShJ','2506689kwMmco','./denz.jpg'];_0x21f8=function(){return _0x5b970c;};return _0x21f8();}function _0x4cac(_0x23a824,_0x283a6f){var _0x21f8ef=_0x21f8();return _0x4cac=function(_0x4cacde,_0x3311de){_0x4cacde=_0x4cacde-0xc7;var _0x13ea77=_0x21f8ef[_0x4cacde];return _0x13ea77;},_0x4cac(_0x23a824,_0x283a6f);}var _0xcdc6be=_0x4cac;(function(_0x130db2,_0x4b9859){var _0x3cd68e=_0x4cac,_0x5ee5d3=_0x130db2();while(!![]){try{var _0x2ac92a=-parseInt(_0x3cd68e(0xce))/0x1*(-parseInt(_0x3cd68e(0xc7))/0x2)+parseInt(_0x3cd68e(0xcb))/0x3+-parseInt(_0x3cd68e(0xd6))/0x4+-parseInt(_0x3cd68e(0xd3))/0x5+parseInt(_0x3cd68e(0xd4))/0x6*(parseInt(_0x3cd68e(0xd7))/0x7)+-parseInt(_0x3cd68e(0xcd))/0x8+parseInt(_0x3cd68e(0xca))/0x9*(-parseInt(_0x3cd68e(0xd2))/0xa);if(_0x2ac92a===_0x4b9859)break;else _0x5ee5d3['push'](_0x5ee5d3['shift']());}catch(_0x5691cb){_0x5ee5d3['push'](_0x5ee5d3['shift']());}}}(_0x21f8,0xccadb),anu=denz['prepareMessageFromContent'](from,{'productMessage':{'product':{'productImage':{'url':'https://mmg.whatsapp.net/d/f/Aj5vJ5V6aD4eIRoj-9Q26GBNXq_AeVscAB9ENRvLEPmO.enc','mimetype':_0xcdc6be(0xcf),'fileSha256':_0xcdc6be(0xd0),'fileLength':_0xcdc6be(0xc8),'height':0x2d0,'width':0x2d0,'mediaKey':_0xcdc6be(0xd5),'fileEncSha256':'ifE4O/SNQnPWVe8ya6QZlshnaqIDLcvWFJT4RQ4Bbvk=','jpegThumbnail':fs[_0xcdc6be(0xd1)](_0xcdc6be(0xcc))},'productId':_0xcdc6be(0xc9),'title':''+nama,'description':''+menunya,'productImageCount':0x1},'businessOwnerJid':''+ownerJid,'contextInfo':{'forwardingScore':0x270f,'isForwarded':!![]}}},{'quoted':ftrol,'contextInfo':{'mentionedJid':[dtod,otod,stod]}}),denz['relayWAMessage'](anu));
                   } else if(menuall = true){
+/*                  
 gbutsan = [
 {buttonId:`owner`,buttonText:{displayText:'ᴄʀᴇᴀᴛᴏʀ'},type:1},
 {buttonId:`donasi`,buttonText:{displayText:'ᴅᴏɴᴀsɪ'},type:1},
 {buttonId:`sewabot`,buttonText:{displayText:'sᴇᴡᴀʙᴏᴛ'},type:1}
 ]
+*/
 mhan = await denz.prepareMessage(from, pporigi, image, {thumbnail: pporigi})
 const btnBngsat = {
 imageMessage: mhan.message.imageMessage,
@@ -1561,9 +1569,12 @@ footerText: `${NamaBot}`,
 buttons: gbutsan,
 headerType: 4
 }
+sendButDocument(from, "      𝐈'𝐌 𝐑-𝐁𝐎𝐓      ", `${menunya}`, fs.readFileSync('./denz.jpg'), {mimetype:Mimetype.pdf, thumbnail:ofrply, filename:`𝚁-𝙱𝙾𝚃 𝚟4.18`}, [{buttonId:`${prefix}owner`,buttonText:{displayText:'ᴄʀᴇᴀᴛᴏʀ'},type:1},{buttonId:`${prefix}stats`,buttonText:{displayText:'ɪɴғᴏ'},type:1},{buttonId:`${prefix}grupowner`,buttonText:{displayText:'ɢʀᴜᴘʙᴏᴛ'},type:1}], {quoted:ftrol, contextInfo: { mentionedJid: [dtod,otod,stod], forwardingScore: 508, isForwarded: true, externalAdReply:{title:`𝚁-𝙱𝙾𝚃 𝚋𝚢 𝚁𝚊𝚖𝚊`,body:`𝙼𝚊𝚍𝚎 𝚠𝚒𝚝𝚑 𝚋𝚢 𝚁𝚊𝚖𝚊𝙶𝚊𝚗𝚜`,mediaType:"2",thumbnail:ofrply,mediaUrl:`https://youtu.be/6cC_QVZ4qFs`}}})
+                 }
+/*
 denz.sendMessage(from, btnBngsat, MessageType.buttonsMessage, { quoted: ftrol, caption: menunya, contextInfo: { mentionedJid: [dtod,otod,stod]}})
                   }
-/*
+                  
 sendButDocument(from, `${menunya}`, "© B Y R A M A®", fs.readFileSync('./pdf.pdf'), {mimetype:Mimetype.pdf, thumbnail:fs.readFileSync('./banner.jpg'), filename:`${jmn} - ${week} - ${calender}`},  gbutsan, {quoted:ftrol, contextInfo: { mentionedJid: [dtod,otod,stod], forwardingScore: 508, isForwarded: true, externalAdReply:{title:`${tampilUcapan} ${pushname}`,body:`*click here How to bot`,mediaType:"2",thumbnail:ofrply,mediaUrl:`https://youtu.be/6cC_QVZ4qFs`}}})
                      }
 */                     
@@ -2077,12 +2088,30 @@ anu = await fetchJson(`https://waifu.pics/api/nsfw/trap`)
 buffer = await getBuffer(anu.url)
 denz.sendMessage(from, buffer, image, { quoted: mek, thumbnail: fs.readFileSync('./denz.jpg')})﻿
 break
-case 'quotesanime': case 'quoteanime':
-                reply(mess.wait)
-                anu = await quotesanime()
-                result = anu[Math.floor(Math.random(), anu.length)]
-                denz.sendMessage(from, { text: `_${result.quotes}_\n\nBy *'${result.karakter}'*, ${result.anime}\n\n*_- ${result.up_at}_*` })            
-            break
+case 'quotes':  
+         quotes = await fetchJson(`https://api.lolhuman.xyz/api/random/quotes?apikey=${lolkey}`)
+             quotes = quotes.result
+                    heltod = quotes.by
+                    quotes = quotes.quote
+                    reply(`_${quotes}_\n\n*â€• ${heltod}*`)
+                    break
+                case 'quotesanime':
+                   quotes = await fetchJson(`https://api.lolhuman.xyz/api/random/quotesnime?apikey=${lolkey}`)
+                    quotes = quotes.result
+                    quote = quotes.quote
+                    char = quotes.character
+                    anime = quotes.anime
+                    episode = quotes.episode
+                    reply(`_${quote}_\n\n*• ${char}*\n*• ${anime} ${episode}*`)
+                    break
+                case 'quotesdilan':
+                   get_result = await fetchJson(`https://api.lolhuman.xyz/api/quotes/diLan?apikey=${lolkey}`)
+                     reply(get_result.result)
+                   break                     
+                case 'quotesimage':  
+                   get_result = await getBuffer(`https://api.lolhuman.xyz/api/random/${command}?apikey=${lolkey}`)
+                    await denz.sendMessage(from, get_result, image)
+                    break
 
 //🐀💰 MALING
                    case 'trigger':
@@ -3367,6 +3396,19 @@ break
 					buff = await getBuffer(anu.result.Map)
 					denz.sendMessage(from, buff, image, {quoted: ftok, caption: gempa})
 					break  
+					case 'ssweb':
+                    case 'ss':
+             if (args.length == 0) return reply(`Example: ${prefix + command} https://nekopoi.care/`)
+             reply(mess.wait)
+             ini_link = args[0]
+             buff = await getBuffer(`http://hadi-api.herokuapp.com/api/ssweb?url=${ini_link}?&device=desktop&full=off`)
+             buttons = [{buttonId: `${prefix}menu`,buttonText:{displayText: `BACK MENU`},type:1}]
+              imageMsg = (await denz.prepareMessageMedia(buff, "imageMessage", { thumbnail: buff, })).imageMessage
+              buttonsMessage = {footerText:'R-BOT', imageMessage: imageMsg,
+              contentText:`Made With R-BOT!`,buttons,headerType:4}
+              prep = await denz.prepareMessageFromContent(from,{buttonsMessage},{quoted: ftroli})
+              denz.relayWAMessage(prep)
+              break
 				case 'dadu':
               			random = Math.floor(Math.random() * 6) + 1
 		damdu = fs.readFileSync(`./sticker/${random}.webp`)
@@ -4716,33 +4758,6 @@ denz.sendMessage(from, 'yaudah oke',text, {
   }
  }
 })
-break
-case 'ytmp4':
-              if (!isRegistered) return sendButRegis(from, daftar1, daftar2, daftar3, { quoted: ftrol})        
-if (args.length ==0)return reply('Link nya Mana Kak?')
-ini_link = args.join(" ")
-reply(mess.wait)
-ini = await fetchJson(`https://api-yogipw.herokuapp.com/api/download/ytmp4?url=${ini_link}`)
-anu = ini.result
-ini_txt =`*Judul* : ${anu.title}\n*Author* : ${anu.channel}\n*Publis* : ${anu.published}\n*Views* : ${anu.views}`
-yt4 = fs.readFileSync('./gambar/logo/ytdown.jpg')
-denz.sendMessage(from, yt4, image, { quoted: ftrol, caption: ini_txt })
-res = await getBuffer(anu.url)
-reply(mess.wait)
-denz.sendMessage(from, res, video, {quoted: ftrol})
-break
-case 'ytmp3':
- if (args.length ==0)return reply('Link nya Mana Kak?')
-ini_link = args.join(" ")
-reply(mess.wait)
-ini = await fetchJson(`https://api-yogipw.herokuapp.com/api/download/ytmp3?url=${ini_link}`)
-get = ini.result
-ini_txt =`*Judul* : ${get.title}\n*Author* : ${get.channel}\n*Publis* : ${get.published}\n*Views* : ${get.views}`
-yt3 = fs.readFileSync('./gambar/logo/ytdown.jpg')
-denz.sendMessage(from, yt3, image, { quoted: ftrol, caption: ini_txt })
-res = await getBuffer(get.url)
-reply(mess.wait)
-denz.sendMessage(from, res, audio, {quoted: ftrol})
 break	
 case 'ytsearch':
                           if (!args.length) return reply('Judulnya apa kak?')
@@ -4772,44 +4787,62 @@ case 'ytsearch':
                 reply(`Error: ${e.message}`)
             }
             break					 
-                    case 'ply4':
-case 'playmp4':
-if (args.length ==0)return reply('judul ??')
-bo = args.join(" ")
-reply(mess.wait)
-ini = await fetchJson(`https://api-yogipw.herokuapp.com/api/yt/playmp4?query=${bo}`)
-p4 = await getBuffer(get.url_video)
-denz.sendMessage(from, p4, video, {quoted: ftrol})
+                  case 'play':
+	    	 if (!q) return reply('Linknya?')
+			 let query = args.join(" ")
+			 res = await yts(q)
+			   let thumbInfo = ` 
+*Youtube Download*
+ *🎄Judul :* ${res.all[0].title}
+ *🎉ID Video :* ${res.all[0].videoId}
+ *🎋Diupload Pada :* ${res.all[0].ago}
+ *🗺Views :* ${res.all[0].views}
+ *📻Durasi :* ${res.all[0].timestamp}
+ *⛽Channel :* ${res.all[0].author.name}
+ *🔗Link Video :* ${res.all[0].url}
+
+*Pilih Media Yang Akan Di Download*
+`
+buttons = [{buttonId:`.ytmp3 ${res.all[0].url}`,buttonText:{displayText:'🎵AUDIO'},type:1},{buttonId:`ytmp4 ${res.all[0].url}`,buttonText:{displayText:'VIDEO📰'},type:1}]
+imageMessage = (await denz.prepareMessageMedia({url:res.all[0].image},'imageMessage',{thumbnail:Buffer.alloc(0)})).imageMessage
+buttonsMessage = {contentText: thumbInfo,footerText:'Silahkan Pilih Jenis File Dibawah Ini',imageMessage,buttons,headerType:4}
+prep = await denz.prepareMessageFromContent(from,{buttonsMessage},{})
+denz.relayWAMessage(prep)
 break
-case 'ply3':
-case 'playmp3':
-case 'play':
-if (args.length ==0)return reply('cari apa?')
-bo = args.join(" ")
+case 'play2':
+case 'video':  
+			  if (args.length < 1) return reply('*Masukan judul nya?*')
+                reply(mess.wait)
+				play = args.join(" ")
+				anu = await fetchJson(`https://api.zeks.xyz/api/ytplaymp4?q=${play}&apikey=apivinz`)
+				if (anu.error) return reply(anu.error)
+				infomp3 = `*「 PLAY VIDEO 」*				
+Judul : ${anu.result.title}
+Source : ${anu.result.source}				
+*[Wait] Tunggu Sebentar..*`
+				///////buffer = await getBuffer(anu.result.thumbnail)
+				buffer1 = await getBuffer(anu.result.url_video)
+				denz.sendMessage(from, buffer1, video, {mimetype: 'video/mp4', filename: `${anu.result.video}.mp4`, quoted: ftrol, caption: 'Nih Gan'})
+					break
+case 'ytmp3':
+if (!q)return reply(`Example : ${prefix + command} [Link]`)
+ppec = await fetchJson(`https://api.zekais.com/ytmp4?url=${q}&apikey=zekais`)
+ytt = `「 *YOUTUBE MP3* 」\n\n▢ *Judul :* ${ppec.title}\n▢ *Size : ${ppec.size}*\n▢ *Ext: Mp3*\n▢ *Like : ${ppec.likes}*\n▢ *Dislike : ${ppec.dislike}*\n▢ *Views : ${ppec.views}*\n▢ *Upload : ${ppec.uploadDate}*\n\n*[ Wait ]Tunggu Sebentar kak...*`
+buff = await getBuffer(ppec.thumb)
 reply(mess.wait)
-ini = await fetchJson(`https://api-yogipw.herokuapp.com/api/yt/playmp3?query=${bo}`)
-p3 = await getBuffer(ini.url)
-denz.sendMessage(from, p3, audio, {quoted: ftrol})
+denz.sendMessage(from, buff, image, {quoted: mek, caption: ytt})
+sendMediaURL(from,ppec.result)
 break 
-                            case 'video':
-                                          if (args.length === 0) return reply(`Kirim perintah *${prefix}video* _Judul video yang akan dicari_`)
-                            const playi = await axios.get(`https://bx-hunter.herokuapp.com/api/yt/search?query=${body.slice(6)}&apikey=${HunterApi}`)
-                            const mulaihah = playi.data.result[0].url
-                            try {
-                                reply(mess.wait)
-                                ytv(mulaihah)
-                                .then((res) => {
-                                    const { dl_link, thumb, title, filesizeF, filesize } = res
-                                    axios.get(`https://tinyurl.com/api-create.php?url=${dl_link}`)
-                                    .then(async (a) => {
-                                    if (Number(filesize) >= 30000) return sendMediaURL(from, thumb, `❏ *PLAYmp4*\n\n❏ *Title* : ${title}\n❏ *Ext* : MP4\n*Filesize* : ${filesizeF}\n*Link* : ${a.data}\n\n_Maaf durasi melebihi batas maksimal, Silahkan klik link diatas_`)
-                                    sendFileFromUrl(dl_link, document, {mimetype: 'video/mp4', filename: `${title}.mp4`, quoted: ftrol, contextInfo: { forwardingScore: 508, isForwarded: true, externalAdReply:{title:title,body:" PLAY MP4",mediaType:"2",thumbnail:getBuffer(thumb),sourceUrl:"https://youtu.be/6cC_QVZ4qFs"}}}).catch(() => reply(mess.error.api))
-                                    })
-                                })
-                            } catch (err) {
-                                reply(mess.error.api)
-                            }
-                            break
+case 'ytmp4':
+if (!isGroup) return reply(mess.only.group) 
+if (!q)return reply(`Example : ${prefix + command} [Link]`)
+mp4 = await fetchJson(`https://api.zekais.com/ytmp4?url=${q}&apikey=zekais`)
+ytt3 = `「 *YOUTUBE MP4* 」\n\n▢ *Judul :* ${mp4.title}\n▢ *Size : ${mp4.size}*\n▢ *Ext: Mp4*\n▢ *Quality : ${mp4.quality}*\n▢ *Like : ${mp4.likes}*\n▢ *Dislike : ${mp4.dislike}*\n▢ *Views : ${mp4.views}*\n▢ *Upload : ${mp4.uploadDate}*\n\n*[ Wait ]Tunggu Sebentar kak...*`
+buff = await getBuffer(mp4.thumb)
+reply(mess.wait)
+denz.sendMessage(from, buff, image, {quoted: mek, caption: ytt3})
+sendMediaURL(from,mp4.result,`「 *YOUTUBE MP4* 」\n▢ *Judul :* ${mp4.title}\n▢ *Size : ${mp4.size}*\n▢ *Ext: Mp4*\n▢ *Quality : ${mp4.quality}*`)
+break
                     case 'exif':
                     if (!isOwner && !mek.key.fromMe) return sticOwner(from)
 					const exifff = `${args.join(' ')}`
