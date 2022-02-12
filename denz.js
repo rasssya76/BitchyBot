@@ -1140,7 +1140,7 @@ ${smbols} Jam : ${jmn}
 ${smbols} Hari : ${week} ${weton}
 ${smbols} Tanggal : ${calender}
 `,
- description: `JIKA INGIN MELIHAT SELURUH DAFTAR MENU SILAHKAN KETIK #allmenu`,
+ description: `\n`,
  sections: [
                      {
                       "title": `${jmn} - ${week} ${weton} - ${calender}`,
@@ -1722,30 +1722,6 @@ ${smbols} ${prefix}horror2 [ _text_ ]
 ${smbols} ${prefix}lava [ _text_ ]
 ${smbols} ${prefix}bagel [ _text_ ]
 ${smbols} ${prefix}broken [ _text_ ]
-${smbols} ${prefix}brokenglass [ _text_ ]
-${smbols} ${prefix}3dunderwater [ _text_ ]
-${smbols} ${prefix}neondevil [ _text_ ]
-${smbols} ${prefix}artpapercut [ _text_ ]
-${smbols} ${prefix}bearlogo [ _text_ ]
-${smbols} ${prefix}icecold [ _text_ ]
-${smbols} ${prefix}fruitjuice [ _text_ ]
-${smbols} ${prefix}rusymetal [ _text_ ]
-${smbols} ${prefix}abstragold [ _text_ ]
-${smbols} ${prefix}biscuit [ _text_ ]
-${smbols} ${prefix}breakwall [ _text_ ]
-${smbols} ${prefix}christmas [ _text_ ]
-${smbols} ${prefix}plasticbagdrug [ _text_ ]
-${smbols} ${prefix}honey [ _text_ ]
-${smbols} ${prefix}horror [ _text_ ]
-${smbols} ${prefix}purplegame [ _text_ ]
-${smbols} ${prefix}metalrainbow [ _text_ ]
-${smbols} ${prefix}greenneon [ _text_ ]
-${smbols} ${prefix}wood [ _text_ ]
-${smbols} ${prefix}dropwater [ _text_ ]
-${smbols} ${prefix}yellowjewelry [ _text_ ]
-${smbols} ${prefix}shinymetal [ _text_ ]
-${smbols} ${prefix}lava [ _text_ ]
-${smbols} ${prefix}rock [ _text_ ]
 ${smbols} ${prefix}denim [ _text_ ]`
 katalog(menu)
 break
@@ -3502,9 +3478,9 @@ if (Number(oi2) >= 50) return reply('Kebanyakan!')
 }
 	  break
 	case 'dadah':
-	reply(`Sayonara buat yang pergi😔
- Semoga amal ibadahnya di terima :)`) 
+	reply(`Turut prihatin terhadap pacar nya kak :)`) 
  break
+/*
 	 case 'bokeh':
                    case 'brokenglass':
                    case 'artpapercut':
@@ -3538,6 +3514,7 @@ if (Number(oi2) >= 50) return reply('Kebanyakan!')
                     ini_buffer = await getBuffer(`https://api.dapuhy.xyz/api/textpro/${command}?text=${ini_txt}&apikey=${dapaapi}`)                                                
                     denz.sendMessage(from, ini_buffer, image, { quoted: ftrol })
                     break
+*/
 case 'halloween2':
 case 'horror':
 case 'game8bit':
