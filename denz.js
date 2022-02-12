@@ -3556,8 +3556,8 @@ if (args.length == 0) return reply(`Example: ${prefix + command} Rama | Gans`)
 var m = c
 var cnb = m.split("|")[0];
 var wp = m.split("|")[1]; 
-let makeRT = await getBuffer(`https://hardianto.xyz/api/maker/carbon?code=const%20${cnb}%20=%20require(%27${wp}%27)&color=cyan&apikey=hardianto`)
-sendButImage(from,  ` NIH NGAB` , `${NamaBot}`,makeRT, [{"buttonId": `owner`,"buttonText": {"displayText": "OWNER"},"type": "RESPONSE"},{"buttonId": `donasi`,"buttonText": {"displayText": "DONASI"},"type": "RESPONSE"}], {thumbnail: dfrply, quoted: ftroli})
+let carbon = await getBuffer(`https://hardianto.xyz/api/maker/carbon?code=const%20${cnb}%20=%20require(%27${wp}%27)&color=cyan&apikey=hardianto`)
+sendButImage(from,  ` NIH NGAB` , `${NamaBot}`,carbon, [{"buttonId": `owner`,"buttonText": {"displayText": "OWNER"},"type": "RESPONSE"},{"buttonId": `donasi`,"buttonText": {"displayText": "DONASI"},"type": "RESPONSE"}], {thumbnail: dfrply, quoted: ftroli})
 break
 case 'waifumaker':		                  
 if (args.length == 0) return reply(`Example: ${prefix + command} Rama | Gans`) 
