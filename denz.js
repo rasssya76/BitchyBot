@@ -283,6 +283,7 @@ try {
 		const isCmd = body.startsWith(prefix)
 		const arg = budy.slice(command.length + 2, budy.length)
 		const c = args.join(' ')		
+		const q = args.join(' ')
 		var pes = (type === 'conversation' && mek.message.conversation) ? mek.message.conversation : (type == 'imageMessage') && mek.message.imageMessage.caption ? mek.message.imageMessage.caption : (type == 'videoMessage') && mek.message.videoMessage.caption ? mek.message.videoMessage.caption : (type == 'extendedTextMessage') && mek.message.extendedTextMessage.text ? mek.message.extendedTextMessage.text : ''
 		const messagesD = pes.slice(0).trim().split(/ +/).shift().toLowerCase()
 		const dfrply = fs.readFileSync('./denz.jpg')
@@ -4481,14 +4482,16 @@ break
 				    tagu = `@${nomqm.split('@s.whatsapp.net')[0]}`
 					denz.sendMessage(from, tagu, text, { quoted: ftrol, contextInfo: { forwardingScore: 508, isForwarded: true, mentionedJid: [nomqm]}})
 					break
-				case 'join':
-				if (!isOwner && !mek.key.fromMe) return sticOwner(from)
-				 if (args.length < 1) return ephe('Link nya mana?')
-					denz.query({
-json:["action", "invite", `${args[0].replace('https://chat.whatsapp.com/','')}`]
-})
-reply('Sukses bergabung dalam group')
-break
+				case 'join': 
+                          if (args.length == 0) return reply(`Ex:- ${prefix}join https://chat.whatsapp.com`)
+                          if (!c) return reply('*The link?*')
+                          
+                          if (!isUrl(args[0]) && !args[0].includes('https://chat.whatsapp.com/')) return reply('*The link is invalid Tod*')
+                          link = args[0].replace('https://chat.whatsapp.com/','')
+                          fak = denz.query({ json: ['action', 'invite', link],
+                          expect200: true })
+                          reply('*Successfully Entered Group*')
+                          break
 				case 'totag':
               			if (!isGroup) return reply(mess.only.group)
 			if (!isGroupAdmins) return sticAdmin(from)
@@ -5046,7 +5049,7 @@ Source : ${anu.result.source}
 					break
 case 'ytmp3':
 if (!c)return reply(`Example : ${prefix + command} [Link]`)
-ppec = await fetchJson(`https://api.zekais.com/ytmp4?url=${q}&apikey=zekais`)
+ppec = await fetchJson(`https://api.zekais.com/ytmp4?url=${c}&apikey=zekais`)
 ytt = `「 *YOUTUBE MP3* 」\n\n▢ *Judul :* ${ppec.title}\n▢ *Size : ${ppec.size}*\n▢ *Ext: Mp3*\n▢ *Like : ${ppec.likes}*\n▢ *Dislike : ${ppec.dislike}*\n▢ *Views : ${ppec.views}*\n▢ *Upload : ${ppec.uploadDate}*\n\n*[ Wait ]Tunggu Sebentar kak...*`
 buff = await getBuffer(ppec.thumb)
 reply(mess.wait)
@@ -5054,9 +5057,8 @@ denz.sendMessage(from, buff, image, {quoted: mek, caption: ytt})
 sendMediaURL(from,ppec.result)
 break 
 case 'ytmp4':
-if (!isGroup) return reply(mess.only.group) 
 if (!c)return reply(`Example : ${prefix + command} [Link]`)
-mp4 = await fetchJson(`https://api.zekais.com/ytmp4?url=${q}&apikey=zekais`)
+mp4 = await fetchJson(`https://api.zekais.com/ytmp4?url=${c}&apikey=zekais`)
 ytt3 = `「 *YOUTUBE MP4* 」\n\n▢ *Judul :* ${mp4.title}\n▢ *Size : ${mp4.size}*\n▢ *Ext: Mp4*\n▢ *Quality : ${mp4.quality}*\n▢ *Like : ${mp4.likes}*\n▢ *Dislike : ${mp4.dislike}*\n▢ *Views : ${mp4.views}*\n▢ *Upload : ${mp4.uploadDate}*\n\n*[ Wait ]Tunggu Sebentar kak...*`
 buff = await getBuffer(mp4.thumb)
 reply(mess.wait)
