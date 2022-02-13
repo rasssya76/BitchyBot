@@ -294,7 +294,7 @@ try {
 			error: {
 				stick: 'Cannot access videos!',
 				Iv: 'Invalid link!',
-				user: `kamu belum terverifikasi silahkan ketik ${prefix}verify`
+				user: `kamu belum terverifikasi silahkan ketik ${prefix}verify`,
                 api: 'Error'
 			},
 			only: {
