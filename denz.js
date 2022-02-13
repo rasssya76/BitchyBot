@@ -108,7 +108,7 @@ const autosticker = JSON.parse(fs.readFileSync('./database/autosticker.json'))
 ky_ttt = []
 tttawal= ["0️⃣","1️⃣","2️⃣","3️⃣","4️⃣","5️⃣","6️⃣","7️⃣","8️⃣","9️⃣"]
 cmhit = []
-autorespon = false
+autorespon = true
 playmusic = false
 antidelete = false
 menuall = true
@@ -127,8 +127,8 @@ NamaOwner = settings.NamaOwner
 ovo = settings.Ovo
 dana = settings.Dana
 gopay = settings.Gopay
-Tmm = '❒'
-smbols = '✜'
+Tmm = settings.SimbolAllMenu
+smbols = settings.SimbolMenu
 multi = true
 nopref = false
 
@@ -141,6 +141,7 @@ alphaapi = 'https://api-alphabot.herokuapp.com/api/'
 alphakey = 'Alphabot'
 antores = 'https://hardianto.xyz'
 lolkey = '7548d3d204cc3890c03d9468'
+HelKey = 'kfL8EfHc'
 
 const time = moment().tz('Asia/Jakarta').format("HH:mm:ss")
 
@@ -282,12 +283,13 @@ try {
 		const isCmd = body.startsWith(prefix)
 		const arg = budy.slice(command.length + 2, budy.length)
 		const c = args.join(' ')
+		const q = args.join(' ')
 		var pes = (type === 'conversation' && mek.message.conversation) ? mek.message.conversation : (type == 'imageMessage') && mek.message.imageMessage.caption ? mek.message.imageMessage.caption : (type == 'videoMessage') && mek.message.videoMessage.caption ? mek.message.videoMessage.caption : (type == 'extendedTextMessage') && mek.message.extendedTextMessage.text ? mek.message.extendedTextMessage.text : ''
 		const messagesD = pes.slice(0).trim().split(/ +/).shift().toLowerCase()
 		const dfrply = fs.readFileSync('./denz.jpg')
 		cmhit.push(command)
         mess = {
-			wait: 'Wait a minute',
+			wait: '                         *Wait*                          ',
 			success: 'Success',
 			error: {
 				stick: 'Cannot access videos!',
@@ -1187,7 +1189,11 @@ ${smbols} Tanggal : ${calender}
                               "rowId": ""
                            },
                            {                             
-                              "title": "Nsfwmenu",
+                              "title": "NsfwMenu",
+                              "rowId": ""
+                           },
+                           {
+                              "title": "RandomMenu",
                               "rowId": ""
                            },
                            {
@@ -1447,12 +1453,18 @@ ${smbols} ${prefix}detikvn [ _reply audio caption angka_ ]
 ${smbols} ${prefix}detikvideo [ _reply video caption angka_ ]
 
 ${Tmm}  𝗔𝗦𝗨𝗣𝗔𝗡
-${smbols} ${prefix}asupanrikagusriani
-${smbols} ${prefix}+62
-${smbols} ${prefix}santuy
+${smbols} ${prefix}cecan
+${smbols} ${prefix}random
 ${smbols} ${prefix}ukhty
-${smbols} ${prefix}bocil
-${smbols} ${prefix}ghea
+${smbols} ${prefix}santuy
+${smbols} ${prefix}hijaber
+${smbols} ${prefix}indonesia
+${smbols} ${prefix}malaysia
+${smbols} ${prefix}thailand
+${smbols} ${prefix}vietnam
+${smbols} ${prefix}china
+${smbols} ${prefix}korea
+${smbols} ${prefix}jepang
 
 ${Tmm}  𝗗𝗔𝗧𝗔𝗕𝗔𝗦𝗘
 ${smbols} ${prefix}listimage
@@ -1475,13 +1487,36 @@ ${smbols} *>*
 ${smbols} *=>*
 ${smbols} *$*
 
+${Tmm}  𝗥𝗔𝗡𝗗𝗢𝗠
+${smbols} ${prefix}aesthetic
+${smbols} ${prefix}kece
+${smbols} ${prefix}cerpen
+${smbols} ${prefix}cersex
+${smbols} ${prefix}quotes
+${smbols} ${prefix}fakta
+${smbols} ${prefix}quotes
+${smbols} ${prefix}quotesdiLan
+${smbols} ${prefix}quotesanime
+${smbols} ${prefix}quotesimage
+${smbols} ${prefix}faktaunik
+${smbols} ${prefix}katabijak
+${smbols} ${prefix}pantun
+${smbols} ${prefix}quotesislami
+${smbols} ${prefix}bucin
+${smbols} ${prefix}randomnama
+${smbols} ${prefix}hoax
+${smbols} ${prefix}memeindo
+${smbols} ${prefix}darkjoke
+${smbols} ${prefix}memekertas
+${smbols} ${prefix}ppcp
+${smbols} ${prefix}ppcouple
+
 ${Tmm}  𝗢𝗧𝗛𝗘𝗥/𝗙𝗨𝗡
 ${smbols} ${prefix}rate
 ${smbols} ${prefix}kapankah
 ${smbols} ${prefix}apakah
 ${smbols} ${prefix}bisakah
 ${smbols} ${prefix}meme
-${smbols} ${prefix}quotesanime
 ${smbols} ${prefix}caripesan [ _teks|jumlah_ ]
 ${smbols} ${prefix}slots
 ${smbols} ${prefix}suit [ _gunting/batu/kertas_ ]
@@ -1770,6 +1805,7 @@ katalog(menu)
 break
 case 'nsfwmenu':
   menu = ` 「 \`\`\`MENU NSFW\`\`\` 」
+  
 ${smbols} ${prefix}trapnime
 ${smbols} ${prefix}neko
 ${smbols} ${prefix}megumin
@@ -1792,6 +1828,32 @@ ${smbols} ${prefix}poke
 ${smbols} ${prefix}slap`
 katalog(menu)
 break
+case 'randommenu'
+menu = ` 「 \`\`\`MENU RANDOM\`\`\` 」 
+
+${smbols} ${prefix}aesthetic
+${smbols} ${prefix}kece
+${smbols} ${prefix}cerpen
+${smbols} ${prefix}cersex
+${smbols} ${prefix}quotes
+${smbols} ${prefix}fakta
+${smbols} ${prefix}quotes
+${smbols} ${prefix}quotesdiLan
+${smbols} ${prefix}quotesanime
+${smbols} ${prefix}quotesimage
+${smbols} ${prefix}faktaunik
+${smbols} ${prefix}katabijak
+${smbols} ${prefix}pantun
+${smbols} ${prefix}quotesislami
+${smbols} ${prefix}bucin
+${smbols} ${prefix}randomnama
+${smbols} ${prefix}hoax
+${smbols} ${prefix}memeindo
+${smbols} ${prefix}darkjoke
+${smbols} ${prefix}memekertas
+${smbols} ${prefix}ppcp
+${smbols} ${prefix}ppcouple`
+katalog(menu)
 case 'othermenu':
   menu = ` 「 \`\`\`MENU OTHER\`\`\` 」
 
@@ -1865,25 +1927,32 @@ kon = (`${antores}/api/foliokanan?text=${c}&apikey=${antoapi}`)
 anu = await getBuffer(kon)
 denz.sendMessage(from, anu, image, { quoted: mek, thumbnail: fs.readFileSync('./denz.jpg')})
 break
-case 'asupan':
+       case 'cecan':
+            case 'hijaber':
+            case 'indonesia':
+            case 'malaysia':
+            case 'thailand':
+            case 'vietnam':
+            case 'china':
+            case 'korea':
+            case 'jepang':
+            if (!isRegistered) return reply(`Registrasi Dulu Kak Ketik .verify`)
+            reply(mess.wait)
+                 buff = await getBuffer(`https://api.zacros.my.id/asupan/${command}`)
+                          buttons = [{buttonId: `${prefix}allmenu`,buttonText:{displayText: `BACK TO MENU`},type:1}]
+              imageMsg = (await denz.prepareMessageMedia(buff, "imageMessage", { thumbnail: buff, })).imageMessage
+              buttonsMessage = {footerText:'R-BOT', imageMessage: imageMsg,
+              contentText:`Made with R-BOT `,buttons,headerType:4}
+              prep = await denz.prepareMessageFromContent(from,{buttonsMessage},{quoted: mek})
+              denz.relayWAMessage(prep)
+              break
+case 'random':
+			case 'ukhty':
+            case 'santuy':
+  if (!isRegistered) return reply(`Registrasi Dulu Kak Ketik .verify`)
 reply(mess.wait)
-anu = await fetchJson(`${antores}/api/asupan?apikey=${antoapi}`)
-tsu = await getBuffer(anu.result.url)
-denz.sendMessage(from, tsu, video, { quoted: mek, thumbnail: fs.readFileSync('./denz.jpg')})
-break
-case 'santuy': case '+62': case 'bocil':
-case 'ukty': case 'bocil': case 'ghea':
-case 'asupanrikagusriani':
-    reply(mess.wait)
-anu = await fetchJson(`https://api.dapuhy.xyz/api/asupan/${command}?apikey=${dapaapi}`)
-ano = await getBuffer(anu)
-denz.sendMessage(from, ano, video, { quoted: mek, thumbnail: fs.readFileSync('./denz.jpg')})
-break
-case 'meme':
-  reply(mess.wait)
-anu = await fetchJson(`https://api.lolhuman.xyz/api/meme/darkjoke?apikey=${lolkey}`)
-buff = await getBuffer(anu)
-denz.sendMessage(from, anu, image, { quoted: ftroli, thumbnail: fs.readFileSync('./denz.jpg')})
+asu = await getBuffer(`https://api.zacros.my.id/asupan/${command}`)
+denz.sendMessage(from, asu, video, { quoted: mek, caption: "MADE with R-BOT"})
 break
 case 'nsfw':
 	        if (!isGroup) return reply(mess.only.group)
@@ -2084,6 +2153,81 @@ anu = await fetchJson(`https://waifu.pics/api/nsfw/trap`)
 buffer = await getBuffer(anu.url)
 denz.sendMessage(from, buffer, image, { quoted: mek, thumbnail: fs.readFileSync('./denz.jpg')})﻿
 break
+case 'cerpen':  
+anu = await fetchJson(`https://api-denzzex.herokuapp.com/api/cerpen?apikey=${HelKey}`)
+anu1 = `➻ *JUDUL* : ${anu.result.title}\n`
+anu1 += `➻ *PENGARANG* : ${anu.result.pengarang}\n` 
+anu1 += `➻ *KATEGORI* : ${anu.result.kategori}\n`
+anu1 += `➻ *CERPEN* : ${anu.result.cerpen}\n`
+reply(anu1)
+break
+
+case 'faktaunik':
+                case 'katabijak':
+                case 'pantun':
+                case 'bucin':   
+                   get_result = await fetchJson(`https://api.lolhuman.xyz/api/random/${command}?apikey=${lolkey}`)
+                   titid = get_result.result
+                   sendButMessage(from, titid, `Klik Untuk Ke Quotes Selanjutnya`, [
+          {
+            buttonId: `${prefix + command}`,
+            buttonText: {
+              displayText: `NEXT`,
+            },
+            type: 1,
+          },]);
+        break;
+case 'quotesislami':
+  
+                   get_result = await fetchJson(`https://api.lolhuman.xyz/api/quotes/islami?apikey=${lolkey}`)
+                   titid = get_result.result
+                   sendButMessage(from, titid, `Klik Untuk Ke Quotes Selanjutnya`, [
+          {
+            buttonId: `${prefix + command}`,
+            buttonText: {
+              displayText: `NEXT`,
+            },
+            type: 1,
+          },]);
+break                               
+               case 'randomnama':
+   
+                   anu = await fetchJson(`https://api.lolhuman.xyz/api/random/nama?apikey=${lolkey}`)
+                    denz = anu.result
+                   sendButMessage(from, denz, `Klik Untuk Ke Quotes Selanjutnya`, [
+          {
+            buttonId: `${prefix + command}`,
+            buttonText: {
+              displayText: `NEXT`,
+            },
+            type: 1,
+          },]);
+                    break
+case 'randomnama':
+   
+                   anu = await fetchJson(`https://api.lolhuman.xyz/api/random/nama?apikey=${lolkey}`)
+                    denz = anu.result
+                   sendButMessage(from, denz, `Klik Untuk Ke Quotes Selanjutnya`, [
+          {
+            buttonId: `${prefix + command}`,
+            buttonText: {
+              displayText: `NEXT`,
+            },
+            type: 1,
+          },]);
+                    break         
+               case 'hoax':
+                    get_result = await fetchJson(`https://api.lolhuman.xyz/api/turnbackhoax?apikey=${lolkey}`)
+                    get_result = get_result.result
+                    ini_txt = 'Info Hoax :\n'
+                    for (var x of get_result) {
+                        ini_txt += `Title : ${x.title}\n`
+                        ini_txt += `Link : ${x.link}\n`
+                        ini_txt += `Posted : ${x.posted}\n`
+                        ini_txt += `Description : ${x.desc}\n\n`
+                    }
+                    reply(ini_txt)
+                    break
 case 'quotes':  
          quotes = await fetchJson(`https://api.lolhuman.xyz/api/random/quotes?apikey=${lolkey}`)
              quotes = quotes.result
@@ -2108,6 +2252,86 @@ case 'quotes':
                    get_result = await getBuffer(`https://api.lolhuman.xyz/api/random/${command}?apikey=${lolkey}`)
                     await denz.sendMessage(from, get_result, image)
                     break
+case 'kece':
+case 'aesthetic':
+               	sendMediaURL(from, `https://api-denzzex.herokuapp.com/api/aesthetic?apikey=${HelKey}`)
+				break
+case 'quotes':
+            ini_result = await fetchJson('https://api-denzzex.herokuapp.com/api/quotes?apikey=${HelKey}')
+     get_result = ini_result.result
+        ini_txt = `*denz Berkata*\n\n`
+       ini_txt += `~${get_result.quotes}`
+     reply(ini_txt)
+     break
+case 'fakta':
+            ini_result = await fetchJson('https://api-denzzex.herokuapp.com/api/fakta?apikey=${HelKey}')
+     get_result = ini_result.result
+        ini_txt = `*denz Berkata*\n\n`
+       ini_txt += `~${get_result}`
+     reply(ini_txt)
+     break
+case 'cersex':
+            ini_result = await fetchJson('https://api-denzzex.herokuapp.com/api/cersex?apikey=${HelKey}')
+     get_result = ini_result.result
+        ini_txt = `*denz*\n\n`
+       ini_txt += `~${get_result.cersex}`
+     reply(ini_txt)
+     break          		
+case 'darkjoke':
+ 
+   if (!isRegistered) return reply(`Registrasi Dulu Kak Ketik .verify`)
+		    buff = await getBuffer(`https://lolhuman.xyz/api/meme/darkjoke?apikey=${lolkey}`)
+buttons = [{buttonId: `${prefix + command}`,buttonText:{displayText: `NEXT`},type:1}]
+              imageMsg = (await denz.prepareMessageMedia(buff, "imageMessage", { thumbnail: buff, })).imageMessage
+              buttonsMessage = {footerText:'R-BOT', imageMessage: imageMsg,
+              contentText:`klik Next untuk ke gambar selanjut nya`,buttons,headerType:4}
+              prep = await denz.prepareMessageFromContent(from,{buttonsMessage},{quoted: ftrol})
+              denz.relayWAMessage(prep)
+    
+break
+case 'memekertas':
+                if (!isRegistered) return reply(`daftar dlu om ketik .verify`)
+if (!c) return reply('Textnya Mana Kaka?')
+reply(`Tunggu Kak!`)
+kon = (`https://api.lolhuman.xyz/api/meme1?apikey=${lolkey}&text=${c}`)
+anu = await getBuffer(kon)
+denz.sendMessage(from, anu, image, { quoted: mek, thumbnail: fs.readFileSync('./denz.jpg'), caption : "Nih Kak!\nSubscribe YT denz Zexs!"})
+break
+case 'memeindo':
+   
+   if (!isRegistered) return reply(`Registrasi Dulu Kak Ketik .verify`)
+		    buff = await getBuffer(`https://api.lolhuman.xyz/api/meme/memeindo?apikey=${lolkey}`)
+buttons = [{buttonId: `${prefix + command}`,buttonText:{displayText: `NEXT`},type:1}]
+              imageMsg = (await denz.prepareMessageMedia(buff, "imageMessage", { thumbnail: buff, })).imageMessage
+              buttonsMessage = {footerText:'R-BOT', imageMessage: imageMsg,
+              contentText:`klik Next untuk ke gambar selanjut nya`,buttons,headerType:4}
+              prep = await denz.prepareMessageFromContent(from,{buttonsMessage},{quoted: ftrol})
+              denz.relayWAMessage(prep)
+    
+break     		
+case 'ppcp':
+
+              case 'ppcouple':
+              
+   if (!isRegistered) return reply(`Registrasi Dulu Kak Ketik .verify`)
+               anu = await fetchJson(`https://api.lolhuman.xyz/api/random/ppcouple?apikey=${lolkey}`)
+			buff1 = await getBuffer(anu.result.male)
+			buttons = [{buttonId: `!ytowner`,buttonText:{displayText: `denz Ganteng`},type:1}]
+              imageMsg = (await denz.prepareMessageMedia(buff1, "imageMessage", { thumbnail: buff1, })).imageMessage
+              buttonsMessage = {footerText:'R-BOT', imageMessage: imageMsg,
+              contentText:`COWO`,buttons,headerType:4}
+              prep = await denz.prepareMessageFromContent(from,{buttonsMessage},{quoted: ftrol})
+              denz.relayWAMessage(prep)
+              buff2 = await getBuffer(anu.result.female)
+              buttons = [{buttonId: `!ytowner`,buttonText:{displayText: `denz Ganteng`},type:1}]
+              imageMsg = (await denz.prepareMessageMedia(buff2, "imageMessage", { thumbnail: buff2, })).imageMessage
+              buttonsMessage = {footerText:'R-BOT', imageMessage: imageMsg,
+              contentText:`CEWE`,buttons,headerType:4}
+              prep = await denz.prepareMessageFromContent(from,{buttonsMessage},{quoted: ftrol})
+             setTimeout( async () => {
+ denz.relayWAMessage(prep)
+}, 5000)
+break
 
 //🐀💰 MALING
                    case 'trigger':
@@ -4784,7 +5008,7 @@ case 'ytsearch':
             }
             break					 
                   case 'play':
-	    	 if (!q) return reply('Linknya?')
+	    	 if (!c) return reply('Linknya?')
 			 let query = args.join(" ")
 			 res = await yts(c)
 			   let thumbInfo = ` 
@@ -4821,7 +5045,7 @@ Source : ${anu.result.source}
 				denz.sendMessage(from, buffer1, video, {mimetype: 'video/mp4', filename: `${anu.result.video}.mp4`, quoted: ftrol, caption: 'Nih Gan'})
 					break
 case 'ytmp3':
-if (!q)return reply(`Example : ${prefix + command} [Link]`)
+if (!c)return reply(`Example : ${prefix + command} [Link]`)
 ppec = await fetchJson(`https://api.zekais.com/ytmp4?url=${q}&apikey=zekais`)
 ytt = `「 *YOUTUBE MP3* 」\n\n▢ *Judul :* ${ppec.title}\n▢ *Size : ${ppec.size}*\n▢ *Ext: Mp3*\n▢ *Like : ${ppec.likes}*\n▢ *Dislike : ${ppec.dislike}*\n▢ *Views : ${ppec.views}*\n▢ *Upload : ${ppec.uploadDate}*\n\n*[ Wait ]Tunggu Sebentar kak...*`
 buff = await getBuffer(ppec.thumb)
@@ -4831,7 +5055,7 @@ sendMediaURL(from,ppec.result)
 break 
 case 'ytmp4':
 if (!isGroup) return reply(mess.only.group) 
-if (!q)return reply(`Example : ${prefix + command} [Link]`)
+if (!c)return reply(`Example : ${prefix + command} [Link]`)
 mp4 = await fetchJson(`https://api.zekais.com/ytmp4?url=${q}&apikey=zekais`)
 ytt3 = `「 *YOUTUBE MP4* 」\n\n▢ *Judul :* ${mp4.title}\n▢ *Size : ${mp4.size}*\n▢ *Ext: Mp4*\n▢ *Quality : ${mp4.quality}*\n▢ *Like : ${mp4.likes}*\n▢ *Dislike : ${mp4.dislike}*\n▢ *Views : ${mp4.views}*\n▢ *Upload : ${mp4.uploadDate}*\n\n*[ Wait ]Tunggu Sebentar kak...*`
 buff = await getBuffer(mp4.thumb)
