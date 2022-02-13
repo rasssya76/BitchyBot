@@ -1654,7 +1654,7 @@ footerText:'Terimakasih Sudah Mendaftar\n ${NamaBot}',
 buttons: gbutsan,
 headerType: 4
 }
-sendButLocation(from, ${jancok}, "Terimakasih Sudah Mendaftar\n ${NamaBot}", ofrply, gbutsan, {quoted:mek, contextInfo: { mentionedJid: [sender]}})
+sendButLocation(from, `${jancok}`, "Terimakasih Sudah Mendaftar\n ${NamaBot}", ofrply, gbutsan, {quoted:mek, contextInfo: { mentionedJid: [sender]}})
 	    console.log(color('[REGISTER]'), color(time, 'yellow'), 'Serial:', color(serialUser, 'cyan'), 'in', color(sender || groupName))
 	    // console.log(e)
         break
