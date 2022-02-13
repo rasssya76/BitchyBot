@@ -1706,7 +1706,7 @@ ${smbols} ${prefix}listrespon`
 katalog(menu)
 break
 case 'downloadmenu':
-  menu = `  \`\`\`MENU DOWNLOAD\`\`\` 」
+  menu = `  \`\`\`MENU DOWNLOAD\`\`\` 
  
 ${smbols} ${prefix}infogempa
 ${smbols} ${prefix}herolist
@@ -1770,7 +1770,7 @@ ${smbols} ${prefix}denim [ _text_ ]`
 katalog(menu)
 break
 case 'groupmenu':
-  menu = ` 「 \`\`\`MENU GROUP\`\`\` 
+  menu = `  \`\`\`MENU GROUP\`\`\` 
  
 ${smbols} ${prefix}getpict [ _@tag_ ]
 ${smbols} ${prefix}getname [ _reply target_ ]
@@ -1803,7 +1803,7 @@ ${smbols} ${prefix}totag [ _reply media_ ]`
 katalog(menu)
 break
 case 'nsfwmenu':
-  menu = ` 「 \`\`\`MENU NSFW\`\`\` 」
+  menu = `   \`\`\`MENU NSFW\`\`\` 
   
 ${smbols} ${prefix}trapnime
 ${smbols} ${prefix}neko
@@ -1827,8 +1827,8 @@ ${smbols} ${prefix}poke
 ${smbols} ${prefix}slap`
 katalog(menu)
 break
-case 'randommenu'
-menu = ` 「 \`\`\`MENU RANDOM\`\`\` 」 
+case 'randommenu':
+menu = `  \`\`\`MENU RANDOM\`\`\` 
 
 ${smbols} ${prefix}aesthetic
 ${smbols} ${prefix}kece
@@ -1853,6 +1853,7 @@ ${smbols} ${prefix}memekertas
 ${smbols} ${prefix}ppcp
 ${smbols} ${prefix}ppcouple`
 katalog(menu)
+break
 case 'othermenu':
   menu = ` 「 \`\`\`MENU OTHER\`\`\` 」
 
