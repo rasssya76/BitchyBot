@@ -1562,7 +1562,7 @@ footerText: `${NamaBot}`,
 buttons: gbutsan,
 headerType: 4
 }
-sendButLocation(from, ${menunya}, "R-BOT", ofrply, gbutsan, { quoted: mek })
+sendButLocation(from, `${menunya}`, "R-BOT", {jpegThumbnail:ofrply,name:""}, gbutsan, { quoted: mek })
                   }
 /*
 sendButDocument(from, "                𝐈'𝐌 𝐑-𝐁𝐎𝐓                 ", `${menunya}`, fs.readFileSync('./denz.jpg'), {mimetype:Mimetype.pdf, thumbnail:ofrply, filename:`𝚁-𝙱𝙾𝚃 𝚟4.18`}, [{buttonId:`${prefix}owner`,buttonText:{displayText:'ᴄʀᴇᴀᴛᴏʀ'},type:1},{buttonId:`${prefix}stats`,buttonText:{displayText:'ɪɴғᴏ'},type:1},{buttonId:`${prefix}grupowner`,buttonText:{displayText:'ɢʀᴜᴘʙᴏᴛ'},type:1}], {quoted:ftrol, contextInfo: { mentionedJid: [dtod,otod,stod], forwardingScore: 508, isForwarded: true, externalAdReply:{title:`𝚁-𝙱𝙾𝚃 𝚋𝚢 𝚁𝚊𝚖𝚊`,body:`𝙼𝚊𝚍𝚎 𝚠𝚒𝚝𝚑 𝚋𝚢 𝚁𝚊𝚖𝚊𝙶𝚊𝚗𝚜`,mediaType:"2",thumbnail:ofrply,mediaUrl:`https://youtu.be/6cC_QVZ4qFs`}}})
@@ -1614,7 +1614,7 @@ footerText: `${NamaBot}`,
 buttons: gbutsan,
 headerType: 4
 }
-sendButLocation(from, ${menunya}, "R-BOT", ofrply, gbutsan, { quoted: mek })
+sendButLocation(from, `${menunya}`, "R-BOT", {jpegThumbnail:ofrply,name:""}, gbutsan, { quoted: mek })
                   }
 /*
 sendButDocument(from, "      𝐈'𝐌 𝐑-𝐁𝐎𝐓      ", `${menunya}`, fs.readFileSync('./denz.jpg'), {mimetype:Mimetype.pdf, thumbnail:ofrply, filename:`𝚁-𝙱𝙾𝚃 𝚟4.18`}, [{buttonId:`${prefix}owner`,buttonText:{displayText:'ᴄʀᴇᴀᴛᴏʀ'},type:1},{buttonId:`${prefix}stats`,buttonText:{displayText:'ɪɴғᴏ'},type:1},{buttonId:`${prefix}grupowner`,buttonText:{displayText:'ɢʀᴜᴘʙᴏᴛ'},type:1}], {quoted:ftrol, contextInfo: { mentionedJid: [dtod,otod,stod], forwardingScore: 508, isForwarded: true, externalAdReply:{title:`𝚁-𝙱𝙾𝚃 𝚋𝚢 𝚁𝚊𝚖𝚊`,body:`𝙼𝚊𝚍𝚎 𝚠𝚒𝚝𝚑 𝚋𝚢 𝚁𝚊𝚖𝚊𝙶𝚊𝚗𝚜`,mediaType:"2",thumbnail:ofrply,mediaUrl:`https://youtu.be/6cC_QVZ4qFs`}}})
