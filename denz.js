@@ -814,9 +814,9 @@ if (!mek.key.remoteJid.endsWith('@g.us') && offline){
 		const reply = (teks) => {
 			denz.sendMessage(from, teks, text, { thumbnail: dfrply, sendEphemeral: true, quoted: mek, contextInfo: { forwardingScore: 508, isForwarded: true, externalAdReply:{title: `${jmn} - ${week} ${weton} - ${calender}`,body:"DON'T CLICK HERE",previewType:"PHOTO",thumbnail:ofrply,sourceUrl:`https://wa.me/message/SQK64PRUWO5FH1`}}})
 		}
-        const replys = (teks) => {
-        denz.sendMessage(from, teks, text, { quoted:ftrol })
-        }
+        const replyy = (teks) => {
+				frhan.sendMessage(from, teks, text, {quoted:mek})
+		}
 		const simir = (teks) => {
 			denz.sendMessage(from, teks, text, { quoted:ftrol })
 		}
@@ -1119,7 +1119,7 @@ reply('http://youtube.com/dcodedenpa')
         switch (command) {        	
         	case 'menu':
 case 'help':
-if (!isRegistered) return replys(mess.user)  
+if (!isRegistered) return replyy(mess.user)  
 stod = `${sender}`
 stst = await denz.getStatus(`${sender.split('@')[0]}@c.us`)
 stst = stst.status == 401 ? '' : stst.status
