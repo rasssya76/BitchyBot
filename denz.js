@@ -815,7 +815,7 @@ if (!mek.key.remoteJid.endsWith('@g.us') && offline){
 			denz.sendMessage(from, teks, text, { thumbnail: dfrply, sendEphemeral: true, quoted: mek, contextInfo: { forwardingScore: 508, isForwarded: true, externalAdReply:{title: `${jmn} - ${week} ${weton} - ${calender}`,body:"DON'T CLICK HERE",previewType:"PHOTO",thumbnail:ofrply,sourceUrl:`https://wa.me/message/SQK64PRUWO5FH1`}}})
 		}
         const replys = (teks) => {
-        denz.sendMessage(from, teks, text, { thumbnail: dfrply, sendEphemeral: true, quoted: mek, contextInfo: { forwardingScore: 508, isForwarded: true }})
+        denz.sendMessage(from, teks, text, { quoted:ftrol })
         }
 		const simir = (teks) => {
 			denz.sendMessage(from, teks, text, { quoted:ftrol })
