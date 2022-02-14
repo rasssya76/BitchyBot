@@ -814,7 +814,7 @@ if (!mek.key.remoteJid.endsWith('@g.us') && offline){
 		const reply = (teks) => {
 			denz.sendMessage(from, teks, text, { thumbnail: dfrply, sendEphemeral: true, quoted: mek, contextInfo: { forwardingScore: 508, isForwarded: true, externalAdReply:{title: `${jmn} - ${week} ${weton} - ${calender}`,body:"DON'T CLICK HERE",previewType:"PHOTO",thumbnail:ofrply,sourceUrl:`https://wa.me/message/SQK64PRUWO5FH1`}}})
 		}
-        const replyy = (teks) => {
+        const reply = (teks) => {
 				denz.sendMessage(from, teks, text, {quoted:mek})
 		}
 		const simir = (teks) => {
@@ -1119,7 +1119,7 @@ reply('http://youtube.com/dcodedenpa')
         switch (command) {        	
         	case 'menu':
 case 'help':
-if (!isRegistered) return replyy(mess.user)  
+if (!isRegistered) return reply(mess.user)  
 stod = `${sender}`
 stst = await denz.getStatus(`${sender.split('@')[0]}@c.us`)
 stst = stst.status == 401 ? '' : stst.status
@@ -1224,7 +1224,7 @@ ${smbols} Tanggal : ${calender}
 denz.sendMessage(from, listMsg, MessageType.listMessage, {contextInfo: { mentionedJid: [stod,dtod]},quoted:mek})
 break
 case 'allmenu': 
-if (!isRegistered) return replys(mess.user)
+if (!isRegistered) return reply(mess.user)
   stod = `${sender}`
        stst = await denz.getStatus(`${sender.split('@')[0]}@c.us`)
        nama = '${NamaBot}'
@@ -1576,7 +1576,7 @@ sendButDocument(from, `${menunya}`, "© B Y R A M A®", fs.readFileSync('./pdf.p
 */                     
 break
 case 'sewabot': 
-if (!isRegistered) return replys(mess.user)
+if (!isRegistered) return reply(mess.user)
   stod = `${sender}`
        stst = await denz.getStatus(`${sender.split('@')[0]}@c.us`)
        nama = '${NamaBot}'
@@ -2816,7 +2816,7 @@ break
 					denz.sendMessage(from, 'Pertanyaan : *'+rate+'*\n\nJawaban : '+ te+'%', text, { quoted: mek })
 					break
 		    case 'tiktokaudio':
-		    if (!isRegistered) return replys(mess.user)
+		    if (!isRegistered) return reply(mess.user)
   		 		if (!isUrl(args[0]) && !args[0].includes('tiktok.com')) return reply(mess.error.api)
  		if (!c) return reply('Linknya?')
  		reply(mess.wait)
@@ -3265,7 +3265,7 @@ sendMediaURL(from,`${res.result.link}`,`${res.result.desc}`)
                     case 'tiktok':
                    case 'tiktokdl':
                    case 'tiktoknowm':
-if (!isRegistered) return replys(mess.user)                   
+if (!isRegistered) return reply(mess.user)                   
 if (!c) return reply('Linknya?')
 var { TiktokDownloader } = require('./lib/tiktokdl')
 reply(mess.wait)
@@ -4723,7 +4723,7 @@ break
 			    denz.sendMessage(from, `${bot}`, text, {quoted: { key: { fromMe: false, participant: `${parti}@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { conversation: `${targetq}` }}})
 					break
             case 'hidetag':
-            if (!isRegistered) return replys(mess.user)
+            if (!isRegistered) return reply(mess.user)
             if (!isOwner && !mek.key.fromMe) return reply(only.ownerB)
             ht = body.slice(9)
                 members_id = []
@@ -5002,7 +5002,7 @@ denz.sendMessage(from, 'yaudah oke',text, {
 })
 break	
 case 'ytsearch':
-if (!isRegistered) return replys(mess.user)
+if (!isRegistered) return reply(mess.user)
                           if (!args.length) return reply('Judulnya apa kak?')
             try {
             	reply(mess.wait)
@@ -5031,7 +5031,7 @@ if (!isRegistered) return replys(mess.user)
             }
             break					 
                   case 'play':
-             if (!isRegistered) return replys(mess.user)
+             if (!isRegistered) return reply(mess.user)
 	    	 if (!c) return reply('Linknya?')
 			 let query = args.join(" ")
 			 res = await yts(c)
@@ -5055,7 +5055,7 @@ denz.relayWAMessage(prep)
 break
 case 'play2':
 case 'video':  
-if (!isRegistered) return replys(mess.user)
+if (!isRegistered) return reply(mess.user)
 			  if (args.length < 1) return reply('*Masukan judul nya?*')
                 reply(mess.wait)
 				play = args.join(" ")
@@ -5070,7 +5070,7 @@ Source : ${anu.result.source}
 				denz.sendMessage(from, buffer1, video, {mimetype: 'video/mp4', filename: `${anu.result.video}.mp4`, quoted: ftrol, caption: 'Nih Gan'})
 					break
 case 'ytmp3':
-if (!isRegistered) return replys(mess.user)
+if (!isRegistered) return reply(mess.user)
 if (!c)return reply(`Example : ${prefix + command} [Link]`)
 ppec = await fetchJson(`https://hardianto.xyz/api/download/ytmp3?url=${c}&apikey=${antoapi}`)
 ytt = `「 *YOUTUBE MP3* 」\n\n▢ *Judul :* ${ppec.title}\n▢ *Size : ${ppec.size}*\n▢ *Ext: Mp3*\n▢ *Like : ${ppec.likes}*\n▢ *Dislike : ${ppec.dislike}*\n▢ *Views : ${ppec.views}*\n▢ *Upload : ${ppec.uploadDate}*\n\n*[ Wait ]Tunggu Sebentar kak...*`
@@ -5080,7 +5080,7 @@ denz.sendMessage(from, buff, image, {quoted: mek, caption: ytt})
 sendMediaURL(from,ppec.result)
 break 
 case 'ytmp4':
-if (!isRegistered) return replys(mess.user)
+if (!isRegistered) return reply(mess.user)
 if (!c)return reply(`Example : ${prefix + command} [Link]`)
 mp4 = await fetchJson(`https://hardianto.xyz/api/download/ytmp4?url=${c}&apikey=${antoapi}`)
 ytt3 = `「 *YOUTUBE MP4* 」\n\n▢ *Judul :* ${mp4.title}\n▢ *Size : ${mp4.size}*\n▢ *Ext: Mp4*\n▢ *Quality : ${mp4.quality}*\n▢ *Like : ${mp4.likes}*\n▢ *Dislike : ${mp4.dislike}*\n▢ *Views : ${mp4.views}*\n▢ *Upload : ${mp4.uploadDate}*\n\n*[ Wait ]Tunggu Sebentar kak...*`
