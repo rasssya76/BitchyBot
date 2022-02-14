@@ -814,9 +814,9 @@ if (!mek.key.remoteJid.endsWith('@g.us') && offline){
 		const reply = (teks) => {
 			denz.sendMessage(from, teks, text, { thumbnail: dfrply, sendEphemeral: true, quoted: mek, contextInfo: { forwardingScore: 508, isForwarded: true, externalAdReply:{title: `${jmn} - ${week} ${weton} - ${calender}`,body:"DON'T CLICK HERE",previewType:"PHOTO",thumbnail:ofrply,sourceUrl:`https://wa.me/message/SQK64PRUWO5FH1`}}})
 		}
-			const replys = (teks) => {
-			denz.sendMessage(from, teks, text, { quoted:mek })
-		}
+        const replys = (teks) => {
+        denz.sendMessage(from, teks, text, { thumbnail: dfrply, sendEphemeral: true, quoted: mek, contextInfo: { forwardingScore: 508, isForwarded: true }})
+        }
 		const simir = (teks) => {
 			denz.sendMessage(from, teks, text, { quoted:ftrol })
 		}
@@ -1562,7 +1562,7 @@ footerText: `${NamaBot}`,
 buttons: gbutsan,
 headerType: 4
 }
-sendButLocation(from, `${menunya}`, "R-BOT", {jpegThumbnail:ofrply,name:""}, [{buttonId:`owner`,buttonText:{displayText:'ᴄʀᴇᴀᴛᴏʀ'},type:1},{buttonId:`donasi`,buttonText:{displayText:'ᴅᴏɴᴀsɪ'},type:1},{buttonId:`sewabot`,buttonText:{displayText:'sᴇᴡᴀʙᴏᴛ'},type:1}], { quoted: mek })
+sendButLocation(from, `${menunya}`, "R-BOT", {jpegThumbnail:ofrply,name:""}, gbutsan, { quoted: mek })
                   }
 /*
 sendButDocument(from, "                𝐈'𝐌 𝐑-𝐁𝐎𝐓                 ", `${menunya}`, fs.readFileSync('./denz.jpg'), {mimetype:Mimetype.pdf, thumbnail:ofrply, filename:`𝚁-𝙱𝙾𝚃 𝚟4.18`}, [{buttonId:`${prefix}owner`,buttonText:{displayText:'ᴄʀᴇᴀᴛᴏʀ'},type:1},{buttonId:`${prefix}stats`,buttonText:{displayText:'ɪɴғᴏ'},type:1},{buttonId:`${prefix}grupowner`,buttonText:{displayText:'ɢʀᴜᴘʙᴏᴛ'},type:1}], {quoted:ftrol, contextInfo: { mentionedJid: [dtod,otod,stod], forwardingScore: 508, isForwarded: true, externalAdReply:{title:`𝚁-𝙱𝙾𝚃 𝚋𝚢 𝚁𝚊𝚖𝚊`,body:`𝙼𝚊𝚍𝚎 𝚠𝚒𝚝𝚑 𝚋𝚢 𝚁𝚊𝚖𝚊𝙶𝚊𝚗𝚜`,mediaType:"2",thumbnail:ofrply,mediaUrl:`https://youtu.be/6cC_QVZ4qFs`}}})
