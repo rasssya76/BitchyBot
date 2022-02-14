@@ -136,7 +136,7 @@ exec(`cd /sdcard/download && play *mp3`)
 							await sendButLoc(mdata.id, `Goodbye @${num.split('@')[0]}\n⌯ָ   ֙Leave from group:\n${mdata.subject}` + '\nBISMILAH SEMOGA DAPET NASI KOTAK', `R-BOT`,goodbye, [{"buttonId": `.dadah`,"buttonText": {"displayText": "dadah\n\nDia Pacarku guys, Kita Ngegay udah lama, gak tau kenapa tiba2 Keluar grup 😭"},"type": "RESPONSE"}], {contextInfo: { mentionedJid: [num]}})
 							} catch {
 						       await sendButLoc(mdata.id, `Goodbye @${num.split('@')[0]}\n⌯ָ   ֙Leave from group:\n${mdata.subject}` + '\nBISMILAH SEMOGA DAPET NASI KOTAK', `R-BOT`,goodbye, [{"buttonId": `.dadah`,"buttonText": {"displayText": "dadah\n\nDia Pacarku guys, Kita Ngegay udah lama, gak tau kenapa tiba2 Keluar grup 😭"},"type": "RESPONSE"}], {contextInfo: { mentionedJid: [num]}})
-						.       }										 				           
+						       }										 				           
 		} else if (anu.action == 'promote') {
 fkontakk = { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(anu.jid ? { remoteJid: '6283136505591-1604595598@g.us' } : {})}, message: { "contactMessage":{"displayName": `${mdata.subject}`,"vcard":`BEGIN:VCARD\nVERSION:3.0\nN:2;Denz;;;\nFN:Denz\nitem1.TEL;waid=6281515589573:6281515589573\nitem1.X-ABLabel:Mobile\nEND:VCARD` }}}
 shp = '◦➛'
